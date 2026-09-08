@@ -23,12 +23,15 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Unit tests (`FreeDiskAnalyzer.Tests`) covering counts, aggregation, cancellation, missing path, category breakdown, progress reporting
 - `FreeDiskAnalyzer.sln` at repo root, CI (`build.yml`) wired to restore/build/test it
 
-## Phase 2: WPF shell and Dashboard
+## Phase 2: WPF shell and Dashboard - done
 
-- `FreeDiskAnalyzer.csproj` (net8.0-windows, WPF)
-- App shell: sidebar navigation (Dashboard, Analyze, Large Files, Folders, Utilities, Settings, Privacy, About)
-- Light/dark theme resource dictionaries, accent color `#2563EB`
-- Dashboard view: drive list, used/free donut chart, last scan summary, NordVPN affiliate card
+- `FreeDiskAnalyzer.csproj` (net8.0-windows, WPF, CommunityToolkit.Mvvm for MVVM)
+- App shell: sidebar navigation (Dashboard, Analyze, Large Files, Folders, Utilities, Settings, Privacy, About), ViewModel-first navigation via DataTemplates
+- Light/dark color dictionaries (`Colors.Light.xaml` / `Colors.Dark.xaml`) with accent `#2563EB`, swappable at runtime via `ThemeManager` (wiring a toggle into it is Phase 4/Settings)
+- Card, primary button, nav list, and progress bar styles (`Styles.xaml`), Segoe UI Variable typography
+- `DonutProgressRing` control for used/free
+- Dashboard view: drive cards, selected-drive detail with donut, last scan summary (honest "no scan yet" placeholder, not fake data), NordVPN affiliate card with disclosure text
+- Other sidebar sections wired to navigation but show a "coming soon" placeholder until their phase
 
 ## Phase 3: Analyze, Large Files, Folders views
 

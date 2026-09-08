@@ -1,0 +1,45 @@
+<Window x:Class="FreeDiskAnalyzer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Free Disk Analyzer"
+        Height="720" Width="1200" MinHeight="600" MinWidth="960"
+        Background="{DynamicResource BackgroundBrush}"
+        FontFamily="{DynamicResource AppFontFamily}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Grid.Column="0" Background="{DynamicResource SidebarBrush}"
+                BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,1,0">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Margin="20,24,20,20">
+                    <TextBlock Text="Free Disk Analyzer" FontSize="16" FontWeight="SemiBold"
+                               TextWrapping="Wrap" Foreground="{DynamicResource TextPrimaryBrush}"/>
+                </StackPanel>
+
+                <ListBox DockPanel.Dock="Top"
+                         ItemsSource="{Binding NavItems}"
+                         SelectedItem="{Binding SelectedNavItem, Mode=TwoWay}"
+                         Style="{StaticResource NavListStyle}"
+                         ItemContainerStyle="{StaticResource NavListItemStyle}"
+                         Margin="12,0,12,12">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Height="24">
+                                <TextBlock Text="{Binding Glyph}" FontFamily="{DynamicResource AppIconFontFamily}"
+                                           FontSize="16" Width="24" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Label}" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+
+        <!-- Content -->
+        <ContentControl Grid.Column="1" Content="{Binding CurrentPage}" Margin="32"/>
+    </Grid>
+</Window>

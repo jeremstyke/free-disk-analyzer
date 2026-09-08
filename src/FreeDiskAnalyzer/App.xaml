@@ -1,0 +1,25 @@
+<Application x:Class="FreeDiskAnalyzer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:FreeDiskAnalyzer.ViewModels"
+             xmlns:views="clr-namespace:FreeDiskAnalyzer.Views">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Index 0: colors, swapped at runtime by ThemeManager for light/dark -->
+                <ResourceDictionary Source="Themes/Colors.Light.xaml"/>
+                <ResourceDictionary Source="Themes/Typography.xaml"/>
+                <ResourceDictionary Source="Themes/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- ViewModel-first navigation: MainViewModel.CurrentPage is bound
+                 to a ContentControl, these templates pick the matching View. -->
+            <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+                <views:DashboardView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ComingSoonViewModel}">
+                <views:ComingSoonView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

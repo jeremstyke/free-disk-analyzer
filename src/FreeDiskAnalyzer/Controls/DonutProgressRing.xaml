@@ -1,0 +1,26 @@
+<UserControl x:Class="FreeDiskAnalyzer.Controls.DonutProgressRing"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="160" Height="160">
+    <Grid>
+        <Ellipse Width="140" Height="140" StrokeThickness="14"
+                 Stroke="{DynamicResource TrackBrush}"
+                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Ellipse x:Name="ProgressArc" Width="140" Height="140" StrokeThickness="14"
+                 Stroke="{DynamicResource AccentBrush}"
+                 StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                 RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <RotateTransform Angle="-90"/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="PercentageText" FontSize="26" FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+            <TextBlock Text="used" FontSize="12" HorizontalAlignment="Center"
+                       Foreground="{DynamicResource TextSecondaryBrush}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
