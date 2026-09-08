@@ -1,0 +1,60 @@
+name: Release
+
+# NOTE: this workflow targets the WPF project that will be added in the
+# "core scan engine + WPF project" phase. Paths below (project file, output
+# folder) will need to be adjusted once that project exists.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore FreeDiskAnalyzer.sln
+
+      - name: Publish (portable, self-contained x64)
+        run: |
+          dotnet publish src/FreeDiskAnalyzer/FreeDiskAnalyzer.csproj `
+            -c Release -r win-x64 --self-contained true `
+            -p:PublishSingleFile=false `
+            -o publish/portable
+
+      - name: Package portable zip
+        run: |
+          Compress-Archive -Path publish/portable/* -DestinationPath FreeDiskAnalyzer-Portable.zip
+
+      # The installer (FreeDiskAnalyzer-Setup.exe) is produced by a separate
+      # installer project (e.g. WiX or Inno Setup) that will be added
+      # alongside the WPF project. This step is a placeholder until then.
+      - name: Build installer
+        run: echo "TODO - build FreeDiskAnalyzer-Setup.exe once the installer project exists"
+
+      - name: Generate SHA256SUMS.txt
+        run: |
+          Get-FileHash FreeDiskAnalyzer-Portable.zip -Algorithm SHA256 |
+            ForEach-Object { "$($_.Hash)  FreeDiskAnalyzer-Portable.zip" } |
+            Out-File -FilePath SHA256SUMS.txt -Encoding ASCII
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            FreeDiskAnalyzer-Portable.zip
+            SHA256SUMS.txt
+          generate_release_notes: true
