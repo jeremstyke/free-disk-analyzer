@@ -92,7 +92,7 @@ dotnet build
 
 ## Contribuer
 
-Les contributions sont les bienvenues. Voir [CONTRIBUTING.md](CONTRIBUTING.md) et [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Ce projet n'accepte pas de pull requests externes. Les rapports de bugs et demandes de fonctionnalités via les [issues](../../issues) sont les bienvenus, voir [CONTRIBUTING.md](CONTRIBUTING.md) et [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Sécurité
 
