@@ -6,7 +6,7 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 
 - Folder structure (`src/`, `tests/`, `assets/`, `docs/`, `website/`, `.github/`)
 - `README.md` / `README.fr.md`
-- `LICENSE` (MIT)
+- `LICENSE` (All Rights Reserved)
 - `PRIVACY.md`, `AFFILIATE-DISCLOSURE.md`
 - `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`
 - `.gitignore`

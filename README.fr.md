@@ -1,6 +1,6 @@
 # Free Disk Analyzer
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-lightgrey.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D6)](#)
 [![.NET](https://img.shields.io/badge/.NET-8-512BD4)](#)
 [![Build](https://img.shields.io/github/actions/workflow/status/jeremstyke/free-disk-analyzer/build.yml?branch=main)](../../actions)
@@ -44,7 +44,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 
 Free Disk Analyzer est actuellement distribué sans certificat commercial de signature de code. Windows SmartScreen peut donc afficher un avertissement car l'éditeur de l'application ne peut pas encore être vérifié.
 
-Cela ne signifie pas que Free Disk Analyzer est un logiciel malveillant. Le projet est open source et son code source est publiquement disponible sur GitHub. Vous pouvez vérifier le fichier téléchargé à l'aide de l'empreinte SHA-256 publiée avec chaque version (`SHA256SUMS.txt`).
+Cela ne signifie pas que Free Disk Analyzer est un logiciel malveillant. Son code source est publiquement disponible sur GitHub pour consultation. Vous pouvez vérifier le fichier téléchargé à l'aide de l'empreinte SHA-256 publiée avec chaque version (`SHA256SUMS.txt`).
 
 ## Confidentialité
 
@@ -100,7 +100,7 @@ Voir [SECURITY.md](SECURITY.md) pour signaler une vulnérabilité.
 
 ## Licence
 
-MIT. Voir [LICENSE](LICENSE).
+Tous droits réservés. L'application est gratuite à l'usage, le code source n'est pas libre de réutilisation ou de redistribution. Voir [LICENSE](LICENSE).
 
 ## Site GitHub Pages
 
