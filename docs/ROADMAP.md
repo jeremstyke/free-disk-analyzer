@@ -13,12 +13,15 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Issue templates, PR template
 - CI workflow (`build.yml`) and release workflow (`release.yml`), scaffolded and ready to activate once the project files exist
 
-## Phase 1: Core scan engine (FreeDiskAnalyzer.Core)
+## Phase 1: Core scan engine (FreeDiskAnalyzer.Core) - done
 
-- Models: `DriveInfoModel`, `FolderNode`, `FileEntry`, `ScanResult`, `ScanProgress`
-- `DiskScanner` service: async recursive scan, `CancellationToken` support, robust handling of access-denied, locked files, long paths, I/O errors
-- Aggregation: largest folders, largest files, category breakdown by extension
-- Unit tests for scanner logic (using a temp directory tree, no dependency on real user drives)
+- Models: `DriveInfoModel`, `FolderNode`, `FileEntry`, `ScanResult`, `ScanProgress`, `FileCategory`
+- `DiskScanner` service: recursive scan on a background thread, `CancellationToken` support, robust handling of access-denied, locked files, long paths, I/O errors, reparse points skipped to avoid cycles
+- `DriveEnumerator`: lists ready/available drives for the Dashboard
+- `FileCategoryClassifier`: extension to category mapping for the storage-by-category chart
+- `TopNTracker`: bounds memory by keeping only the top 200 largest files/folders instead of the whole tree
+- Unit tests (`FreeDiskAnalyzer.Tests`) covering counts, aggregation, cancellation, missing path, category breakdown, progress reporting
+- `FreeDiskAnalyzer.sln` at repo root, CI (`build.yml`) wired to restore/build/test it
 
 ## Phase 2: WPF shell and Dashboard
 

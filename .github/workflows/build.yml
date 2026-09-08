@@ -1,9 +1,9 @@
 name: Build
 
-# NOTE: this workflow targets the solution file that will be added in the
-# "core scan engine + WPF project" phase (FreeDiskAnalyzer.sln at repo root).
-# It is safe to merge now; it will simply have nothing to build until the
-# .sln and .csproj files exist.
+# Covers FreeDiskAnalyzer.Core and its tests. The WPF project
+# (src/FreeDiskAnalyzer) will be added to FreeDiskAnalyzer.sln in a later
+# phase; once it exists, this workflow will build and it does not need
+# further changes.
 
 on:
   push:
@@ -24,16 +24,11 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # TODO: remove "continue-on-error: true" below once FreeDiskAnalyzer.sln
-      # exists, so CI actually fails the build on real errors.
       - name: Restore
         run: dotnet restore FreeDiskAnalyzer.sln
-        continue-on-error: true
 
       - name: Build
         run: dotnet build FreeDiskAnalyzer.sln --configuration Release --no-restore
-        continue-on-error: true
 
       - name: Test
         run: dotnet test FreeDiskAnalyzer.sln --configuration Release --no-build --verbosity normal
-        continue-on-error: true
