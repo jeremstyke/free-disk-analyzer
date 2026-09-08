@@ -42,13 +42,14 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Dashboard's "Last scan" card now shows real totals (files, folders, bytes, completion time) once a scan has run, instead of a placeholder
 - Not done yet: storage-by-category chart and file-type breakdown chart. `DiskScanner` already computes `BytesByCategory`, so this is a UI-only addition, folded into Phase 4
 
-## Phase 4: Utilities, Settings, Privacy, About
+## Phase 4: Settings, Privacy, About, charts, DeleteMe suggestion
 
-- `RecommendedSoftware` model and static/curated catalog (affiliate and non-affiliate entries)
-- NordVPN and NordVPN Threat Protection entries
+- Scope change (per Bob): no Utilities software catalog. Only two affiliate touchpoints: NordVPN on the Dashboard (done, Phase 2) and DeleteMe, suggested after a scan completes on the Analyze tab. `Utilities` removed from the sidebar entirely.
+- DeleteMe card on Analyze: blocked on getting the exact affiliate URL from Bob (same format as the NordVPN one, with `aff_id`), not inventing it.
 - Settings: language, theme, start with Windows, analytics opt-in/opt-out, reset settings
 - Privacy page content (mirrors `PRIVACY.md`)
 - About page (version, license, GitHub link)
+- Storage-by-category and file-type breakdown charts on Dashboard, using `DiskScanner`'s existing `BytesByCategory` output
 
 ## Phase 5: Localization
 

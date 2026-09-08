@@ -58,7 +58,7 @@ Détails complets : [PRIVACY.md](PRIVACY.md)
 
 ## Divulgation d'affiliation
 
-Certains liens dans Free Disk Analyzer (section Utilities et tableau de bord) sont des liens affiliés (NordVPN, NordVPN Threat Protection, et d'autres à venir). Si vous achetez via l'un de ces liens, nous pouvons percevoir une commission sans surcoût pour vous. Ces commissions aident à financer le développement. Des logiciels non affiliés sont également listés, clairement identifiés.
+Certains liens dans Free Disk Analyzer (tableau de bord et après un scan) sont des liens affiliés (NordVPN, DeleteMe). Si vous achetez via l'un de ces liens, nous pouvons percevoir une commission sans surcoût pour vous. Ces commissions aident à financer le développement.
 
 Détails complets : [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md)
 

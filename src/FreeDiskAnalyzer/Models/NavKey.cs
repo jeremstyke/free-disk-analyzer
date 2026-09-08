@@ -6,7 +6,6 @@ public enum NavKey
     Analyze,
     LargeFiles,
     Folders,
-    Utilities,
     Settings,
     Privacy,
     About

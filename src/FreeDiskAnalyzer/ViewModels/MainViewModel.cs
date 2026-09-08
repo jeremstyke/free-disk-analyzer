@@ -65,7 +65,6 @@ public sealed partial class MainViewModel : ObservableObject
         NavKey.Analyze => "Analyze",
         NavKey.LargeFiles => "Large Files",
         NavKey.Folders => "Folders",
-        NavKey.Utilities => "Utilities",
         NavKey.Settings => "Settings",
         NavKey.Privacy => "Privacy",
         NavKey.About => "About",
@@ -78,7 +77,6 @@ public sealed partial class MainViewModel : ObservableObject
         new NavItem { Key = NavKey.Analyze, Label = "Analyze", Glyph = "\uE721" },
         new NavItem { Key = NavKey.LargeFiles, Label = "Large Files", Glyph = "\uE8A5" },
         new NavItem { Key = NavKey.Folders, Label = "Folders", Glyph = "\uE8B7" },
-        new NavItem { Key = NavKey.Utilities, Label = "Utilities", Glyph = "\uE90F" },
         new NavItem { Key = NavKey.Settings, Label = "Settings", Glyph = "\uE713" },
         new NavItem { Key = NavKey.Privacy, Label = "Privacy", Glyph = "\uE72E" },
         new NavItem { Key = NavKey.About, Label = "About", Glyph = "\uE946" }

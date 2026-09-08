@@ -41,7 +41,7 @@ Free Disk Analyzer works fully offline. Disabling your internet connection does 
 
 ## Affiliate links
 
-Some Utilities and Dashboard entries are affiliate links (see [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md)). Clicking one opens your browser and sends you to the partner's website; from that point, the partner's own privacy policy applies. Free Disk Analyzer itself does not track which links you click.
+Some Dashboard and post-scan entries are affiliate links (see [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md)). Clicking one opens your browser and sends you to the partner's website; from that point, the partner's own privacy policy applies. Free Disk Analyzer itself does not track which links you click.
 
 ## Changes to this policy
 

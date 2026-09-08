@@ -31,7 +31,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Largest Folders and Largest Files views
 - Dedicated Large Files search with size filters (100 MB, 500 MB, 1 GB, 5 GB, custom)
 - Folder hierarchy view to quickly spot what is consuming space
-- Utilities library of useful software (VPN, Security, Backup, Compression, etc.), affiliate and non-affiliate entries clearly labeled
+- NordVPN recommendation on the Dashboard, and a DeleteMe recommendation after a scan completes, both clearly labeled as affiliate links
 - Light and dark mode, modern Windows 11-inspired interface
 - English and French, with a proper resource-based localization setup
 - 100% local analysis. Nothing about your files or folders ever leaves your machine
@@ -63,7 +63,7 @@ Full details: [PRIVACY.md](PRIVACY.md)
 
 ## Affiliate disclosure
 
-Some links in Free Disk Analyzer (in the Utilities section and on the Dashboard) are affiliate links (NordVPN, NordVPN Threat Protection, and others as added). If you purchase through one of these links, we may receive a commission at no extra cost to you. These commissions help fund development. Non-affiliate software is also listed, clearly marked.
+Some links in Free Disk Analyzer (on the Dashboard and after a scan completes) are affiliate links (NordVPN, DeleteMe). If you purchase through one of these links, we may receive a commission at no extra cost to you. These commissions help fund development.
 
 Full details: [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md)
 
