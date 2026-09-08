@@ -12,12 +12,10 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 🇬🇧 [Read in English](README.md)
 
 <p align="center">
-  <a href="../../releases/latest">
-    <img src="https://img.shields.io/badge/%E2%86%93%20T%C3%A9l%C3%A9charger-pour%20Windows-2563EB?style=for-the-badge" alt="Télécharger pour Windows" />
-  </a>
+  <img src="https://img.shields.io/badge/%E2%86%93%20T%C3%A9l%C3%A9charger%20pour%20Windows-Bient%C3%B4t%20disponible-9CA3AF?style=for-the-badge" alt="Télécharger pour Windows - Bientôt disponible" />
 </p>
 
-> [Voir toutes les versions](../../releases)
+> Pas encore de version publiée, le projet est en développement actif. [Suivre l'avancement](docs/ROADMAP.md)
 
 ---
 
@@ -35,6 +33,8 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Gratuit pour toujours. Pas d'abonnement, pas de version premium, pas de limite artificielle
 
 ## Installation
+
+*Pas encore publié. La première version sera disponible sur la page [Releases](../../releases) une fois prête, voir [ROADMAP.md](docs/ROADMAP.md) pour suivre l'avancement.*
 
 1. Rendez-vous sur la [dernière version](../../releases/latest)
 2. Téléchargez `FreeDiskAnalyzer-Setup.exe` (installateur) ou `FreeDiskAnalyzer-Portable.zip` (portable)
