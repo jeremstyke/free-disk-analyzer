@@ -1,0 +1,71 @@
+<UserControl x:Class="FreeDiskAnalyzer.Views.AnalyzeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,32">
+
+            <TextBlock Text="Analyze" Style="{StaticResource TitleTextStyle}"/>
+            <TextBlock Text="Pick a drive and start a scan." Style="{StaticResource SubtitleTextStyle}" Margin="0,4,0,24"/>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock Text="Drive" Style="{StaticResource CaptionTextStyle}" Margin="0,0,0,6"/>
+                    <ComboBox ItemsSource="{Binding Drives}" SelectedItem="{Binding SelectedDrive}" Width="320" HorizontalAlignment="Left">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <Run Text="{Binding Name, Mode=OneWay}"/>
+                                    <Run Text=" - "/>
+                                    <Run Text="{Binding RootPath, Mode=OneWay}"/>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+                        <Button Content="Analyze Disk" Style="{StaticResource PrimaryButtonStyle}"
+                                Command="{Binding StartScanCommand}" Margin="0,0,12,0"/>
+                        <Button Content="Cancel" Command="{Binding CancelScanCommand}"
+                                Visibility="{Binding IsScanning, Converter={StaticResource BoolToVis}}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24"
+                    Visibility="{Binding IsScanning, Converter={StaticResource BoolToVis}}">
+                <StackPanel>
+                    <TextBlock Text="Scanning..." FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+                    <ProgressBar IsIndeterminate="True" Style="{StaticResource ThinProgressBarStyle}" Margin="0,0,0,16"/>
+                    <TextBlock Text="{Binding CurrentPath}" TextTrimming="CharacterEllipsis"
+                               Style="{StaticResource CaptionTextStyle}" Margin="0,0,0,16"/>
+                    <UniformGrid Columns="4">
+                        <StackPanel>
+                            <TextBlock Text="Files" Style="{StaticResource CaptionTextStyle}"/>
+                            <TextBlock Text="{Binding FilesScanned, StringFormat=N0}" FontWeight="SemiBold"
+                                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Folders" Style="{StaticResource CaptionTextStyle}"/>
+                            <TextBlock Text="{Binding FoldersScanned, StringFormat=N0}" FontWeight="SemiBold"
+                                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Size" Style="{StaticResource CaptionTextStyle}"/>
+                            <TextBlock Text="{Binding BytesScannedDisplay}" FontWeight="SemiBold"
+                                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Elapsed" Style="{StaticResource CaptionTextStyle}"/>
+                            <TextBlock Text="{Binding ElapsedDisplay}" FontWeight="SemiBold"
+                                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+                        </StackPanel>
+                    </UniformGrid>
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="{Binding CompletionMessage}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"/>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

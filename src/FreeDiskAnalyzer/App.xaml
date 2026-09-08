@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:FreeDiskAnalyzer.ViewModels"
-             xmlns:views="clr-namespace:FreeDiskAnalyzer.Views">
+             xmlns:views="clr-namespace:FreeDiskAnalyzer.Views"
+             xmlns:converters="clr-namespace:FreeDiskAnalyzer.Converters">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,9 +18,22 @@
             <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
                 <views:DashboardView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:AnalyzeViewModel}">
+                <views:AnalyzeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:LargeFilesViewModel}">
+                <views:LargeFilesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:FoldersViewModel}">
+                <views:FoldersView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:ComingSoonViewModel}">
                 <views:ComingSoonView/>
             </DataTemplate>
+
+            <converters:ByteSizeConverter x:Key="ByteSizeConverter"/>
+            <converters:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVis"/>
+            <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

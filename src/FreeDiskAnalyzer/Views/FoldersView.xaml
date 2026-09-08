@@ -1,0 +1,59 @@
+<UserControl x:Class="FreeDiskAnalyzer.Views.FoldersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Folders" Style="{StaticResource TitleTextStyle}"/>
+            <TextBlock Text="Largest folders from your last scan, sorted by size."
+                       Style="{StaticResource SubtitleTextStyle}" Margin="0,4,0,20"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <TextBlock Text="Run a scan from the Analyze tab first." Style="{StaticResource SubtitleTextStyle}"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Visibility="{Binding HasScanResult, Converter={StaticResource InverseBoolToVis}}"/>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          Visibility="{Binding HasScanResult, Converter={StaticResource BoolToVis}}">
+                <ItemsControl ItemsSource="{Binding Folders}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,10" Padding="16">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0" Margin="0,0,16,0">
+                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource TextPrimaryBrush}"/>
+                                        <TextBlock Text="{Binding FullPath}" Style="{StaticResource CaptionTextStyle}"
+                                                   TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding SizeBytes, Converter={StaticResource ByteSizeConverter}}"
+                                                   FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,16,0"
+                                                   Foreground="{DynamicResource TextPrimaryBrush}"/>
+                                        <Button Content="Open" Margin="0,0,8,0"
+                                                Command="{Binding DataContext.OpenFolderCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                CommandParameter="{Binding}"/>
+                                        <Button Content="Show in Explorer"
+                                                Command="{Binding DataContext.ShowInExplorerCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                CommandParameter="{Binding}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

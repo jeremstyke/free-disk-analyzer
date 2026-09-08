@@ -33,12 +33,14 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Dashboard view: drive cards, selected-drive detail with donut, last scan summary (honest "no scan yet" placeholder, not fake data), NordVPN affiliate card with disclosure text
 - Other sidebar sections wired to navigation but show a "coming soon" placeholder until their phase
 
-## Phase 3: Analyze, Large Files, Folders views
+## Phase 3: Analyze, Large Files, Folders views - done
 
-- Analyze view: drive picker, live scan progress (files/folders counted, path being scanned, elapsed time, Cancel button)
-- Results views: Largest Folders, Largest Files, with Open / Show in Explorer actions
-- Large Files search with size filters (100 MB / 500 MB / 1 GB / 5 GB / custom)
-- Charts: storage by category, file type breakdown
+- `ScanResultStore`: shared state so Dashboard, Large Files, and Folders all reflect the latest scan without re-running it
+- Analyze view: drive picker, live progress (current path, files/folders counted, size, elapsed time), Cancel button, honest completion message (including on cancellation)
+- Large Files view: size filter (100 MB / 500 MB / 1 GB / 5 GB / custom), Open and Show in Explorer actions
+- Folders view: largest folders from the last scan sorted by size, same Open / Show in Explorer actions
+- Dashboard's "Last scan" card now shows real totals (files, folders, bytes, completion time) once a scan has run, instead of a placeholder
+- Not done yet: storage-by-category chart and file-type breakdown chart. `DiskScanner` already computes `BytesByCategory`, so this is a UI-only addition, folded into Phase 4
 
 ## Phase 4: Utilities, Settings, Privacy, About
 

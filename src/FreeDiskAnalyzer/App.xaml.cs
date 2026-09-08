@@ -17,7 +17,8 @@ public partial class App : Application
         ThemeManager.ApplyTheme(ThemeMode.Light);
 
         IDriveEnumerator driveEnumerator = new DriveEnumerator();
-        var mainViewModel = new MainViewModel(driveEnumerator);
+        IDiskScanner diskScanner = new DiskScanner();
+        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner);
 
         var mainWindow = new MainWindow
         {
