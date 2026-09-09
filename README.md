@@ -13,7 +13,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 🇫🇷 [Lire en français](README.fr.md)
 
 <p align="center">
-  <a href="../../releases/latest">
+  <a href="../../releases/latest/download/FreeDiskAnalyzer-Setup.exe">
     <img src="https://img.shields.io/badge/%E2%86%93%20Download-for%20Windows-2563EB?style=for-the-badge" alt="Download for Windows" />
   </a>
 </p>

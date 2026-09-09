@@ -12,7 +12,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 🇬🇧 [Read in English](README.md)
 
 <p align="center">
-  <a href="../../releases/latest">
+  <a href="../../releases/latest/download/FreeDiskAnalyzer-Setup.exe">
     <img src="https://img.shields.io/badge/%E2%86%93%20T%C3%A9l%C3%A9charger-pour%20Windows-2563EB?style=for-the-badge" alt="Télécharger pour Windows" />
   </a>
 </p>
