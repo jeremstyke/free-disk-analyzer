@@ -107,3 +107,13 @@ Described 2026-09-09. The 3-tab pitch: Cleanup (frees disk space, fixes everyday
 The plan is for Free Disk Analyzer to eventually replace CleanTab (Chrome/Edge extension) entirely: migrate CleanTab's users to this Windows app, and show an end-of-life message inside CleanTab pointing them here, framed as "a complete suite on Windows, always free."
 
 This raises the stakes on the "wait for real testing" rule already in place for the v2 vision above, it doesn't loosen it. CleanTab has real, active users today. Redirecting them to Free Disk Analyzer only makes sense once this app has been run and tested on a real machine, ideally has some track record with early users on its current read-only feature set, and the higher-risk v2 items (real deletion, registry/telemetry changes) have shipped and been used without incident. Sunsetting a working product to point at an unlaunched one is the kind of move that's hard to undo if it goes wrong, better to move a few weeks later with confidence than fast with an unverified base.
+
+## VPN, option 2: reseller-backed integrated VPN (per Bob, logged only, nothing started)
+
+Discussed 2026-09-09. Instead of just the existing NordVPN affiliate link, a real "Connect" button inside the app backed by a VPN reseller (white-label server access, Bob bills end users, reseller runs the network).
+
+History worth remembering before restarting this: Bob previously pursued a VPN reseller approach (VPNresellers) for a free Android VPN app, using WireGuard, and it was abandoned as not viable, on top of unresolved Android build errors that were never fixed. Same reseller-based model, different platform, don't assume it'll go differently without asking what specifically didn't work last time (the reseller relationship/economics, or just the Android build issues).
+
+Technical shape on Windows, if revisited: don't build a VPN client from scratch. Either drive a WireGuard/WinTun setup or shell out to the official `wireguard.exe` client with a config file supplied by the reseller. Meaningfully simpler than the Android driver-level work that stalled before, but still real ongoing work: credential management, server rotation, billing if not free, support when a connection breaks.
+
+Not scoped, not started. Same precondition as the rest of the v2 items: this is for after the current app has real usage on a real machine.
