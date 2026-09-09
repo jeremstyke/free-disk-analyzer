@@ -11,6 +11,8 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 
 🇬🇧 [Read in English](README.md)
 
+🌐 [Site web](https://jeremstyke.github.io/free-disk-analyzer/fr/)
+
 <p align="center">
   <a href="../../releases/latest/download/FreeDiskAnalyzer-Setup.exe">
     <img src="https://img.shields.io/badge/%E2%86%93%20T%C3%A9l%C3%A9charger-pour%20Windows-2563EB?style=for-the-badge" alt="Télécharger pour Windows" />
@@ -117,10 +119,6 @@ Tous droits réservés. L'application est gratuite à l'usage, le code source n'
 ## Visibilité du dépôt
 
 Ce dépôt est public.
-
-## Site web
-
-En ligne sur [jeremstyke.github.io/free-disk-analyzer](https://jeremstyke.github.io/free-disk-analyzer/) (anglais) et [.../fr/](https://jeremstyke.github.io/free-disk-analyzer/fr/) (français). Source dans [`website/`](website/), déployé via un workflow GitHub Actions (`.github/workflows/pages.yml`) plutôt que la méthode classique par branche, qui ne peut pas cibler un dossier personnalisé comme `website/`.
 
 ## Autres projets du développeur
 

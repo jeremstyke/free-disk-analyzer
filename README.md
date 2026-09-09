@@ -12,6 +12,8 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 
 🇫🇷 [Lire en français](README.fr.md)
 
+🌐 [Website](https://jeremstyke.github.io/free-disk-analyzer/)
+
 <p align="center">
   <a href="../../releases/latest/download/FreeDiskAnalyzer-Setup.exe">
     <img src="https://img.shields.io/badge/%E2%86%93%20Download-for%20Windows-2563EB?style=for-the-badge" alt="Download for Windows" />
@@ -125,10 +127,6 @@ All rights reserved. The application is free to use, the source code is not free
 ## Repository visibility
 
 This repository is public.
-
-## Website
-
-Live at [jeremstyke.github.io/free-disk-analyzer](https://jeremstyke.github.io/free-disk-analyzer/) (English) and [.../fr/](https://jeremstyke.github.io/free-disk-analyzer/fr/) (French). Source in [`website/`](website/), deployed via a GitHub Actions workflow (`.github/workflows/pages.yml`) rather than the classic branch-deploy method, since that one can't target a custom folder like `website/`.
 
 ## More from the developer
 
