@@ -12,7 +12,11 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 
 🇫🇷 [Lire en français](README.fr.md)
 
-🌐 [Website](https://jeremstyke.github.io/free-disk-analyzer/)
+<p align="center">
+  <a href="https://jeremstyke.github.io/free-disk-analyzer/">
+    <img src="https://img.shields.io/badge/%F0%9F%8C%90%20Website-2563EB?style=for-the-badge" alt="Website" />
+  </a>
+</p>
 
 <p align="center">
   <a href="../../releases/latest/download/FreeDiskAnalyzer-Setup.exe">
