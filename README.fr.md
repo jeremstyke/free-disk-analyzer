@@ -76,6 +76,7 @@ Free-Disk-Analyzer/
 ├── assets/                        # Icônes, logos, images
 ├── docs/                          # Documentation complémentaire
 ├── website/                       # Site GitHub Pages (publié une fois le dépôt public)
+├── installer/                     # Script Inno Setup produisant FreeDiskAnalyzer-Setup.exe
 └── .github/                       # Workflows, templates d'issues et de PR
 ```
 

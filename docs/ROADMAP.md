@@ -58,13 +58,14 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Localized: navigation labels, Dashboard, Analyze, Large Files, Folders, Settings, About, Coming Soon placeholder.
 - Not done: the Privacy page's long-form body paragraphs are still English-only (title/tagline are localized). Same mechanical pattern as the other pages, just not swept yet, tracked here so it isn't forgotten.
 
-## Phase 6: Packaging, CI/CD, and going public
+## Phase 6: Packaging, CI/CD, and going public - in progress
 
-- Installer project (WiX or Inno Setup) producing `FreeDiskAnalyzer-Setup.exe`
-- Finalize `release.yml`: portable zip, installer, `SHA256SUMS.txt`, GitHub Release publishing
-- `website/` static site (EN + FR), matching the app's visual identity
+- Done: Inno Setup script (`installer/setup.iss`) producing `FreeDiskAnalyzer-Setup.exe`, English/French installer UI, desktop icon optional, uninstaller included.
+- Done: `release.yml` finalized. On a pushed tag (`vX.Y.Z`), it publishes a self-contained win-x64 build, zips it as `FreeDiskAnalyzer-Portable.zip`, builds the installer via the same publish output, generates `SHA256SUMS.txt` for both, and publishes all three to the GitHub Release.
+- Not done: `website/` static site (EN + FR)
+- Not done: app icon (.ico) for the exe and installer, currently using the WPF default
 - Decision point (deferred, per Bob): repo is private during development. Before this phase ships publicly, decide whether to make the main repo public, or keep it private and distribute releases/Pages another way (private repos on the free plan can't serve public GitHub Releases downloads or GitHub Pages)
-- Tag `v1.0.0` and cut the first public release
+- Tag `v1.0.0` and cut the first release once the app has actually been built and tested locally at least once
 
 ## Out of scope for v1
 

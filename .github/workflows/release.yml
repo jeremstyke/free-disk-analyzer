@@ -1,8 +1,13 @@
 name: Release
 
-# NOTE: this workflow targets the WPF project that will be added in the
-# "core scan engine + WPF project" phase. Paths below (project file, output
-# folder) will need to be adjusted once that project exists.
+# Triggered by pushing a tag like v1.0.0. Builds:
+#   - FreeDiskAnalyzer-Portable.zip  (self-contained, no installer)
+#   - FreeDiskAnalyzer-Setup.exe     (Inno Setup installer)
+#   - SHA256SUMS.txt                 (checksums for both, so a download can
+#                                      be verified even though v1 ships
+#                                      without a commercial code-signing
+#                                      certificate, see README)
+# and publishes all three to the GitHub Release for the pushed tag.
 
 on:
   push:
@@ -25,36 +30,57 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Extract version from tag
+        id: version
+        shell: pwsh
+        run: |
+          $tag = "${{ github.ref_name }}"
+          $version = $tag.TrimStart('v')
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+
       - name: Restore
         run: dotnet restore FreeDiskAnalyzer.sln
 
-      - name: Publish (portable, self-contained x64)
+      - name: Publish self-contained win-x64 build
         run: |
           dotnet publish src/FreeDiskAnalyzer/FreeDiskAnalyzer.csproj `
             -c Release -r win-x64 --self-contained true `
             -p:PublishSingleFile=false `
+            -p:Version=${{ steps.version.outputs.version }} `
             -o publish/portable
 
       - name: Package portable zip
-        run: |
-          Compress-Archive -Path publish/portable/* -DestinationPath FreeDiskAnalyzer-Portable.zip
+        shell: pwsh
+        run: Compress-Archive -Path publish/portable/* -DestinationPath FreeDiskAnalyzer-Portable.zip
 
-      # The installer (FreeDiskAnalyzer-Setup.exe) is produced by a separate
-      # installer project (e.g. WiX or Inno Setup) that will be added
-      # alongside the WPF project. This step is a placeholder until then.
+      - name: Install Inno Setup
+        run: choco install innosetup -y --no-progress
+
       - name: Build installer
-        run: echo "TODO - build FreeDiskAnalyzer-Setup.exe once the installer project exists"
+        shell: pwsh
+        run: |
+          $sourceDir = (Resolve-Path "publish\portable").Path
+          & "C:\Program Files (x86)\Inno Setup 6\iscc.exe" `
+            "/DSourceDir=$sourceDir" `
+            "/DAppVersion=${{ steps.version.outputs.version }}" `
+            installer\setup.iss
+          Copy-Item "installer\output\FreeDiskAnalyzer-Setup.exe" "FreeDiskAnalyzer-Setup.exe"
 
       - name: Generate SHA256SUMS.txt
+        shell: pwsh
         run: |
-          Get-FileHash FreeDiskAnalyzer-Portable.zip -Algorithm SHA256 |
-            ForEach-Object { "$($_.Hash)  FreeDiskAnalyzer-Portable.zip" } |
-            Out-File -FilePath SHA256SUMS.txt -Encoding ASCII
+          $files = "FreeDiskAnalyzer-Portable.zip", "FreeDiskAnalyzer-Setup.exe"
+          $lines = foreach ($f in $files) {
+            $hash = (Get-FileHash $f -Algorithm SHA256).Hash
+            "$hash  $f"
+          }
+          $lines | Out-File -FilePath SHA256SUMS.txt -Encoding ASCII
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             FreeDiskAnalyzer-Portable.zip
+            FreeDiskAnalyzer-Setup.exe
             SHA256SUMS.txt
           generate_release_notes: true
