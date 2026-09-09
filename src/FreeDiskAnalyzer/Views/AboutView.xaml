@@ -12,7 +12,9 @@
         <TextBlock Text="{x:Static res:Strings.About_Tagline}" Style="{StaticResource BodyTextStyle}"
                    HorizontalAlignment="Center" Margin="0,20,0,20"/>
         <Button Content="{x:Static res:Strings.About_ViewGitHub}" Style="{StaticResource PrimaryButtonStyle}"
-                HorizontalAlignment="Center" Command="{Binding OpenGitHubCommand}" Margin="0,0,0,20"/>
+                HorizontalAlignment="Center" Command="{Binding OpenGitHubCommand}" Margin="0,0,0,12"/>
+        <Button Content="{x:Static res:Strings.About_Coffee}" HorizontalAlignment="Center"
+                Command="{Binding OpenCoffeeCommand}" Margin="0,0,0,20"/>
         <TextBlock Text="{x:Static res:Strings.About_License}" Style="{StaticResource CaptionTextStyle}"
                    HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,24"/>
 

@@ -9,6 +9,7 @@ public sealed partial class AboutViewModel : ObservableObject
 {
     public const string GitHubUrl = "https://github.com/jeremstyke/free-disk-analyzer";
     public const string CleanTabUrl = "https://getcleantab.com/";
+    public const string CoffeeUrl = "https://cleantab.gumroad.com/coffee";
 
     public string VersionDisplay { get; } =
         Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";
@@ -23,5 +24,11 @@ public sealed partial class AboutViewModel : ObservableObject
     private void OpenCleanTab()
     {
         Process.Start(new ProcessStartInfo(CleanTabUrl) { UseShellExecute = true });
+    }
+
+    [RelayCommand]
+    private void OpenCoffee()
+    {
+        Process.Start(new ProcessStartInfo(CoffeeUrl) { UseShellExecute = true });
     }
 }
