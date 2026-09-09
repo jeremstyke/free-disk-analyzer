@@ -55,7 +55,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 
 Free Disk Analyzer is currently distributed without a commercial code-signing certificate. Windows SmartScreen may therefore display a warning because the application publisher cannot yet be verified.
 
-This does not mean that Free Disk Analyzer is malware. You can verify the downloaded release using the SHA-256 checksum published with each release (`SHA256SUMS.txt`).
+This does not mean that Free Disk Analyzer is malware. The source code is publicly viewable on GitHub. You can also verify the downloaded release using the SHA-256 checksum published with each release (`SHA256SUMS.txt`).
 
 ## Privacy
 
@@ -119,11 +119,11 @@ All rights reserved. The application is free to use, the source code is not free
 
 ## Repository visibility
 
-This repository is currently private during development. It will be made public (or restructured) once the app is in a working, downloadable state. Until then, releases and GitHub Pages are not publicly reachable, see [ROADMAP.md](docs/ROADMAP.md).
+This repository is public.
 
 ## Website
 
-The marketing site lives in [`website/`](website/) (English) and [`website/fr/`](website/fr/) (French): hero, features, privacy, FAQ, download section. Not live yet, GitHub Pages needs a public repository on the free plan, see the note above. You can preview it locally by opening `website/index.html` in a browser.
+Live at [jeremstyke.github.io/free-disk-analyzer](https://jeremstyke.github.io/free-disk-analyzer/) (English) and [.../fr/](https://jeremstyke.github.io/free-disk-analyzer/fr/) (French). Source in [`website/`](website/), deployed via a GitHub Actions workflow (`.github/workflows/pages.yml`) rather than the classic branch-deploy method, since that one can't target a custom folder like `website/`.
 
 ## More from the developer
 

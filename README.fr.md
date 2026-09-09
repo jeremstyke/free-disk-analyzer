@@ -50,7 +50,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 
 Free Disk Analyzer est actuellement distribué sans certificat commercial de signature de code. Windows SmartScreen peut donc afficher un avertissement car l'éditeur de l'application ne peut pas encore être vérifié.
 
-Cela ne signifie pas que Free Disk Analyzer est un logiciel malveillant. Vous pouvez vérifier le fichier téléchargé à l'aide de l'empreinte SHA-256 publiée avec chaque version (`SHA256SUMS.txt`).
+Cela ne signifie pas que Free Disk Analyzer est un logiciel malveillant. Le code source est consultable publiquement sur GitHub. Vous pouvez aussi vérifier le fichier téléchargé à l'aide de l'empreinte SHA-256 publiée avec chaque version (`SHA256SUMS.txt`).
 
 ## Confidentialité
 
@@ -111,11 +111,11 @@ Tous droits réservés. L'application est gratuite à l'usage, le code source n'
 
 ## Visibilité du dépôt
 
-Ce dépôt est actuellement privé pendant le développement. Il sera rendu public (ou restructuré) une fois l'application dans un état fonctionnel et téléchargeable. En attendant, les releases et GitHub Pages ne sont pas accessibles publiquement, voir [ROADMAP.md](docs/ROADMAP.md).
+Ce dépôt est public.
 
 ## Site web
 
-Le site vitrine se trouve dans [`website/`](website/) (anglais) et [`website/fr/`](website/fr/) (français) : hero, fonctionnalités, confidentialité, FAQ, section téléchargement. Pas encore en ligne, GitHub Pages nécessite un dépôt public sur le plan gratuit, voir la note ci-dessus. Vous pouvez le prévisualiser en local en ouvrant `website/index.html` dans un navigateur.
+En ligne sur [jeremstyke.github.io/free-disk-analyzer](https://jeremstyke.github.io/free-disk-analyzer/) (anglais) et [.../fr/](https://jeremstyke.github.io/free-disk-analyzer/fr/) (français). Source dans [`website/`](website/), déployé via un workflow GitHub Actions (`.github/workflows/pages.yml`) plutôt que la méthode classique par branche, qui ne peut pas cibler un dossier personnalisé comme `website/`.
 
 ## Autres projets du développeur
 
