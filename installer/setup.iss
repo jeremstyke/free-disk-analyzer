@@ -43,6 +43,7 @@ PrivilegesRequired=lowest
 ArchitecturesAllowed=x64
 ArchitecturesInstallIn64BitMode=x64
 UninstallDisplayIcon={app}\{#AppExeName}
+SetupIconFile=..\assets\icon.ico
 ; No commercial code-signing certificate for v1, see README "Windows security warning".
 
 [Languages]

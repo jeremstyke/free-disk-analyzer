@@ -62,8 +62,9 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 
 - Done: Inno Setup script (`installer/setup.iss`) producing `FreeDiskAnalyzer-Setup.exe`, English/French installer UI, desktop icon optional, uninstaller included.
 - Done: `release.yml` finalized. On a pushed tag (`vX.Y.Z`), it publishes a self-contained win-x64 build, zips it as `FreeDiskAnalyzer-Portable.zip`, builds the installer via the same publish output, generates `SHA256SUMS.txt` for both, and publishes all three to the GitHub Release.
-- Not done: `website/` static site (EN + FR)
-- Not done: app icon (.ico) for the exe and installer, currently using the WPF default
+- Done: app icon (`assets/icon.ico`, generated programmatically: a donut-ring motif matching the in-app `DonutProgressRing`, on a rounded-square accent-blue background). Wired into `FreeDiskAnalyzer.csproj` (`ApplicationIcon`) and `installer/setup.iss` (`SetupIconFile`).
+- Done: `website/` static site, English (`index.html`) and French (`fr/index.html`), sharing `assets/style.css`. Hero, features, privacy, free-forever statement, screenshots placeholder (honestly empty, no fake images), FAQ, download band, footer with affiliate disclosure. Download CTA is in a disabled "coming soon" state until the first release exists. No links to the GitHub repo anywhere on the site, since it's currently private, would be dead links for visitors.
+- Not done: real screenshots (need a working build first)
 - Decision point (deferred, per Bob): repo is private during development. Before this phase ships publicly, decide whether to make the main repo public, or keep it private and distribute releases/Pages another way (private repos on the free plan can't serve public GitHub Releases downloads or GitHub Pages)
 - Tag `v1.0.0` and cut the first release once the app has actually been built and tested locally at least once
 
