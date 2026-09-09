@@ -80,6 +80,37 @@
                 </Border>
             </Grid>
 
+            <!-- Storage by category -->
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock Text="Storage by category" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,16"/>
+                    <ItemsControl ItemsSource="{Binding CategoryBreakdown}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,0,0,12">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="110"/>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="90"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Label}" VerticalAlignment="Center"
+                                               Style="{StaticResource BodyTextStyle}"/>
+                                    <Border Grid.Column="1" Background="{DynamicResource TrackBrush}" CornerRadius="4"
+                                            Height="10" VerticalAlignment="Center" Margin="8,0" Width="200">
+                                        <Border Background="{DynamicResource AccentBrush}" CornerRadius="4"
+                                                HorizontalAlignment="Left"
+                                                Width="{Binding BarPercentage, Converter={StaticResource PercentageToWidthConverter}, ConverterParameter=200}"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="2" Text="{Binding BytesDisplay}" VerticalAlignment="Center"
+                                               HorizontalAlignment="Right" Style="{StaticResource CaptionTextStyle}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
             <!-- NordVPN affiliate card -->
             <Border Style="{StaticResource CardStyle}" Background="{DynamicResource AccentBrushLight}">
                 <StackPanel>

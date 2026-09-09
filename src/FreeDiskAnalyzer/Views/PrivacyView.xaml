@@ -1,0 +1,57 @@
+<UserControl x:Class="FreeDiskAnalyzer.Views.PrivacyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,32" MaxWidth="720" HorizontalAlignment="Left">
+
+            <TextBlock Text="Privacy" Style="{StaticResource TitleTextStyle}"/>
+            <TextBlock Text="Free forever. Privacy first." Style="{StaticResource SubtitleTextStyle}" Margin="0,4,0,24"/>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="What stays local, always" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                               Text="Drive, folder, and file names and paths, file sizes, types and dates, and every scan result stay on this computer. The scan engine reads your file system directly, there is no server involved in analyzing a disk."/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="What can be sent, anonymously, only if you opt in" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                               Text="If you enable analytics in Settings: that an installation and launches happened, the number of scans performed, the app version, the Windows version, and an approximate country. This is off by default and can be turned off at any time."/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="What is never collected" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                               Text="Your name, email, or Microsoft account. File names, paths, or contents. Folder names or structure. Detailed disk contents. Any identifier used to fingerprint this device. There is no hidden or undocumented telemetry."/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="Offline use" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                               Text="Free Disk Analyzer works fully offline. Disabling your internet connection does not affect scanning, results, or any core feature."/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Affiliate links" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                               Text="The NordVPN card on the Dashboard and the DeleteMe suggestion after a scan are affiliate links, clearly labeled where they appear. Clicking one opens your browser to the partner's site, which then applies its own privacy policy. Free Disk Analyzer does not track which links you click."/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

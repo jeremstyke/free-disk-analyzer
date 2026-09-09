@@ -27,13 +27,15 @@ public sealed partial class DashboardViewModel : ObservableObject
     [ObservableProperty]
     private string lastScanSummary = "No scan yet. Run one from the Analyze tab to see results here.";
 
+    public ObservableCollection<CategoryUsageViewModel> CategoryBreakdown { get; } = new();
+
     public DashboardViewModel(IDriveEnumerator driveEnumerator, ScanResultStore scanResultStore)
     {
         _driveEnumerator = driveEnumerator;
         _scanResultStore = scanResultStore;
 
         LoadDrives();
-        UpdateLastScanSummary();
+        UpdateFromScanResult();
         _scanResultStore.PropertyChanged += OnStoreChanged;
     }
 
@@ -41,11 +43,11 @@ public sealed partial class DashboardViewModel : ObservableObject
     {
         if (e.PropertyName == nameof(ScanResultStore.LatestResult))
         {
-            UpdateLastScanSummary();
+            UpdateFromScanResult();
         }
     }
 
-    private void UpdateLastScanSummary()
+    private void UpdateFromScanResult()
     {
         var result = _scanResultStore.LatestResult;
 
@@ -53,6 +55,28 @@ public sealed partial class DashboardViewModel : ObservableObject
             ? "No scan yet. Run one from the Analyze tab to see results here."
             : $"{result.RootPath}: {result.TotalFilesScanned:N0} files, {result.TotalFoldersScanned:N0} folders, " +
               $"{ByteSizeFormatter.Format(result.TotalBytesScanned)} scanned, completed {result.CompletedAtUtc:g} UTC.";
+
+        CategoryBreakdown.Clear();
+
+        if (result is null || result.BytesByCategory.Count == 0)
+        {
+            return;
+        }
+
+        var maxBytes = result.BytesByCategory.Values.Max();
+        if (maxBytes <= 0) return;
+
+        foreach (var (category, bytes) in result.BytesByCategory.OrderByDescending(kvp => kvp.Value))
+        {
+            if (bytes <= 0) continue;
+
+            CategoryBreakdown.Add(new CategoryUsageViewModel
+            {
+                Label = category.ToString(),
+                BytesDisplay = ByteSizeFormatter.Format(bytes),
+                BarPercentage = bytes / (double)maxBytes * 100
+            });
+        }
     }
 
     [RelayCommand]

@@ -27,13 +27,15 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 ## Features
 
 - Fast, non-blocking disk scan (async, cancellable at any time)
-- Dashboard with drive overview, used/free donut chart, and last scan summary
+- Dashboard with drive overview, used/free donut chart, storage-by-category breakdown, and last scan summary
 - Largest Folders and Largest Files views
 - Dedicated Large Files search with size filters (100 MB, 500 MB, 1 GB, 5 GB, custom)
 - Folder hierarchy view to quickly spot what is consuming space
 - NordVPN recommendation on the Dashboard, and a DeleteMe recommendation after a scan completes, both clearly labeled as affiliate links
+- Settings: light/dark theme, start with Windows, opt-in anonymous analytics, reset to defaults, all saved locally
+- Dedicated Privacy page explaining exactly what stays local and what never leaves your machine
 - Light and dark mode, modern Windows 11-inspired interface
-- English and French, with a proper resource-based localization setup
+- English for now, French localization is planned, see [ROADMAP.md](docs/ROADMAP.md)
 - 100% local analysis. Nothing about your files or folders ever leaves your machine
 - Free forever. No subscription, no premium tier, no artificial limits
 

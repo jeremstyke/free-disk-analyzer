@@ -27,12 +27,22 @@
             <DataTemplate DataType="{x:Type vm:FoldersViewModel}">
                 <views:FoldersView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+                <views:SettingsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:PrivacyViewModel}">
+                <views:PrivacyView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:AboutViewModel}">
+                <views:AboutView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:ComingSoonViewModel}">
                 <views:ComingSoonView/>
             </DataTemplate>
 
             <converters:ByteSizeConverter x:Key="ByteSizeConverter"/>
             <converters:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVis"/>
+            <converters:PercentageToWidthConverter x:Key="PercentageToWidthConverter"/>
             <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         </ResourceDictionary>
     </Application.Resources>

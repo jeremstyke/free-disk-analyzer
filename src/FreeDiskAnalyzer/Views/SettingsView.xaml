@@ -1,0 +1,49 @@
+<UserControl x:Class="FreeDiskAnalyzer.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,32">
+
+            <TextBlock Text="Settings" Style="{StaticResource TitleTextStyle}"/>
+            <TextBlock Text="Preferences are saved locally on this device." Style="{StaticResource SubtitleTextStyle}"
+                       Margin="0,4,0,24"/>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="Language" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                    <TextBlock Text="English (French support is coming in a future update)"
+                               Style="{StaticResource CaptionTextStyle}"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <TextBlock Text="Theme" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,12"/>
+                    <ComboBox ItemsSource="{Binding ThemeOptions}" SelectedItem="{Binding Theme}" Width="160"
+                              HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <CheckBox Content="Start with Windows" IsChecked="{Binding StartWithWindows}"
+                              Foreground="{DynamicResource TextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
+                <StackPanel>
+                    <CheckBox Content="Share anonymous usage statistics" IsChecked="{Binding AnalyticsEnabled}"
+                              Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                    <TextBlock Text="Off by default. No file names, paths, or personal data are ever included. See the Privacy tab for details."
+                               Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+
+            <Button Content="Reset settings" Command="{Binding ResetSettingsCommand}" HorizontalAlignment="Left"/>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -64,7 +64,22 @@
                 </StackPanel>
             </Border>
 
-            <TextBlock Text="{Binding CompletionMessage}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding CompletionMessage}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                       Margin="0,0,0,24"/>
+
+            <Border Style="{StaticResource CardStyle}" Background="{DynamicResource AccentBrushLight}"
+                    Visibility="{Binding HasScanCompleted, Converter={StaticResource BoolToVis}}">
+                <StackPanel>
+                    <TextBlock Text="Recommended: DeleteMe" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                    <TextBlock TextWrapping="Wrap" Style="{StaticResource BodyTextStyle}" Margin="0,0,0,12"
+                               Text="Now that you have cleaned up your storage, remove your personal data from data broker sites too."/>
+                    <Button Content="Learn more" Style="{StaticResource PrimaryButtonStyle}"
+                            HorizontalAlignment="Left" Command="{Binding OpenDeleteMeCommand}"/>
+                    <TextBlock Margin="0,12,0,0" Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap"
+                               Text="🔗 Affiliate link - Helps support the development of Free Disk Analyzer at no extra cost to you."/>
+                </StackPanel>
+            </Border>
 
         </StackPanel>
     </ScrollViewer>

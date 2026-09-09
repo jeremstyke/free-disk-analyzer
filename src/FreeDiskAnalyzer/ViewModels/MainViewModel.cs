@@ -10,6 +10,7 @@ public sealed partial class MainViewModel : ObservableObject
 {
     private readonly IDriveEnumerator _driveEnumerator;
     private readonly IDiskScanner _diskScanner;
+    private readonly ISettingsService _settingsService;
     private readonly ScanResultStore _scanResultStore;
 
     // Pages are cached per nav key so switching tabs doesn't reload state
@@ -24,10 +25,11 @@ public sealed partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private object? currentPage;
 
-    public MainViewModel(IDriveEnumerator driveEnumerator, IDiskScanner diskScanner)
+    public MainViewModel(IDriveEnumerator driveEnumerator, IDiskScanner diskScanner, ISettingsService settingsService)
     {
         _driveEnumerator = driveEnumerator;
         _diskScanner = diskScanner;
+        _settingsService = settingsService;
         _scanResultStore = new ScanResultStore();
 
         NavItems = new ObservableCollection<NavItem>(BuildNavItems());
@@ -53,6 +55,9 @@ public sealed partial class MainViewModel : ObservableObject
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.LargeFiles => new LargeFilesViewModel(_scanResultStore),
             NavKey.Folders => new FoldersViewModel(_scanResultStore),
+            NavKey.Settings => new SettingsViewModel(_settingsService),
+            NavKey.Privacy => new PrivacyViewModel(),
+            NavKey.About => new AboutViewModel(),
             _ => new ComingSoonViewModel(GetTitle(key))
         };
 

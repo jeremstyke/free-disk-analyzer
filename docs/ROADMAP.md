@@ -42,14 +42,14 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Dashboard's "Last scan" card now shows real totals (files, folders, bytes, completion time) once a scan has run, instead of a placeholder
 - Not done yet: storage-by-category chart and file-type breakdown chart. `DiskScanner` already computes `BytesByCategory`, so this is a UI-only addition, folded into Phase 4
 
-## Phase 4: Settings, Privacy, About, charts, DeleteMe suggestion
+## Phase 4: Settings, Privacy, About, charts, DeleteMe suggestion - done
 
-- Scope change (per Bob): no Utilities software catalog. Only two affiliate touchpoints: NordVPN on the Dashboard (done, Phase 2) and DeleteMe, suggested after a scan completes on the Analyze tab. `Utilities` removed from the sidebar entirely.
-- DeleteMe card on Analyze: blocked on getting the exact affiliate URL from Bob (same format as the NordVPN one, with `aff_id`), not inventing it.
-- Settings: language, theme, start with Windows, analytics opt-in/opt-out, reset settings
-- Privacy page content (mirrors `PRIVACY.md`)
-- About page (version, license, GitHub link)
-- Storage-by-category and file-type breakdown charts on Dashboard, using `DiskScanner`'s existing `BytesByCategory` output
+- Scope change (per Bob): no Utilities software catalog. Only two affiliate touchpoints: NordVPN on the Dashboard (Phase 2) and DeleteMe, suggested after a scan completes on the Analyze tab. `Utilities` removed from the sidebar entirely.
+- Settings: theme (persisted, applied via `ThemeManager`), start with Windows (real registry Run key toggle), anonymous analytics opt-in/opt-out, reset to defaults. Saved as local JSON via `SettingsService`.
+- Privacy page: static content mirroring `PRIVACY.md`.
+- About page: version (from assembly), tagline, GitHub link, license note.
+- Storage-by-category chart on the Dashboard, using `DiskScanner`'s `BytesByCategory` output.
+- Not done: file-type breakdown chart (category chart covers most of the same need, revisit if still wanted), language switching (Phase 5).
 
 ## Phase 5: Localization
 

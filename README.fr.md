@@ -22,13 +22,15 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 ## Fonctionnalités
 
 - Scan disque rapide, jamais bloquant (async, annulable à tout moment)
-- Tableau de bord avec vue d'ensemble des disques, graphique donut utilisé/libre, résumé du dernier scan
+- Tableau de bord avec vue d'ensemble des disques, graphique donut utilisé/libre, répartition du stockage par catégorie, résumé du dernier scan
 - Vues Largest Folders et Largest Files
 - Recherche dédiée de fichiers volumineux avec filtres de taille (100 Mo, 500 Mo, 1 Go, 5 Go, personnalisé)
 - Vue hiérarchique des dossiers pour repérer rapidement ce qui consomme l'espace
-- Bibliothèque d'utilitaires (VPN, sécurité, sauvegarde, compression, etc.), avec logiciels affiliés et non affiliés clairement identifiés
+- Recommandation NordVPN sur le tableau de bord, et recommandation DeleteMe après un scan, toutes deux clairement identifiées comme liens affiliés
+- Paramètres : thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
+- Page Confidentialité dédiée expliquant précisément ce qui reste local
 - Mode clair et sombre, interface moderne inspirée de Windows 11
-- Anglais et français, avec une vraie architecture de localisation
+- Anglais pour l'instant, le français est prévu, voir [ROADMAP.md](docs/ROADMAP.md)
 - Analyse 100 % locale. Rien concernant vos fichiers ou dossiers n'est jamais envoyé
 - Gratuit pour toujours. Pas d'abonnement, pas de version premium, pas de limite artificielle
 

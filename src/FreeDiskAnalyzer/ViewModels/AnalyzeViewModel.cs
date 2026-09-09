@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Models;
@@ -10,6 +11,10 @@ namespace FreeDiskAnalyzer.ViewModels;
 
 public sealed partial class AnalyzeViewModel : ObservableObject
 {
+    // DeleteMe affiliate link, disclosed in the UI text right below the button.
+    // See AFFILIATE-DISCLOSURE.md.
+    public const string DeleteMeAffiliateUrl = "https://www.de33watrk.com/WCKMXS/KMKS9/";
+
     private readonly IDiskScanner _diskScanner;
     private readonly ScanResultStore _scanResultStore;
     private CancellationTokenSource? _cts;
@@ -39,6 +44,9 @@ public sealed partial class AnalyzeViewModel : ObservableObject
 
     [ObservableProperty]
     private string? completionMessage;
+
+    [ObservableProperty]
+    private bool hasScanCompleted;
 
     public AnalyzeViewModel(IDriveEnumerator driveEnumerator, IDiskScanner diskScanner, ScanResultStore scanResultStore)
     {
@@ -83,6 +91,7 @@ public sealed partial class AnalyzeViewModel : ObservableObject
                 ? "Scan cancelled. Partial results are shown in Large Files and Folders."
                 : $"Scan complete: {result.TotalFilesScanned:N0} files, {result.TotalFoldersScanned:N0} folders, " +
                   $"{ByteSizeFormatter.Format(result.TotalBytesScanned)} scanned.";
+            HasScanCompleted = true;
         }
         catch (DirectoryNotFoundException)
         {
@@ -100,6 +109,12 @@ public sealed partial class AnalyzeViewModel : ObservableObject
 
     [RelayCommand(CanExecute = nameof(CanCancelScan))]
     private void CancelScan() => _cts?.Cancel();
+
+    [RelayCommand]
+    private void OpenDeleteMe()
+    {
+        Process.Start(new ProcessStartInfo(DeleteMeAffiliateUrl) { UseShellExecute = true });
+    }
 
     private void OnProgress(ScanProgress progress)
     {

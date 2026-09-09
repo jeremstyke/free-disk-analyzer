@@ -1,6 +1,6 @@
 using System.Windows;
 using FreeDiskAnalyzer.Core.Services;
-using FreeDiskAnalyzer.Models;
+using FreeDiskAnalyzer.Services;
 using FreeDiskAnalyzer.Themes;
 using FreeDiskAnalyzer.ViewModels;
 
@@ -14,11 +14,13 @@ public partial class App : Application
 
         // No dependency injection container yet, manual composition is enough
         // at this stage. Revisit if the service list grows significantly.
-        ThemeManager.ApplyTheme(ThemeMode.Light);
+        ISettingsService settingsService = new SettingsService();
+        var settings = settingsService.Load();
+        ThemeManager.ApplyTheme(settings.Theme);
 
         IDriveEnumerator driveEnumerator = new DriveEnumerator();
         IDiskScanner diskScanner = new DiskScanner();
-        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner);
+        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, settingsService);
 
         var mainWindow = new MainWindow
         {
