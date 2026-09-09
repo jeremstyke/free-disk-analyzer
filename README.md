@@ -125,4 +125,4 @@ This repository is currently private during development. It will be made public 
 
 [CleanTab - Browser Cleaner](https://getcleantab.com/): a free, privacy-first browser cleaner for Chrome and Edge, same "free forever, privacy first" philosophy as this project, by the same developer.
 
-If Free Disk Analyzer is useful to you, you can [offer a coffee](https://cleantab.gumroad.com/coffee).
+If Free Disk Analyzer is useful to you, you can [offer a coffee](https://jeremstyke.gumroad.com/coffee).

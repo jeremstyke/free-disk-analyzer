@@ -117,4 +117,4 @@ Ce dépôt est actuellement privé pendant le développement. Il sera rendu publ
 
 [CleanTab - Browser Cleaner](https://getcleantab.com/) : un nettoyeur de navigateur gratuit et respectueux de la vie privée pour Chrome et Edge, même philosophie "gratuit pour toujours, confidentialité d'abord" que ce projet, par le même développeur.
 
-Si Free Disk Analyzer vous est utile, vous pouvez [offrir un café](https://cleantab.gumroad.com/coffee).
+Si Free Disk Analyzer vous est utile, vous pouvez [offrir un café](https://jeremstyke.gumroad.com/coffee).
