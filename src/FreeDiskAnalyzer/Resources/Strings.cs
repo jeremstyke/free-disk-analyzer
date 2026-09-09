@@ -76,6 +76,16 @@ public static class Strings
 
     public static string Privacy_Title => Get(nameof(Privacy_Title));
     public static string Privacy_Tagline => Get(nameof(Privacy_Tagline));
+    public static string Privacy_StaysLocal_Title => Get(nameof(Privacy_StaysLocal_Title));
+    public static string Privacy_StaysLocal_Body => Get(nameof(Privacy_StaysLocal_Body));
+    public static string Privacy_OptIn_Title => Get(nameof(Privacy_OptIn_Title));
+    public static string Privacy_OptIn_Body => Get(nameof(Privacy_OptIn_Body));
+    public static string Privacy_NeverCollected_Title => Get(nameof(Privacy_NeverCollected_Title));
+    public static string Privacy_NeverCollected_Body => Get(nameof(Privacy_NeverCollected_Body));
+    public static string Privacy_Offline_Title => Get(nameof(Privacy_Offline_Title));
+    public static string Privacy_Offline_Body => Get(nameof(Privacy_Offline_Body));
+    public static string Privacy_Affiliate_Title => Get(nameof(Privacy_Affiliate_Title));
+    public static string Privacy_Affiliate_Body => Get(nameof(Privacy_Affiliate_Body));
 
     public static string About_Tagline => Get(nameof(About_Tagline));
     public static string About_ViewGitHub => Get(nameof(About_ViewGitHub));

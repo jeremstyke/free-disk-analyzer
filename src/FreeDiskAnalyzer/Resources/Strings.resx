@@ -93,6 +93,16 @@
 
   <data name="Privacy_Title" xml:space="preserve"><value>Privacy</value></data>
   <data name="Privacy_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
+  <data name="Privacy_StaysLocal_Title" xml:space="preserve"><value>What stays local, always</value></data>
+  <data name="Privacy_StaysLocal_Body" xml:space="preserve"><value>Drive, folder, and file names and paths, file sizes, types and dates, and every scan result stay on this computer. The scan engine reads your file system directly, there is no server involved in analyzing a disk.</value></data>
+  <data name="Privacy_OptIn_Title" xml:space="preserve"><value>What can be sent, anonymously, only if you opt in</value></data>
+  <data name="Privacy_OptIn_Body" xml:space="preserve"><value>If you enable analytics in Settings: that an installation and launches happened, the number of scans performed, the app version, the Windows version, and an approximate country. This is off by default and can be turned off at any time.</value></data>
+  <data name="Privacy_NeverCollected_Title" xml:space="preserve"><value>What is never collected</value></data>
+  <data name="Privacy_NeverCollected_Body" xml:space="preserve"><value>Your name, email, or Microsoft account. File names, paths, or contents. Folder names or structure. Detailed disk contents. Any identifier used to fingerprint this device. There is no hidden or undocumented telemetry.</value></data>
+  <data name="Privacy_Offline_Title" xml:space="preserve"><value>Offline use</value></data>
+  <data name="Privacy_Offline_Body" xml:space="preserve"><value>Free Disk Analyzer works fully offline. Disabling your internet connection does not affect scanning, results, or any core feature.</value></data>
+  <data name="Privacy_Affiliate_Title" xml:space="preserve"><value>Affiliate links</value></data>
+  <data name="Privacy_Affiliate_Body" xml:space="preserve"><value>The NordVPN card on the Dashboard and the DeleteMe suggestion after a scan are affiliate links, clearly labeled where they appear. Clicking one opens your browser to the partner's site, which then applies its own privacy policy. Free Disk Analyzer does not track which links you click.</value></data>
 
   <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="About_ViewGitHub" xml:space="preserve"><value>View on GitHub</value></data>

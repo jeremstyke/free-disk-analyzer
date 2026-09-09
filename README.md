@@ -35,7 +35,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Settings: language, light/dark theme, start with Windows, opt-in anonymous analytics, reset to defaults, all saved locally
 - Dedicated Privacy page explaining exactly what stays local and what never leaves your machine
 - Light and dark mode, modern Windows 11-inspired interface
-- English and French (language selector in Settings, restart to apply; the Privacy page's detailed text is still English-only, see [ROADMAP.md](docs/ROADMAP.md))
+- English and French, full coverage (language selector in Settings, restart to apply)
 - 100% local analysis. Nothing about your files or folders ever leaves your machine
 - Free forever. No subscription, no premium tier, no artificial limits
 

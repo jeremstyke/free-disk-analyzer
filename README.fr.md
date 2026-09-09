@@ -30,7 +30,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Paramètres : langue, thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
 - Page Confidentialité dédiée expliquant précisément ce qui reste local
 - Mode clair et sombre, interface moderne inspirée de Windows 11
-- Anglais et français (sélecteur de langue dans Paramètres, redémarrage requis pour appliquer ; le texte détaillé de la page Confidentialité reste en anglais pour l'instant, voir [ROADMAP.md](docs/ROADMAP.md))
+- Anglais et français, couverture complète (sélecteur de langue dans Paramètres, redémarrage requis pour appliquer)
 - Analyse 100 % locale. Rien concernant vos fichiers ou dossiers n'est jamais envoyé
 - Gratuit pour toujours. Pas d'abonnement, pas de version premium, pas de limite artificielle
 

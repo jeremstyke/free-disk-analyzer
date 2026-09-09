@@ -93,6 +93,16 @@
 
   <data name="Privacy_Title" xml:space="preserve"><value>Confidentialité</value></data>
   <data name="Privacy_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
+  <data name="Privacy_StaysLocal_Title" xml:space="preserve"><value>Ce qui reste local, toujours</value></data>
+  <data name="Privacy_StaysLocal_Body" xml:space="preserve"><value>Noms et chemins des disques, dossiers et fichiers, tailles, types et dates, et chaque résultat de scan restent sur cet ordinateur. Le moteur de scan lit votre système de fichiers directement, aucun serveur n'intervient dans l'analyse d'un disque.</value></data>
+  <data name="Privacy_OptIn_Title" xml:space="preserve"><value>Ce qui peut être envoyé, anonymement, uniquement si vous l'activez</value></data>
+  <data name="Privacy_OptIn_Body" xml:space="preserve"><value>Si vous activez les statistiques dans les Paramètres : qu'une installation et des lancements ont eu lieu, le nombre de scans effectués, la version de l'application, la version de Windows, et un pays approximatif. C'est désactivé par défaut et peut être désactivé à tout moment.</value></data>
+  <data name="Privacy_NeverCollected_Title" xml:space="preserve"><value>Ce qui n'est jamais collecté</value></data>
+  <data name="Privacy_NeverCollected_Body" xml:space="preserve"><value>Votre nom, email ou compte Microsoft. Noms de fichiers, chemins ou contenus. Noms de dossiers ou structure. Contenu détaillé du disque. Tout identifiant utilisé pour reconnaître cet appareil. Il n'y a aucune télémétrie cachée ou non documentée.</value></data>
+  <data name="Privacy_Offline_Title" xml:space="preserve"><value>Utilisation hors ligne</value></data>
+  <data name="Privacy_Offline_Body" xml:space="preserve"><value>Free Disk Analyzer fonctionne entièrement hors ligne. Désactiver votre connexion internet n'affecte ni le scan, ni les résultats, ni aucune fonctionnalité principale.</value></data>
+  <data name="Privacy_Affiliate_Title" xml:space="preserve"><value>Liens affiliés</value></data>
+  <data name="Privacy_Affiliate_Body" xml:space="preserve"><value>La carte NordVPN sur le tableau de bord et la suggestion DeleteMe après un scan sont des liens affiliés, clairement identifiés là où ils apparaissent. Cliquer dessus ouvre votre navigateur vers le site du partenaire, qui applique alors sa propre politique de confidentialité. Free Disk Analyzer ne suit pas les liens sur lesquels vous cliquez.</value></data>
 
   <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="About_ViewGitHub" xml:space="preserve"><value>Voir sur GitHub</value></data>
