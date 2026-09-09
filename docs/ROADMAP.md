@@ -66,6 +66,7 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Not done: real screenshots (need a working build first)
 - Decision point (deferred, per Bob): repo is private during development. Before this phase ships publicly, decide whether to make the main repo public, or keep it private and distribute releases/Pages another way (private repos on the free plan can't serve public GitHub Releases downloads or GitHub Pages)
 - Done: `v1.0.0` tagged and released (installer + portable zip + checksums, verified present on the GitHub Release). Note: this happened before the app was ever launched and tested locally, at Bob's explicit request, ahead of the usual order. If the app doesn't actually run correctly once tested, expect a `v1.0.1` fix release.
+- Future, not scoped yet (per Bob): a blog on the website. Needs a decision first on its purpose, since that changes the shape: SEO content (a handful of static "how to free up disk space on Windows" style articles, fits the current static-site approach) versus a product changelog/news feed (needs a chronological, dated structure). Revisit once the site is actually public.
 
 ## Out of scope for v1
 
