@@ -43,7 +43,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Old files finder, the ones you likely forgot about, sorted by last modified date
 - Empty folder finder
 - Export a scan report to CSV
-- NordVPN recommendation on the Dashboard, clearly labeled as an affiliate link
+- NordVPN recommendation on the Dashboard, and a DeleteMe recommendation after a scan completes, both clearly labeled as affiliate links
 - Settings: language, light/dark theme, start with Windows, opt-in anonymous analytics, reset to defaults, all saved locally
 - Dedicated Privacy page explaining exactly what stays local and what never leaves your machine
 - Light and dark mode, modern Windows 11-inspired interface
@@ -78,6 +78,7 @@ Full details: [PRIVACY.md](PRIVACY.md)
 Some links in Free Disk Analyzer (on the Dashboard and after a scan completes) are affiliate links:
 
 - [NordVPN](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer)
+- [DeleteMe](https://www.de33watrk.com/WCKMXS/KMKS9/)
 
 If you purchase through one of these links, we may receive a commission at no extra cost to you. These commissions help fund development.
 

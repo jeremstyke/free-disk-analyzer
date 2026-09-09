@@ -50,6 +50,8 @@ public static class Strings
     public static string Analyze_Folders => Get(nameof(Analyze_Folders));
     public static string Analyze_Size => Get(nameof(Analyze_Size));
     public static string Analyze_Elapsed => Get(nameof(Analyze_Elapsed));
+    public static string Analyze_DeleteMeTitle => Get(nameof(Analyze_DeleteMeTitle));
+    public static string Analyze_DeleteMeBody => Get(nameof(Analyze_DeleteMeBody));
 
     public static string LargeFiles_Title => Get(nameof(LargeFiles_Title));
     public static string LargeFiles_Subtitle => Get(nameof(LargeFiles_Subtitle));

@@ -38,7 +38,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Détecteur de fichiers anciens, ceux probablement oubliés, triés par date de modification
 - Détecteur de dossiers vides
 - Export d'un rapport de scan en CSV
-- Recommandation NordVPN sur le tableau de bord, clairement identifiée comme lien affilié
+- Recommandation NordVPN sur le tableau de bord, et recommandation DeleteMe après un scan, toutes deux clairement identifiées comme liens affiliés
 - Paramètres : langue, thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
 - Page Confidentialité dédiée expliquant précisément ce qui reste local
 - Mode clair et sombre, interface moderne inspirée de Windows 11
@@ -73,6 +73,7 @@ Détails complets : [PRIVACY.md](PRIVACY.md)
 Certains liens dans Free Disk Analyzer (tableau de bord et après un scan) sont des liens affiliés :
 
 - [NordVPN](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer)
+- [DeleteMe](https://www.de33watrk.com/WCKMXS/KMKS9/)
 
 Si vous achetez via l'un de ces liens, nous pouvons percevoir une commission sans surcoût pour vous. Ces commissions aident à financer le développement.
 

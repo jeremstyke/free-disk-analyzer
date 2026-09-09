@@ -12,6 +12,10 @@ namespace FreeDiskAnalyzer.ViewModels;
 
 public sealed partial class AnalyzeViewModel : ObservableObject
 {
+    // DeleteMe affiliate link, disclosed in the UI text right below the button.
+    // See AFFILIATE-DISCLOSURE.md.
+    public const string DeleteMeAffiliateUrl = "https://www.de33watrk.com/WCKMXS/KMKS9/";
+
     private readonly IDiskScanner _diskScanner;
     private readonly ScanResultStore _scanResultStore;
     private CancellationTokenSource? _cts;
@@ -106,6 +110,12 @@ public sealed partial class AnalyzeViewModel : ObservableObject
 
     [RelayCommand(CanExecute = nameof(CanCancelScan))]
     private void CancelScan() => _cts?.Cancel();
+
+    [RelayCommand]
+    private void OpenDeleteMe()
+    {
+        Process.Start(new ProcessStartInfo(DeleteMeAffiliateUrl) { UseShellExecute = true });
+    }
 
     [RelayCommand]
     private void ExportReport()

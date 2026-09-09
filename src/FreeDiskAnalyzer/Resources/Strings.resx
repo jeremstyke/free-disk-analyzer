@@ -67,7 +67,8 @@
   <data name="Analyze_Folders" xml:space="preserve"><value>Folders</value></data>
   <data name="Analyze_Size" xml:space="preserve"><value>Size</value></data>
   <data name="Analyze_Elapsed" xml:space="preserve"><value>Elapsed</value></data>
-
+  <data name="Analyze_DeleteMeTitle" xml:space="preserve"><value>Recommended: DeleteMe</value></data>
+  <data name="Analyze_DeleteMeBody" xml:space="preserve"><value>Now that you have cleaned up your storage, remove your personal data from data broker sites too.</value></data>
 
   <data name="LargeFiles_Title" xml:space="preserve"><value>Large Files</value></data>
   <data name="LargeFiles_Subtitle" xml:space="preserve"><value>Find files above a size threshold from your last scan.</value></data>
@@ -125,7 +126,7 @@
   <data name="Privacy_Offline_Title" xml:space="preserve"><value>Offline use</value></data>
   <data name="Privacy_Offline_Body" xml:space="preserve"><value>Free Disk Analyzer works fully offline. Disabling your internet connection does not affect scanning, results, or any core feature.</value></data>
   <data name="Privacy_Affiliate_Title" xml:space="preserve"><value>Affiliate links</value></data>
-  <data name="Privacy_Affiliate_Body" xml:space="preserve"><value>The NordVPN card on the Dashboard is an affiliate link, clearly labeled where it appears. Clicking it opens your browser to the partner's site, which then applies its own privacy policy. Free Disk Analyzer does not track which links you click.</value></data>
+  <data name="Privacy_Affiliate_Body" xml:space="preserve"><value>The NordVPN card on the Dashboard and the DeleteMe suggestion after a scan are affiliate links, clearly labeled where they appear. Clicking one opens your browser to the partner's site, which then applies its own privacy policy. Free Disk Analyzer does not track which links you click.</value></data>
 
   <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="About_ViewGitHub" xml:space="preserve"><value>View on GitHub</value></data>
