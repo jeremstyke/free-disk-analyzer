@@ -2,6 +2,13 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('fda_lang') === 'en') { location.replace('../'); }
+  } catch (e) { /* localStorage unavailable, just show this French page */ }
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Disk Analyzer : découvrez ce qui occupe vraiment votre stockage</title>
 <meta name="description" content="Un analyseur d'espace disque gratuit et respectueux de la vie privée pour Windows. Chaque scan reste sur votre appareil.">
@@ -36,7 +43,7 @@
     </nav>
     <div style="display:flex; align-items:center; gap:12px;">
       <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offrir un café</a>
-      <div class="lang-switch"><a href="../">EN</a></div>
+      <div class="lang-switch"><a href="../" onclick="try{localStorage.setItem('fda_lang','en')}catch(e){}">EN</a></div>
     </div>
   </div>
 </header>

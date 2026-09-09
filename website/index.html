@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var choice = localStorage.getItem('fda_lang');
+    if (choice === 'fr') { location.replace('fr/'); return; }
+    if (choice === 'en') { return; }
+    var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (browserLang.indexOf('fr') === 0) { location.replace('fr/'); }
+  } catch (e) { /* localStorage unavailable, just show the default English page */ }
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Disk Analyzer: see what's really using your storage</title>
 <meta name="description" content="A free, privacy-first disk space analyzer for Windows. Every scan stays on your device.">
@@ -36,7 +47,7 @@
     </nav>
     <div style="display:flex; align-items:center; gap:12px;">
       <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
-      <div class="lang-switch"><a href="fr/">FR</a></div>
+      <div class="lang-switch"><a href="fr/" onclick="try{localStorage.setItem('fda_lang','fr')}catch(e){}">FR</a></div>
     </div>
   </div>
 </header>
