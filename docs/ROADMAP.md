@@ -42,7 +42,7 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Dashboard's "Last scan" card now shows real totals (files, folders, bytes, completion time) once a scan has run, instead of a placeholder
 - Not done yet: storage-by-category chart and file-type breakdown chart. `DiskScanner` already computes `BytesByCategory`, so this is a UI-only addition, folded into Phase 4
 
-## Phase 4: Settings, Privacy, About, charts, DeleteMe suggestion - done
+## Phase 4: Settings, Privacy, About, charts, DeleteMe suggestion - done (DeleteMe later removed, see note below)
 
 - Scope change (per Bob): no Utilities software catalog. Only two affiliate touchpoints: NordVPN on the Dashboard (Phase 2) and DeleteMe, suggested after a scan completes on the Analyze tab. `Utilities` removed from the sidebar entirely.
 - Settings: theme (persisted, applied via `ThemeManager`), start with Windows (real registry Run key toggle), anonymous analytics opt-in/opt-out, reset to defaults. Saved as local JSON via `SettingsService`.
@@ -119,3 +119,7 @@ History worth remembering before restarting this: Bob previously pursued a VPN r
 Technical shape on Windows, if revisited: don't build a VPN client from scratch. Either drive a WireGuard/WinTun setup or shell out to the official `wireguard.exe` client with a config file supplied by the reseller. Meaningfully simpler than the Android driver-level work that stalled before, but still real ongoing work: credential management, server rotation, billing if not free, support when a connection breaks.
 
 Not scoped, not started. Same precondition as the rest of the v2 items: this is for after the current app has real usage on a real machine.
+
+## DeleteMe removed (per Bob, 2026-09-10)
+
+The DeleteMe affiliate recommendation (Analyze tab card, and mentions across README/AFFILIATE-DISCLOSURE.md/website) was removed entirely at Bob's request. NordVPN remains the only current affiliate partner. If DeleteMe or another privacy/data-removal partner comes back later, re-add it the same way: a labeled card with a "Learn more" button and the affiliate disclosure line, not silently.
