@@ -99,3 +99,11 @@ A 4-tab expansion beyond the current read-only analyzer, described by Bob on 202
 4. **Outils & Conseils tab** - excluded from this vision for now, per Bob. Was: quick uninstaller (**real app removal + AppData cleanup**, same risk category as "Désinstalleur Express" discussed and deferred earlier) plus a tips/guides content feed pulling from the website for AdSense and affiliate traffic.
 
 Ordering note for whoever picks this up: item 3's DNS flush is the only genuinely low-risk item in this list. Everything else either deletes user files, modifies the registry/system services, or removes installed applications, categories this project has deliberately kept out of v1 so a bug can't hurt anyone's data. Build and test each in isolation, with explicit confirmation UI showing exactly what will change before it happens.
+
+## Long-term product direction: replace CleanTab (per Bob, logged only, nothing started)
+
+Described 2026-09-09. The 3-tab pitch: Cleanup (frees disk space, fixes everyday slowness), Security & Privacy (clears browsing traces, blocks Windows telemetry, protects the system), VPN (secures Wi-Fi, hides IP). Positioning: one Windows suite instead of three separate tools, covering a PC's full health and privacy.
+
+The plan is for Free Disk Analyzer to eventually replace CleanTab (Chrome/Edge extension) entirely: migrate CleanTab's users to this Windows app, and show an end-of-life message inside CleanTab pointing them here, framed as "a complete suite on Windows, always free."
+
+This raises the stakes on the "wait for real testing" rule already in place for the v2 vision above, it doesn't loosen it. CleanTab has real, active users today. Redirecting them to Free Disk Analyzer only makes sense once this app has been run and tested on a real machine, ideally has some track record with early users on its current read-only feature set, and the higher-risk v2 items (real deletion, registry/telemetry changes) have shipped and been used without incident. Sunsetting a working product to point at an unlaunched one is the kind of move that's hard to undo if it goes wrong, better to move a few weeks later with confidence than fast with an unverified base.
