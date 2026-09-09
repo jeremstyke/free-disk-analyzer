@@ -113,6 +113,10 @@ Tous droits réservés. L'application est gratuite à l'usage, le code source n'
 
 Ce dépôt est actuellement privé pendant le développement. Il sera rendu public (ou restructuré) une fois l'application dans un état fonctionnel et téléchargeable. En attendant, les releases et GitHub Pages ne sont pas accessibles publiquement, voir [ROADMAP.md](docs/ROADMAP.md).
 
+## Site web
+
+Le site vitrine se trouve dans [`website/`](website/) (anglais) et [`website/fr/`](website/fr/) (français) : hero, fonctionnalités, confidentialité, FAQ, section téléchargement. Pas encore en ligne, GitHub Pages nécessite un dépôt public sur le plan gratuit, voir la note ci-dessus. Vous pouvez le prévisualiser en local en ouvrant `website/index.html` dans un navigateur.
+
 ## Autres projets du développeur
 
 [CleanTab - Browser Cleaner](https://getcleantab.com/) : un nettoyeur de navigateur gratuit et respectueux de la vie privée pour Chrome et Edge, même philosophie "gratuit pour toujours, confidentialité d'abord" que ce projet, par le même développeur.

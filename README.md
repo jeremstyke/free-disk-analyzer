@@ -121,6 +121,10 @@ All rights reserved. The application is free to use, the source code is not free
 
 This repository is currently private during development. It will be made public (or restructured) once the app is in a working, downloadable state. Until then, releases and GitHub Pages are not publicly reachable, see [ROADMAP.md](docs/ROADMAP.md).
 
+## Website
+
+The marketing site lives in [`website/`](website/) (English) and [`website/fr/`](website/fr/) (French): hero, features, privacy, FAQ, download section. Not live yet, GitHub Pages needs a public repository on the free plan, see the note above. You can preview it locally by opening `website/index.html` in a browser.
+
 ## More from the developer
 
 [CleanTab - Browser Cleaner](https://getcleantab.com/): a free, privacy-first browser cleaner for Chrome and Edge, same "free forever, privacy first" philosophy as this project, by the same developer.
