@@ -13,10 +13,12 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 🇫🇷 [Lire en français](README.fr.md)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/%E2%86%93%20Download%20for%20Windows-Coming%20soon-9CA3AF?style=for-the-badge" alt="Download for Windows - Coming soon" />
+  <a href="../../releases/latest">
+    <img src="https://img.shields.io/badge/%E2%86%93%20Download-for%20Windows-2563EB?style=for-the-badge" alt="Download for Windows" />
+  </a>
 </p>
 
-> No release yet, this is still in active development. [Follow progress](docs/ROADMAP.md)
+> [View all releases](../../releases)
 
 ---
 
@@ -40,8 +42,6 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Free forever. No subscription, no premium tier, no artificial limits
 
 ## Installation
-
-*Not yet released. The first build will be published on the [Releases](../../releases) page once ready, see [ROADMAP.md](docs/ROADMAP.md) for progress.*
 
 1. Go to the [latest release](../../releases/latest)
 2. Download `FreeDiskAnalyzer-Setup.exe` (installer) or `FreeDiskAnalyzer-Portable.zip` (portable)

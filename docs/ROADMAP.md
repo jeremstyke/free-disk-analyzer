@@ -65,7 +65,7 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Done: `website/` static site, English (`index.html`) and French (`fr/index.html`), sharing `assets/style.css`. Hero, features, privacy, free-forever statement, screenshots placeholder (honestly empty, no fake images), FAQ, download band, footer with affiliate disclosure. Download CTA is in a disabled "coming soon" state until the first release exists. No links to the GitHub repo anywhere on the site, since it's currently private, would be dead links for visitors.
 - Not done: real screenshots (need a working build first)
 - Decision point (deferred, per Bob): repo is private during development. Before this phase ships publicly, decide whether to make the main repo public, or keep it private and distribute releases/Pages another way (private repos on the free plan can't serve public GitHub Releases downloads or GitHub Pages)
-- Tag `v1.0.0` and cut the first release once the app has actually been built and tested locally at least once
+- Done: `v1.0.0` tagged and released (installer + portable zip + checksums, verified present on the GitHub Release). Note: this happened before the app was ever launched and tested locally, at Bob's explicit request, ahead of the usual order. If the app doesn't actually run correctly once tested, expect a `v1.0.1` fix release.
 
 ## Out of scope for v1
 
