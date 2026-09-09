@@ -27,10 +27,10 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Recherche dédiée de fichiers volumineux avec filtres de taille (100 Mo, 500 Mo, 1 Go, 5 Go, personnalisé)
 - Vue hiérarchique des dossiers pour repérer rapidement ce qui consomme l'espace
 - Recommandation NordVPN sur le tableau de bord, et recommandation DeleteMe après un scan, toutes deux clairement identifiées comme liens affiliés
-- Paramètres : thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
+- Paramètres : langue, thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
 - Page Confidentialité dédiée expliquant précisément ce qui reste local
 - Mode clair et sombre, interface moderne inspirée de Windows 11
-- Anglais pour l'instant, le français est prévu, voir [ROADMAP.md](docs/ROADMAP.md)
+- Anglais et français (sélecteur de langue dans Paramètres, redémarrage requis pour appliquer ; le texte détaillé de la page Confidentialité reste en anglais pour l'instant, voir [ROADMAP.md](docs/ROADMAP.md))
 - Analyse 100 % locale. Rien concernant vos fichiers ou dossiers n'est jamais envoyé
 - Gratuit pour toujours. Pas d'abonnement, pas de version premium, pas de limite artificielle
 

@@ -1,6 +1,7 @@
 <UserControl x:Class="FreeDiskAnalyzer.Views.LargeFilesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="clr-namespace:FreeDiskAnalyzer.Resources">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -9,23 +10,23 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Large Files" Style="{StaticResource TitleTextStyle}"/>
-            <TextBlock Text="Find files above a size threshold from your last scan."
+            <TextBlock Text="{x:Static res:Strings.LargeFiles_Title}" Style="{StaticResource TitleTextStyle}"/>
+            <TextBlock Text="{x:Static res:Strings.LargeFiles_Subtitle}"
                        Style="{StaticResource SubtitleTextStyle}" Margin="0,4,0,20"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,20" VerticalAlignment="Center">
-            <TextBlock Text="Minimum size:" VerticalAlignment="Center" Margin="0,0,10,0"
+            <TextBlock Text="{x:Static res:Strings.LargeFiles_MinSize}" VerticalAlignment="Center" Margin="0,0,10,0"
                        Style="{StaticResource BodyTextStyle}"/>
             <ComboBox ItemsSource="{Binding FilterOptions}" SelectedItem="{Binding SelectedFilter}"
                       DisplayMemberPath="Label" Width="140" Margin="0,0,20,0"/>
-            <TextBlock Text="Custom (MB):" VerticalAlignment="Center" Margin="0,0,8,0"
+            <TextBlock Text="{x:Static res:Strings.LargeFiles_Custom}" VerticalAlignment="Center" Margin="0,0,8,0"
                        Style="{StaticResource CaptionTextStyle}"/>
             <TextBox Text="{Binding CustomThresholdMb, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
         </StackPanel>
 
         <Grid Grid.Row="2">
-            <TextBlock Text="Run a scan from the Analyze tab first." Style="{StaticResource SubtitleTextStyle}"
+            <TextBlock Text="{x:Static res:Strings.LargeFiles_NoScan}" Style="{StaticResource SubtitleTextStyle}"
                        HorizontalAlignment="Center" VerticalAlignment="Center"
                        Visibility="{Binding HasScanResult, Converter={StaticResource InverseBoolToVis}}"/>
 
@@ -52,10 +53,10 @@
                                         <TextBlock Text="{Binding SizeBytes, Converter={StaticResource ByteSizeConverter}}"
                                                    FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,16,0"
                                                    Foreground="{DynamicResource TextPrimaryBrush}"/>
-                                        <Button Content="Open" Margin="0,0,8,0"
+                                        <Button Content="{x:Static res:Strings.LargeFiles_Open}" Margin="0,0,8,0"
                                                 Command="{Binding DataContext.OpenFileCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                 CommandParameter="{Binding}"/>
-                                        <Button Content="Show in Explorer"
+                                        <Button Content="{x:Static res:Strings.LargeFiles_ShowInExplorer}"
                                                 Command="{Binding DataContext.ShowInExplorerCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                 CommandParameter="{Binding}"/>
                                     </StackPanel>

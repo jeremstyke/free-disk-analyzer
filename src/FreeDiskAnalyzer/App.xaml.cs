@@ -1,3 +1,5 @@
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using FreeDiskAnalyzer.Core.Services;
 using FreeDiskAnalyzer.Services;
@@ -17,6 +19,7 @@ public partial class App : Application
         ISettingsService settingsService = new SettingsService();
         var settings = settingsService.Load();
         ThemeManager.ApplyTheme(settings.Theme);
+        ApplyLanguage(settings.Language);
 
         IDriveEnumerator driveEnumerator = new DriveEnumerator();
         IDiskScanner diskScanner = new DiskScanner();
@@ -27,5 +30,26 @@ public partial class App : Application
             DataContext = mainViewModel
         };
         mainWindow.Show();
+    }
+
+    private static void ApplyLanguage(string languageCode)
+    {
+        // Applied once at startup: x:Static resource lookups in XAML are
+        // resolved when each view is first constructed, not re-evaluated
+        // live. Changing the language in Settings takes effect on next
+        // launch (see SettingsViewModel.LanguageChanged / the restart note
+        // shown in the UI), rather than requiring a live-rebinding
+        // localization framework for a two-language app.
+        try
+        {
+            var culture = CultureInfo.GetCultureInfo(languageCode);
+            CultureInfo.CurrentUICulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+        }
+        catch (CultureNotFoundException)
+        {
+            // Unknown/corrupted setting, fall back to the OS default rather
+            // than crashing on startup.
+        }
     }
 }

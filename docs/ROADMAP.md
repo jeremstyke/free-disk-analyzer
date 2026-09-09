@@ -51,10 +51,12 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Storage-by-category chart on the Dashboard, using `DiskScanner`'s `BytesByCategory` output.
 - Not done: file-type breakdown chart (category chart covers most of the same need, revisit if still wanted), language switching (Phase 5).
 
-## Phase 5: Localization
+## Phase 5: Localization - mostly done
 
-- `Resources.resx` (English, default) and `Resources.fr.resx` (French)
-- Language selector wired into Settings
+- `Resources/Strings.resx` (English, default) and `Resources/Strings.fr.resx` (French), embedded via the standard SDK resx pipeline. No Visual Studio Designer.cs relied on, a hand-written `Strings` static class wraps `ResourceManager` so it builds with plain `dotnet build`.
+- Language selector in Settings (English / Français), persisted, applied via `CultureInfo.CurrentUICulture` at next launch (a "restart to apply" note appears when changed, this app doesn't attempt live re-binding of `x:Static` resources on the fly).
+- Localized: navigation labels, Dashboard, Analyze, Large Files, Folders, Settings, About, Coming Soon placeholder.
+- Not done: the Privacy page's long-form body paragraphs are still English-only (title/tagline are localized). Same mechanical pattern as the other pages, just not swept yet, tracked here so it isn't forgotten.
 
 ## Phase 6: Packaging, CI/CD, and going public
 

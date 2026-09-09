@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="AppTitle" xml:space="preserve"><value>Free Disk Analyzer</value></data>
+
+  <data name="Nav_Dashboard" xml:space="preserve"><value>Tableau de bord</value></data>
+  <data name="Nav_Analyze" xml:space="preserve"><value>Analyser</value></data>
+  <data name="Nav_LargeFiles" xml:space="preserve"><value>Fichiers volumineux</value></data>
+  <data name="Nav_Folders" xml:space="preserve"><value>Dossiers</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Paramètres</value></data>
+  <data name="Nav_Privacy" xml:space="preserve"><value>Confidentialité</value></data>
+  <data name="Nav_About" xml:space="preserve"><value>À propos</value></data>
+
+  <data name="Dashboard_Title" xml:space="preserve"><value>Tableau de bord</value></data>
+  <data name="Dashboard_Subtitle" xml:space="preserve"><value>Vue d'ensemble de vos disques et du dernier scan.</value></data>
+  <data name="Dashboard_Storage" xml:space="preserve"><value>Stockage</value></data>
+  <data name="Dashboard_Used" xml:space="preserve"><value>Utilisé</value></data>
+  <data name="Dashboard_Free" xml:space="preserve"><value>Libre</value></data>
+  <data name="Dashboard_LastScan" xml:space="preserve"><value>Dernier scan</value></data>
+  <data name="Dashboard_NoScanYet" xml:space="preserve"><value>Aucun scan pour l'instant. Lancez-en un depuis l'onglet Analyser.</value></data>
+  <data name="Dashboard_StorageByCategory" xml:space="preserve"><value>Stockage par catégorie</value></data>
+  <data name="Dashboard_NordVpnTitle" xml:space="preserve"><value>Recommandé : NordVPN</value></data>
+  <data name="Dashboard_NordVpnBody" xml:space="preserve"><value>Protégez votre connexion pendant que vous naviguez et gérez vos fichiers.</value></data>
+  <data name="Dashboard_LearnMore" xml:space="preserve"><value>En savoir plus</value></data>
+  <data name="Dashboard_AffiliateDisclosure" xml:space="preserve"><value>Lien affilié - Aide à financer le développement de Free Disk Analyzer, sans surcoût pour vous.</value></data>
+  <data name="Dashboard_UsedOf" xml:space="preserve"><value> utilisé sur </value></data>
+
+  <data name="Analyze_Title" xml:space="preserve"><value>Analyser</value></data>
+  <data name="Analyze_Subtitle" xml:space="preserve"><value>Choisissez un disque et lancez un scan.</value></data>
+  <data name="Analyze_Drive" xml:space="preserve"><value>Disque</value></data>
+  <data name="Analyze_StartScan" xml:space="preserve"><value>Analyser le disque</value></data>
+  <data name="Analyze_Cancel" xml:space="preserve"><value>Annuler</value></data>
+  <data name="Analyze_Scanning" xml:space="preserve"><value>Analyse en cours...</value></data>
+  <data name="Analyze_Files" xml:space="preserve"><value>Fichiers</value></data>
+  <data name="Analyze_Folders" xml:space="preserve"><value>Dossiers</value></data>
+  <data name="Analyze_Size" xml:space="preserve"><value>Taille</value></data>
+  <data name="Analyze_Elapsed" xml:space="preserve"><value>Temps écoulé</value></data>
+  <data name="Analyze_DeleteMeTitle" xml:space="preserve"><value>Recommandé : DeleteMe</value></data>
+  <data name="Analyze_DeleteMeBody" xml:space="preserve"><value>Maintenant que votre stockage est nettoyé, supprimez aussi vos données personnelles des sites de courtiers en données.</value></data>
+
+  <data name="LargeFiles_Title" xml:space="preserve"><value>Fichiers volumineux</value></data>
+  <data name="LargeFiles_Subtitle" xml:space="preserve"><value>Trouvez les fichiers au-dessus d'un seuil de taille depuis votre dernier scan.</value></data>
+  <data name="LargeFiles_MinSize" xml:space="preserve"><value>Taille minimum :</value></data>
+  <data name="LargeFiles_Custom" xml:space="preserve"><value>Personnalisé (Mo) :</value></data>
+  <data name="LargeFiles_NoScan" xml:space="preserve"><value>Lancez d'abord un scan depuis l'onglet Analyser.</value></data>
+  <data name="LargeFiles_Open" xml:space="preserve"><value>Ouvrir</value></data>
+  <data name="LargeFiles_ShowInExplorer" xml:space="preserve"><value>Afficher dans l'Explorateur</value></data>
+
+  <data name="Folders_Title" xml:space="preserve"><value>Dossiers</value></data>
+  <data name="Folders_Subtitle" xml:space="preserve"><value>Dossiers les plus volumineux de votre dernier scan, triés par taille.</value></data>
+  <data name="Folders_NoScan" xml:space="preserve"><value>Lancez d'abord un scan depuis l'onglet Analyser.</value></data>
+
+  <data name="Settings_Title" xml:space="preserve"><value>Paramètres</value></data>
+  <data name="Settings_Subtitle" xml:space="preserve"><value>Les préférences sont sauvegardées localement sur cet appareil.</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Langue</value></data>
+  <data name="Settings_LanguageRestartNote" xml:space="preserve"><value>Redémarrez Free Disk Analyzer pour appliquer un changement de langue.</value></data>
+  <data name="Settings_Theme" xml:space="preserve"><value>Thème</value></data>
+  <data name="Settings_StartWithWindows" xml:space="preserve"><value>Démarrer avec Windows</value></data>
+  <data name="Settings_Analytics" xml:space="preserve"><value>Partager des statistiques d'usage anonymes</value></data>
+  <data name="Settings_AnalyticsNote" xml:space="preserve"><value>Désactivé par défaut. Aucun nom de fichier, chemin ou donnée personnelle n'est jamais inclus. Voir l'onglet Confidentialité pour le détail.</value></data>
+  <data name="Settings_Reset" xml:space="preserve"><value>Réinitialiser les paramètres</value></data>
+
+  <data name="Privacy_Title" xml:space="preserve"><value>Confidentialité</value></data>
+  <data name="Privacy_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
+
+  <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
+  <data name="About_ViewGitHub" xml:space="preserve"><value>Voir sur GitHub</value></data>
+  <data name="About_Version" xml:space="preserve"><value>Version</value></data>
+  <data name="About_License" xml:space="preserve"><value>Tous droits réservés. Voir LICENSE dans le dépôt.</value></data>
+
+  <data name="ComingSoon_Subtitle" xml:space="preserve"><value>Cette section arrive dans une prochaine mise à jour.</value></data>
+</root>

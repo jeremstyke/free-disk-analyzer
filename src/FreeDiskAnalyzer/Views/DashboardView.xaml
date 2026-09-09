@@ -1,12 +1,13 @@
 <UserControl x:Class="FreeDiskAnalyzer.Views.DashboardView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:controls="clr-namespace:FreeDiskAnalyzer.Controls">
+             xmlns:controls="clr-namespace:FreeDiskAnalyzer.Controls"
+             xmlns:res="clr-namespace:FreeDiskAnalyzer.Resources">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="0,0,0,32">
 
-            <TextBlock Text="Dashboard" Style="{StaticResource TitleTextStyle}"/>
-            <TextBlock Text="Overview of your drives and last scan."
+            <TextBlock Text="{x:Static res:Strings.Dashboard_Title}" Style="{StaticResource TitleTextStyle}"/>
+            <TextBlock Text="{x:Static res:Strings.Dashboard_Subtitle}"
                        Style="{StaticResource SubtitleTextStyle}" Margin="0,4,0,24"/>
 
             <!-- Drive cards -->
@@ -32,7 +33,7 @@
                                              Style="{StaticResource ThinProgressBarStyle}"/>
                                 <TextBlock Margin="0,10,0,0" FontSize="12" Foreground="{DynamicResource TextSecondaryBrush}">
                                     <Run Text="{Binding UsedDisplay, Mode=OneWay}"/>
-                                    <Run Text=" used of "/>
+                                    <Run Text="{x:Static res:Strings.Dashboard_UsedOf}"/>
                                     <Run Text="{Binding TotalDisplay, Mode=OneWay}"/>
                                 </TextBlock>
                             </StackPanel>
@@ -51,18 +52,18 @@
 
                 <Border Grid.Column="0" Style="{StaticResource CardStyle}">
                     <StackPanel HorizontalAlignment="Center">
-                        <TextBlock Text="Storage" FontWeight="SemiBold" FontSize="16"
+                        <TextBlock Text="{x:Static res:Strings.Dashboard_Storage}" FontWeight="SemiBold" FontSize="16"
                                    HorizontalAlignment="Left" Foreground="{DynamicResource TextPrimaryBrush}"
                                    Margin="0,0,0,16"/>
                         <controls:DonutProgressRing UsedPercentage="{Binding SelectedDrive.UsedPercentage, Mode=OneWay}"/>
                         <StackPanel Orientation="Horizontal" Margin="0,16,0,0" HorizontalAlignment="Center">
                             <StackPanel Margin="0,0,24,0">
-                                <TextBlock Text="Used" Style="{StaticResource CaptionTextStyle}"/>
+                                <TextBlock Text="{x:Static res:Strings.Dashboard_Used}" Style="{StaticResource CaptionTextStyle}"/>
                                 <TextBlock Text="{Binding SelectedDrive.UsedDisplay}" FontWeight="SemiBold"
                                            Foreground="{DynamicResource TextPrimaryBrush}"/>
                             </StackPanel>
                             <StackPanel>
-                                <TextBlock Text="Free" Style="{StaticResource CaptionTextStyle}"/>
+                                <TextBlock Text="{x:Static res:Strings.Dashboard_Free}" Style="{StaticResource CaptionTextStyle}"/>
                                 <TextBlock Text="{Binding SelectedDrive.FreeDisplay}" FontWeight="SemiBold"
                                            Foreground="{DynamicResource TextPrimaryBrush}"/>
                             </StackPanel>
@@ -72,7 +73,7 @@
 
                 <Border Grid.Column="2" Style="{StaticResource CardStyle}">
                     <StackPanel>
-                        <TextBlock Text="Last scan" FontWeight="SemiBold" FontSize="16"
+                        <TextBlock Text="{x:Static res:Strings.Dashboard_LastScan}" FontWeight="SemiBold" FontSize="16"
                                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,12"/>
                         <TextBlock Text="{Binding LastScanSummary}" TextWrapping="Wrap"
                                    Style="{StaticResource BodyTextStyle}"/>
@@ -83,7 +84,7 @@
             <!-- Storage by category -->
             <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
                 <StackPanel>
-                    <TextBlock Text="Storage by category" FontWeight="SemiBold" FontSize="16"
+                    <TextBlock Text="{x:Static res:Strings.Dashboard_StorageByCategory}" FontWeight="SemiBold" FontSize="16"
                                Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,16"/>
                     <ItemsControl ItemsSource="{Binding CategoryBreakdown}">
                         <ItemsControl.ItemTemplate>
@@ -114,14 +115,16 @@
             <!-- NordVPN affiliate card -->
             <Border Style="{StaticResource CardStyle}" Background="{DynamicResource AccentBrushLight}">
                 <StackPanel>
-                    <TextBlock Text="Recommended: NordVPN" FontWeight="SemiBold" FontSize="16"
+                    <TextBlock Text="{x:Static res:Strings.Dashboard_NordVpnTitle}" FontWeight="SemiBold" FontSize="16"
                                Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
-                    <TextBlock TextWrapping="Wrap" Style="{StaticResource BodyTextStyle}" Margin="0,0,0,12"
-                               Text="Protect your connection while you browse and manage your files."/>
-                    <Button Content="Learn more" Style="{StaticResource PrimaryButtonStyle}"
+                    <TextBlock Text="{x:Static res:Strings.Dashboard_NordVpnBody}" TextWrapping="Wrap"
+                               Style="{StaticResource BodyTextStyle}" Margin="0,0,0,12"/>
+                    <Button Content="{x:Static res:Strings.Dashboard_LearnMore}" Style="{StaticResource PrimaryButtonStyle}"
                             HorizontalAlignment="Left" Command="{Binding OpenNordVpnCommand}"/>
-                    <TextBlock Margin="0,12,0,0" Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap"
-                               Text="🔗 Affiliate link - Helps support the development of Free Disk Analyzer at no extra cost to you."/>
+                    <TextBlock Margin="0,12,0,0" Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap">
+                        <Run Text="🔗"/>
+                        <Run Text="{x:Static res:Strings.Dashboard_AffiliateDisclosure}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
 

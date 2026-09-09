@@ -78,12 +78,12 @@ public sealed partial class MainViewModel : ObservableObject
 
     private static IEnumerable<NavItem> BuildNavItems() => new[]
     {
-        new NavItem { Key = NavKey.Dashboard, Label = "Dashboard", Glyph = "\uE80F" },
-        new NavItem { Key = NavKey.Analyze, Label = "Analyze", Glyph = "\uE721" },
-        new NavItem { Key = NavKey.LargeFiles, Label = "Large Files", Glyph = "\uE8A5" },
-        new NavItem { Key = NavKey.Folders, Label = "Folders", Glyph = "\uE8B7" },
-        new NavItem { Key = NavKey.Settings, Label = "Settings", Glyph = "\uE713" },
-        new NavItem { Key = NavKey.Privacy, Label = "Privacy", Glyph = "\uE72E" },
-        new NavItem { Key = NavKey.About, Label = "About", Glyph = "\uE946" }
+        new NavItem { Key = NavKey.Dashboard, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Dashboard, Glyph = "\uE80F" },
+        new NavItem { Key = NavKey.Analyze, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Analyze, Glyph = "\uE721" },
+        new NavItem { Key = NavKey.LargeFiles, Label = FreeDiskAnalyzer.Resources.Strings.Nav_LargeFiles, Glyph = "\uE8A5" },
+        new NavItem { Key = NavKey.Folders, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Folders, Glyph = "\uE8B7" },
+        new NavItem { Key = NavKey.Settings, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Settings, Glyph = "\uE713" },
+        new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E" },
+        new NavItem { Key = NavKey.About, Label = FreeDiskAnalyzer.Resources.Strings.Nav_About, Glyph = "\uE946" }
     };
 }
