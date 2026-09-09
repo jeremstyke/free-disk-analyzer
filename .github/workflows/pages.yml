@@ -8,7 +8,6 @@ name: Deploy website to GitHub Pages
 on:
   push:
     branches: ["main"]
-    paths: ["website/**"]
   workflow_dispatch:
 
 permissions:
