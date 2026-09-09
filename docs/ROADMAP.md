@@ -119,3 +119,7 @@ History worth remembering before restarting this: Bob previously pursued a VPN r
 Technical shape on Windows, if revisited: don't build a VPN client from scratch. Either drive a WireGuard/WinTun setup or shell out to the official `wireguard.exe` client with a config file supplied by the reseller. Meaningfully simpler than the Android driver-level work that stalled before, but still real ongoing work: credential management, server rotation, billing if not free, support when a connection breaks.
 
 Not scoped, not started. Same precondition as the rest of the v2 items: this is for after the current app has real usage on a real machine.
+
+## IPVanish considered and declined for Free Disk Analyzer (per Bob, 2026-09-10)
+
+Bob has an IPVanish affiliate link (already used on CleanTab, alongside DeleteMe). Considered adding it here too, decided against: two competing VPN affiliate offers in the same app reads as less genuine and splits attention, rather than one clear recommendation. Free Disk Analyzer keeps NordVPN only. If this gets revisited, don't place a second VPN offer next to the existing NordVPN card, separate contexts if it happens at all.
