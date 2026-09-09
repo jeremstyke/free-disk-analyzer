@@ -4,6 +4,7 @@ using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Models;
+using FreeDiskAnalyzer.Models;
 using FreeDiskAnalyzer.Services;
 
 namespace FreeDiskAnalyzer.ViewModels;
