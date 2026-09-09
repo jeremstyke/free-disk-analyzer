@@ -69,7 +69,12 @@ Full details: [PRIVACY.md](PRIVACY.md)
 
 ## Affiliate disclosure
 
-Some links in Free Disk Analyzer (on the Dashboard and after a scan completes) are affiliate links (NordVPN, DeleteMe). If you purchase through one of these links, we may receive a commission at no extra cost to you. These commissions help fund development.
+Some links in Free Disk Analyzer (on the Dashboard and after a scan completes) are affiliate links:
+
+- [NordVPN](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer)
+- [DeleteMe](https://www.de33watrk.com/WCKMXS/KMKS9/)
+
+If you purchase through one of these links, we may receive a commission at no extra cost to you. These commissions help fund development.
 
 Full details: [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md)
 
