@@ -22,7 +22,7 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto"
                           Visibility="{Binding HasScanResult, Converter={StaticResource BoolToVis}}">
                 <StackPanel>
-                    <TextBlock Text="{x:Static res:Strings.EmptyFolders_NoneFound}" Style="{StaticResource SubtitleTextStyle}"
+                    <TextBlock Text="{x:Static res:Strings.EmptyFolders_NoneFound}"
                                Margin="0,24,0,0" HorizontalAlignment="Center">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock" BasedOn="{StaticResource SubtitleTextStyle}">

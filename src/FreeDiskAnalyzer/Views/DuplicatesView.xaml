@@ -46,7 +46,7 @@
         </Border>
 
         <Grid Grid.Row="2">
-            <TextBlock Text="{x:Static res:Strings.Duplicates_NoneYet}" Style="{StaticResource SubtitleTextStyle}"
+            <TextBlock Text="{x:Static res:Strings.Duplicates_NoneYet}"
                        HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock" BasedOn="{StaticResource SubtitleTextStyle}">
@@ -60,7 +60,7 @@
                 </TextBlock.Style>
             </TextBlock>
 
-            <TextBlock Text="{x:Static res:Strings.Duplicates_NoneFound}" Style="{StaticResource SubtitleTextStyle}"
+            <TextBlock Text="{x:Static res:Strings.Duplicates_NoneFound}"
                        HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock" BasedOn="{StaticResource SubtitleTextStyle}">
