@@ -88,3 +88,14 @@ All four read-only, no file deletion, same risk profile as the rest of v1:
 - Any file deletion or cleanup feature (analysis-only in v1, per spec)
 - Any paid tier or artificially limited feature
 - Any telemetry beyond the documented anonymous, opt-in usage stats
+
+## v2 vision (per Bob, logged only, nothing started)
+
+A 4-tab expansion beyond the current read-only analyzer, described by Bob on 2026-09-09. Point 4 (blog/AdSense) explicitly excluded from this vision for now. Logged here so the idea isn't lost, not scheduled, not started. Before any of this begins: the current app needs to have actually been run and tested on a real machine (still pending as of this writing), since most of these items are a different risk category entirely from anything shipped so far.
+
+1. **Nettoyage (Cleanup) tab** - Windows temp files, browser caches, recycle bin, error logs. **Real file deletion.** Same risk category explicitly deferred earlier in this project (see "Out of scope for v1" above). Needs its own confirmation/safety design (show what will be deleted and its total size before acting, Recycle Bin rather than permanent delete where possible, clear per-item errors) before it's built, not just bolted onto the existing scan UI.
+2. **Vitesse / Performance tab** - startup program manager (disable/enable, registry `Run` key and Task Scheduler entries), one-click RAM purge. **Modifies system/registry state.** Startup manager is moderate risk (reversible, user-visible, well-trodden pattern in tools like Task Manager). RAM purge claims are often more marketing than real benefit on modern Windows, worth scrutinizing before building.
+3. **Sécurité & Confidentialité tab** - VPN module (video/partner, likely the existing NordVPN affiliate relationship rather than a built-in VPN), DNS cache flush (`ipconfig /flushdns`, low risk, standard troubleshooting command), Windows telemetry/tracking toggles. **The telemetry toggles are registry/service-level system modification**, same risk category as "Inhibiteur de télémétrie" discussed and deferred earlier.
+4. **Outils & Conseils tab** - excluded from this vision for now, per Bob. Was: quick uninstaller (**real app removal + AppData cleanup**, same risk category as "Désinstalleur Express" discussed and deferred earlier) plus a tips/guides content feed pulling from the website for AdSense and affiliate traffic.
+
+Ordering note for whoever picks this up: item 3's DNS flush is the only genuinely low-risk item in this list. Everything else either deletes user files, modifies the registry/system services, or removes installed applications, categories this project has deliberately kept out of v1 so a bug can't hurt anyone's data. Build and test each in isolation, with explicit confirmation UI showing exactly what will change before it happens.
