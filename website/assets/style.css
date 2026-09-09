@@ -359,7 +359,16 @@ footer .disclosure {
   .feature { width: 100%; }
   .feature:nth-child(odd) { padding-right: 0; }
   .privacy-points div { width: 100%; }
-  .nav-links { display: none; }
+  .nav .wrap { flex-wrap: wrap; row-gap: 12px; }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+  .nav-links a { margin: 0 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
