@@ -56,12 +56,12 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - `Resources.resx` (English, default) and `Resources.fr.resx` (French)
 - Language selector wired into Settings
 
-## Phase 6: Packaging, CI/CD, and GitHub Pages site
+## Phase 6: Packaging, CI/CD, and going public
 
-- Finalize `build.yml` (remove placeholder `continue-on-error`)
 - Installer project (WiX or Inno Setup) producing `FreeDiskAnalyzer-Setup.exe`
 - Finalize `release.yml`: portable zip, installer, `SHA256SUMS.txt`, GitHub Release publishing
 - `website/` static site (EN + FR), matching the app's visual identity
+- Decision point (deferred, per Bob): repo is private during development. Before this phase ships publicly, decide whether to make the main repo public, or keep it private and distribute releases/Pages another way (private repos on the free plan can't serve public GitHub Releases downloads or GitHub Pages)
 - Tag `v1.0.0` and cut the first public release
 
 ## Out of scope for v1

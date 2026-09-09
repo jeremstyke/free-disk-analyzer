@@ -51,7 +51,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 
 Free Disk Analyzer is currently distributed without a commercial code-signing certificate. Windows SmartScreen may therefore display a warning because the application publisher cannot yet be verified.
 
-This does not mean that Free Disk Analyzer is malware. Its source code is publicly available on GitHub for review. You can verify the downloaded release using the SHA-256 checksum published with each release (`SHA256SUMS.txt`).
+This does not mean that Free Disk Analyzer is malware. You can verify the downloaded release using the SHA-256 checksum published with each release (`SHA256SUMS.txt`).
 
 ## Privacy
 
@@ -80,7 +80,7 @@ Free-Disk-Analyzer/
 │   └── FreeDiskAnalyzer.Tests/    # Unit tests
 ├── assets/                        # Icons, logos, images
 ├── docs/                          # Additional documentation
-├── website/                       # GitHub Pages site
+├── website/                       # GitHub Pages site (published once the repo goes public)
 └── .github/                       # Workflows, issue and PR templates
 ```
 
@@ -112,6 +112,6 @@ See [SECURITY.md](SECURITY.md) for how to report a vulnerability.
 
 All rights reserved. The application is free to use, the source code is not free to reuse or redistribute. See [LICENSE](LICENSE).
 
-## GitHub Pages
+## Repository visibility
 
-Project website: https://jeremstyke.github.io/free-disk-analyzer/
+This repository is currently private during development. It will be made public (or restructured) once the app is in a working, downloadable state. Until then, releases and GitHub Pages are not publicly reachable, see [ROADMAP.md](docs/ROADMAP.md).
