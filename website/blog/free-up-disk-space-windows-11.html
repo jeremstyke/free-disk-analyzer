@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Free Up Disk Space on Windows 11: The Complete Guide</title>
+<meta name="description" content="Every place Windows actually hides reclaimable space, from Storage Sense to the WinSxS folder, in the order that gives you the most space back for the least risk.">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      Free Disk Analyzer
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <h1>How to Free Up Disk Space on Windows 11: The Complete Guide</h1>
+  <p class="article-meta">2026 · 7 min read</p>
+
+  <p>Windows accumulates clutter from a lot of places you never look at directly: update leftovers, hibernation state, temporary files that outlived their purpose, and installs you forgot you had. The fixes below are ordered from safest and easiest to more advanced, so start at the top and stop once you've freed up what you need.</p>
+
+  <h2>1. Run Storage Sense</h2>
+  <p>Settings &gt; System &gt; Storage &gt; Storage Sense. Turn it on and run it once manually. It clears temporary files, empties the Recycle Bin after a set number of days, and can offload old files from folders like Downloads to the cloud if you use OneDrive. This is the safest starting point: Microsoft designed it specifically not to touch anything you're actively using.</p>
+
+  <h2>2. Uninstall what you don't use</h2>
+  <p>Settings &gt; Apps &gt; Installed apps, then sort by size. Large, rarely used applications (old games, trial software, bundled utilities from a laptop manufacturer) are usually the single biggest wins here, often bigger than anything temp-file cleanup will find.</p>
+
+  <h2>3. Clean up the Downloads folder</h2>
+  <p>It's the one folder almost everyone forgets to check, and installers, ZIP files, and video downloads pile up there for years. It's also usually safe to clear entirely, since anything actually needed has typically been moved elsewhere already.</p>
+
+  <h2>4. Empty the Recycle Bin, properly</h2>
+  <p>Deleted files sit in the Recycle Bin using their original space until it's emptied. If you haven't emptied it in a while, right-click it and check "Properties" first, it's not unusual to find several gigabytes waiting there.</p>
+
+  <h2>5. Clear browser caches</h2>
+  <p>Chrome, Edge, and Firefox each keep their own cache, and on a machine that's browsed heavily for months, this can add up to multiple gigabytes across profiles. Each browser has a "Clear browsing data" option in its settings, usually under Privacy.</p>
+
+  <h2>6. Reduce System Restore point usage</h2>
+  <p>System Restore points can quietly consume many gigabytes over time. Settings &gt; System &gt; About &gt; Advanced system settings &gt; System Protection lets you reduce the max disk usage allocated to them, or delete older restore points, without disabling the feature entirely.</p>
+
+  <h2>7. Disable hibernation, if you don't use it</h2>
+  <p>The hibernation file (<code>hiberfil.sys</code>) reserves space equal to a portion of your RAM, permanently, whether you use hibernation or not. If you never use it (most desktop users don't), running <code>powercfg /hibernate off</code> from an administrator command prompt reclaims that space immediately. Skip this one if you rely on hibernation for sleep/resume behavior.</p>
+
+  <h2>8. Clean up the WinSxS folder, carefully</h2>
+  <p>The WinSxS folder stores Windows component versions used for updates and rollbacks, and it grows over years of Windows updates. Running <code>Dism.exe /online /Cleanup-Image /StartComponentCleanup</code> from an administrator command prompt removes superseded versions safely. Don't delete this folder manually, it can break Windows Update.</p>
+
+  <div class="cta-box">
+    <p>Before you start deleting things, it helps to actually see where the space is going first, rather than guessing. <a href="../index.html">Free Disk Analyzer</a> scans a drive and shows the largest files and folders, all locally, nothing leaves your computer.</p>
+  </div>
+
+  <h2>The order that makes sense</h2>
+  <p>Storage Sense and uninstalling unused apps get most people most of the way there with essentially no risk. The Downloads folder and Recycle Bin usually add a meaningful chunk on top. WinSxS cleanup and hibernation are worth doing on an older machine that's never had them touched, but they're optional, not first steps.</p>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved.<br>Also by the same developer: <a href="https://getcleantab.com/">CleanTab, a free browser cleaner</a>. If Free Disk Analyzer is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">Free Disk Analyzer may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+</body>
+</html>

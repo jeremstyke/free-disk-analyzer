@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Taking Up Space on Your Windows PC? How to Actually Find Out</title>
+<meta name="description" content="Why File Explorer's folder sizes lie to you, and the fastest ways to find the real source of a full drive.">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      Free Disk Analyzer
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <h1>What's Taking Up Space on Your Windows PC? How to Actually Find Out</h1>
+  <p class="article-meta">2026 · 6 min read</p>
+
+  <p>"Local Disk (C:) is almost full" is one of the more frustrating Windows messages, mostly because it doesn't tell you why. File Explorer alone makes this surprisingly hard to figure out.</p>
+
+  <h2>Why File Explorer doesn't really help</h2>
+  <p>Right-clicking a folder and choosing Properties shows a total size, but calculating it can take a long time on a large folder, and you have to do it one folder at a time, guessing where to look next. There's no built-in view that just shows you the biggest things on a drive, sorted, in one pass.</p>
+
+  <h2>Start with Settings, for a rough picture</h2>
+  <p>Settings &gt; System &gt; Storage gives a breakdown by category (Apps, Documents, Temporary files, and so on). It's a reasonable starting point, but the categories are broad. "Apps" doesn't tell you which app, and "Other" is often the largest category and the least informative.</p>
+
+  <h2>The usual suspects worth checking directly</h2>
+  <ul>
+    <li><strong>Downloads folder</strong> - installers and videos accumulate here for years without anyone noticing.</li>
+    <li><strong>Hibernation file (<code>hiberfil.sys</code>)</strong> - reserves space equal to a portion of your RAM, invisible unless you know to look for it.</li>
+    <li><strong>Virtual machine disk files</strong> - a single VM image can be tens of gigabytes, and they're easy to forget about once a project is done.</li>
+    <li><strong>Game installs</strong> - modern games routinely exceed 50-100 GB each; a handful of uninstalled-in-spirit-but-not-in-practice games add up fast.</li>
+    <li><strong>Browser caches and profile data</strong> - spread across Chrome, Edge, and Firefox if you use more than one.</li>
+    <li><strong><code>node_modules</code> and build folders</strong> - if you do any development work, old project folders can hide gigabytes of dependencies you'll never reinstall from.</li>
+  </ul>
+
+  <h2>OneDrive files can be misleading</h2>
+  <p>If you use OneDrive with Files On-Demand, some files shown in Explorer are just placeholders, not stored locally, while others are fully downloaded. A folder that looks huge in OneDrive's web view might barely touch your local disk, and vice versa, which can throw off manual estimates.</p>
+
+  <h2>A dedicated scan is the fastest path</h2>
+  <p>The most direct way to answer "what's using my space" is a tool built specifically to walk the whole drive once and rank folders and files by size. That's the entire job <a href="../index.html">Free Disk Analyzer</a> does: point it at a drive, and it shows the largest folders and files, a breakdown by category, and the oldest files you've likely forgotten about, without uploading anything about your files anywhere.</p>
+
+  <h2>Once you know where the space is</h2>
+  <p>Finding the source is the useful part, deciding what to do about it is usually straightforward once you can see it: uninstall the game, delete the old VM image, clear the browser cache, or just leave it if it turns out to be something you actually need.</p>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved.<br>Also by the same developer: <a href="https://getcleantab.com/">CleanTab, a free browser cleaner</a>. If Free Disk Analyzer is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">Free Disk Analyzer may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+</body>
+</html>

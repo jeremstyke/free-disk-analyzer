@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Find and Delete Duplicate Files on Windows</title>
+<meta name="description" content="Why duplicates pile up without you noticing, how they're actually detected, and how to remove them safely.">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      Free Disk Analyzer
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <h1>How to Find and Delete Duplicate Files on Windows</h1>
+  <p class="article-meta">2026 · 5 min read</p>
+
+  <p>Duplicate files build up quietly: a photo backed up twice from two different apps, a document copied "just in case" and never removed, a downloads folder with three copies of the same installer. None of it looks like much file by file, but it adds up.</p>
+
+  <h2>How duplicates actually accumulate</h2>
+  <ul>
+    <li><strong>Photo and video backups</strong> - syncing the same camera roll through more than one app or cloud service is the single biggest source for most people.</li>
+    <li><strong>Downloads</strong> - re-downloading a file because the original couldn't be found, without deleting the old one.</li>
+    <li><strong>Project folders</strong> - copying a whole folder to "make a backup" before an edit, then keeping both indefinitely.</li>
+    <li><strong>Email attachments</strong> - saved once from the email client and again manually, in two different folders.</li>
+  </ul>
+
+  <h2>Why file name and size aren't enough</h2>
+  <p>Two files can have the same name and be completely different, and two files with completely different names can be byte-for-byte identical (a renamed copy, for instance). Reliable duplicate detection has to compare actual content, not just the file's name or reported size, otherwise you'll get false matches and miss real ones.</p>
+
+  <h2>How real duplicate detection works</h2>
+  <p>The efficient approach is two steps: first group files by size, since two files with different sizes obviously can't be identical. Then, only for files that share a size with at least one other file, compute a content hash (a fingerprint of the actual bytes) and compare those. This avoids the expensive part, hashing, for the vast majority of files that have no size match at all.</p>
+
+  <h2>Safety before deleting</h2>
+  <ul>
+    <li>Delete to the Recycle Bin, not permanently, so a mistake is recoverable.</li>
+    <li>Check the full path of each copy before removing one, sometimes "duplicates" are intentionally kept in different locations for different purposes (a working copy and an archive copy).</li>
+    <li>Start with your largest duplicate groups first, that's where the actual space savings are.</li>
+  </ul>
+
+  <div class="cta-box">
+    <p><a href="../index.html">Free Disk Analyzer</a>'s Duplicates tab does the size-then-hash comparison described above automatically (for files 1 MB and up, since tiny duplicates aren't worth flagging), and shows you exactly how much space each group of duplicates is wasting before you decide what to do with them.</p>
+  </div>
+
+  <h2>What it doesn't do (on purpose)</h2>
+  <p>Free Disk Analyzer shows you duplicates, it doesn't delete anything automatically. That choice is intentional: automatic deletion of "duplicate" files is exactly the kind of feature that goes wrong for someone, somewhere, and costs them a file they actually needed.</p>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved.<br>Also by the same developer: <a href="https://getcleantab.com/">CleanTab, a free browser cleaner</a>. If Free Disk Analyzer is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">Free Disk Analyzer may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+</body>
+</html>

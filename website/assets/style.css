@@ -365,3 +365,104 @@ footer .disclosure {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Content pages (Privacy, About, Blog articles) ---------- */
+
+.content-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 28px 96px;
+}
+
+.content-page h1 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+
+.content-page .page-lead {
+  color: var(--ink-muted);
+  font-size: 17px;
+  margin: 0 0 40px;
+}
+
+.content-page h2 {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 40px 0 12px;
+}
+
+.content-page p {
+  margin: 0 0 18px;
+}
+
+.content-page ul {
+  margin: 0 0 18px;
+  padding-left: 22px;
+}
+
+.content-page li {
+  margin-bottom: 8px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover { color: var(--ink); }
+
+/* ---------- Blog index ---------- */
+
+.blog-list {
+  border-top: 1px solid var(--border);
+}
+
+.blog-item {
+  display: block;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-item .blog-date {
+  color: var(--ink-muted);
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+
+.blog-item h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.blog-item p {
+  color: var(--ink-muted);
+  margin: 0;
+  font-size: 15px;
+}
+
+.blog-item:hover h3 { color: var(--accent); }
+
+.article-meta {
+  color: var(--ink-muted);
+  font-size: 14px;
+  margin: 0 0 32px;
+}
+
+.cta-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.cta-box p { margin: 0 0 14px; }
