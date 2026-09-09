@@ -91,6 +91,8 @@ public static class Strings
     public static string About_ViewGitHub => Get(nameof(About_ViewGitHub));
     public static string About_Version => Get(nameof(About_Version));
     public static string About_License => Get(nameof(About_License));
+    public static string About_MoreApps => Get(nameof(About_MoreApps));
+    public static string About_CleanTab => Get(nameof(About_CleanTab));
 
     public static string ComingSoon_Subtitle => Get(nameof(ComingSoon_Subtitle));
 

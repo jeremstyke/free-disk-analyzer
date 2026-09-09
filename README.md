@@ -116,3 +116,7 @@ All rights reserved. The application is free to use, the source code is not free
 ## Repository visibility
 
 This repository is currently private during development. It will be made public (or restructured) once the app is in a working, downloadable state. Until then, releases and GitHub Pages are not publicly reachable, see [ROADMAP.md](docs/ROADMAP.md).
+
+## More from the developer
+
+[CleanTab - Browser Cleaner](https://getcleantab.com/): a free, privacy-first browser cleaner for Chrome and Edge, same "free forever, privacy first" philosophy as this project, by the same developer.

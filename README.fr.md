@@ -108,3 +108,7 @@ Tous droits réservés. L'application est gratuite à l'usage, le code source n'
 ## Visibilité du dépôt
 
 Ce dépôt est actuellement privé pendant le développement. Il sera rendu public (ou restructuré) une fois l'application dans un état fonctionnel et téléchargeable. En attendant, les releases et GitHub Pages ne sont pas accessibles publiquement, voir [ROADMAP.md](docs/ROADMAP.md).
+
+## Autres projets du développeur
+
+[CleanTab - Browser Cleaner](https://getcleantab.com/) : un nettoyeur de navigateur gratuit et respectueux de la vie privée pour Chrome et Edge, même philosophie "gratuit pour toujours, confidentialité d'abord" que ce projet, par le même développeur.

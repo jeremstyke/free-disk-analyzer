@@ -108,6 +108,8 @@
   <data name="About_ViewGitHub" xml:space="preserve"><value>View on GitHub</value></data>
   <data name="About_Version" xml:space="preserve"><value>Version</value></data>
   <data name="About_License" xml:space="preserve"><value>All rights reserved. See LICENSE in the repository.</value></data>
+  <data name="About_MoreApps" xml:space="preserve"><value>Also by the same developer</value></data>
+  <data name="About_CleanTab" xml:space="preserve"><value>CleanTab, a free privacy-first browser cleaner</value></data>
 
   <data name="ComingSoon_Subtitle" xml:space="preserve"><value>This section is coming in a future update.</value></data>
 </root>
