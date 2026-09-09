@@ -21,9 +21,7 @@ public static class Strings
     public static string Nav_Analyze => Get(nameof(Nav_Analyze));
     public static string Nav_LargeFiles => Get(nameof(Nav_LargeFiles));
     public static string Nav_Folders => Get(nameof(Nav_Folders));
-    public static string Nav_OldFiles => Get(nameof(Nav_OldFiles));
-    public static string Nav_Duplicates => Get(nameof(Nav_Duplicates));
-    public static string Nav_EmptyFolders => Get(nameof(Nav_EmptyFolders));
+    public static string Nav_Cleanup => Get(nameof(Nav_Cleanup));
     public static string Nav_Settings => Get(nameof(Nav_Settings));
     public static string Nav_Privacy => Get(nameof(Nav_Privacy));
     public static string Nav_About => Get(nameof(Nav_About));

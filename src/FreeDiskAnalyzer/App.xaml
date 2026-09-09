@@ -27,6 +27,9 @@
             <DataTemplate DataType="{x:Type vm:FoldersViewModel}">
                 <views:FoldersView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:CleanupViewModel}">
+                <views:CleanupView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:OldFilesViewModel}">
                 <views:OldFilesView/>
             </DataTemplate>
