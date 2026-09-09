@@ -1,6 +1,7 @@
 <Window x:Class="FreeDiskAnalyzer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:FreeDiskAnalyzer.Resources"
         Title="Free Disk Analyzer"
         Height="720" Width="1200" MinHeight="600" MinWidth="960"
         Background="{DynamicResource BackgroundBrush}"
@@ -36,6 +37,12 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+
+                <Button DockPanel.Dock="Bottom" Command="{Binding OpenCoffeeCommand}"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        HorizontalAlignment="Stretch" Margin="12,0,12,16">
+                    <TextBlock Text="{x:Static res:Strings.About_Coffee}" HorizontalAlignment="Center"/>
+                </Button>
             </DockPanel>
         </Border>
 

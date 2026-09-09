@@ -1,5 +1,7 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Services;
 using FreeDiskAnalyzer.Models;
 using FreeDiskAnalyzer.Services;
@@ -95,4 +97,10 @@ public sealed partial class MainViewModel : ObservableObject
         new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E" },
         new NavItem { Key = NavKey.About, Label = FreeDiskAnalyzer.Resources.Strings.Nav_About, Glyph = "\uE946" }
     };
+
+    [RelayCommand]
+    private void OpenCoffee()
+    {
+        Process.Start(new ProcessStartInfo(AboutViewModel.CoffeeUrl) { UseShellExecute = true });
+    }
 }
