@@ -38,6 +38,9 @@
   <data name="Nav_Analyze" xml:space="preserve"><value>Analyser</value></data>
   <data name="Nav_LargeFiles" xml:space="preserve"><value>Fichiers volumineux</value></data>
   <data name="Nav_Folders" xml:space="preserve"><value>Dossiers</value></data>
+  <data name="Nav_OldFiles" xml:space="preserve"><value>Fichiers anciens</value></data>
+  <data name="Nav_Duplicates" xml:space="preserve"><value>Doublons</value></data>
+  <data name="Nav_EmptyFolders" xml:space="preserve"><value>Dossiers vides</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Paramètres</value></data>
   <data name="Nav_Privacy" xml:space="preserve"><value>Confidentialité</value></data>
   <data name="Nav_About" xml:space="preserve"><value>À propos</value></data>
@@ -80,6 +83,29 @@
   <data name="Folders_Title" xml:space="preserve"><value>Dossiers</value></data>
   <data name="Folders_Subtitle" xml:space="preserve"><value>Dossiers les plus volumineux de votre dernier scan, triés par taille.</value></data>
   <data name="Folders_NoScan" xml:space="preserve"><value>Lancez d'abord un scan depuis l'onglet Analyser.</value></data>
+
+  <data name="OldFiles_Title" xml:space="preserve"><value>Fichiers anciens</value></data>
+  <data name="OldFiles_Subtitle" xml:space="preserve"><value>Les fichiers les plus anciens de votre dernier scan, ceux que vous avez probablement oubliés.</value></data>
+  <data name="OldFiles_NoScan" xml:space="preserve"><value>Lancez d'abord un scan depuis l'onglet Analyser.</value></data>
+  <data name="OldFiles_LastModified" xml:space="preserve"><value>Dernière modification</value></data>
+
+  <data name="Duplicates_Title" xml:space="preserve"><value>Doublons</value></data>
+  <data name="Duplicates_Subtitle" xml:space="preserve"><value>Trouvez les fichiers au contenu identique qui occupent l'espace plus d'une fois. Les fichiers de moins de 1 Mo sont ignorés.</value></data>
+  <data name="Duplicates_Drive" xml:space="preserve"><value>Disque</value></data>
+  <data name="Duplicates_StartScan" xml:space="preserve"><value>Chercher les doublons</value></data>
+  <data name="Duplicates_Cancel" xml:space="preserve"><value>Annuler</value></data>
+  <data name="Duplicates_Scanning" xml:space="preserve"><value>Recherche de doublons en cours...</value></data>
+  <data name="Duplicates_NoneYet" xml:space="preserve"><value>Lancez une recherche de doublons pour voir les résultats ici.</value></data>
+  <data name="Duplicates_NoneFound" xml:space="preserve"><value>Aucun fichier en double trouvé.</value></data>
+  <data name="Duplicates_WastedSpace" xml:space="preserve"><value>Espace gaspillé</value></data>
+  <data name="Duplicates_Copies" xml:space="preserve"><value>copies</value></data>
+
+  <data name="EmptyFolders_Title" xml:space="preserve"><value>Dossiers vides</value></data>
+  <data name="EmptyFolders_Subtitle" xml:space="preserve"><value>Dossiers de votre dernier scan qui ne contiennent rien du tout.</value></data>
+  <data name="EmptyFolders_NoScan" xml:space="preserve"><value>Lancez d'abord un scan depuis l'onglet Analyser.</value></data>
+  <data name="EmptyFolders_NoneFound" xml:space="preserve"><value>Aucun dossier vide trouvé.</value></data>
+
+  <data name="Analyze_ExportReport" xml:space="preserve"><value>Exporter le rapport (CSV)</value></data>
 
   <data name="Settings_Title" xml:space="preserve"><value>Paramètres</value></data>
   <data name="Settings_Subtitle" xml:space="preserve"><value>Les préférences sont sauvegardées localement sur cet appareil.</value></data>

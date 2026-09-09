@@ -14,11 +14,15 @@ namespace FreeDiskAnalyzer.Core.Services;
 /// </summary>
 public sealed class DiskScanner : IDiskScanner
 {
-    // Bounded memory: only the top N largest files/folders are ever kept.
+    // Bounded memory: only the top N largest/oldest files and folders, and
+    // up to N empty folders, are ever kept, never the whole tree.
     private const int TrackerBufferCapacity = 1000;
     private const int TopResultCount = 200;
+    private const int MaxEmptyFolders = 200;
 
     private static readonly TimeSpan ProgressReportInterval = TimeSpan.FromMilliseconds(150);
+
+    private readonly record struct FolderStats(long SizeBytes, int FileCount, int FolderCount);
 
     public Task<ScanResult> ScanAsync(
         string rootPath,
@@ -61,7 +65,13 @@ public sealed class DiskScanner : IDiskScanner
             TrackerBufferCapacity, TopResultCount, (a, b) => a.SizeBytes.CompareTo(b.SizeBytes));
         var largestFolders = new TopNTracker<FolderNode>(
             TrackerBufferCapacity, TopResultCount, (a, b) => a.SizeBytes.CompareTo(b.SizeBytes));
+        // "Ascending" here means: the older the file (smaller LastWriteTimeUtc),
+        // the more valuable it is to keep, hence the reversed comparison.
+        var oldestFiles = new TopNTracker<FileEntry>(
+            TrackerBufferCapacity, TopResultCount,
+            (a, b) => Nullable.Compare(b.LastWriteTimeUtc, a.LastWriteTimeUtc));
         var bytesByCategory = new Dictionary<FileCategory, long>();
+        var emptyFolders = new List<FolderNode>();
 
         var lastReportElapsed = TimeSpan.Zero;
 
@@ -74,7 +84,7 @@ public sealed class DiskScanner : IDiskScanner
             progress.Report(new ScanProgress(currentPath, totalFiles, totalFolders, totalBytes, elapsed));
         }
 
-        long ScanFolder(string path)
+        FolderStats ScanFolder(string path)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -86,25 +96,27 @@ public sealed class DiskScanner : IDiskScanner
             catch (UnauthorizedAccessException)
             {
                 accessDeniedCount++;
-                return 0;
+                return default;
             }
             catch (SecurityException)
             {
                 accessDeniedCount++;
-                return 0;
+                return default;
             }
             catch (PathTooLongException)
             {
                 errorCount++;
-                return 0;
+                return default;
             }
             catch (IOException)
             {
                 errorCount++;
-                return 0;
+                return default;
             }
 
             long folderSize = 0;
+            var fileCount = 0;
+            var folderCount = 0;
 
             foreach (var entry in entries)
             {
@@ -124,16 +136,28 @@ public sealed class DiskScanner : IDiskScanner
                         }
 
                         totalFolders++;
-                        var subfolderSize = ScanFolder(entry);
-                        folderSize += subfolderSize;
+                        folderCount++;
+                        var subStats = ScanFolder(entry);
+                        folderSize += subStats.SizeBytes;
+                        fileCount += subStats.FileCount;
+                        folderCount += subStats.FolderCount;
 
                         var name = Path.GetFileName(entry);
-                        largestFolders.Offer(new FolderNode
+                        var folderNode = new FolderNode
                         {
                             FullPath = entry,
                             Name = string.IsNullOrEmpty(name) ? entry : name,
-                            SizeBytes = subfolderSize
-                        });
+                            SizeBytes = subStats.SizeBytes,
+                            FileCount = subStats.FileCount,
+                            SubfolderCount = subStats.FolderCount
+                        };
+
+                        largestFolders.Offer(folderNode);
+
+                        if (subStats.FileCount == 0 && emptyFolders.Count < MaxEmptyFolders)
+                        {
+                            emptyFolders.Add(folderNode);
+                        }
                     }
                     else
                     {
@@ -141,6 +165,7 @@ public sealed class DiskScanner : IDiskScanner
                         var size = info.Length;
 
                         folderSize += size;
+                        fileCount++;
                         totalBytes += size;
                         totalFiles++;
 
@@ -148,8 +173,14 @@ public sealed class DiskScanner : IDiskScanner
                         var category = FileCategoryClassifier.Classify(extension);
                         bytesByCategory[category] = bytesByCategory.GetValueOrDefault(category) + size;
 
-                        largestFiles.Offer(new FileEntry(
-                            entry, info.Name, size, extension, category, SafeGetLastWriteTimeUtc(info)));
+                        var lastWriteUtc = SafeGetLastWriteTimeUtc(info);
+                        var fileEntry = new FileEntry(entry, info.Name, size, extension, category, lastWriteUtc);
+
+                        largestFiles.Offer(fileEntry);
+                        if (lastWriteUtc.HasValue)
+                        {
+                            oldestFiles.Offer(fileEntry);
+                        }
                     }
                 }
                 catch (UnauthorizedAccessException)
@@ -173,7 +204,7 @@ public sealed class DiskScanner : IDiskScanner
                 ReportIfDue(entry);
             }
 
-            return folderSize;
+            return new FolderStats(folderSize, fileCount, folderCount);
         }
 
         try
@@ -199,6 +230,8 @@ public sealed class DiskScanner : IDiskScanner
             ErrorCount = errorCount,
             LargestFolders = largestFolders.GetTopDescending(),
             LargestFiles = largestFiles.GetTopDescending(),
+            OldestFiles = oldestFiles.GetTopDescending(),
+            EmptyFolders = emptyFolders,
             BytesByCategory = bytesByCategory
         };
     }

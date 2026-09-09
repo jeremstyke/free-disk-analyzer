@@ -68,6 +68,20 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Done: `v1.0.0` tagged and released (installer + portable zip + checksums, verified present on the GitHub Release). Note: this happened before the app was ever launched and tested locally, at Bob's explicit request, ahead of the usual order. If the app doesn't actually run correctly once tested, expect a `v1.0.1` fix release.
 - Future, not scoped yet (per Bob): a blog on the website. Needs a decision first on its purpose, since that changes the shape: SEO content (a handful of static "how to free up disk space on Windows" style articles, fits the current static-site approach) versus a product changelog/news feed (needs a chronological, dated structure). Revisit once the site is actually public.
 
+## Phase 7: Duplicate finder, old files, empty folders, CSV export (post-v1.0.0)
+
+All four read-only, no file deletion, same risk profile as the rest of v1:
+
+- `FolderNode` now tracks recursive file/subfolder counts (`FileCount`, `SubfolderCount`, `IsEmpty`), computed by `DiskScanner` during the normal scan at no extra cost.
+- `ScanResult` gained `OldestFiles` (bounded top-200, oldest first, files with no last-write date are excluded) and `EmptyFolders` (capped at 200), both from the same scan pass as everything else, no rescan needed.
+- New "Old Files" tab: browse `OldestFiles`, same Open / Show in Explorer actions as Large Files.
+- New "Empty Folders" tab: browse `EmptyFolders`, same actions.
+- New "Duplicates" tab: a separate, opt-in scan (own drive picker, own progress, own cancel), since duplicate detection is inherently a two-phase, heavier operation than the main scan: group files 1 MB and up by size (cheap), then SHA-256 hash only the files that share a size with another file (skips the vast majority of files). Capped at 20,000 hashed candidates as a safety limit. `IDuplicateFinder` / `DuplicateFinder` in Core.
+- "Export report (CSV)" button on Analyze, visible after a scan completes: writes root path, totals, category breakdown, largest folders, and largest files via `ScanReportExporter.BuildCsv`, using a standard Windows save dialog.
+- Unit tests added for all of the above (folder counts, empty folder detection, oldest-files ordering, duplicate detection including the size-threshold and no-false-positive-on-same-size-different-content cases, CSV building including comma-escaping).
+- Localized in both English and French, same pattern as the rest of the app.
+- Verified compiling via the same GitHub Actions build-status check used for the rest of the project, not yet exercised by hand on a real machine.
+
 ## Out of scope for v1
 
 - Any file deletion or cleanup feature (analysis-only in v1, per spec)

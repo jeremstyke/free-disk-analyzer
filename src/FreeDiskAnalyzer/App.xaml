@@ -27,6 +27,15 @@
             <DataTemplate DataType="{x:Type vm:FoldersViewModel}">
                 <views:FoldersView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:OldFilesViewModel}">
+                <views:OldFilesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:DuplicatesViewModel}">
+                <views:DuplicatesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:EmptyFoldersViewModel}">
+                <views:EmptyFoldersView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
                 <views:SettingsView/>
             </DataTemplate>

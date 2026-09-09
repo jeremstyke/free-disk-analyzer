@@ -21,6 +21,9 @@ public static class Strings
     public static string Nav_Analyze => Get(nameof(Nav_Analyze));
     public static string Nav_LargeFiles => Get(nameof(Nav_LargeFiles));
     public static string Nav_Folders => Get(nameof(Nav_Folders));
+    public static string Nav_OldFiles => Get(nameof(Nav_OldFiles));
+    public static string Nav_Duplicates => Get(nameof(Nav_Duplicates));
+    public static string Nav_EmptyFolders => Get(nameof(Nav_EmptyFolders));
     public static string Nav_Settings => Get(nameof(Nav_Settings));
     public static string Nav_Privacy => Get(nameof(Nav_Privacy));
     public static string Nav_About => Get(nameof(Nav_About));
@@ -63,6 +66,29 @@ public static class Strings
     public static string Folders_Title => Get(nameof(Folders_Title));
     public static string Folders_Subtitle => Get(nameof(Folders_Subtitle));
     public static string Folders_NoScan => Get(nameof(Folders_NoScan));
+
+    public static string OldFiles_Title => Get(nameof(OldFiles_Title));
+    public static string OldFiles_Subtitle => Get(nameof(OldFiles_Subtitle));
+    public static string OldFiles_NoScan => Get(nameof(OldFiles_NoScan));
+    public static string OldFiles_LastModified => Get(nameof(OldFiles_LastModified));
+
+    public static string Duplicates_Title => Get(nameof(Duplicates_Title));
+    public static string Duplicates_Subtitle => Get(nameof(Duplicates_Subtitle));
+    public static string Duplicates_Drive => Get(nameof(Duplicates_Drive));
+    public static string Duplicates_StartScan => Get(nameof(Duplicates_StartScan));
+    public static string Duplicates_Cancel => Get(nameof(Duplicates_Cancel));
+    public static string Duplicates_Scanning => Get(nameof(Duplicates_Scanning));
+    public static string Duplicates_NoneYet => Get(nameof(Duplicates_NoneYet));
+    public static string Duplicates_NoneFound => Get(nameof(Duplicates_NoneFound));
+    public static string Duplicates_WastedSpace => Get(nameof(Duplicates_WastedSpace));
+    public static string Duplicates_Copies => Get(nameof(Duplicates_Copies));
+
+    public static string EmptyFolders_Title => Get(nameof(EmptyFolders_Title));
+    public static string EmptyFolders_Subtitle => Get(nameof(EmptyFolders_Subtitle));
+    public static string EmptyFolders_NoScan => Get(nameof(EmptyFolders_NoScan));
+    public static string EmptyFolders_NoneFound => Get(nameof(EmptyFolders_NoneFound));
+
+    public static string Analyze_ExportReport => Get(nameof(Analyze_ExportReport));
 
     public static string Settings_Title => Get(nameof(Settings_Title));
     public static string Settings_Subtitle => Get(nameof(Settings_Subtitle));

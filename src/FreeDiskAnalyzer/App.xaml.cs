@@ -23,7 +23,8 @@ public partial class App : Application
 
         IDriveEnumerator driveEnumerator = new DriveEnumerator();
         IDiskScanner diskScanner = new DiskScanner();
-        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, settingsService);
+        IDuplicateFinder duplicateFinder = new DuplicateFinder();
+        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, settingsService);
 
         var mainWindow = new MainWindow
         {

@@ -117,6 +117,24 @@ public sealed partial class AnalyzeViewModel : ObservableObject
         Process.Start(new ProcessStartInfo(DeleteMeAffiliateUrl) { UseShellExecute = true });
     }
 
+    [RelayCommand]
+    private void ExportReport()
+    {
+        var result = _scanResultStore.LatestResult;
+        if (result is null) return;
+
+        var dialog = new Microsoft.Win32.SaveFileDialog
+        {
+            Filter = "CSV file (*.csv)|*.csv",
+            FileName = $"FreeDiskAnalyzer-Report-{DateTime.Now:yyyy-MM-dd}.csv"
+        };
+
+        if (dialog.ShowDialog() != true) return;
+
+        var csv = ScanReportExporter.BuildCsv(result);
+        File.WriteAllText(dialog.FileName, csv);
+    }
+
     private void OnProgress(ScanProgress progress)
     {
         CurrentPath = progress.CurrentPath;

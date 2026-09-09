@@ -38,6 +38,9 @@
   <data name="Nav_Analyze" xml:space="preserve"><value>Analyze</value></data>
   <data name="Nav_LargeFiles" xml:space="preserve"><value>Large Files</value></data>
   <data name="Nav_Folders" xml:space="preserve"><value>Folders</value></data>
+  <data name="Nav_OldFiles" xml:space="preserve"><value>Old Files</value></data>
+  <data name="Nav_Duplicates" xml:space="preserve"><value>Duplicates</value></data>
+  <data name="Nav_EmptyFolders" xml:space="preserve"><value>Empty Folders</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Settings</value></data>
   <data name="Nav_Privacy" xml:space="preserve"><value>Privacy</value></data>
   <data name="Nav_About" xml:space="preserve"><value>About</value></data>
@@ -80,6 +83,29 @@
   <data name="Folders_Title" xml:space="preserve"><value>Folders</value></data>
   <data name="Folders_Subtitle" xml:space="preserve"><value>Largest folders from your last scan, sorted by size.</value></data>
   <data name="Folders_NoScan" xml:space="preserve"><value>Run a scan from the Analyze tab first.</value></data>
+
+  <data name="OldFiles_Title" xml:space="preserve"><value>Old Files</value></data>
+  <data name="OldFiles_Subtitle" xml:space="preserve"><value>The oldest files from your last scan, the ones you likely forgot about.</value></data>
+  <data name="OldFiles_NoScan" xml:space="preserve"><value>Run a scan from the Analyze tab first.</value></data>
+  <data name="OldFiles_LastModified" xml:space="preserve"><value>Last modified</value></data>
+
+  <data name="Duplicates_Title" xml:space="preserve"><value>Duplicates</value></data>
+  <data name="Duplicates_Subtitle" xml:space="preserve"><value>Find files with identical content taking up space more than once. Files under 1 MB are skipped.</value></data>
+  <data name="Duplicates_Drive" xml:space="preserve"><value>Drive</value></data>
+  <data name="Duplicates_StartScan" xml:space="preserve"><value>Find Duplicates</value></data>
+  <data name="Duplicates_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Duplicates_Scanning" xml:space="preserve"><value>Looking for duplicates...</value></data>
+  <data name="Duplicates_NoneYet" xml:space="preserve"><value>Run a duplicate scan to see results here.</value></data>
+  <data name="Duplicates_NoneFound" xml:space="preserve"><value>No duplicate files found.</value></data>
+  <data name="Duplicates_WastedSpace" xml:space="preserve"><value>Wasted space</value></data>
+  <data name="Duplicates_Copies" xml:space="preserve"><value>copies</value></data>
+
+  <data name="EmptyFolders_Title" xml:space="preserve"><value>Empty Folders</value></data>
+  <data name="EmptyFolders_Subtitle" xml:space="preserve"><value>Folders from your last scan that contain nothing at all.</value></data>
+  <data name="EmptyFolders_NoScan" xml:space="preserve"><value>Run a scan from the Analyze tab first.</value></data>
+  <data name="EmptyFolders_NoneFound" xml:space="preserve"><value>No empty folders found.</value></data>
+
+  <data name="Analyze_ExportReport" xml:space="preserve"><value>Export report (CSV)</value></data>
 
   <data name="Settings_Title" xml:space="preserve"><value>Settings</value></data>
   <data name="Settings_Subtitle" xml:space="preserve"><value>Preferences are saved locally on this device.</value></data>

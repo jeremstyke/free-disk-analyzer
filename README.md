@@ -33,6 +33,10 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Largest Folders and Largest Files views
 - Dedicated Large Files search with size filters (100 MB, 500 MB, 1 GB, 5 GB, custom)
 - Folder hierarchy view to quickly spot what is consuming space
+- Duplicate file finder (files 1 MB and up, matched by content, not just name/size)
+- Old files finder, the ones you likely forgot about, sorted by last modified date
+- Empty folder finder
+- Export a scan report to CSV
 - NordVPN recommendation on the Dashboard, and a DeleteMe recommendation after a scan completes, both clearly labeled as affiliate links
 - Settings: language, light/dark theme, start with Windows, opt-in anonymous analytics, reset to defaults, all saved locally
 - Dedicated Privacy page explaining exactly what stays local and what never leaves your machine

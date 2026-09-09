@@ -124,6 +124,54 @@ public sealed class DiskScannerTests : IDisposable
     }
 
     [Fact]
+    public async Task ScanAsync_DetectsEmptyFolders()
+    {
+        Directory.CreateDirectory(Path.Combine(_tempRoot, "empty1"));
+        Directory.CreateDirectory(Path.Combine(_tempRoot, "empty2", "nested_empty"));
+        CreateFile("not_empty/file.bin", 10);
+
+        var scanner = new DiskScanner();
+        var result = await scanner.ScanAsync(_tempRoot);
+
+        var emptyNames = result.EmptyFolders.Select(f => f.Name).ToList();
+        Assert.Contains("empty1", emptyNames);
+        Assert.Contains("empty2", emptyNames);
+        Assert.Contains("nested_empty", emptyNames);
+        Assert.DoesNotContain("not_empty", emptyNames);
+    }
+
+    [Fact]
+    public async Task ScanAsync_TracksFolderFileAndSubfolderCounts()
+    {
+        CreateFile("parent/a.bin", 10);
+        CreateFile("parent/b.bin", 10);
+        CreateFile("parent/child/c.bin", 10);
+
+        var scanner = new DiskScanner();
+        var result = await scanner.ScanAsync(_tempRoot);
+
+        var parent = result.LargestFolders.Single(f => f.Name == "parent");
+        Assert.Equal(3, parent.FileCount);
+        Assert.Equal(1, parent.SubfolderCount);
+        Assert.False(parent.IsEmpty);
+    }
+
+    [Fact]
+    public async Task ScanAsync_TracksOldestFiles()
+    {
+        var oldPath = CreateFile("old.bin", 10);
+        var newPath = CreateFile("new.bin", 10);
+        File.SetLastWriteTimeUtc(oldPath, DateTime.UtcNow.AddYears(-5));
+        File.SetLastWriteTimeUtc(newPath, DateTime.UtcNow);
+
+        var scanner = new DiskScanner();
+        var result = await scanner.ScanAsync(_tempRoot);
+
+        Assert.NotEmpty(result.OldestFiles);
+        Assert.Equal("old.bin", result.OldestFiles[0].Name);
+    }
+
+    [Fact]
     public async Task ScanAsync_ThrowsWhenPathDoesNotExist()
     {
         var scanner = new DiskScanner();

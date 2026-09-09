@@ -25,6 +25,8 @@ public sealed class ScanResult
 
     public IReadOnlyList<FolderNode> LargestFolders { get; init; } = Array.Empty<FolderNode>();
     public IReadOnlyList<FileEntry> LargestFiles { get; init; } = Array.Empty<FileEntry>();
+    public IReadOnlyList<FileEntry> OldestFiles { get; init; } = Array.Empty<FileEntry>();
+    public IReadOnlyList<FolderNode> EmptyFolders { get; init; } = Array.Empty<FolderNode>();
     public IReadOnlyDictionary<FileCategory, long> BytesByCategory { get; init; } =
         new Dictionary<FileCategory, long>();
 }

@@ -28,6 +28,10 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Vues Largest Folders et Largest Files
 - Recherche dédiée de fichiers volumineux avec filtres de taille (100 Mo, 500 Mo, 1 Go, 5 Go, personnalisé)
 - Vue hiérarchique des dossiers pour repérer rapidement ce qui consomme l'espace
+- Détecteur de fichiers en double (1 Mo et plus, comparés par contenu, pas juste nom/taille)
+- Détecteur de fichiers anciens, ceux probablement oubliés, triés par date de modification
+- Détecteur de dossiers vides
+- Export d'un rapport de scan en CSV
 - Recommandation NordVPN sur le tableau de bord, et recommandation DeleteMe après un scan, toutes deux clairement identifiées comme liens affiliés
 - Paramètres : langue, thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
 - Page Confidentialité dédiée expliquant précisément ce qui reste local

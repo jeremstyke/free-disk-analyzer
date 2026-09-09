@@ -10,6 +10,7 @@ public sealed partial class MainViewModel : ObservableObject
 {
     private readonly IDriveEnumerator _driveEnumerator;
     private readonly IDiskScanner _diskScanner;
+    private readonly IDuplicateFinder _duplicateFinder;
     private readonly ISettingsService _settingsService;
     private readonly ScanResultStore _scanResultStore;
 
@@ -25,10 +26,15 @@ public sealed partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private object? currentPage;
 
-    public MainViewModel(IDriveEnumerator driveEnumerator, IDiskScanner diskScanner, ISettingsService settingsService)
+    public MainViewModel(
+        IDriveEnumerator driveEnumerator,
+        IDiskScanner diskScanner,
+        IDuplicateFinder duplicateFinder,
+        ISettingsService settingsService)
     {
         _driveEnumerator = driveEnumerator;
         _diskScanner = diskScanner;
+        _duplicateFinder = duplicateFinder;
         _settingsService = settingsService;
         _scanResultStore = new ScanResultStore();
 
@@ -55,6 +61,9 @@ public sealed partial class MainViewModel : ObservableObject
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.LargeFiles => new LargeFilesViewModel(_scanResultStore),
             NavKey.Folders => new FoldersViewModel(_scanResultStore),
+            NavKey.OldFiles => new OldFilesViewModel(_scanResultStore),
+            NavKey.Duplicates => new DuplicatesViewModel(_driveEnumerator, _duplicateFinder),
+            NavKey.EmptyFolders => new EmptyFoldersViewModel(_scanResultStore),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
             NavKey.About => new AboutViewModel(),
@@ -70,6 +79,9 @@ public sealed partial class MainViewModel : ObservableObject
         NavKey.Analyze => "Analyze",
         NavKey.LargeFiles => "Large Files",
         NavKey.Folders => "Folders",
+        NavKey.OldFiles => "Old Files",
+        NavKey.Duplicates => "Duplicates",
+        NavKey.EmptyFolders => "Empty Folders",
         NavKey.Settings => "Settings",
         NavKey.Privacy => "Privacy",
         NavKey.About => "About",
@@ -82,6 +94,9 @@ public sealed partial class MainViewModel : ObservableObject
         new NavItem { Key = NavKey.Analyze, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Analyze, Glyph = "\uE721" },
         new NavItem { Key = NavKey.LargeFiles, Label = FreeDiskAnalyzer.Resources.Strings.Nav_LargeFiles, Glyph = "\uE8A5" },
         new NavItem { Key = NavKey.Folders, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Folders, Glyph = "\uE8B7" },
+        new NavItem { Key = NavKey.OldFiles, Label = FreeDiskAnalyzer.Resources.Strings.Nav_OldFiles, Glyph = "\uE823" },
+        new NavItem { Key = NavKey.Duplicates, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Duplicates, Glyph = "\uE8C8" },
+        new NavItem { Key = NavKey.EmptyFolders, Label = FreeDiskAnalyzer.Resources.Strings.Nav_EmptyFolders, Glyph = "\uE74D" },
         new NavItem { Key = NavKey.Settings, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Settings, Glyph = "\uE713" },
         new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E" },
         new NavItem { Key = NavKey.About, Label = FreeDiskAnalyzer.Resources.Strings.Nav_About, Glyph = "\uE946" }
