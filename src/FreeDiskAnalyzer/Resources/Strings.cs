@@ -96,6 +96,11 @@ public static class Strings
     public static string Performance_FreeRam => Get(nameof(Performance_FreeRam));
     public static string Performance_Running => Get(nameof(Performance_Running));
 
+    public static string Startup_Title => Get(nameof(Startup_Title));
+    public static string Startup_Body => Get(nameof(Startup_Body));
+    public static string Startup_Remove => Get(nameof(Startup_Remove));
+    public static string Startup_NoneFound => Get(nameof(Startup_NoneFound));
+
     public static string Browsers_Title => Get(nameof(Browsers_Title));
     public static string Browsers_Body => Get(nameof(Browsers_Body));
     public static string Browsers_RescanCommand => Get(nameof(Browsers_RescanCommand));

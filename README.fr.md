@@ -39,6 +39,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Détecteur de dossiers vides, avec suppression en un clic (Corbeille, pas définitif)
 - Nettoyage des navigateurs : efface le cache, les cookies et l'historique pour Chrome, Edge et Firefox (favoris et mots de passe jamais touchés, historique Firefox volontairement exclu car mélangé aux favoris dans le même fichier)
 - Libération de RAM (vrais chiffres avant/après, pas un gain promis)
+- Gestionnaire de démarrage (activer/désactiver/supprimer les apps au démarrage de Windows, compte utilisateur uniquement, pas besoin de droits admin)
 - Notifications de mise à jour dans l'app, avec téléchargement et installation en un clic
 - Derniers articles du blog affichés sur le tableau de bord
 - Nettoyage PC : fichiers temporaires et Corbeille (onglet Système dans Nettoyage)

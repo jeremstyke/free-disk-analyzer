@@ -113,6 +113,11 @@
   <data name="Performance_FreeRam" xml:space="preserve"><value>Libérer la RAM</value></data>
   <data name="Performance_Running" xml:space="preserve"><value>En cours...</value></data>
 
+  <data name="Startup_Title" xml:space="preserve"><value>Programmes au démarrage</value></data>
+  <data name="Startup_Body" xml:space="preserve"><value>Applications qui se lancent au démarrage de Windows. Désactiver n'en désinstalle aucune, ça arrête juste le lancement automatique, réactivable à tout moment. Seules les entrées de votre propre compte sont affichées, pas les entrées système partagées.</value></data>
+  <data name="Startup_Remove" xml:space="preserve"><value>Supprimer</value></data>
+  <data name="Startup_NoneFound" xml:space="preserve"><value>Aucun programme au démarrage trouvé.</value></data>
+
   <data name="Browsers_Title" xml:space="preserve"><value>Nettoyage des navigateurs</value></data>
   <data name="Browsers_Body" xml:space="preserve"><value>Efface le cache, les cookies et l'historique de navigation pour Chrome, Edge et Firefox. Les favoris et mots de passe enregistrés ne sont jamais touchés. Pour Firefox, l'historique n'est pas proposé ici car il est stocké avec les favoris dans le même fichier. Fermez vos navigateurs d'abord pour de meilleurs résultats.</value></data>
   <data name="Browsers_RescanCommand" xml:space="preserve"><value>Rescanner</value></data>

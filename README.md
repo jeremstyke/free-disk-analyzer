@@ -44,6 +44,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Empty folder finder, with one-click delete (Recycle Bin, not permanent)
 - Browser cleanup: clears cache, cookies, and history for Chrome, Edge, and Firefox (bookmarks and passwords are never touched, Firefox history is intentionally skipped since it's stored together with bookmarks)
 - Free up RAM (real before/after numbers, not a promised gain)
+- Startup program manager (enable/disable/remove apps that launch with Windows, per-user only, no admin rights needed)
 - In-app update notifications, with one-click download and install
 - Latest blog articles shown on the Dashboard
 - PC cleanup: Temp files and Recycle Bin (System tab in Cleanup)

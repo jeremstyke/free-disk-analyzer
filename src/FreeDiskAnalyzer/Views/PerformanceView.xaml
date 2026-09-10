@@ -2,20 +2,62 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:res="clr-namespace:FreeDiskAnalyzer.Resources">
-    <StackPanel Margin="0,8,0,0">
-        <Border Style="{StaticResource CardStyle}">
-            <StackPanel>
-                <TextBlock Text="{x:Static res:Strings.Performance_Title}" FontWeight="SemiBold" FontSize="16"
-                           Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
-                <TextBlock Text="{x:Static res:Strings.Performance_Body}" TextWrapping="Wrap"
-                           Style="{StaticResource BodyTextStyle}" Margin="0,0,0,16"/>
-                <Button Content="{x:Static res:Strings.Performance_FreeRam}" Style="{StaticResource PrimaryButtonStyle}"
-                        HorizontalAlignment="Left" Command="{Binding FreeUpRamCommand}"/>
-                <TextBlock Text="{x:Static res:Strings.Performance_Running}" Style="{StaticResource CaptionTextStyle}"
-                           Margin="0,12,0,0" Visibility="{Binding IsRunning, Converter={StaticResource BoolToVis}}"/>
-                <TextBlock Text="{Binding ResultSummary}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
-                           Margin="0,16,0,0" Visibility="{Binding HasRunOnce, Converter={StaticResource BoolToVis}}"/>
-            </StackPanel>
-        </Border>
-    </StackPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,8,0,0">
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="{x:Static res:Strings.Performance_Title}" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock Text="{x:Static res:Strings.Performance_Body}" TextWrapping="Wrap"
+                               Style="{StaticResource BodyTextStyle}" Margin="0,0,0,16"/>
+                    <Button Content="{x:Static res:Strings.Performance_FreeRam}" Style="{StaticResource PrimaryButtonStyle}"
+                            HorizontalAlignment="Left" Command="{Binding FreeUpRamCommand}"/>
+                    <TextBlock Text="{x:Static res:Strings.Performance_Running}" Style="{StaticResource CaptionTextStyle}"
+                               Margin="0,12,0,0" Visibility="{Binding IsRunning, Converter={StaticResource BoolToVis}}"/>
+                    <TextBlock Text="{Binding ResultSummary}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                               Margin="0,16,0,0" Visibility="{Binding HasRunOnce, Converter={StaticResource BoolToVis}}"/>
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="{x:Static res:Strings.Startup_Title}" FontWeight="SemiBold" FontSize="16"
+                       Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+            <TextBlock Text="{x:Static res:Strings.Startup_Body}" TextWrapping="Wrap"
+                       Style="{StaticResource BodyTextStyle}" Margin="0,0,0,16"/>
+
+            <ItemsControl ItemsSource="{Binding StartupItems}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource CardStyle}" Margin="0,0,0,10" Padding="16">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold"
+                                               Foreground="{DynamicResource TextPrimaryBrush}"/>
+                                    <TextBlock Text="{Binding CommandOrPath}" Style="{StaticResource CaptionTextStyle}"
+                                               TextTrimming="CharacterEllipsis"/>
+                                </StackPanel>
+
+                                <ToggleButton Grid.Column="1" IsChecked="{Binding IsEnabled}" Margin="0,0,12,0"
+                                              VerticalAlignment="Center"
+                                              Command="{Binding DataContext.ToggleStartupItemCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                              CommandParameter="{Binding}"/>
+
+                                <Button Grid.Column="2" Content="{x:Static res:Strings.Startup_Remove}"
+                                        Command="{Binding DataContext.DeleteStartupItemCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <TextBlock Text="{x:Static res:Strings.Startup_NoneFound}" Style="{StaticResource BodyTextStyle}"
+                       Margin="0,8,0,0" Visibility="{Binding HasNoStartupItems, Converter={StaticResource BoolToVis}}"/>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

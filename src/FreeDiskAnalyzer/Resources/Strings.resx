@@ -113,6 +113,11 @@
   <data name="Performance_FreeRam" xml:space="preserve"><value>Free up RAM</value></data>
   <data name="Performance_Running" xml:space="preserve"><value>Working...</value></data>
 
+  <data name="Startup_Title" xml:space="preserve"><value>Startup programs</value></data>
+  <data name="Startup_Body" xml:space="preserve"><value>Apps that launch when Windows starts. Turning one off doesn't uninstall it, it just stops launching automatically, and can be turned back on any time. Only your own account's entries are shown, not shared system-wide ones.</value></data>
+  <data name="Startup_Remove" xml:space="preserve"><value>Remove</value></data>
+  <data name="Startup_NoneFound" xml:space="preserve"><value>No startup programs found.</value></data>
+
   <data name="Browsers_Title" xml:space="preserve"><value>Browser cleanup</value></data>
   <data name="Browsers_Body" xml:space="preserve"><value>Clears cache, cookies, and browsing history for Chrome, Edge, and Firefox. Bookmarks and saved passwords are never touched. For Firefox, history is not offered here since it's stored together with bookmarks in the same file. Close your browsers first for best results.</value></data>
   <data name="Browsers_RescanCommand" xml:space="preserve"><value>Rescan</value></data>

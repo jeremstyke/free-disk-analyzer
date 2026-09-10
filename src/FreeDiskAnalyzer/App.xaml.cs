@@ -30,8 +30,9 @@ public partial class App : Application
         ISafeDeleteService safeDeleteService = new SafeDeleteService();
         IBrowserCleaner browserCleaner = new BrowserCleaner(safeDeleteService);
         ISystemCleaner systemCleaner = new SystemCleaner(safeDeleteService);
+        IStartupManager startupManager = new StartupManager(safeDeleteService);
         var mainViewModel = new MainViewModel(
-            driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService,
+            driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, startupManager, settingsService,
             updateChecker, blogFeedService, safeDeleteService, browserCleaner, systemCleaner);
 
         var mainWindow = new MainWindow

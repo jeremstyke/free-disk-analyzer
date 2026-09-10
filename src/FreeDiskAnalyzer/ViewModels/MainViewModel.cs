@@ -18,6 +18,7 @@ public sealed partial class MainViewModel : ObservableObject
     private readonly IDiskScanner _diskScanner;
     private readonly IDuplicateFinder _duplicateFinder;
     private readonly IRamOptimizer _ramOptimizer;
+    private readonly IStartupManager _startupManager;
     private readonly ISettingsService _settingsService;
     private readonly IUpdateChecker _updateChecker;
     private readonly IBlogFeedService _blogFeedService;
@@ -57,6 +58,7 @@ public sealed partial class MainViewModel : ObservableObject
         IDiskScanner diskScanner,
         IDuplicateFinder duplicateFinder,
         IRamOptimizer ramOptimizer,
+        IStartupManager startupManager,
         ISettingsService settingsService,
         IUpdateChecker updateChecker,
         IBlogFeedService blogFeedService,
@@ -68,6 +70,7 @@ public sealed partial class MainViewModel : ObservableObject
         _diskScanner = diskScanner;
         _duplicateFinder = duplicateFinder;
         _ramOptimizer = ramOptimizer;
+        _startupManager = startupManager;
         _settingsService = settingsService;
         _updateChecker = updateChecker;
         _blogFeedService = blogFeedService;
@@ -147,7 +150,7 @@ public sealed partial class MainViewModel : ObservableObject
             NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _blogFeedService, _scanResultStore),
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.Explore => new ExploreViewModel(_scanResultStore),
-            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _safeDeleteService, _browserCleaner, _systemCleaner, _settingsService, _scanResultStore),
+            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _startupManager, _safeDeleteService, _browserCleaner, _systemCleaner, _settingsService, _scanResultStore),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
             NavKey.About => new AboutViewModel(),

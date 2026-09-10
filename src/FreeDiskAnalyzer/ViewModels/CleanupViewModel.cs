@@ -33,6 +33,7 @@ public sealed partial class CleanupViewModel : ObservableObject
         IDriveEnumerator driveEnumerator,
         IDuplicateFinder duplicateFinder,
         IRamOptimizer ramOptimizer,
+        IStartupManager startupManager,
         ISafeDeleteService safeDeleteService,
         IBrowserCleaner browserCleaner,
         ISystemCleaner systemCleaner,
@@ -41,7 +42,7 @@ public sealed partial class CleanupViewModel : ObservableObject
     {
         Duplicates = new DuplicatesViewModel(driveEnumerator, duplicateFinder, safeDeleteService);
         EmptyFolders = new EmptyFoldersViewModel(scanResultStore, safeDeleteService);
-        Performance = new PerformanceViewModel(ramOptimizer);
+        Performance = new PerformanceViewModel(ramOptimizer, startupManager);
         Browsers = new BrowsersViewModel(browserCleaner, settingsService);
         System = new SystemViewModel(systemCleaner);
 
