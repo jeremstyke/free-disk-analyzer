@@ -58,7 +58,7 @@
       <p class="lead">Un analyseur d'espace disque gratuit pour Windows. Chaque scan tourne sur votre appareil, rien concernant vos fichiers n'en sort jamais.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/FreeDiskAnalyzer-Setup.exe">Télécharger pour Windows</a>
-        <span class="btn-note">Gratuit, v1.0.0</span>
+        <span class="btn-note" id="latest-version-note">Gratuit</span>
       </div>
       <p style="margin-top:14px; font-size:13px; color:var(--ink-muted);">Pas encore de certificat de signature de code commercial, Windows peut afficher un avertissement "éditeur inconnu" au premier lancement. <a href="#faq">Pourquoi ?</a></p>
     </div>
@@ -246,5 +246,15 @@
   </div>
 </footer>
 
+<script>
+  fetch('https://api.github.com/repos/jeremstyke/free-disk-analyzer/releases/latest')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !data.tag_name) return;
+      var note = document.getElementById('latest-version-note');
+      if (note) note.textContent += ', ' + data.tag_name;
+    })
+    .catch(function () { /* offline or rate-limited: leave the plain label */ });
+</script>
 </body>
 </html>

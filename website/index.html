@@ -62,7 +62,7 @@
       <p class="lead">A free disk space analyzer for Windows. Every scan runs on your device, nothing about your files ever leaves it.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/FreeDiskAnalyzer-Setup.exe">Download for Windows</a>
-        <span class="btn-note">Free, v1.0.0</span>
+        <span class="btn-note" id="latest-version-note">Free</span>
       </div>
       <p style="margin-top:14px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, Windows may show an "unknown publisher" warning on first run. <a href="#faq">Why?</a></p>
     </div>
@@ -251,5 +251,15 @@
   </div>
 </footer>
 
+<script>
+  fetch('https://api.github.com/repos/jeremstyke/free-disk-analyzer/releases/latest')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !data.tag_name) return;
+      var note = document.getElementById('latest-version-note');
+      if (note) note.textContent += ', ' + data.tag_name;
+    })
+    .catch(function () { /* offline or rate-limited: leave the plain label */ });
+</script>
 </body>
 </html>
