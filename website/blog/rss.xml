@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Free Disk Analyzer Blog</title>
+    <title>PurgeCore Blog</title>
     <link>https://jeremstyke.github.io/free-disk-analyzer/blog/</link>
     <description>Guides on freeing up disk space, finding what's using your storage, and keeping a Windows PC running smoothly.</description>
     <language>en</language>
 
     <item>
-      <title>Free Disk Analyzer vs CCleaner: Which One Should You Use?</title>
+      <title>PurgeCore vs CCleaner: Which One Should You Use?</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-ccleaner.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-ccleaner.html</guid>
-      <description>An honest comparison of Free Disk Analyzer and CCleaner: what each one does well, where CCleaner is still ahead, and where a registry cleaner and paid upsells change the picture.</description>
+      <description>An honest comparison of PurgeCore and CCleaner: what each one does well, where CCleaner is still ahead, and where a registry cleaner and paid upsells change the picture.</description>
     </item>
     <item>
-      <title>Free Disk Analyzer vs BleachBit: Which One Should You Use?</title>
+      <title>PurgeCore vs BleachBit: Which One Should You Use?</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-bleachbit.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-bleachbit.html</guid>
-      <description>An honest comparison of Free Disk Analyzer and BleachBit: open-source privacy cleaning versus disk-space analysis, and where each one is the better fit.</description>
+      <description>An honest comparison of PurgeCore and BleachBit: open-source privacy cleaning versus disk-space analysis, and where each one is the better fit.</description>
     </item>
     <item>
-      <title>Free Disk Analyzer vs WinDirStat: Which One Should You Use?</title>
+      <title>PurgeCore vs WinDirStat: Which One Should You Use?</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-windirstat.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-windirstat.html</guid>
-      <description>An honest comparison of Free Disk Analyzer and WinDirStat: treemap visualization versus a broader cleanup toolkit, and which fits what you're trying to do.</description>
+      <description>An honest comparison of PurgeCore and WinDirStat: treemap visualization versus a broader cleanup toolkit, and which fits what you're trying to do.</description>
     </item>
     <item>
-      <title>Free Disk Analyzer v1.2.0: Startup Manager</title>
+      <title>PurgeCore v1.2.0: Startup Manager</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-2-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-2-0-release-notes.html</guid>
-      <description>What's new in Free Disk Analyzer v1.2.0: a Startup Manager to speed up boot time and reduce clutter at login.</description>
+      <description>What's new in PurgeCore v1.2.0: a Startup Manager to speed up boot time and reduce clutter at login.</description>
     </item>
     <item>
-      <title>Free Disk Analyzer v1.1.0: Cleanup That Actually Cleans</title>
+      <title>PurgeCore v1.1.0: Cleanup That Actually Cleans</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-1-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-1-0-release-notes.html</guid>
-      <description>What's new in Free Disk Analyzer v1.1.0: safe deletion for duplicates and empty folders, browser cleanup for Chrome/Edge/Firefox, a cookie whitelist, PC cleanup, RAM optimization, and risk indicators on everything.</description>
+      <description>What's new in PurgeCore v1.1.0: safe deletion for duplicates and empty folders, browser cleanup for Chrome/Edge/Firefox, a cookie whitelist, PC cleanup, RAM optimization, and risk indicators on everything.</description>
     </item>
     <item>
-      <title>Free Disk Analyzer v1.0.2: In-App Update Notifications</title>
+      <title>PurgeCore v1.0.2: In-App Update Notifications</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-2-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-2-release-notes.html</guid>
-      <description>What's new in Free Disk Analyzer v1.0.2: a banner that appears when a newer version is out, with one-click download and install.</description>
+      <description>What's new in PurgeCore v1.0.2: a banner that appears when a newer version is out, with one-click download and install.</description>
     </item>
     <item>
-      <title>Free Disk Analyzer v1.0.1: Cleanup, Duplicates, RAM, and CSV Export</title>
+      <title>PurgeCore v1.0.1: Cleanup, Duplicates, RAM, and CSV Export</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-1-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-1-release-notes.html</guid>
-      <description>What's new in Free Disk Analyzer v1.0.1: a Cleanup tab with duplicate finder, old files, empty folders, a RAM optimizer, and CSV export.</description>
+      <description>What's new in PurgeCore v1.0.1: a Cleanup tab with duplicate finder, old files, empty folders, a RAM optimizer, and CSV export.</description>
     </item>
     <item>
       <title>How to Free Up Disk Space on Windows 11: The Complete Guide</title>

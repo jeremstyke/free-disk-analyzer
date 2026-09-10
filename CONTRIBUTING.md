@@ -1,4 +1,4 @@
-# Contributing to Free Disk Analyzer
+# Contributing to PurgeCore
 
 This project is not accepting external code contributions (pull requests) at this time. It is developed and maintained solely by the project owner.
 
@@ -8,7 +8,7 @@ Bug reports and feature requests via [issues](../../issues) are still welcome, s
 
 - File deletion is allowed only through the specific, well-defined, safe paths already built (Duplicates, Empty Folders, Browser cleanup), always via the Recycle Bin, always with a confirmation showing what and how much before it happens, always re-checked against `PathSafetyGuard` (never deletes inside Windows/Program Files, regardless of the code path). Don't add a generic "delete this" button to Large Files, Old Files, or Folders, those show arbitrary files that could be anything, deletion there stays manual (Show in Explorer) rather than one click.
 - No feature may require sending file names, paths, or contents off the local machine.
-- No feature may introduce a paid tier, subscription, or artificially locked functionality. Free Disk Analyzer is free forever.
+- No feature may introduce a paid tier, subscription, or artificially locked functionality. PurgeCore is free forever.
 - New affiliate links must be disclosed clearly in the UI and added to [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md).
 
 ## Building locally (for reference)

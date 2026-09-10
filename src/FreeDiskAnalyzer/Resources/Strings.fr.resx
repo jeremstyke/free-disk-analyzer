@@ -32,7 +32,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 
-  <data name="AppTitle" xml:space="preserve"><value>Free Disk Analyzer</value></data>
+  <data name="AppTitle" xml:space="preserve"><value>PurgeCore</value></data>
 
   <data name="Nav_Dashboard" xml:space="preserve"><value>Tableau de bord</value></data>
   <data name="Nav_Analyze" xml:space="preserve"><value>Analyser</value></data>
@@ -53,7 +53,7 @@
   <data name="Dashboard_NordVpnTitle" xml:space="preserve"><value>Recommandé : NordVPN</value></data>
   <data name="Dashboard_NordVpnBody" xml:space="preserve"><value>Protégez votre connexion pendant que vous naviguez et gérez vos fichiers.</value></data>
   <data name="Dashboard_LearnMore" xml:space="preserve"><value>En savoir plus</value></data>
-  <data name="Dashboard_AffiliateDisclosure" xml:space="preserve"><value>Lien affilié - Aide à financer le développement de Free Disk Analyzer, sans surcoût pour vous.</value></data>
+  <data name="Dashboard_AffiliateDisclosure" xml:space="preserve"><value>Lien affilié - Aide à financer le développement de PurgeCore, sans surcoût pour vous.</value></data>
   <data name="Dashboard_UsedOf" xml:space="preserve"><value> utilisé sur </value></data>
   <data name="Dashboard_FromTheBlog" xml:space="preserve"><value>Depuis le blog</value></data>
   <data name="Dashboard_ViewBlog" xml:space="preserve"><value>Voir le blog</value></data>
@@ -150,7 +150,7 @@
   <data name="Settings_Title" xml:space="preserve"><value>Paramètres</value></data>
   <data name="Settings_Subtitle" xml:space="preserve"><value>Les préférences sont sauvegardées localement sur cet appareil.</value></data>
   <data name="Settings_Language" xml:space="preserve"><value>Langue</value></data>
-  <data name="Settings_LanguageRestartNote" xml:space="preserve"><value>Redémarrez Free Disk Analyzer pour appliquer un changement de langue.</value></data>
+  <data name="Settings_LanguageRestartNote" xml:space="preserve"><value>Redémarrez PurgeCore pour appliquer un changement de langue.</value></data>
   <data name="Settings_Theme" xml:space="preserve"><value>Thème</value></data>
   <data name="Settings_StartWithWindows" xml:space="preserve"><value>Démarrer avec Windows</value></data>
   <data name="Settings_Analytics" xml:space="preserve"><value>Partager des statistiques d'usage anonymes</value></data>
@@ -168,9 +168,9 @@
   <data name="Privacy_NeverCollected_Title" xml:space="preserve"><value>Ce qui n'est jamais collecté</value></data>
   <data name="Privacy_NeverCollected_Body" xml:space="preserve"><value>Votre nom, email ou compte Microsoft. Noms de fichiers, chemins ou contenus. Noms de dossiers ou structure. Contenu détaillé du disque. Tout identifiant utilisé pour reconnaître cet appareil. Il n'y a aucune télémétrie cachée ou non documentée.</value></data>
   <data name="Privacy_Offline_Title" xml:space="preserve"><value>Utilisation hors ligne</value></data>
-  <data name="Privacy_Offline_Body" xml:space="preserve"><value>Free Disk Analyzer fonctionne entièrement hors ligne. Désactiver votre connexion internet n'affecte ni le scan, ni les résultats, ni aucune fonctionnalité principale.</value></data>
+  <data name="Privacy_Offline_Body" xml:space="preserve"><value>PurgeCore fonctionne entièrement hors ligne. Désactiver votre connexion internet n'affecte ni le scan, ni les résultats, ni aucune fonctionnalité principale.</value></data>
   <data name="Privacy_Affiliate_Title" xml:space="preserve"><value>Liens affiliés</value></data>
-  <data name="Privacy_Affiliate_Body" xml:space="preserve"><value>La carte NordVPN sur le tableau de bord et la suggestion DeleteMe après un scan sont des liens affiliés, clairement identifiés là où ils apparaissent. Cliquer dessus ouvre votre navigateur vers le site du partenaire, qui applique alors sa propre politique de confidentialité. Free Disk Analyzer ne suit pas les liens sur lesquels vous cliquez.</value></data>
+  <data name="Privacy_Affiliate_Body" xml:space="preserve"><value>La carte NordVPN sur le tableau de bord et la suggestion DeleteMe après un scan sont des liens affiliés, clairement identifiés là où ils apparaissent. Cliquer dessus ouvre votre navigateur vers le site du partenaire, qui applique alors sa propre politique de confidentialité. PurgeCore ne suit pas les liens sur lesquels vous cliquez.</value></data>
 
   <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="About_ViewGitHub" xml:space="preserve"><value>Voir sur GitHub</value></data>

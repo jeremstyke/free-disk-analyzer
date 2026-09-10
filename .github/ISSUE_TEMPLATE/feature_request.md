@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for Free Disk Analyzer
+about: Suggest an idea for PurgeCore
 title: "[Feature] "
 labels: enhancement
 assignees: ''

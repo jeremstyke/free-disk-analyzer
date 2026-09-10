@@ -2,7 +2,7 @@
 
 ## English
 
-Some links in Free Disk Analyzer are affiliate links. If you purchase a product or service through one of these links, we may receive a commission at no additional cost to you. These commissions help support the development and maintenance of Free Disk Analyzer.
+Some links in PurgeCore are affiliate links. If you purchase a product or service through one of these links, we may receive a commission at no additional cost to you. These commissions help support the development and maintenance of PurgeCore.
 
 We may also recommend products and software that have no affiliate relationship with us.
 
@@ -18,7 +18,7 @@ This list will be updated as new affiliate partnerships are added.
 
 ## Français
 
-Certains liens dans Free Disk Analyzer sont des liens affiliés. Si vous achetez un produit ou un service via l'un de ces liens, nous pouvons percevoir une commission, sans surcoût pour vous. Ces commissions aident à financer le développement et la maintenance de Free Disk Analyzer.
+Certains liens dans PurgeCore sont des liens affiliés. Si vous achetez un produit ou un service via l'un de ces liens, nous pouvons percevoir une commission, sans surcoût pour vous. Ces commissions aident à financer le développement et la maintenance de PurgeCore.
 
 Nous pouvons également recommander des produits et logiciels sans relation d'affiliation avec nous.
 

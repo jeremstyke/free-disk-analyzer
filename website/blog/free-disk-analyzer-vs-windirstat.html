@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Disk Analyzer vs WinDirStat: Which One Should You Use?</title>
-<meta name="description" content="An honest comparison of Free Disk Analyzer and WinDirStat: treemap visualization versus a broader cleanup toolkit, and which fits what you're trying to do.">
-<meta property="og:title" content="Free Disk Analyzer vs WinDirStat: Which One Should You Use?">
-<meta property="og:description" content="An honest comparison of Free Disk Analyzer and WinDirStat: treemap visualization versus a broader cleanup toolkit, and which fits what you're trying to do.">
+<title>PurgeCore vs WinDirStat: Which One Should You Use?</title>
+<meta name="description" content="An honest comparison of PurgeCore and WinDirStat: treemap visualization versus a broader cleanup toolkit, and which fits what you're trying to do.">
+<meta property="og:title" content="PurgeCore vs WinDirStat: Which One Should You Use?">
+<meta property="og:description" content="An honest comparison of PurgeCore and WinDirStat: treemap visualization versus a broader cleanup toolkit, and which fits what you're trying to do.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://jeremstyke.github.io/free-disk-analyzer/assets/og-image-icon.png">
 <meta property="og:url" content="https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-windirstat.html">
 <link rel="canonical" href="https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-windirstat.html">
 <link rel="icon" type="image/png" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-<link rel="alternate" type="application/rss+xml" title="Free Disk Analyzer Blog" href="rss.xml">
+<link rel="alternate" type="application/rss+xml" title="PurgeCore Blog" href="rss.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
         <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
                 stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
       </svg>
-      Free Disk Analyzer
+      PurgeCore
     </a>
     <nav class="nav-links">
       <a href="../index.html#features">Features</a>
@@ -51,49 +51,49 @@
   <div class="article-header">
     <span class="article-tag">Comparison</span>
   </div>
-  <h1>Free Disk Analyzer vs WinDirStat: Which One Should You Use?</h1>
+  <h1>PurgeCore vs WinDirStat: Which One Should You Use?</h1>
   <p class="article-meta">2026 · 5 min read</p>
 
   <p>WinDirStat has been the classic answer to "where did my disk space go" since 2003: point it at a drive, get a colorful treemap of every file. It's free, open source, and still actively maintained. Here's how it compares.</p>
 
-  <h2>What WinDirStat does that Free Disk Analyzer doesn't</h2>
+  <h2>What WinDirStat does that PurgeCore doesn't</h2>
   <ul>
-    <li><strong>A treemap visualization.</strong> Every file drawn as a rectangle sized to its footprint, colored by file type. It's a genuinely fast way to spot one enormous file or folder at a glance, and Free Disk Analyzer doesn't have an equivalent view, it uses sorted lists instead.</li>
+    <li><strong>A treemap visualization.</strong> Every file drawn as a rectangle sized to its footprint, colored by file type. It's a genuinely fast way to spot one enormous file or folder at a glance, and PurgeCore doesn't have an equivalent view, it uses sorted lists instead.</li>
     <li><strong>A file-extension breakdown</strong> showing exactly how much space each file type consumes across the whole scan.</li>
     <li><strong>Two decades of maintenance</strong> and a large, established user base, including plenty of IT professionals who reach for it specifically because it's simple and does one job.</li>
     <li><strong>Elevated scanning support</strong> for reaching protected system folders a standard user account can't read.</li>
   </ul>
 
-  <h2>Where Free Disk Analyzer takes a different approach</h2>
+  <h2>Where PurgeCore takes a different approach</h2>
   <ul>
-    <li><strong>Cleanup features beyond "find and delete manually."</strong> WinDirStat lets you delete, move, or compress files from its interface, but it doesn't find duplicates, clean browser data, manage startup programs, or touch the Recycle Bin and Temp folder as dedicated features. Free Disk Analyzer builds all of that around the initial scan.</li>
-    <li><strong>Guardrails on deletion.</strong> WinDirStat's delete action is a direct file operation, effective, but with no built-in risk rating or Recycle Bin safety net baked into the workflow the way Free Disk Analyzer's is.</li>
+    <li><strong>Cleanup features beyond "find and delete manually."</strong> WinDirStat lets you delete, move, or compress files from its interface, but it doesn't find duplicates, clean browser data, manage startup programs, or touch the Recycle Bin and Temp folder as dedicated features. PurgeCore builds all of that around the initial scan.</li>
+    <li><strong>Guardrails on deletion.</strong> WinDirStat's delete action is a direct file operation, effective, but with no built-in risk rating or Recycle Bin safety net baked into the workflow the way PurgeCore's is.</li>
     <li><strong>A dashboard and category breakdown</strong> as the first screen, rather than jumping straight into the file tree.</li>
     <li><strong>Duplicate detection</strong>, matched by actual file content rather than name or size, something WinDirStat doesn't do at all.</li>
   </ul>
 
   <h2>Two tools built around different jobs</h2>
-  <p>WinDirStat answers one question extremely well: where, visually, is my disk space going. It doesn't try to be a full cleanup suite, and for people who just want that answer and are comfortable deleting things themselves afterward, it remains a solid, no-nonsense choice. Free Disk Analyzer starts from a similar question but is built to also act on the answer, with safety rails around anything that deletes something.</p>
+  <p>WinDirStat answers one question extremely well: where, visually, is my disk space going. It doesn't try to be a full cleanup suite, and for people who just want that answer and are comfortable deleting things themselves afterward, it remains a solid, no-nonsense choice. PurgeCore starts from a similar question but is built to also act on the answer, with safety rails around anything that deletes something.</p>
 
   <h2>Bottom line</h2>
-  <p>If a treemap is the specific view you want, or you're an IT professional who just needs a fast, no-frills way to see where space went on a machine you're troubleshooting, WinDirStat still does that job well. If you want disk analysis plus duplicate detection, browser cleanup, RAM and startup management, and safety-first deletion in one app, that's the broader scope Free Disk Analyzer covers.</p>
+  <p>If a treemap is the specific view you want, or you're an IT professional who just needs a fast, no-frills way to see where space went on a machine you're troubleshooting, WinDirStat still does that job well. If you want disk analysis plus duplicate detection, browser cleanup, RAM and startup management, and safety-first deletion in one app, that's the broader scope PurgeCore covers.</p>
 
   <div class="cta-box">
-    <p>Want the fuller picture, not just where the space went but what you can safely do about it? That's what Free Disk Analyzer adds on top.</p>
+    <p>Want the fuller picture, not just where the space went but what you can safely do about it? That's what PurgeCore adds on top.</p>
   </div>
 
   <div class="download-band" style="margin-top:48px;">
-    <h2>Download Free Disk Analyzer</h2>
+    <h2>Download PurgeCore</h2>
     <p>Free forever, no account, no trial.</p>
-    <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/FreeDiskAnalyzer-Setup.exe">Download for Windows</a>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Setup.exe">Download for Windows</a>
     <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, so Windows may show a brief "unknown publisher" warning on first run. The source is public on GitHub, and each release is published with a SHA-256 checksum you can verify.</p>
   </div>
 </div>
 
 <footer>
   <div class="wrap foot-row">
-    <div>&copy; 2026 Jeremy Jury. All rights reserved. If Free Disk Analyzer is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
-    <div class="disclosure">Free Disk Analyzer may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+    <div>&copy; 2026 Jeremy Jury. All rights reserved. If PurgeCore is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">PurgeCore may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
   </div>
 </footer>
 

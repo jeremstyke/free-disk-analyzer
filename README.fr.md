@@ -1,4 +1,4 @@
-# Free Disk Analyzer
+# PurgeCore
 
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-lightgrey.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D6)](#)
@@ -18,7 +18,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 </p>
 
 <p align="center">
-  <a href="../../releases/latest/download/FreeDiskAnalyzer-Setup.exe">
+  <a href="../../releases/latest/download/PurgeCore-Setup.exe">
     <img src="https://img.shields.io/badge/%E2%86%93%20T%C3%A9l%C3%A9charger-pour%20Windows-2563EB?style=for-the-badge" alt="Télécharger pour Windows" />
   </a>
 </p>
@@ -60,14 +60,14 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 ## Installation
 
 1. Rendez-vous sur la [dernière version](../../releases/latest)
-2. Téléchargez `FreeDiskAnalyzer-Setup.exe` (installateur) ou `FreeDiskAnalyzer-Portable.zip` (portable)
+2. Téléchargez `PurgeCore-Setup.exe` (installateur) ou `PurgeCore-Portable.zip` (portable)
 3. Lancez l'application. Windows peut afficher un avertissement SmartScreen, voir ci-dessous.
 
 ### À propos de l'avertissement de sécurité Windows
 
-Free Disk Analyzer est actuellement distribué sans certificat commercial de signature de code. Windows SmartScreen peut donc afficher un avertissement car l'éditeur de l'application ne peut pas encore être vérifié.
+PurgeCore est actuellement distribué sans certificat commercial de signature de code. Windows SmartScreen peut donc afficher un avertissement car l'éditeur de l'application ne peut pas encore être vérifié.
 
-Cela ne signifie pas que Free Disk Analyzer est un logiciel malveillant. Le code source est consultable publiquement sur GitHub. Vous pouvez aussi vérifier le fichier téléchargé à l'aide de l'empreinte SHA-256 publiée avec chaque version (`SHA256SUMS.txt`).
+Cela ne signifie pas que PurgeCore est un logiciel malveillant. Le code source est consultable publiquement sur GitHub. Vous pouvez aussi vérifier le fichier téléchargé à l'aide de l'empreinte SHA-256 publiée avec chaque version (`SHA256SUMS.txt`).
 
 ## Confidentialité
 
@@ -81,7 +81,7 @@ Détails complets : [PRIVACY.md](PRIVACY.md)
 
 ## Divulgation d'affiliation
 
-Certains liens dans Free Disk Analyzer (tableau de bord et après un scan) sont des liens affiliés :
+Certains liens dans PurgeCore (tableau de bord et après un scan) sont des liens affiliés :
 
 - [NordVPN](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer)
 - [DeleteMe](https://www.de33watrk.com/WCKMXS/KMKS9/)
@@ -102,7 +102,7 @@ Free-Disk-Analyzer/
 ├── assets/                        # Icônes, logos, images
 ├── docs/                          # Documentation complémentaire
 ├── website/                       # Site GitHub Pages (publié une fois le dépôt public)
-├── installer/                     # Script Inno Setup produisant FreeDiskAnalyzer-Setup.exe
+├── installer/                     # Script Inno Setup produisant PurgeCore-Setup.exe
 └── .github/                       # Workflows, templates d'issues et de PR
 ```
 
@@ -137,4 +137,4 @@ Ce dépôt est public.
 
 ## Soutien
 
-Si Free Disk Analyzer vous est utile, vous pouvez [offrir un café](https://jeremstyke.gumroad.com/coffee).
+Si PurgeCore vous est utile, vous pouvez [offrir un café](https://jeremstyke.gumroad.com/coffee).

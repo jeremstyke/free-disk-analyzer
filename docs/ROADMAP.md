@@ -1,6 +1,6 @@
 # Roadmap
 
-This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to be a self-contained, reviewable chunk.
+This tracks the phases toward PurgeCore v1.0.0. Each phase is meant to be a self-contained, reviewable chunk.
 
 ## Phase 0: Repository structure and documentation (done)
 
@@ -59,8 +59,8 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 
 ## Phase 6: Packaging, CI/CD, and going public - in progress
 
-- Done: Inno Setup script (`installer/setup.iss`) producing `FreeDiskAnalyzer-Setup.exe`, English/French installer UI, desktop icon optional, uninstaller included.
-- Done: `release.yml` finalized. On a pushed tag (`vX.Y.Z`), it publishes a self-contained win-x64 build, zips it as `FreeDiskAnalyzer-Portable.zip`, builds the installer via the same publish output, generates `SHA256SUMS.txt` for both, and publishes all three to the GitHub Release.
+- Done: Inno Setup script (`installer/setup.iss`) producing `PurgeCore-Setup.exe`, English/French installer UI, desktop icon optional, uninstaller included.
+- Done: `release.yml` finalized. On a pushed tag (`vX.Y.Z`), it publishes a self-contained win-x64 build, zips it as `PurgeCore-Portable.zip`, builds the installer via the same publish output, generates `SHA256SUMS.txt` for both, and publishes all three to the GitHub Release.
 - Done: app icon (`assets/icon.ico`, generated programmatically: a donut-ring motif matching the in-app `DonutProgressRing`, on a rounded-square accent-blue background). Wired into `FreeDiskAnalyzer.csproj` (`ApplicationIcon`) and `installer/setup.iss` (`SetupIconFile`).
 - Done: `website/` static site, English (`index.html`) and French (`fr/index.html`), sharing `assets/style.css`. Hero, features, privacy, free-forever statement, screenshots placeholder (honestly empty, no fake images), FAQ, download band, footer with affiliate disclosure. Download CTA is in a disabled "coming soon" state until the first release exists. No links to the GitHub repo anywhere on the site, since it's currently private, would be dead links for visitors.
 - Not done: real screenshots (need a working build first)
@@ -107,9 +107,9 @@ Ordering note for whoever picks this up: item 3's DNS flush is the only genuinel
 
 Described 2026-09-09. Originally pitched as three tabs including VPN, the VPN portion of this plan was abandoned per Bob 2026-09-10 (see below), current pitch is Cleanup (frees disk space, fixes everyday slowness) plus Security & Privacy (clears browsing traces, blocks Windows telemetry, protects the system). Positioning: one Windows suite instead of separate tools, covering a PC's full health and privacy.
 
-The plan is for Free Disk Analyzer to eventually replace CleanTab (Chrome/Edge extension) entirely: migrate CleanTab's users to this Windows app, and show an end-of-life message inside CleanTab pointing them here, framed as "a complete suite on Windows, always free."
+The plan is for PurgeCore to eventually replace CleanTab (Chrome/Edge extension) entirely: migrate CleanTab's users to this Windows app, and show an end-of-life message inside CleanTab pointing them here, framed as "a complete suite on Windows, always free."
 
-This raises the stakes on the "wait for real testing" rule already in place for the v2 vision above, it doesn't loosen it. CleanTab has real, active users today. Redirecting them to Free Disk Analyzer only makes sense once this app has been run and tested on a real machine, ideally has some track record with early users on its current read-only feature set, and the higher-risk v2 items (real deletion, registry/telemetry changes) have shipped and been used without incident. Sunsetting a working product to point at an unlaunched one is the kind of move that's hard to undo if it goes wrong, better to move a few weeks later with confidence than fast with an unverified base.
+This raises the stakes on the "wait for real testing" rule already in place for the v2 vision above, it doesn't loosen it. CleanTab has real, active users today. Redirecting them to PurgeCore only makes sense once this app has been run and tested on a real machine, ideally has some track record with early users on its current read-only feature set, and the higher-risk v2 items (real deletion, registry/telemetry changes) have shipped and been used without incident. Sunsetting a working product to point at an unlaunched one is the kind of move that's hard to undo if it goes wrong, better to move a few weeks later with confidence than fast with an unverified base.
 
 ## Free VPN plan abandoned (per Bob, 2026-09-10)
 
@@ -117,15 +117,15 @@ The built-in free VPN plan (reseller-backed WireGuard integration, discussed 202
 
 If a built-in VPN is ever reconsidered, this history is worth knowing first: Bob previously pursued a VPN reseller approach (VPNresellers) for a free Android VPN app using WireGuard, abandoned as not viable, on top of unresolved Android build errors that were never fixed. The Windows teaser attempt in this app was abandoned even before reaching the reseller-integration stage. Two abandoned attempts on two platforms, worth asking what specifically isn't working (reseller economics, technical complexity, or something else) before trying a third time.
 
-## IPVanish considered and declined for Free Disk Analyzer (per Bob, 2026-09-10)
+## IPVanish considered and declined for PurgeCore (per Bob, 2026-09-10)
 
-Bob has an IPVanish affiliate link (already used on CleanTab, alongside DeleteMe). Considered adding it here too, decided against: two competing VPN affiliate offers in the same app reads as less genuine and splits attention, rather than one clear recommendation. Free Disk Analyzer keeps NordVPN only. If this gets revisited, don't place a second VPN offer next to the existing NordVPN card, separate contexts if it happens at all.
+Bob has an IPVanish affiliate link (already used on CleanTab, alongside DeleteMe). Considered adding it here too, decided against: two competing VPN affiliate offers in the same app reads as less genuine and splits attention, rather than one clear recommendation. PurgeCore keeps NordVPN only. If this gets revisited, don't place a second VPN offer next to the existing NordVPN card, separate contexts if it happens at all.
 
 ## In-app update notifications and release process (per Bob, 2026-09-10)
 
 Added: `IUpdateChecker` / `UpdateChecker` (Core) polls the GitHub Releases API once on startup, compares the latest tag to the running app's version via `ReleaseVersionComparer`, and fails silently on any network problem (never blocks or errors out the app over a background convenience check). When a newer version exists, a banner appears at the top of every page (`MainWindow.xaml`, wired through `MainViewModel`) with the version number, a dismiss option, and a "Download and install" button that downloads the new installer to a temp folder and launches it.
 
-The installer (`installer/setup.iss`) now sets `CloseApplications=yes` and `RestartApplications=yes`, so launching it from inside a running Free Disk Analyzer closes the app, installs over it, and reopens it automatically, a genuine one-click update rather than requiring the user to close the app manually first.
+The installer (`installer/setup.iss`) now sets `CloseApplications=yes` and `RestartApplications=yes`, so launching it from inside a running PurgeCore closes the app, installs over it, and reopens it automatically, a genuine one-click update rather than requiring the user to close the app manually first.
 
 Process going forward, for whoever cuts the next release: write a blog post for every tagged release (see `website/blog/v1-0-1-release-notes.html` for the pattern), add it to `website/blog/index.html`, `website/sitemap.xml`, and `website/blog/rss.xml`. Not automated yet, each of those four files needs a manual edit per release. Automating this (e.g. a release.yml step that generates the post from the tag's changelog) would be a reasonable follow-up if releases become frequent enough that the manual step gets skipped.
 
@@ -141,7 +141,7 @@ What can actually be deleted, and nothing else:
 
 1. **Duplicates**: "Delete extra copies" per group, always keeps the first file, only offers the rest for deletion, a duplicate group can never be fully wiped out by this button.
 2. **Empty Folders**: delete button per folder, only offered for folders the scanner already confirmed are empty (recursively, `FolderNode.IsEmpty`).
-3. **Browser cleanup** (new "Browsers" tab in Cleanup, 5th sub-tab): `IBrowserCleaner` / `BrowserCleaner` scans Chrome, Edge (Chromium, `Default` profile only, per-profile support like "Profile 1" not implemented) and Firefox (default profile via directory pattern match, not full `profiles.ini` parsing) for Cache, Cookies, and History, shows sizes, lets the user pick which to clear via checkboxes, deletes only what's selected after confirmation. Firefox History is never offered, it lives in the same `places.sqlite` database as bookmarks in Firefox, too risky to touch with a simple file delete. Bookmarks and saved passwords are never in scope for any browser. This is the feature that gives Free Disk Analyzer the core capability CleanTab has as a browser extension, relevant to the "replace CleanTab" long-term direction logged earlier in this file.
+3. **Browser cleanup** (new "Browsers" tab in Cleanup, 5th sub-tab): `IBrowserCleaner` / `BrowserCleaner` scans Chrome, Edge (Chromium, `Default` profile only, per-profile support like "Profile 1" not implemented) and Firefox (default profile via directory pattern match, not full `profiles.ini` parsing) for Cache, Cookies, and History, shows sizes, lets the user pick which to clear via checkboxes, deletes only what's selected after confirmation. Firefox History is never offered, it lives in the same `places.sqlite` database as bookmarks in Firefox, too risky to touch with a simple file delete. Bookmarks and saved passwords are never in scope for any browser. This is the feature that gives PurgeCore the core capability CleanTab has as a browser extension, relevant to the "replace CleanTab" long-term direction logged earlier in this file.
 
 Deliberately not built: a generic "delete this" button on Large Files, Old Files, or Folders. Those tabs show arbitrary files the scanner found, which could be anything, so deletion there stays manual (the existing Show in Explorer button) rather than one click. See the note added to `CONTRIBUTING.md`.
 
@@ -158,7 +158,7 @@ Flagged explicitly to Bob when built: the cookie whitelist is meaningfully less 
 
 ## CleanTab cross-promotion removed from site/app (per Bob, 2026-09-10)
 
-All CleanTab links and mentions removed from the website (footer on every page, About page bio) and the app (About page card, ViewModel command/URL, resx strings). Consistent with Free Disk Analyzer now having its own browser cleanup feature rather than needing to point at CleanTab for that. Note: this only covers what lives in this repository, the CleanTab extension itself is a separate codebase/session, not something reachable from here.
+All CleanTab links and mentions removed from the website (footer on every page, About page bio) and the app (About page card, ViewModel command/URL, resx strings). Consistent with PurgeCore now having its own browser cleanup feature rather than needing to point at CleanTab for that. Note: this only covers what lives in this repository, the CleanTab extension itself is a separate codebase/session, not something reachable from here.
 
 ## Sidebar regrouped: Explore + Cleanup (per Bob, 2026-09-10)
 

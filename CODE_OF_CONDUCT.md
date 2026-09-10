@@ -2,7 +2,7 @@
 
 ## Our pledge
 
-We want participation in Free Disk Analyzer to be a harassment-free experience for everyone, regardless of experience level, background, or identity.
+We want participation in PurgeCore to be a harassment-free experience for everyone, regardless of experience level, background, or identity.
 
 ## Expected behavior
 

@@ -8,7 +8,7 @@ namespace FreeDiskAnalyzer.Core.Services;
 public sealed class UpdateChecker : IUpdateChecker
 {
     private const string ReleasesApiUrl = "https://api.github.com/repos/jeremstyke/free-disk-analyzer/releases/latest";
-    private const string InstallerAssetName = "FreeDiskAnalyzer-Setup.exe";
+    private const string InstallerAssetName = "PurgeCore-Setup.exe";
 
     public async Task<UpdateInfo> CheckForUpdateAsync(string currentVersion, CancellationToken cancellationToken = default)
     {

@@ -17,7 +17,7 @@ You should receive an acknowledgment within a few days. Once a fix is available,
 
 ## Design principles relevant to security
 
-- Free Disk Analyzer does not require administrator privileges for normal disk analysis
+- PurgeCore does not require administrator privileges for normal disk analysis
 - The app never executes, deletes, or modifies scanned files in V1
 - All file system paths are validated before use
 - Every release is published with a `SHA256SUMS.txt` checksum file so downloads can be verified independently of Windows SmartScreen

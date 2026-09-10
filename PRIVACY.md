@@ -2,7 +2,7 @@
 
 *Free forever. Privacy first.*
 
-This document explains exactly what Free Disk Analyzer does and does not do with your data. It applies to the desktop application and mirrors the content shown in the app's Privacy page.
+This document explains exactly what PurgeCore does and does not do with your data. It applies to the desktop application and mirrors the content shown in the app's Privacy page.
 
 ## What stays local, always
 
@@ -37,11 +37,11 @@ This is off by default in spirit of privacy-first design, and can be turned off 
 
 ## Offline use
 
-Free Disk Analyzer works fully offline. Disabling your internet connection does not affect scanning, results, or any core feature.
+PurgeCore works fully offline. Disabling your internet connection does not affect scanning, results, or any core feature.
 
 ## Affiliate links
 
-Some Dashboard and post-scan entries are affiliate links (see [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md)). Clicking one opens your browser and sends you to the partner's website; from that point, the partner's own privacy policy applies. Free Disk Analyzer itself does not track which links you click.
+Some Dashboard and post-scan entries are affiliate links (see [AFFILIATE-DISCLOSURE.md](AFFILIATE-DISCLOSURE.md)). Clicking one opens your browser and sends you to the partner's website; from that point, the partner's own privacy policy applies. PurgeCore itself does not track which links you click.
 
 ## Changes to this policy
 

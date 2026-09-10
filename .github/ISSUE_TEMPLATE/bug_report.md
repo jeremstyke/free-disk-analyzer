@@ -21,7 +21,7 @@ What you expected to happen instead.
 If applicable.
 
 **Environment**
-- Free Disk Analyzer version:
+- PurgeCore version:
 - Windows version:
 - Installed via: Setup.exe / Portable.zip
 

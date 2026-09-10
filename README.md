@@ -1,4 +1,4 @@
-# Free Disk Analyzer
+# PurgeCore
 
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-lightgrey.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D6)](#)
@@ -19,7 +19,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 </p>
 
 <p align="center">
-  <a href="../../releases/latest/download/FreeDiskAnalyzer-Setup.exe">
+  <a href="../../releases/latest/download/PurgeCore-Setup.exe">
     <img src="https://img.shields.io/badge/%E2%86%93%20Download-for%20Windows-2563EB?style=for-the-badge" alt="Download for Windows" />
   </a>
 </p>
@@ -63,14 +63,14 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 ## Installation
 
 1. Go to the [latest release](../../releases/latest)
-2. Download `FreeDiskAnalyzer-Setup.exe` (installer) or `FreeDiskAnalyzer-Portable.zip` (portable)
+2. Download `PurgeCore-Setup.exe` (installer) or `PurgeCore-Portable.zip` (portable)
 3. Run it. Windows may show a SmartScreen warning, see below.
 
 ### About the Windows security warning
 
-Free Disk Analyzer is currently distributed without a commercial code-signing certificate. Windows SmartScreen may therefore display a warning because the application publisher cannot yet be verified.
+PurgeCore is currently distributed without a commercial code-signing certificate. Windows SmartScreen may therefore display a warning because the application publisher cannot yet be verified.
 
-This does not mean that Free Disk Analyzer is malware. The source code is publicly viewable on GitHub. You can also verify the downloaded release using the SHA-256 checksum published with each release (`SHA256SUMS.txt`).
+This does not mean that PurgeCore is malware. The source code is publicly viewable on GitHub. You can also verify the downloaded release using the SHA-256 checksum published with each release (`SHA256SUMS.txt`).
 
 ## Privacy
 
@@ -84,7 +84,7 @@ Full details: [PRIVACY.md](PRIVACY.md)
 
 ## Affiliate disclosure
 
-Some links in Free Disk Analyzer (on the Dashboard and after a scan completes) are affiliate links:
+Some links in PurgeCore (on the Dashboard and after a scan completes) are affiliate links:
 
 - [NordVPN](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer)
 - [DeleteMe](https://www.de33watrk.com/WCKMXS/KMKS9/)
@@ -105,7 +105,7 @@ Free-Disk-Analyzer/
 ├── assets/                        # Icons, logos, images
 ├── docs/                          # Additional documentation
 ├── website/                       # GitHub Pages site (published once the repo goes public)
-├── installer/                     # Inno Setup script producing FreeDiskAnalyzer-Setup.exe
+├── installer/                     # Inno Setup script producing PurgeCore-Setup.exe
 └── .github/                       # Workflows, issue and PR templates
 ```
 
@@ -143,4 +143,4 @@ This repository is public.
 
 ## Support
 
-If Free Disk Analyzer is useful to you, you can [offer a coffee](https://jeremstyke.gumroad.com/coffee).
+If PurgeCore is useful to you, you can [offer a coffee](https://jeremstyke.gumroad.com/coffee).

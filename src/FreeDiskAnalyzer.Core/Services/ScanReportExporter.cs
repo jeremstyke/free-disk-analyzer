@@ -17,7 +17,7 @@ public static class ScanReportExporter
         var sb = new StringBuilder();
         var culture = CultureInfo.InvariantCulture;
 
-        sb.AppendLine("Free Disk Analyzer scan report");
+        sb.AppendLine("PurgeCore scan report");
         sb.AppendLine($"Root path,{Csv(result.RootPath)}");
         sb.AppendLine($"Completed (UTC),{result.CompletedAtUtc.ToString("u", culture)}");
         sb.AppendLine($"Total files,{result.TotalFilesScanned}");

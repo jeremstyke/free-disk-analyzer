@@ -1,8 +1,8 @@
 name: Release
 
 # Triggered by pushing a tag like v1.0.0. Builds:
-#   - FreeDiskAnalyzer-Portable.zip  (self-contained, no installer)
-#   - FreeDiskAnalyzer-Setup.exe     (Inno Setup installer)
+#   - PurgeCore-Portable.zip  (self-contained, no installer)
+#   - PurgeCore-Setup.exe     (Inno Setup installer)
 #   - SHA256SUMS.txt                 (checksums for both, so a download can
 #                                      be verified even though v1 ships
 #                                      without a commercial code-signing
@@ -51,7 +51,7 @@ jobs:
 
       - name: Package portable zip
         shell: pwsh
-        run: Compress-Archive -Path publish/portable/* -DestinationPath FreeDiskAnalyzer-Portable.zip
+        run: Compress-Archive -Path publish/portable/* -DestinationPath PurgeCore-Portable.zip
 
       - name: Install Inno Setup
         run: choco install innosetup -y --no-progress
@@ -64,12 +64,12 @@ jobs:
             "/DSourceDir=$sourceDir" `
             "/DAppVersion=${{ steps.version.outputs.version }}" `
             installer\setup.iss
-          Copy-Item "installer\output\FreeDiskAnalyzer-Setup.exe" "FreeDiskAnalyzer-Setup.exe"
+          Copy-Item "installer\output\PurgeCore-Setup.exe" "PurgeCore-Setup.exe"
 
       - name: Generate SHA256SUMS.txt
         shell: pwsh
         run: |
-          $files = "FreeDiskAnalyzer-Portable.zip", "FreeDiskAnalyzer-Setup.exe"
+          $files = "PurgeCore-Portable.zip", "PurgeCore-Setup.exe"
           $lines = foreach ($f in $files) {
             $hash = (Get-FileHash $f -Algorithm SHA256).Hash
             "$hash  $f"
@@ -80,7 +80,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            FreeDiskAnalyzer-Portable.zip
-            FreeDiskAnalyzer-Setup.exe
+            PurgeCore-Portable.zip
+            PurgeCore-Setup.exe
             SHA256SUMS.txt
           generate_release_notes: true

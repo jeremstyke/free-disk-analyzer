@@ -8,7 +8,9 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <RootNamespace>FreeDiskAnalyzer</RootNamespace>
-    <AssemblyName>FreeDiskAnalyzer</AssemblyName>
+    <AssemblyName>PurgeCore</AssemblyName>
+    <Product>PurgeCore</Product>
+    <AssemblyTitle>PurgeCore</AssemblyTitle>
     <ApplicationIcon>..\..\assets\icon.ico</ApplicationIcon>
     <Platforms>x64</Platforms>
     <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>

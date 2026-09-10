@@ -114,7 +114,7 @@ public sealed partial class MainViewModel : ObservableObject
 
         try
         {
-            var tempPath = Path.Combine(Path.GetTempPath(), "FreeDiskAnalyzer-Setup.exe");
+            var tempPath = Path.Combine(Path.GetTempPath(), "PurgeCore-Setup.exe");
 
             using var client = new HttpClient { Timeout = TimeSpan.FromMinutes(5) };
             var bytes = await client.GetByteArrayAsync(_updateInfo.DownloadUrl);
