@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Disk Analyzer v1.0.2: In-App Update Notifications</title>
+<meta name="description" content="What's new in Free Disk Analyzer v1.0.2: a banner that appears when a newer version is out, with one-click download and install.">
+<meta property="og:title" content="Free Disk Analyzer v1.0.2: In-App Update Notifications">
+<meta property="og:description" content="What's new in Free Disk Analyzer v1.0.2: a banner that appears when a newer version is out, with one-click download and install.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/free-disk-analyzer/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-2-release-notes.html">
+<link rel="canonical" href="https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-2-release-notes.html">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Free Disk Analyzer Blog" href="rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      Free Disk Analyzer
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/free-disk-analyzer">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <div class="article-header">
+    <span class="article-tag">Release notes</span>
+  </div>
+  <h1>Free Disk Analyzer v1.0.2: In-App Update Notifications</h1>
+  <p class="article-meta">2026</p>
+
+  <p>v1.0.2 is a small, focused release: it adds update notifications inside the app itself, so future versions won't require checking GitHub manually.</p>
+
+  <h2>New: update banner</h2>
+  <p>On launch, Free Disk Analyzer quietly checks whether a newer version has been released. If one has, a banner appears at the top of the app, on every tab, with the version number and two choices: download and install right away, or dismiss it and keep using the current version.</p>
+
+  <h2>New: one-click install</h2>
+  <p>Choosing to update downloads the new installer in the background and launches it directly, no browser, no manual download step. The installer now automatically closes the running app, installs over it, and reopens it when done, so there's nothing else to click through.</p>
+
+  <h2>Why this matters</h2>
+  <p>v1.0.1 added a Cleanup section (duplicates, old files, empty folders, a RAM optimizer) and CSV export, but anyone who had already installed v1.0.0 had no way to know those features existed without checking GitHub. This closes that gap going forward.</p>
+
+  <h2>What stayed the same</h2>
+  <p>The check itself only reads the public release list on GitHub, nothing about your files, your drive, or your usage is involved or sent anywhere. If GitHub is unreachable, the app just stays quiet about it and works normally.</p>
+
+  <div class="cta-box">
+    <p>Already on v1.0.1? The next release after this one will show up as a banner automatically, no need to check back here manually.</p>
+  </div>
+
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Download v1.0.2</h2>
+    <p>Free forever, no account, no trial.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/FreeDiskAnalyzer-Setup.exe">Download for Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, so Windows may show a brief "unknown publisher" warning on first run. The source is public on GitHub, and each release is published with a SHA-256 checksum you can verify.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved.<br>Also by the same developer: <a href="https://getcleantab.com/">CleanTab, a free browser cleaner</a>. If Free Disk Analyzer is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">Free Disk Analyzer may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+</body>
+</html>
