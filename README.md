@@ -28,10 +28,6 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 
 ---
 
-> 🚀 **Coming soon: a free, built-in VPN.** In development, planned locations include the US, UK, France, Germany, and more. Nothing to buy yet. [See the VPN page](https://jeremstyke.github.io/free-disk-analyzer/vpn.html) · [Read the announcement](https://jeremstyke.github.io/free-disk-analyzer/blog/free-vpn-coming-soon.html)
-
----
-
 ## Screenshots
 
 *Screenshots will be added here once the first UI build is available.*
@@ -49,7 +45,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Browser cleanup: clears cache, cookies, and history for Chrome, Edge, and Firefox (bookmarks and passwords are never touched, Firefox history is intentionally skipped since it's stored together with bookmarks)
 - Free up RAM (real before/after numbers, not a promised gain)
 - Startup program manager (enable/disable/remove apps that launch with Windows, per-user only, no admin rights needed)
-- VPN tab: coming-soon page for a planned free, built-in VPN (no payment collected, informational only for now)
+- Driver info (read-only): installed drivers, flags ones 3+ years old, links to Windows Update and manufacturer sites, never downloads or installs anything itself
 - In-app update notifications, with one-click download and install
 - Latest blog articles shown on the Dashboard
 - PC cleanup: Temp files and Recycle Bin (System tab in Cleanup)

@@ -16,6 +16,7 @@ public sealed partial class ExploreViewModel : ObservableObject
     public LargeFilesViewModel LargeFiles { get; }
     public FoldersViewModel Folders { get; }
     public OldFilesViewModel OldFiles { get; }
+    public DriversViewModel Drivers { get; }
 
     public ObservableCollection<CleanupTab> Tabs { get; }
 
@@ -25,17 +26,19 @@ public sealed partial class ExploreViewModel : ObservableObject
     [ObservableProperty]
     private object? currentContent;
 
-    public ExploreViewModel(ScanResultStore scanResultStore)
+    public ExploreViewModel(ScanResultStore scanResultStore, IDriverInfoService driverInfoService)
     {
         LargeFiles = new LargeFilesViewModel(scanResultStore);
         Folders = new FoldersViewModel(scanResultStore);
         OldFiles = new OldFilesViewModel(scanResultStore);
+        Drivers = new DriversViewModel(driverInfoService);
 
         Tabs = new ObservableCollection<CleanupTab>
         {
             new(Resources.Strings.LargeFiles_Title, LargeFiles),
             new(Resources.Strings.Folders_Title, Folders),
-            new(Resources.Strings.OldFiles_Title, OldFiles)
+            new(Resources.Strings.OldFiles_Title, OldFiles),
+            new(Resources.Strings.Drivers_Title, Drivers)
         };
 
         SelectedTab = Tabs[0];

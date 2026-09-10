@@ -2,9 +2,9 @@ using System.Windows.Controls;
 
 namespace FreeDiskAnalyzer.Views;
 
-public partial class VpnView : UserControl
+public partial class DriversView : UserControl
 {
-    public VpnView()
+    public DriversView()
     {
         InitializeComponent();
     }

@@ -1,0 +1,59 @@
+<UserControl x:Class="FreeDiskAnalyzer.Views.DriversView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="clr-namespace:FreeDiskAnalyzer.Resources">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,8,0,16">
+            <TextBlock Text="{x:Static res:Strings.Drivers_Title}" FontWeight="SemiBold" FontSize="16"
+                       Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+            <TextBlock Text="{x:Static res:Strings.Drivers_Body}" TextWrapping="Wrap"
+                       Style="{StaticResource BodyTextStyle}" Margin="0,0,0,16"/>
+            <WrapPanel>
+                <Button Content="{x:Static res:Strings.Drivers_OpenWindowsUpdate}" Style="{StaticResource PrimaryButtonStyle}"
+                        Margin="0,0,8,8" Command="{Binding OpenWindowsUpdateCommand}"/>
+                <Button Content="NVIDIA" Margin="0,0,8,8" Command="{Binding OpenNvidiaCommand}"/>
+                <Button Content="AMD" Margin="0,0,8,8" Command="{Binding OpenAmdCommand}"/>
+                <Button Content="Intel" Margin="0,0,8,8" Command="{Binding OpenIntelCommand}"/>
+            </WrapPanel>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Drivers}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource CardStyle}" Margin="0,0,0,8" Padding="14">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="{Binding DeviceName}" FontWeight="SemiBold"
+                                               Foreground="{DynamicResource TextPrimaryBrush}"/>
+                                    <TextBlock Style="{StaticResource CaptionTextStyle}">
+                                        <Run Text="{Binding Manufacturer, Mode=OneWay}"/>
+                                        <Run Text=" · v"/>
+                                        <Run Text="{Binding Version, Mode=OneWay}"/>
+                                        <Run Text=" · "/>
+                                        <Run Text="{Binding DriverDate, StringFormat='{}{0:yyyy-MM-dd}', Mode=OneWay}"/>
+                                    </TextBlock>
+                                </StackPanel>
+
+                                <Border Grid.Column="1" Background="#F59E0B" CornerRadius="999" Padding="8,3" VerticalAlignment="Center"
+                                        Visibility="{Binding IsPotentiallyOld, Converter={StaticResource BoolToVis}}">
+                                    <TextBlock Text="{x:Static res:Strings.Drivers_OldBadge}" Foreground="White" FontSize="10" FontWeight="Bold"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

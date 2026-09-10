@@ -27,10 +27,6 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 
 ---
 
-> 🚀 **Bientôt disponible : un VPN gratuit intégré.** En développement, localisations prévues : États-Unis, Royaume-Uni, France, Allemagne, et plus. Rien à acheter pour l'instant. [Voir la page VPN](https://jeremstyke.github.io/free-disk-analyzer/vpn.html) · [Lire l'annonce](https://jeremstyke.github.io/free-disk-analyzer/blog/free-vpn-coming-soon.html)
-
----
-
 ---
 
 ## Fonctionnalités
@@ -46,7 +42,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Nettoyage des navigateurs : efface le cache, les cookies et l'historique pour Chrome, Edge et Firefox (favoris et mots de passe jamais touchés, historique Firefox volontairement exclu car mélangé aux favoris dans le même fichier)
 - Libération de RAM (vrais chiffres avant/après, pas un gain promis)
 - Gestionnaire de démarrage (activer/désactiver/supprimer les apps au démarrage de Windows, compte utilisateur uniquement, pas besoin de droits admin)
-- Onglet VPN : page "bientôt disponible" pour un futur VPN gratuit intégré (aucun paiement collecté, informatif seulement pour l'instant)
+- Infos pilotes (lecture seule) : pilotes installés, signale ceux de 3+ ans, liens vers Windows Update et les sites fabricants, ne télécharge ni n'installe jamais rien lui-même
 - Notifications de mise à jour dans l'app, avec téléchargement et installation en un clic
 - Derniers articles du blog affichés sur le tableau de bord
 - Nettoyage PC : fichiers temporaires et Corbeille (onglet Système dans Nettoyage)

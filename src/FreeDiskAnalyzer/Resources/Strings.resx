@@ -38,7 +38,6 @@
   <data name="Nav_Analyze" xml:space="preserve"><value>Analyze</value></data>
   <data name="Nav_Explore" xml:space="preserve"><value>Explore</value></data>
   <data name="Nav_Cleanup" xml:space="preserve"><value>Cleanup</value></data>
-  <data name="Nav_Vpn" xml:space="preserve"><value>VPN</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Settings</value></data>
   <data name="Nav_Privacy" xml:space="preserve"><value>Privacy</value></data>
   <data name="Nav_About" xml:space="preserve"><value>About</value></data>
@@ -119,19 +118,11 @@
   <data name="Startup_Remove" xml:space="preserve"><value>Remove</value></data>
   <data name="Startup_NoneFound" xml:space="preserve"><value>No startup programs found.</value></data>
 
-  <data name="Vpn_Title" xml:space="preserve"><value>Free VPN</value></data>
-  <data name="Vpn_ComingSoonBadge" xml:space="preserve"><value>COMING SOON</value></data>
-  <data name="Vpn_Subtitle" xml:space="preserve"><value>A built-in VPN is in development. Nothing to buy here yet, this page is just to show where things stand.</value></data>
-  <data name="Vpn_LocationsTitle" xml:space="preserve"><value>Planned server locations</value></data>
-  <data name="Vpn_LocationsNote" xml:space="preserve"><value>Final list depends on infrastructure partner availability, subject to change.</value></data>
-  <data name="Vpn_Body" xml:space="preserve"><value>The goal is a genuinely free tier alongside the free app, funded without compromising what you already get for nothing. How exactly it will be funded (ads, an optional paid tier, or something else) hasn't been finalized, and nothing will be sold here until it actually works.</value></data>
-  <data name="Vpn_MeanwhileTitle" xml:space="preserve"><value>Need a VPN right now?</value></data>
-  <data name="Vpn_MeanwhileBody" xml:space="preserve"><value>NordVPN is a real, working VPN you can use today while the built-in one is being developed.</value></data>
-  <data name="Vpn_SecureNow" xml:space="preserve"><value>Secure my PC in the meantime</value></data>
-  <data name="Vpn_SupportTitle" xml:space="preserve"><value>Support VPN development</value></data>
-  <data name="Vpn_SupportBody" xml:space="preserve"><value>This is a donation to help fund building the free VPN, not a purchase of VPN access, there's nothing to activate yet.</value></data>
-  <data name="Vpn_SupportButton" xml:space="preserve"><value>Support development</value></data>
-  <data name="Vpn_LearnMore" xml:space="preserve"><value>See full details on the website</value></data>
+  <data name="Drivers_Title" xml:space="preserve"><value>Drivers</value></data>
+  <data name="Drivers_Body" xml:space="preserve"><value>Installed drivers and how old they are. Nothing here is downloaded or installed automatically, use Windows Update or the manufacturer's own site to update anything.</value></data>
+  <data name="Drivers_OpenWindowsUpdate" xml:space="preserve"><value>Open Windows Update</value></data>
+  <data name="Drivers_OldBadge" xml:space="preserve"><value>3+ years old</value></data>
+
 
   <data name="Browsers_Title" xml:space="preserve"><value>Browser cleanup</value></data>
   <data name="Browsers_Body" xml:space="preserve"><value>Clears cache, cookies, and browsing history for Chrome, Edge, and Firefox. Bookmarks and saved passwords are never touched. For Firefox, history is not offered here since it's stored together with bookmarks in the same file. Close your browsers first for best results.</value></data>

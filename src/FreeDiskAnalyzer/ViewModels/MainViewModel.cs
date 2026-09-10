@@ -19,6 +19,7 @@ public sealed partial class MainViewModel : ObservableObject
     private readonly IDuplicateFinder _duplicateFinder;
     private readonly IRamOptimizer _ramOptimizer;
     private readonly IStartupManager _startupManager;
+    private readonly IDriverInfoService _driverInfoService;
     private readonly ISettingsService _settingsService;
     private readonly IUpdateChecker _updateChecker;
     private readonly IBlogFeedService _blogFeedService;
@@ -59,6 +60,7 @@ public sealed partial class MainViewModel : ObservableObject
         IDuplicateFinder duplicateFinder,
         IRamOptimizer ramOptimizer,
         IStartupManager startupManager,
+        IDriverInfoService driverInfoService,
         ISettingsService settingsService,
         IUpdateChecker updateChecker,
         IBlogFeedService blogFeedService,
@@ -71,6 +73,7 @@ public sealed partial class MainViewModel : ObservableObject
         _duplicateFinder = duplicateFinder;
         _ramOptimizer = ramOptimizer;
         _startupManager = startupManager;
+        _driverInfoService = driverInfoService;
         _settingsService = settingsService;
         _updateChecker = updateChecker;
         _blogFeedService = blogFeedService;
@@ -149,9 +152,8 @@ public sealed partial class MainViewModel : ObservableObject
         {
             NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _blogFeedService, _scanResultStore),
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
-            NavKey.Explore => new ExploreViewModel(_scanResultStore),
+            NavKey.Explore => new ExploreViewModel(_scanResultStore, _driverInfoService),
             NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _startupManager, _safeDeleteService, _browserCleaner, _systemCleaner, _settingsService, _scanResultStore),
-            NavKey.Vpn => new VpnViewModel(),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
             NavKey.About => new AboutViewModel(),
@@ -167,7 +169,6 @@ public sealed partial class MainViewModel : ObservableObject
         NavKey.Analyze => "Analyze",
         NavKey.Explore => "Explore",
         NavKey.Cleanup => "Cleanup",
-        NavKey.Vpn => "VPN",
         NavKey.Settings => "Settings",
         NavKey.Privacy => "Privacy",
         NavKey.About => "About",
@@ -180,7 +181,6 @@ public sealed partial class MainViewModel : ObservableObject
         new NavItem { Key = NavKey.Analyze, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Analyze, Glyph = "\uE721" },
         new NavItem { Key = NavKey.Explore, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Explore, Glyph = "\uE8A5" },
         new NavItem { Key = NavKey.Cleanup, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Cleanup, Glyph = "\uE74D" },
-        new NavItem { Key = NavKey.Vpn, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Vpn, Glyph = "\uE81E" },
         new NavItem { Key = NavKey.Settings, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Settings, Glyph = "\uE713" },
         new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E" },
         new NavItem { Key = NavKey.About, Label = FreeDiskAnalyzer.Resources.Strings.Nav_About, Glyph = "\uE946" }
