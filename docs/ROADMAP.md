@@ -88,9 +88,9 @@ All read-only except RAM optimization (which modifies live process memory state,
 
 ## Out of scope for v1
 
-- Any file deletion or cleanup feature (analysis-only in v1, per spec)
 - Any paid tier or artificially limited feature
 - Any telemetry beyond the documented anonymous, opt-in usage stats
+- A generic "delete this file/folder" button anywhere outside the specific, safe, well-defined deletion features already built (Duplicates, Empty Folders, Browser cleanup)
 
 ## v2 vision (per Bob, logged only, nothing started)
 
@@ -134,3 +134,21 @@ Added: `IUpdateChecker` / `UpdateChecker` (Core) polls the GitHub Releases API o
 The installer (`installer/setup.iss`) now sets `CloseApplications=yes` and `RestartApplications=yes`, so launching it from inside a running Free Disk Analyzer closes the app, installs over it, and reopens it automatically, a genuine one-click update rather than requiring the user to close the app manually first.
 
 Process going forward, for whoever cuts the next release: write a blog post for every tagged release (see `website/blog/v1-0-1-release-notes.html` for the pattern), add it to `website/blog/index.html`, `website/sitemap.xml`, and `website/blog/rss.xml`. Not automated yet, each of those four files needs a manual edit per release. Automating this (e.g. a release.yml step that generates the post from the tag's changelog) would be a reasonable follow-up if releases become frequent enough that the manual step gets skipped.
+
+## First real deletion features, and browser cleanup to replace CleanTab's core function (per Bob, 2026-09-10)
+
+This is the first time the app deletes anything. Explicit request from Bob, with an explicit safety requirement attached, not something to build lightly, so the safety design is documented here in detail:
+
+- `PathSafetyGuard` (Core, unit tested): hard-coded refusal to consider anything under Windows, Program Files, or Program Files (x86) safe to delete, regardless of what feature or code path produced the path. Applied both when a feature decides what to *offer* for deletion and again, redundantly, inside `SafeDeleteService` right before the actual delete call.
+- `SafeDeleteService` (WPF project, uses `Microsoft.VisualBasic.FileIO.FileSystem`): every delete in the app goes to the Recycle Bin, never `File.Delete`/`Directory.Delete` directly. Never throws, returns false on failure (locked file, missing, protected path) so callers can report "skipped" rather than crash.
+- Every delete path requires an explicit confirmation dialog showing what will be deleted and roughly how much space it frees, before anything happens.
+
+What can actually be deleted, and nothing else:
+
+1. **Duplicates**: "Delete extra copies" per group, always keeps the first file, only offers the rest for deletion, a duplicate group can never be fully wiped out by this button.
+2. **Empty Folders**: delete button per folder, only offered for folders the scanner already confirmed are empty (recursively, `FolderNode.IsEmpty`).
+3. **Browser cleanup** (new "Browsers" tab in Cleanup, 5th sub-tab): `IBrowserCleaner` / `BrowserCleaner` scans Chrome, Edge (Chromium, `Default` profile only, per-profile support like "Profile 1" not implemented) and Firefox (default profile via directory pattern match, not full `profiles.ini` parsing) for Cache, Cookies, and History, shows sizes, lets the user pick which to clear via checkboxes, deletes only what's selected after confirmation. Firefox History is never offered, it lives in the same `places.sqlite` database as bookmarks in Firefox, too risky to touch with a simple file delete. Bookmarks and saved passwords are never in scope for any browser. This is the feature that gives Free Disk Analyzer the core capability CleanTab has as a browser extension, relevant to the "replace CleanTab" long-term direction logged earlier in this file.
+
+Deliberately not built: a generic "delete this" button on Large Files, Old Files, or Folders. Those tabs show arbitrary files the scanner found, which could be anything, so deletion there stays manual (the existing Show in Explorer button) rather than one click. See the note added to `CONTRIBUTING.md`.
+
+Not yet verified by hand: this is real, permanent-ish (Recycle-Bin-backed but still) file deletion, shipped without ever having been run on a real machine, same caveat as everything else in this project, but it matters more here than anywhere else so far.

@@ -34,9 +34,10 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Vues Largest Folders et Largest Files
 - Recherche dédiée de fichiers volumineux avec filtres de taille (100 Mo, 500 Mo, 1 Go, 5 Go, personnalisé)
 - Vue hiérarchique des dossiers pour repérer rapidement ce qui consomme l'espace
-- Détecteur de fichiers en double (1 Mo et plus, comparés par contenu, pas juste nom/taille)
+- Détecteur de fichiers en double (1 Mo et plus, comparés par contenu, pas juste nom/taille), suppression des copies en trop directement depuis la liste (garde toujours au moins une copie, envoie à la Corbeille)
 - Détecteur de fichiers anciens, ceux probablement oubliés, triés par date de modification
-- Détecteur de dossiers vides
+- Détecteur de dossiers vides, avec suppression en un clic (Corbeille, pas définitif)
+- Nettoyage des navigateurs : efface le cache, les cookies et l'historique pour Chrome, Edge et Firefox (favoris et mots de passe jamais touchés, historique Firefox volontairement exclu car mélangé aux favoris dans le même fichier)
 - Libération de RAM (vrais chiffres avant/après, pas un gain promis)
 - Notifications de mise à jour dans l'app, avec téléchargement et installation en un clic
 - Derniers articles du blog affichés sur le tableau de bord

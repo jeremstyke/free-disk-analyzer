@@ -39,9 +39,10 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Largest Folders and Largest Files views
 - Dedicated Large Files search with size filters (100 MB, 500 MB, 1 GB, 5 GB, custom)
 - Folder hierarchy view to quickly spot what is consuming space
-- Duplicate file finder (files 1 MB and up, matched by content, not just name/size)
+- Duplicate file finder (files 1 MB and up, matched by content, not just name/size), delete extra copies straight from the list (always keeps at least one copy, sends to Recycle Bin)
 - Old files finder, the ones you likely forgot about, sorted by last modified date
-- Empty folder finder
+- Empty folder finder, with one-click delete (Recycle Bin, not permanent)
+- Browser cleanup: clears cache, cookies, and history for Chrome, Edge, and Firefox (bookmarks and passwords are never touched, Firefox history is intentionally skipped since it's stored together with bookmarks)
 - Free up RAM (real before/after numbers, not a promised gain)
 - In-app update notifications, with one-click download and install
 - Latest blog articles shown on the Dashboard
