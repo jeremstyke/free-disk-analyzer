@@ -1,3 +1,5 @@
+using FreeDiskAnalyzer.Core.Models;
+
 namespace FreeDiskAnalyzer.Models;
 
 /// <summary>
@@ -12,4 +14,12 @@ public sealed class BrowserCleanupItem
     public required BrowserCleanupCategory Category { get; init; }
     public required IReadOnlyList<string> Paths { get; init; }
     public required long SizeBytes { get; init; }
+
+    public RiskLevel RiskLevel => Category switch
+    {
+        BrowserCleanupCategory.Cache => RiskLevel.Low,
+        BrowserCleanupCategory.Cookies => RiskLevel.Medium,
+        BrowserCleanupCategory.History => RiskLevel.High,
+        _ => RiskLevel.Medium
+    };
 }

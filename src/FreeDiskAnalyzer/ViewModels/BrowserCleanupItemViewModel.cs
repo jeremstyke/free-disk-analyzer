@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using FreeDiskAnalyzer.Core.Models;
 using FreeDiskAnalyzer.Core.Utilities;
 using FreeDiskAnalyzer.Models;
 
@@ -11,6 +12,7 @@ public sealed partial class BrowserCleanupItemViewModel : ObservableObject
     public string BrowserName => Item.BrowserName;
     public string CategoryLabel => Item.Category.ToString();
     public string SizeDisplay => ByteSizeFormatter.Format(Item.SizeBytes);
+    public RiskLevel RiskLevel => Item.RiskLevel;
 
     [ObservableProperty]
     private bool isSelected = true;

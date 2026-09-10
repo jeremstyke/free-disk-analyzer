@@ -101,6 +101,10 @@ public static class Strings
     public static string Browsers_Body => Get(nameof(Browsers_Body));
     public static string Browsers_RescanCommand => Get(nameof(Browsers_RescanCommand));
     public static string Browsers_Clean => Get(nameof(Browsers_Clean));
+    public static string Risk_Low => Get(nameof(Risk_Low));
+    public static string Risk_Medium => Get(nameof(Risk_Medium));
+    public static string Risk_High => Get(nameof(Risk_High));
+    public static string Browsers_RiskLegend => Get(nameof(Browsers_RiskLegend));
 
     public static string Update_Available => Get(nameof(Update_Available));
     public static string Update_Download => Get(nameof(Update_Download));

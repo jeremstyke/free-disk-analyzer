@@ -61,6 +61,7 @@
             <converters:ByteSizeConverter x:Key="ByteSizeConverter"/>
             <converters:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVis"/>
             <converters:PercentageToWidthConverter x:Key="PercentageToWidthConverter"/>
+            <converters:RiskLevelToBrushConverter x:Key="RiskLevelToBrushConverter"/>
             <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         </ResourceDictionary>
     </Application.Resources>

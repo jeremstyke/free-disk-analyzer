@@ -118,6 +118,10 @@
   <data name="Browsers_Body" xml:space="preserve"><value>Clears cache, cookies, and browsing history for Chrome, Edge, and Firefox. Bookmarks and saved passwords are never touched. For Firefox, history is not offered here since it's stored together with bookmarks in the same file. Close your browsers first for best results.</value></data>
   <data name="Browsers_RescanCommand" xml:space="preserve"><value>Rescan</value></data>
   <data name="Browsers_Clean" xml:space="preserve"><value>Clean selected</value></data>
+  <data name="Risk_Low" xml:space="preserve"><value>Low risk</value></data>
+  <data name="Risk_Medium" xml:space="preserve"><value>Medium risk</value></data>
+  <data name="Risk_High" xml:space="preserve"><value>High risk</value></data>
+  <data name="Browsers_RiskLegend" xml:space="preserve"><value>Green: nothing meaningful is lost. Orange: minor inconvenience (signed out of sites). Red: something you might want to keep (history).</value></data>
 
   <data name="Update_Available" xml:space="preserve"><value>A new version is available: v{0}</value></data>
   <data name="Update_Download" xml:space="preserve"><value>Download and install</value></data>

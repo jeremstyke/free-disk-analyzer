@@ -12,7 +12,11 @@
         <StackPanel Grid.Row="0">
             <TextBlock Text="{x:Static res:Strings.Duplicates_Title}" Style="{StaticResource TitleTextStyle}"/>
             <TextBlock Text="{x:Static res:Strings.Duplicates_Subtitle}"
-                       Style="{StaticResource SubtitleTextStyle}" Margin="0,4,0,20"/>
+                       Style="{StaticResource SubtitleTextStyle}" Margin="0,4,0,8"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Ellipse Width="10" Height="10" Margin="0,0,6,0" VerticalAlignment="Center" Fill="#16A34A"/>
+                <TextBlock Text="{x:Static res:Strings.Risk_Low}" Style="{StaticResource CaptionTextStyle}"/>
+            </StackPanel>
         </StackPanel>
 
         <Border Grid.Row="1" Style="{StaticResource CardStyle}" Margin="0,0,0,20">
