@@ -3,6 +3,7 @@ using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Utilities;
+using FreeDiskAnalyzer.Models;
 using FreeDiskAnalyzer.Services;
 
 namespace FreeDiskAnalyzer.ViewModels;
@@ -55,9 +56,18 @@ public sealed partial class SystemViewModel : ObservableObject
         if (selected.Count == 0) return;
 
         var totalSize = selected.Sum(i => i.Item.SizeBytes);
+        var includesRecycleBin = selected.Any(i => i.Item.Category == SystemCleanupCategory.RecycleBin);
+
+        var message = $"Clean {selected.Count} item(s), about {ByteSizeFormatter.Format(totalSize)}?\n" +
+                      "Temp files go to the Recycle Bin, recoverable if needed.";
+
+        if (includesRecycleBin)
+        {
+            message += "\n\nEmptying the Recycle Bin is permanent: those files will not be recoverable afterwards.";
+        }
 
         var confirmed = MessageBox.Show(
-            $"Clean {selected.Count} item(s), about {ByteSizeFormatter.Format(totalSize)}?",
+            message,
             "Clean system",
             MessageBoxButton.YesNo,
             MessageBoxImage.Warning) == MessageBoxResult.Yes;

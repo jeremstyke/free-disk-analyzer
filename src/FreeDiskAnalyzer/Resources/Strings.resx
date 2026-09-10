@@ -124,7 +124,7 @@
   <data name="Browsers_RiskLegend" xml:space="preserve"><value>Green: nothing meaningful is lost. Orange: minor inconvenience (signed out of sites). Red: something you might want to keep (history).</value></data>
 
   <data name="System_Title" xml:space="preserve"><value>Temp files and Recycle Bin</value></data>
-  <data name="System_Body" xml:space="preserve"><value>Clears your Temp folder and empties the Recycle Bin. Both regenerate or were already discarded, low risk.</value></data>
+  <data name="System_Body" xml:space="preserve"><value>Clears your Temp folder (low risk, files go to the Recycle Bin) and empties the Recycle Bin (medium risk, permanent, review what's in it first if unsure).</value></data>
   <data name="System_TempFiles" xml:space="preserve"><value>Temp files</value></data>
   <data name="System_RecycleBin" xml:space="preserve"><value>Recycle Bin</value></data>
 
