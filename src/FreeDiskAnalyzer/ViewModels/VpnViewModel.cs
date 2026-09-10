@@ -14,7 +14,7 @@ namespace FreeDiskAnalyzer.ViewModels;
 public sealed partial class VpnViewModel : ObservableObject
 {
     public const string SupportDevelopmentUrl = "https://jeremstyke.gumroad.com/coffee";
-    public const string VpnPageUrl = "https://jeremstyke.github.io/free-disk-analyzer/vpn.html";
+    public const string VpnPageUrl = "https://jeremstyke.github.io/free-disk-analyzer/blog/free-vpn-coming-soon.html";
 
     [RelayCommand]
     private void OpenNordVpn()
