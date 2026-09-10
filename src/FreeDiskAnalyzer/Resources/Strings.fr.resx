@@ -162,8 +162,6 @@
   <data name="About_ViewGitHub" xml:space="preserve"><value>Voir sur GitHub</value></data>
   <data name="About_Version" xml:space="preserve"><value>Version</value></data>
   <data name="About_License" xml:space="preserve"><value>Tous droits réservés. Voir LICENSE dans le dépôt.</value></data>
-  <data name="About_MoreApps" xml:space="preserve"><value>Aussi par le même développeur</value></data>
-  <data name="About_CleanTab" xml:space="preserve"><value>CleanTab, un nettoyeur de navigateur gratuit et respectueux de la vie privée</value></data>
   <data name="About_Coffee" xml:space="preserve"><value>Offrir un café</value></data>
 
   <data name="ComingSoon_Subtitle" xml:space="preserve"><value>Cette section arrive dans une prochaine mise à jour.</value></data>

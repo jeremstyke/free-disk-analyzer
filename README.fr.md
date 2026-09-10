@@ -131,8 +131,6 @@ Tous droits réservés. L'application est gratuite à l'usage, le code source n'
 
 Ce dépôt est public.
 
-## Autres projets du développeur
-
-[CleanTab - Browser Cleaner](https://getcleantab.com/) : un nettoyeur de navigateur gratuit et respectueux de la vie privée pour Chrome et Edge, même philosophie "gratuit pour toujours, confidentialité d'abord" que ce projet, par le même développeur.
+## Soutien
 
 Si Free Disk Analyzer vous est utile, vous pouvez [offrir un café](https://jeremstyke.gumroad.com/coffee).

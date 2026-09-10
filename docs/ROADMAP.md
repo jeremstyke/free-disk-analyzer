@@ -161,3 +161,7 @@ Two additions on top of the deletion safety work above:
 - **Cookie whitelist** (Settings): a list of domains (one per line) whose cookies survive a cookie cleanup, so the user stays signed in to sites they choose. Implemented via `Microsoft.Data.Sqlite`, opening the browser's cookie database directly and deleting only non-whitelisted rows (Chromium: `cookies` table / `host_key` column, Firefox: `moz_cookies` / `host`), rather than deleting the whole file.
 
 Flagged explicitly to Bob when built: the cookie whitelist is meaningfully less certain than everything else in this app. It edits another program's private database file based on an assumed schema that could differ across browser versions or break on a future update, verified by static reasoning only, never against a real Chrome/Edge/Firefox cookie database. Failures are caught and skipped (never a partial/corrupt write attempted), but "doesn't crash" isn't the same as "definitely works as intended", this is the one feature in the app worth extra scrutiny once real testing starts.
+
+## CleanTab cross-promotion removed from site/app (per Bob, 2026-09-10)
+
+All CleanTab links and mentions removed from the website (footer on every page, About page bio) and the app (About page card, ViewModel command/URL, resx strings). Consistent with Free Disk Analyzer now having its own browser cleanup feature rather than needing to point at CleanTab for that. Note: this only covers what lives in this repository, the CleanTab extension itself is a separate codebase/session, not something reachable from here.
