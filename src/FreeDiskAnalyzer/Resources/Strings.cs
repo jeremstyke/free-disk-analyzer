@@ -21,6 +21,7 @@ public static class Strings
     public static string Nav_Analyze => Get(nameof(Nav_Analyze));
     public static string Nav_Explore => Get(nameof(Nav_Explore));
     public static string Nav_Cleanup => Get(nameof(Nav_Cleanup));
+    public static string Nav_Vpn => Get(nameof(Nav_Vpn));
     public static string Nav_Settings => Get(nameof(Nav_Settings));
     public static string Nav_Privacy => Get(nameof(Nav_Privacy));
     public static string Nav_About => Get(nameof(Nav_About));
@@ -100,6 +101,19 @@ public static class Strings
     public static string Startup_Body => Get(nameof(Startup_Body));
     public static string Startup_Remove => Get(nameof(Startup_Remove));
     public static string Startup_NoneFound => Get(nameof(Startup_NoneFound));
+
+    public static string Vpn_Title => Get(nameof(Vpn_Title));
+    public static string Vpn_ComingSoonBadge => Get(nameof(Vpn_ComingSoonBadge));
+    public static string Vpn_Subtitle => Get(nameof(Vpn_Subtitle));
+    public static string Vpn_LocationsTitle => Get(nameof(Vpn_LocationsTitle));
+    public static string Vpn_LocationsNote => Get(nameof(Vpn_LocationsNote));
+    public static string Vpn_Body => Get(nameof(Vpn_Body));
+    public static string Vpn_MeanwhileTitle => Get(nameof(Vpn_MeanwhileTitle));
+    public static string Vpn_MeanwhileBody => Get(nameof(Vpn_MeanwhileBody));
+    public static string Vpn_SecureNow => Get(nameof(Vpn_SecureNow));
+    public static string Vpn_SupportTitle => Get(nameof(Vpn_SupportTitle));
+    public static string Vpn_SupportBody => Get(nameof(Vpn_SupportBody));
+    public static string Vpn_SupportButton => Get(nameof(Vpn_SupportButton));
 
     public static string Browsers_Title => Get(nameof(Browsers_Title));
     public static string Browsers_Body => Get(nameof(Browsers_Body));

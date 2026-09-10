@@ -33,6 +33,9 @@
             <DataTemplate DataType="{x:Type vm:CleanupViewModel}">
                 <views:CleanupView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:VpnViewModel}">
+                <views:VpnView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:OldFilesViewModel}">
                 <views:OldFilesView/>
             </DataTemplate>
