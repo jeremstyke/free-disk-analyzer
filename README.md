@@ -47,7 +47,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - In-app update notifications, with one-click download and install
 - Latest blog articles shown on the Dashboard
 - PC cleanup: Temp files and Recycle Bin (System tab in Cleanup)
-- Cookie whitelist (Settings): keep specific sites signed in when clearing cookies
+- Cookie whitelist (Browsers tab): keep specific sites signed in when clearing cookies
 - Green/orange/red risk indicators on every deletion feature
 - Export a scan report to CSV
 - NordVPN recommendation on the Dashboard, and a DeleteMe recommendation after a scan completes, both clearly labeled as affiliate links

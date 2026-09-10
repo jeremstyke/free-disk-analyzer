@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Disk Analyzer v1.1.0: Cleanup That Actually Cleans</title>
+<meta name="description" content="What's new in Free Disk Analyzer v1.1.0: safe deletion for duplicates and empty folders, browser cleanup for Chrome/Edge/Firefox, a cookie whitelist, PC cleanup, RAM optimization, and risk indicators on everything.">
+<meta property="og:title" content="Free Disk Analyzer v1.1.0: Cleanup That Actually Cleans">
+<meta property="og:description" content="What's new in Free Disk Analyzer v1.1.0: safe deletion for duplicates and empty folders, browser cleanup for Chrome/Edge/Firefox, a cookie whitelist, PC cleanup, RAM optimization, and risk indicators on everything.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/free-disk-analyzer/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/free-disk-analyzer/blog/v1-1-0-release-notes.html">
+<link rel="canonical" href="https://jeremstyke.github.io/free-disk-analyzer/blog/v1-1-0-release-notes.html">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Free Disk Analyzer Blog" href="rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      Free Disk Analyzer
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/free-disk-analyzer">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <div class="article-header">
+    <span class="article-tag">Release notes</span>
+  </div>
+  <h1>Free Disk Analyzer v1.1.0: Cleanup That Actually Cleans</h1>
+  <p class="article-meta">2026</p>
+
+  <p>Every earlier version could show you what was using your space. v1.1.0 is the first version that can actually do something about it, and it's built around one rule: nothing gets deleted without your say-so, and nothing important gets touched by accident.</p>
+
+  <h2>Real deletion, with real guardrails</h2>
+  <p>Two safety layers apply to every delete action in the app, everywhere: it always goes to the Recycle Bin, never a permanent delete, and it's hard-blocked from ever touching anything inside Windows or Program Files, no matter what triggered it. On top of that, you always see a confirmation showing exactly what will be deleted and roughly how much space it frees, before anything happens.</p>
+
+  <h2>New: delete duplicates and empty folders</h2>
+  <p>The Duplicates and Empty Folders tools (moved into the new Explore/Cleanup split, more on that below) can now clean up what they find. Duplicates always keeps at least one copy of every file, an entire group can never be wiped out by one click. Empty folders go straight to the Recycle Bin.</p>
+
+  <h2>New: browser cleanup, built in</h2>
+  <p>A new Browsers tab clears cache, cookies, and history for Chrome, Edge, and Firefox. Bookmarks and saved passwords are never touched, and for Firefox specifically, history is intentionally left alone since it's stored in the same database as bookmarks there, too easy to get wrong. A cookie whitelist lets you list domains to keep signed in to (one per line), the rest get cleared as usual.</p>
+
+  <h2>New: PC cleanup and a RAM check</h2>
+  <p>A System tab clears your Temp folder and can empty the Recycle Bin, with an extra warning specifically for the Recycle Bin since that one step really is permanent. A Performance tab asks Windows to reclaim unused memory and shows the real before/after numbers rather than a promised gain, on modern Windows the actual effect of this kind of action is often smaller than "RAM cleaner" tools like to imply.</p>
+
+  <h2>New: risk indicators on everything</h2>
+  <p>Every deletable item now shows a small green, orange, or red dot. Green means nothing meaningful is lost (an empty folder, a duplicate copy, regenerable browser cache). Orange means a minor inconvenience (you'll be signed out of sites). Red means something you might actually want to keep (browsing history).</p>
+
+  <h2>Reorganized: Explore vs. Cleanup</h2>
+  <p>Large Files, Folders, and Old Files moved into a new Explore tab, read-only browsing, nothing there deletes anything. Cleanup now only holds tools that can change or delete something: Duplicates, Empty Folders, Performance, Browsers, and System. The sidebar is shorter than before, and the split makes it obvious at a glance which tab is safe to poke around in and which one asks you to confirm before it acts.</p>
+
+  <h2>Also in this release</h2>
+  <ul>
+    <li>Export a scan report to CSV</li>
+    <li>In-app update notifications with one-click download and install</li>
+    <li>Latest blog posts shown on the Dashboard</li>
+  </ul>
+
+  <div class="cta-box">
+    <p>Updating from an earlier version? The installer detects it, closes the running app, installs over it, and reopens it automatically, no need to uninstall first.</p>
+  </div>
+
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Download v1.1.0</h2>
+    <p>Free forever, no account, no trial.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/FreeDiskAnalyzer-Setup.exe">Download for Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, so Windows may show a brief "unknown publisher" warning on first run. The source is public on GitHub, and each release is published with a SHA-256 checksum you can verify.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved. If Free Disk Analyzer is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">Free Disk Analyzer may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+</body>
+</html>
