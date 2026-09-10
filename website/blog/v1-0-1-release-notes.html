@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Disk Analyzer v1.0.1: Cleanup, Duplicates, RAM, and CSV Export</title>
+<meta name="description" content="What's new in Free Disk Analyzer v1.0.1: a Cleanup tab with duplicate finder, old files, empty folders, a RAM optimizer, and CSV export.">
+<meta property="og:title" content="Free Disk Analyzer v1.0.1: Cleanup, Duplicates, RAM, and CSV Export">
+<meta property="og:description" content="What's new in Free Disk Analyzer v1.0.1: a Cleanup tab with duplicate finder, old files, empty folders, a RAM optimizer, and CSV export.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/free-disk-analyzer/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-1-release-notes.html">
+<link rel="canonical" href="https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-1-release-notes.html">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Free Disk Analyzer Blog" href="rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      Free Disk Analyzer
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/free-disk-analyzer">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <div class="article-header">
+    <span class="article-tag">Release notes</span>
+  </div>
+  <h1>Free Disk Analyzer v1.0.1: Cleanup, Duplicates, RAM, and CSV Export</h1>
+  <p class="article-meta">2026</p>
+
+  <p>v1.0.1 adds a Cleanup section and a way to export your scan results, on top of everything in the original v1.0.0 release.</p>
+
+  <h2>New: Cleanup tab</h2>
+  <p>A new sidebar entry groups four tools:</p>
+  <ul>
+    <li><strong>Duplicates</strong> - finds files with identical content (1 MB and up), compared by actual content, not just name or size, so renamed copies are caught and same-size-different-content files aren't wrongly flagged.</li>
+    <li><strong>Old Files</strong> - the oldest files from your last scan, sorted by last modified date, usually a fast way to spot things you forgot you had.</li>
+    <li><strong>Empty Folders</strong> - folders that contain nothing at all, even after checking every subfolder.</li>
+    <li><strong>Free up RAM</strong> - asks Windows to reclaim memory that isn't actively in use. Shown with real before/after numbers rather than a promised gain, since the actual effect of this kind of action on modern Windows is often smaller than "RAM cleaner" tools imply.</li>
+  </ul>
+
+  <h2>New: export a scan report to CSV</h2>
+  <p>After a scan on the Analyze tab, an "Export report" button saves a CSV with the scan totals, the storage-by-category breakdown, and the largest folders and files, useful for keeping a record or sharing results.</p>
+
+  <h2>What stayed the same</h2>
+  <p>Still analysis-only: nothing in this release deletes or modifies any of your files. Still fully local: none of these features send anything about your files anywhere.</p>
+
+  <div class="cta-box">
+    <p>Already have v1.0.0 installed? The updated installer will detect it, close the running app, and reinstall over it automatically, no need to uninstall first.</p>
+  </div>
+
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Download v1.0.1</h2>
+    <p>Free forever, no account, no trial.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/FreeDiskAnalyzer-Setup.exe">Download for Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, so Windows may show a brief "unknown publisher" warning on first run. The source is public on GitHub, and each release is published with a SHA-256 checksum you can verify.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved.<br>Also by the same developer: <a href="https://getcleantab.com/">CleanTab, a free browser cleaner</a>. If Free Disk Analyzer is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">Free Disk Analyzer may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+</body>
+</html>

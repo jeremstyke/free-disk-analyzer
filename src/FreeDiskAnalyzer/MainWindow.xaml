@@ -47,6 +47,45 @@
         </Border>
 
         <!-- Content -->
-        <ContentControl Grid.Column="1" Content="{Binding CurrentPage}" Margin="32"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="{DynamicResource AccentBrush}"
+                    Visibility="{Binding IsUpdateBannerVisible, Converter={StaticResource BoolToVis}}">
+                <Grid Margin="24,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{Binding UpdateBannerText}" Foreground="White"
+                               VerticalAlignment="Center" FontWeight="SemiBold"/>
+                    <Button Grid.Column="1" Command="{Binding DownloadAndInstallUpdateCommand}"
+                            Margin="0,0,12,0" Padding="14,6" Background="White" Foreground="{DynamicResource AccentBrush}"
+                            BorderThickness="0" Cursor="Hand">
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Text" Value="{x:Static res:Strings.Update_Download}"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsDownloadingUpdate}" Value="True">
+                                            <Setter Property="Text" Value="{x:Static res:Strings.Update_Downloading}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Button>
+                    <Button Grid.Column="2" Command="{Binding DismissUpdateBannerCommand}"
+                            Content="{x:Static res:Strings.Update_Dismiss}"
+                            Background="Transparent" Foreground="White" BorderThickness="0" Cursor="Hand"/>
+                </Grid>
+            </Border>
+
+            <ContentControl Grid.Row="1" Content="{Binding CurrentPage}" Margin="32"/>
+        </Grid>
     </Grid>
 </Window>

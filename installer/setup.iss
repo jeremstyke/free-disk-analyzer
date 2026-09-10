@@ -45,6 +45,13 @@ ArchitecturesInstallIn64BitMode=x64
 UninstallDisplayIcon={app}\{#AppExeName}
 SetupIconFile=..\assets\icon.ico
 ; No commercial code-signing certificate for v1, see README "Windows security warning".
+; If the app is running (e.g. the user triggered this update from inside
+; Free Disk Analyzer), close it automatically before installing over it,
+; and relaunch it once the update is done. Makes "download and install"
+; from inside the app a genuine one-click update rather than requiring the
+; user to manually close the app first.
+CloseApplications=yes
+RestartApplications=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

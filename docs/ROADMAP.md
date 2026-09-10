@@ -126,3 +126,11 @@ Not scoped, not started. Same precondition as the rest of the v2 items: this is 
 ## IPVanish considered and declined for Free Disk Analyzer (per Bob, 2026-09-10)
 
 Bob has an IPVanish affiliate link (already used on CleanTab, alongside DeleteMe). Considered adding it here too, decided against: two competing VPN affiliate offers in the same app reads as less genuine and splits attention, rather than one clear recommendation. Free Disk Analyzer keeps NordVPN only. If this gets revisited, don't place a second VPN offer next to the existing NordVPN card, separate contexts if it happens at all.
+
+## In-app update notifications and release process (per Bob, 2026-09-10)
+
+Added: `IUpdateChecker` / `UpdateChecker` (Core) polls the GitHub Releases API once on startup, compares the latest tag to the running app's version via `ReleaseVersionComparer`, and fails silently on any network problem (never blocks or errors out the app over a background convenience check). When a newer version exists, a banner appears at the top of every page (`MainWindow.xaml`, wired through `MainViewModel`) with the version number, a dismiss option, and a "Download and install" button that downloads the new installer to a temp folder and launches it.
+
+The installer (`installer/setup.iss`) now sets `CloseApplications=yes` and `RestartApplications=yes`, so launching it from inside a running Free Disk Analyzer closes the app, installs over it, and reopens it automatically, a genuine one-click update rather than requiring the user to close the app manually first.
+
+Process going forward, for whoever cuts the next release: write a blog post for every tagged release (see `website/blog/v1-0-1-release-notes.html` for the pattern), add it to `website/blog/index.html`, `website/sitemap.xml`, and `website/blog/rss.xml`. Not automated yet, each of those four files needs a manual edit per release. Automating this (e.g. a release.yml step that generates the post from the tag's changelog) would be a reasonable follow-up if releases become frequent enough that the manual step gets skipped.

@@ -93,6 +93,11 @@ public static class Strings
     public static string Performance_FreeRam => Get(nameof(Performance_FreeRam));
     public static string Performance_Running => Get(nameof(Performance_Running));
 
+    public static string Update_Available => Get(nameof(Update_Available));
+    public static string Update_Download => Get(nameof(Update_Download));
+    public static string Update_Downloading => Get(nameof(Update_Downloading));
+    public static string Update_Dismiss => Get(nameof(Update_Dismiss));
+
     public static string Settings_Title => Get(nameof(Settings_Title));
     public static string Settings_Subtitle => Get(nameof(Settings_Subtitle));
     public static string Settings_Language => Get(nameof(Settings_Language));

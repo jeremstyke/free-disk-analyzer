@@ -25,7 +25,8 @@ public partial class App : Application
         IDiskScanner diskScanner = new DiskScanner();
         IDuplicateFinder duplicateFinder = new DuplicateFinder();
         IRamOptimizer ramOptimizer = new RamOptimizer();
-        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService);
+        IUpdateChecker updateChecker = new UpdateChecker();
+        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService, updateChecker);
 
         var mainWindow = new MainWindow
         {
