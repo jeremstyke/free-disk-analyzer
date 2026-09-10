@@ -22,4 +22,11 @@
     <ProjectReference Include="..\FreeDiskAnalyzer.Core\FreeDiskAnalyzer.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Used for Microsoft.VisualBasic.FileIO.FileSystem, the standard way
+         to send files to the Recycle Bin instead of permanently deleting
+         them, from .NET (no WinForms dependency involved). -->
+    <Reference Include="Microsoft.VisualBasic" />
+  </ItemGroup>
+
 </Project>

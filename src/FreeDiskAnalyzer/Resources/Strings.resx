@@ -99,11 +99,13 @@
   <data name="Duplicates_NoneFound" xml:space="preserve"><value>No duplicate files found.</value></data>
   <data name="Duplicates_WastedSpace" xml:space="preserve"><value>Wasted space</value></data>
   <data name="Duplicates_Copies" xml:space="preserve"><value>copies</value></data>
+  <data name="Duplicates_Delete" xml:space="preserve"><value>Delete extra copies</value></data>
 
   <data name="EmptyFolders_Title" xml:space="preserve"><value>Empty Folders</value></data>
   <data name="EmptyFolders_Subtitle" xml:space="preserve"><value>Folders from your last scan that contain nothing at all.</value></data>
   <data name="EmptyFolders_NoScan" xml:space="preserve"><value>Run a scan from the Analyze tab first.</value></data>
   <data name="EmptyFolders_NoneFound" xml:space="preserve"><value>No empty folders found.</value></data>
+  <data name="EmptyFolders_Delete" xml:space="preserve"><value>Delete</value></data>
 
   <data name="Analyze_ExportReport" xml:space="preserve"><value>Export report (CSV)</value></data>
 
@@ -111,6 +113,11 @@
   <data name="Performance_Body" xml:space="preserve"><value>Asks Windows to reclaim memory that running processes aren't actively using. Windows already does this automatically when something needs the memory, so the real-world effect is often modest. The numbers below are the actual measurement, not a promised gain.</value></data>
   <data name="Performance_FreeRam" xml:space="preserve"><value>Free up RAM</value></data>
   <data name="Performance_Running" xml:space="preserve"><value>Working...</value></data>
+
+  <data name="Browsers_Title" xml:space="preserve"><value>Browser cleanup</value></data>
+  <data name="Browsers_Body" xml:space="preserve"><value>Clears cache, cookies, and browsing history for Chrome, Edge, and Firefox. Bookmarks and saved passwords are never touched. For Firefox, history is not offered here since it's stored together with bookmarks in the same file. Close your browsers first for best results.</value></data>
+  <data name="Browsers_RescanCommand" xml:space="preserve"><value>Rescan</value></data>
+  <data name="Browsers_Clean" xml:space="preserve"><value>Clean selected</value></data>
 
   <data name="Update_Available" xml:space="preserve"><value>A new version is available: v{0}</value></data>
   <data name="Update_Download" xml:space="preserve"><value>Download and install</value></data>

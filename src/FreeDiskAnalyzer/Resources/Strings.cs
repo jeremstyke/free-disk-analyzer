@@ -82,11 +82,13 @@ public static class Strings
     public static string Duplicates_NoneFound => Get(nameof(Duplicates_NoneFound));
     public static string Duplicates_WastedSpace => Get(nameof(Duplicates_WastedSpace));
     public static string Duplicates_Copies => Get(nameof(Duplicates_Copies));
+    public static string Duplicates_Delete => Get(nameof(Duplicates_Delete));
 
     public static string EmptyFolders_Title => Get(nameof(EmptyFolders_Title));
     public static string EmptyFolders_Subtitle => Get(nameof(EmptyFolders_Subtitle));
     public static string EmptyFolders_NoScan => Get(nameof(EmptyFolders_NoScan));
     public static string EmptyFolders_NoneFound => Get(nameof(EmptyFolders_NoneFound));
+    public static string EmptyFolders_Delete => Get(nameof(EmptyFolders_Delete));
 
     public static string Analyze_ExportReport => Get(nameof(Analyze_ExportReport));
 
@@ -94,6 +96,11 @@ public static class Strings
     public static string Performance_Body => Get(nameof(Performance_Body));
     public static string Performance_FreeRam => Get(nameof(Performance_FreeRam));
     public static string Performance_Running => Get(nameof(Performance_Running));
+
+    public static string Browsers_Title => Get(nameof(Browsers_Title));
+    public static string Browsers_Body => Get(nameof(Browsers_Body));
+    public static string Browsers_RescanCommand => Get(nameof(Browsers_RescanCommand));
+    public static string Browsers_Clean => Get(nameof(Browsers_Clean));
 
     public static string Update_Available => Get(nameof(Update_Available));
     public static string Update_Download => Get(nameof(Update_Download));

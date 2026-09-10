@@ -1,16 +1,19 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
+using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Models;
 using FreeDiskAnalyzer.Core.Services;
+using FreeDiskAnalyzer.Core.Utilities;
 
 namespace FreeDiskAnalyzer.ViewModels;
 
 public sealed partial class DuplicatesViewModel : ObservableObject
 {
     private readonly IDuplicateFinder _duplicateFinder;
+    private readonly ISafeDeleteService _safeDeleteService;
     private CancellationTokenSource? _cts;
 
     public ObservableCollection<DriveInfoModel> Drives { get; } = new();
@@ -28,9 +31,10 @@ public sealed partial class DuplicatesViewModel : ObservableObject
     [ObservableProperty]
     private string currentPath = string.Empty;
 
-    public DuplicatesViewModel(IDriveEnumerator driveEnumerator, IDuplicateFinder duplicateFinder)
+    public DuplicatesViewModel(IDriveEnumerator driveEnumerator, IDuplicateFinder duplicateFinder, ISafeDeleteService safeDeleteService)
     {
         _duplicateFinder = duplicateFinder;
+        _safeDeleteService = safeDeleteService;
 
         foreach (var drive in driveEnumerator.GetAvailableDrives())
         {
@@ -98,5 +102,45 @@ public sealed partial class DuplicatesViewModel : ObservableObject
         if (string.IsNullOrEmpty(path)) return;
 
         Process.Start(new ProcessStartInfo("explorer.exe", $"/select,\"{path}\"") { UseShellExecute = true });
+    }
+
+    [RelayCommand]
+    private void DeleteGroup(DuplicateGroup? group)
+    {
+        if (group is null || group.FilePaths.Count < 2) return;
+
+        // Always keep the first copy, only the extras are ever offered for
+        // deletion, so a duplicate group can never be fully wiped out.
+        var toDelete = group.FilePaths.Skip(1).ToList();
+
+        var confirmed = MessageBox.Show(
+            $"Delete {toDelete.Count} of {group.FilePaths.Count} copies (keeping one)?\n" +
+            $"This will free about {Core.Utilities.ByteSizeFormatter.Format(group.SizeBytes * toDelete.Count)}.\n" +
+            "Files go to the Recycle Bin, not permanently deleted.",
+            "Delete duplicates",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Warning) == MessageBoxResult.Yes;
+
+        if (!confirmed) return;
+
+        var deletedCount = 0;
+        foreach (var path in toDelete)
+        {
+            if (!PathSafetyGuard.IsSafeToDelete(path)) continue;
+            if (_safeDeleteService.TryDeleteFile(path)) deletedCount++;
+        }
+
+        if (deletedCount == toDelete.Count)
+        {
+            Results.Remove(group);
+        }
+        else
+        {
+            MessageBox.Show(
+                $"Deleted {deletedCount} of {toDelete.Count} files. Some may be open in another program.",
+                "Delete duplicates",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
     }
 }

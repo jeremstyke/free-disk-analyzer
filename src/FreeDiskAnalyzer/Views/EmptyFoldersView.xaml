@@ -57,8 +57,11 @@
                                             <Button Content="{x:Static res:Strings.LargeFiles_Open}" Margin="0,0,8,0"
                                                     Command="{Binding DataContext.OpenFolderCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                     CommandParameter="{Binding}"/>
-                                            <Button Content="{x:Static res:Strings.LargeFiles_ShowInExplorer}"
+                                            <Button Content="{x:Static res:Strings.LargeFiles_ShowInExplorer}" Margin="0,0,8,0"
                                                     Command="{Binding DataContext.ShowInExplorerCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                    CommandParameter="{Binding}"/>
+                                            <Button Content="{x:Static res:Strings.EmptyFolders_Delete}"
+                                                    Command="{Binding DataContext.DeleteFolderCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                                     CommandParameter="{Binding}"/>
                                         </StackPanel>
                                     </Grid>

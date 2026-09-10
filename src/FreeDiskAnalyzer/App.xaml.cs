@@ -27,7 +27,11 @@ public partial class App : Application
         IRamOptimizer ramOptimizer = new RamOptimizer();
         IUpdateChecker updateChecker = new UpdateChecker();
         IBlogFeedService blogFeedService = new BlogFeedService();
-        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService, updateChecker, blogFeedService);
+        ISafeDeleteService safeDeleteService = new SafeDeleteService();
+        IBrowserCleaner browserCleaner = new BrowserCleaner(safeDeleteService);
+        var mainViewModel = new MainViewModel(
+            driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService,
+            updateChecker, blogFeedService, safeDeleteService, browserCleaner);
 
         var mainWindow = new MainWindow
         {
