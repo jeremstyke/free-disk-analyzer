@@ -17,5 +17,18 @@ public interface IBrowserCleaner
     /// still re-checked against PathSafetyGuard before deletion. Files
     /// locked by a running browser are skipped, not treated as fatal.
     /// </summary>
-    Task<BrowserCleanupResult> CleanAsync(IEnumerable<BrowserCleanupItem> items, CancellationToken cancellationToken = default);
+    /// <param name="cookieWhitelist">
+    /// Domains to keep when cleaning a Cookies-category item (matched as a
+    /// suffix, so "example.com" also protects "www.example.com"). When
+    /// non-empty, cookie cleanup edits the browser's cookie database in
+    /// place (deletes matching rows) instead of deleting the whole file.
+    /// This touches another program's private database file based on an
+    /// assumed schema, less certain to work across every browser version
+    /// than the rest of this app, failures are skipped rather than risking
+    /// a corrupt file.
+    /// </param>
+    Task<BrowserCleanupResult> CleanAsync(
+        IEnumerable<BrowserCleanupItem> items,
+        IReadOnlyList<string>? cookieWhitelist = null,
+        CancellationToken cancellationToken = default);
 }

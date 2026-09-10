@@ -7,18 +7,14 @@ using FreeDiskAnalyzer.Services;
 
 namespace FreeDiskAnalyzer.ViewModels;
 
-public sealed partial class BrowsersViewModel : ObservableObject
+public sealed partial class SystemViewModel : ObservableObject
 {
-    private readonly IBrowserCleaner _browserCleaner;
-    private readonly ISettingsService _settingsService;
+    private readonly ISystemCleaner _systemCleaner;
 
-    public ObservableCollection<BrowserCleanupItemViewModel> Items { get; } = new();
+    public ObservableCollection<SystemCleanupItemViewModel> Items { get; } = new();
 
     [ObservableProperty]
     private bool isScanning;
-
-    [ObservableProperty]
-    private bool hasScanned;
 
     [ObservableProperty]
     private bool isCleaning;
@@ -26,10 +22,9 @@ public sealed partial class BrowsersViewModel : ObservableObject
     [ObservableProperty]
     private string? resultSummary;
 
-    public BrowsersViewModel(IBrowserCleaner browserCleaner, ISettingsService settingsService)
+    public SystemViewModel(ISystemCleaner systemCleaner)
     {
-        _browserCleaner = browserCleaner;
-        _settingsService = settingsService;
+        _systemCleaner = systemCleaner;
         _ = ScanAsync();
     }
 
@@ -41,12 +36,11 @@ public sealed partial class BrowsersViewModel : ObservableObject
 
         try
         {
-            var results = await _browserCleaner.ScanAsync();
+            var results = await _systemCleaner.ScanAsync();
             foreach (var item in results)
             {
-                Items.Add(new BrowserCleanupItemViewModel(item));
+                Items.Add(new SystemCleanupItemViewModel(item));
             }
-            HasScanned = true;
         }
         finally
         {
@@ -61,13 +55,10 @@ public sealed partial class BrowsersViewModel : ObservableObject
         if (selected.Count == 0) return;
 
         var totalSize = selected.Sum(i => i.Item.SizeBytes);
-        var whitelist = _settingsService.Load().CookieWhitelist;
 
         var confirmed = MessageBox.Show(
-            $"Clear {selected.Count} item(s), about {ByteSizeFormatter.Format(totalSize)}?\n" +
-            "Close your browsers first for best results, anything still in use will be skipped rather than failing the whole operation." +
-            (whitelist.Count > 0 ? $"\nCookies for {whitelist.Count} whitelisted domain(s) will be kept." : ""),
-            "Clean browsers",
+            $"Clean {selected.Count} item(s), about {ByteSizeFormatter.Format(totalSize)}?",
+            "Clean system",
             MessageBoxButton.YesNo,
             MessageBoxImage.Warning) == MessageBoxResult.Yes;
 
@@ -77,14 +68,12 @@ public sealed partial class BrowsersViewModel : ObservableObject
 
         try
         {
-            var result = await _browserCleaner.CleanAsync(selected.Select(vm => vm.Item), whitelist);
+            var result = await _systemCleaner.CleanAsync(selected.Select(vm => vm.Item));
 
             ResultSummary =
                 $"Freed about {ByteSizeFormatter.Format(result.BytesFreed)} " +
-                $"({result.ItemsCleaned} cleaned, {result.ItemsSkipped} skipped, usually because a browser was open).";
+                $"({result.CategoriesCleaned} cleaned, {result.CategoriesSkipped} skipped).";
 
-            // Re-scan so the list reflects what's actually left, rather than
-            // guessing which items fully succeeded.
             await ScanAsync();
         }
         finally

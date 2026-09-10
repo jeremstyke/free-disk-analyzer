@@ -23,6 +23,7 @@ public sealed partial class MainViewModel : ObservableObject
     private readonly IBlogFeedService _blogFeedService;
     private readonly ISafeDeleteService _safeDeleteService;
     private readonly IBrowserCleaner _browserCleaner;
+    private readonly ISystemCleaner _systemCleaner;
     private readonly ScanResultStore _scanResultStore;
 
     private UpdateInfo? _updateInfo;
@@ -60,7 +61,8 @@ public sealed partial class MainViewModel : ObservableObject
         IUpdateChecker updateChecker,
         IBlogFeedService blogFeedService,
         ISafeDeleteService safeDeleteService,
-        IBrowserCleaner browserCleaner)
+        IBrowserCleaner browserCleaner,
+        ISystemCleaner systemCleaner)
     {
         _driveEnumerator = driveEnumerator;
         _diskScanner = diskScanner;
@@ -71,6 +73,7 @@ public sealed partial class MainViewModel : ObservableObject
         _blogFeedService = blogFeedService;
         _safeDeleteService = safeDeleteService;
         _browserCleaner = browserCleaner;
+        _systemCleaner = systemCleaner;
         _scanResultStore = new ScanResultStore();
 
         NavItems = new ObservableCollection<NavItem>(BuildNavItems());
@@ -145,7 +148,7 @@ public sealed partial class MainViewModel : ObservableObject
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.LargeFiles => new LargeFilesViewModel(_scanResultStore),
             NavKey.Folders => new FoldersViewModel(_scanResultStore),
-            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _safeDeleteService, _browserCleaner, _scanResultStore),
+            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _safeDeleteService, _browserCleaner, _systemCleaner, _settingsService, _scanResultStore),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
             NavKey.About => new AboutViewModel(),

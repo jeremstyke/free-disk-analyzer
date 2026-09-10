@@ -123,6 +123,11 @@
   <data name="Risk_High" xml:space="preserve"><value>High risk</value></data>
   <data name="Browsers_RiskLegend" xml:space="preserve"><value>Green: nothing meaningful is lost. Orange: minor inconvenience (signed out of sites). Red: something you might want to keep (history).</value></data>
 
+  <data name="System_Title" xml:space="preserve"><value>Temp files and Recycle Bin</value></data>
+  <data name="System_Body" xml:space="preserve"><value>Clears your Temp folder and empties the Recycle Bin. Both regenerate or were already discarded, low risk.</value></data>
+  <data name="System_TempFiles" xml:space="preserve"><value>Temp files</value></data>
+  <data name="System_RecycleBin" xml:space="preserve"><value>Recycle Bin</value></data>
+
   <data name="Update_Available" xml:space="preserve"><value>A new version is available: v{0}</value></data>
   <data name="Update_Download" xml:space="preserve"><value>Download and install</value></data>
   <data name="Update_Downloading" xml:space="preserve"><value>Downloading...</value></data>
@@ -137,6 +142,8 @@
   <data name="Settings_Analytics" xml:space="preserve"><value>Share anonymous usage statistics</value></data>
   <data name="Settings_AnalyticsNote" xml:space="preserve"><value>Off by default. No file names, paths, or personal data are ever included. See the Privacy tab for details.</value></data>
   <data name="Settings_Reset" xml:space="preserve"><value>Reset settings</value></data>
+  <data name="Settings_CookieWhitelist" xml:space="preserve"><value>Cookie whitelist</value></data>
+  <data name="Settings_CookieWhitelistNote" xml:space="preserve"><value>One domain per line (e.g. gmail.com). When cleaning cookies in Cleanup, these are kept so you stay signed in. Leave empty to clear all cookies for the selected browsers.</value></data>
 
   <data name="Privacy_Title" xml:space="preserve"><value>Privacy</value></data>
   <data name="Privacy_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>

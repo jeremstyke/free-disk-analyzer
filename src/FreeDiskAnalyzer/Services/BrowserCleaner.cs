@@ -1,6 +1,7 @@
 using System.IO;
 using FreeDiskAnalyzer.Core.Utilities;
 using FreeDiskAnalyzer.Models;
+using Microsoft.Data.Sqlite;
 
 namespace FreeDiskAnalyzer.Services;
 
@@ -32,35 +33,25 @@ public sealed class BrowserCleaner : IBrowserCleaner
         }, cancellationToken);
     }
 
-    public Task<BrowserCleanupResult> CleanAsync(IEnumerable<BrowserCleanupItem> items, CancellationToken cancellationToken = default)
+    public Task<BrowserCleanupResult> CleanAsync(
+        IEnumerable<BrowserCleanupItem> items,
+        IReadOnlyList<string>? cookieWhitelist = null,
+        CancellationToken cancellationToken = default)
     {
         return Task.Run(() =>
         {
             long freed = 0;
             var cleaned = 0;
             var skipped = 0;
+            var hasWhitelist = cookieWhitelist is { Count: > 0 };
 
             foreach (var item in items)
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var anySuccess = false;
-
-                foreach (var path in item.Paths)
-                {
-                    // Re-checked here even though scanning already only looked in known
-                    // browser profile locations, this is the last line of defense.
-                    if (PathSafetyGuard.IsProtected(path))
-                    {
-                        continue;
-                    }
-
-                    var success = Directory.Exists(path)
-                        ? _safeDeleteService.TryDeleteDirectory(path)
-                        : _safeDeleteService.TryDeleteFile(path);
-
-                    if (success) anySuccess = true;
-                }
+                var anySuccess = item.Category == BrowserCleanupCategory.Cookies && hasWhitelist
+                    ? CleanCookiesWithWhitelist(item, cookieWhitelist!)
+                    : DeleteItemPaths(item);
 
                 if (anySuccess)
                 {
@@ -75,6 +66,82 @@ public sealed class BrowserCleaner : IBrowserCleaner
 
             return new BrowserCleanupResult(freed, cleaned, skipped);
         }, cancellationToken);
+    }
+
+    private bool DeleteItemPaths(BrowserCleanupItem item)
+    {
+        var anySuccess = false;
+
+        foreach (var path in item.Paths)
+        {
+            // Re-checked here even though scanning already only looked in known
+            // browser profile locations, this is the last line of defense.
+            if (PathSafetyGuard.IsProtected(path))
+            {
+                continue;
+            }
+
+            var success = Directory.Exists(path)
+                ? _safeDeleteService.TryDeleteDirectory(path)
+                : _safeDeleteService.TryDeleteFile(path);
+
+            if (success) anySuccess = true;
+        }
+
+        return anySuccess;
+    }
+
+    /// <summary>
+    /// Deletes cookie rows for domains not in the whitelist, in place,
+    /// instead of removing the whole cookies file. Schema differs by
+    /// browser (Chromium: table "cookies"/"host_key", Firefox: table
+    /// "moz_cookies"/"host"). Any failure (locked file, unexpected schema)
+    /// skips that file rather than risking a partial write.
+    /// </summary>
+    private bool CleanCookiesWithWhitelist(BrowserCleanupItem item, IReadOnlyList<string> whitelist)
+    {
+        var (table, column) = item.BrowserName == "Firefox"
+            ? ("moz_cookies", "host")
+            : ("cookies", "host_key");
+
+        var anySuccess = false;
+
+        foreach (var path in item.Paths)
+        {
+            if (PathSafetyGuard.IsProtected(path)) continue;
+            if (!File.Exists(path)) { anySuccess = true; continue; }
+
+            try
+            {
+                using var connection = new SqliteConnection($"Data Source={path}");
+                connection.Open();
+
+                using var deleteCommand = connection.CreateCommand();
+                var whereClauses = string.Join(" AND ", whitelist.Select((_, i) => $"{column} NOT LIKE @p{i}"));
+                deleteCommand.CommandText = $"DELETE FROM {table} WHERE {whereClauses}";
+
+                for (var i = 0; i < whitelist.Count; i++)
+                {
+                    deleteCommand.Parameters.AddWithValue($"@p{i}", "%" + whitelist[i]);
+                }
+
+                deleteCommand.ExecuteNonQuery();
+
+                using var vacuumCommand = connection.CreateCommand();
+                vacuumCommand.CommandText = "VACUUM";
+                vacuumCommand.ExecuteNonQuery();
+
+                anySuccess = true;
+            }
+            catch (Exception ex) when (ex is SqliteException or IOException or UnauthorizedAccessException)
+            {
+                // Locked (browser still open), unexpected schema, or any
+                // other SQL problem: skip this file rather than risk a
+                // partial or corrupt write to another program's database.
+            }
+        }
+
+        return anySuccess;
     }
 
     private static IEnumerable<BrowserCleanupItem> ScanChromiumBrowser(string browserName, string profileRoot)

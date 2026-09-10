@@ -14,4 +14,9 @@ public sealed class AppSettings
 
     // Only "en" is meaningful until Phase 5 (localization) lands.
     public string Language { get; set; } = "en";
+
+    // Domains whose cookies are kept when cleaning browser cookies (e.g.
+    // "gmail.com" keeps you signed in there). Matched as a suffix against
+    // each cookie's host, so "example.com" also protects "www.example.com".
+    public List<string> CookieWhitelist { get; set; } = new();
 }

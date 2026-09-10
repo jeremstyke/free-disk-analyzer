@@ -1,0 +1,56 @@
+<UserControl x:Class="FreeDiskAnalyzer.Views.SystemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:res="clr-namespace:FreeDiskAnalyzer.Resources">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,8,0,16">
+            <TextBlock Text="{x:Static res:Strings.System_Title}" FontWeight="SemiBold" FontSize="16"
+                       Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+            <TextBlock Text="{x:Static res:Strings.System_Body}" TextWrapping="Wrap"
+                       Style="{StaticResource BodyTextStyle}" Margin="0,0,0,16"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="{x:Static res:Strings.Browsers_RescanCommand}" Margin="0,0,12,0"
+                        Command="{Binding ScanCommand}"/>
+                <Button Content="{x:Static res:Strings.Browsers_Clean}" Style="{StaticResource PrimaryButtonStyle}"
+                        Command="{Binding CleanSelectedCommand}"/>
+            </StackPanel>
+            <TextBlock Text="{Binding ResultSummary}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
+                       Margin="0,12,0,0"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Items}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource CardStyle}" Margin="0,0,0,10" Padding="16">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <CheckBox Grid.Column="0" IsChecked="{Binding IsSelected}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+
+                                <TextBlock Grid.Column="1" Text="{Binding CategoryLabel}" FontWeight="SemiBold"
+                                           VerticalAlignment="Center" Foreground="{DynamicResource TextPrimaryBrush}"/>
+
+                                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Ellipse Width="10" Height="10" Margin="0,0,8,0" VerticalAlignment="Center"
+                                             Fill="{Binding RiskLevel, Converter={StaticResource RiskLevelToBrushConverter}}"/>
+                                    <TextBlock Text="{Binding SizeDisplay}" FontWeight="SemiBold"
+                                               VerticalAlignment="Center" Foreground="{DynamicResource TextPrimaryBrush}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

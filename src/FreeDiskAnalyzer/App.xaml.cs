@@ -29,9 +29,10 @@ public partial class App : Application
         IBlogFeedService blogFeedService = new BlogFeedService();
         ISafeDeleteService safeDeleteService = new SafeDeleteService();
         IBrowserCleaner browserCleaner = new BrowserCleaner(safeDeleteService);
+        ISystemCleaner systemCleaner = new SystemCleaner(safeDeleteService);
         var mainViewModel = new MainViewModel(
             driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService,
-            updateChecker, blogFeedService, safeDeleteService, browserCleaner);
+            updateChecker, blogFeedService, safeDeleteService, browserCleaner, systemCleaner);
 
         var mainWindow = new MainWindow
         {

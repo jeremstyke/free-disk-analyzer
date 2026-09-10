@@ -106,6 +106,11 @@ public static class Strings
     public static string Risk_High => Get(nameof(Risk_High));
     public static string Browsers_RiskLegend => Get(nameof(Browsers_RiskLegend));
 
+    public static string System_Title => Get(nameof(System_Title));
+    public static string System_Body => Get(nameof(System_Body));
+    public static string System_TempFiles => Get(nameof(System_TempFiles));
+    public static string System_RecycleBin => Get(nameof(System_RecycleBin));
+
     public static string Update_Available => Get(nameof(Update_Available));
     public static string Update_Download => Get(nameof(Update_Download));
     public static string Update_Downloading => Get(nameof(Update_Downloading));
@@ -120,6 +125,8 @@ public static class Strings
     public static string Settings_Analytics => Get(nameof(Settings_Analytics));
     public static string Settings_AnalyticsNote => Get(nameof(Settings_AnalyticsNote));
     public static string Settings_Reset => Get(nameof(Settings_Reset));
+    public static string Settings_CookieWhitelist => Get(nameof(Settings_CookieWhitelist));
+    public static string Settings_CookieWhitelistNote => Get(nameof(Settings_CookieWhitelistNote));
 
     public static string Privacy_Title => Get(nameof(Privacy_Title));
     public static string Privacy_Tagline => Get(nameof(Privacy_Tagline));

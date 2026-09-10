@@ -123,6 +123,11 @@
   <data name="Risk_High" xml:space="preserve"><value>Risque élevé</value></data>
   <data name="Browsers_RiskLegend" xml:space="preserve"><value>Vert : rien d'important n'est perdu. Orange : gêne mineure (déconnecté des sites). Rouge : quelque chose que vous voudrez peut-être garder (historique).</value></data>
 
+  <data name="System_Title" xml:space="preserve"><value>Fichiers temporaires et Corbeille</value></data>
+  <data name="System_Body" xml:space="preserve"><value>Vide votre dossier temporaire et la Corbeille. Les deux se régénèrent ou ont déjà été jetés, risque faible.</value></data>
+  <data name="System_TempFiles" xml:space="preserve"><value>Fichiers temporaires</value></data>
+  <data name="System_RecycleBin" xml:space="preserve"><value>Corbeille</value></data>
+
   <data name="Update_Available" xml:space="preserve"><value>Une nouvelle version est disponible : v{0}</value></data>
   <data name="Update_Download" xml:space="preserve"><value>Télécharger et installer</value></data>
   <data name="Update_Downloading" xml:space="preserve"><value>Téléchargement...</value></data>
@@ -137,6 +142,8 @@
   <data name="Settings_Analytics" xml:space="preserve"><value>Partager des statistiques d'usage anonymes</value></data>
   <data name="Settings_AnalyticsNote" xml:space="preserve"><value>Désactivé par défaut. Aucun nom de fichier, chemin ou donnée personnelle n'est jamais inclus. Voir l'onglet Confidentialité pour le détail.</value></data>
   <data name="Settings_Reset" xml:space="preserve"><value>Réinitialiser les paramètres</value></data>
+  <data name="Settings_CookieWhitelist" xml:space="preserve"><value>Liste blanche des cookies</value></data>
+  <data name="Settings_CookieWhitelistNote" xml:space="preserve"><value>Un domaine par ligne (ex : gmail.com). Lors du nettoyage des cookies dans Nettoyage, ceux-ci sont conservés pour rester connecté. Laissez vide pour effacer tous les cookies des navigateurs sélectionnés.</value></data>
 
   <data name="Privacy_Title" xml:space="preserve"><value>Confidentialité</value></data>
   <data name="Privacy_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
