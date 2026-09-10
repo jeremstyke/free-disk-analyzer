@@ -16,6 +16,9 @@
                 <Ellipse Width="10" Height="10" Margin="0,0,6,0" VerticalAlignment="Center" Fill="#16A34A"/>
                 <TextBlock Text="{x:Static res:Strings.Risk_Low}" Style="{StaticResource CaptionTextStyle}"/>
             </StackPanel>
+            <Button Content="{x:Static res:Strings.EmptyFolders_DeleteAll}" HorizontalAlignment="Left" Margin="0,0,0,20"
+                    Command="{Binding DeleteAllFoldersCommand}"
+                    Visibility="{Binding HasScanResult, Converter={StaticResource BoolToVis}}"/>
         </StackPanel>
 
         <Grid Grid.Row="1">

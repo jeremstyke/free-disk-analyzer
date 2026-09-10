@@ -95,4 +95,42 @@ public sealed partial class EmptyFoldersViewModel : ObservableObject
                 MessageBoxImage.Information);
         }
     }
+
+    [RelayCommand]
+    private void DeleteAllFolders()
+    {
+        var folders = Folders.ToList();
+        if (folders.Count == 0) return;
+
+        var confirmed = MessageBox.Show(
+            $"Delete all {folders.Count} empty folders?\n" +
+            "They go to the Recycle Bin, not permanently deleted.",
+            "Delete all empty folders",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Warning) == MessageBoxResult.Yes;
+
+        if (!confirmed) return;
+
+        var deleted = 0;
+
+        foreach (var folder in folders)
+        {
+            if (!PathSafetyGuard.IsSafeToDelete(folder.FullPath)) continue;
+
+            if (_safeDeleteService.TryDeleteDirectory(folder.FullPath))
+            {
+                Folders.Remove(folder);
+                deleted++;
+            }
+        }
+
+        if (deleted < folders.Count)
+        {
+            MessageBox.Show(
+                $"Deleted {deleted} of {folders.Count} folders. Some may be in use by another program.",
+                "Delete all empty folders",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+    }
 }

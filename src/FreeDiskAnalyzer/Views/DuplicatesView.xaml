@@ -46,6 +46,10 @@
                     <TextBlock Text="{x:Static res:Strings.Duplicates_Scanning}" Style="{StaticResource CaptionTextStyle}" Margin="0,0,10,0"/>
                     <TextBlock Text="{Binding CurrentPath}" Style="{StaticResource CaptionTextStyle}" TextTrimming="CharacterEllipsis"/>
                 </StackPanel>
+
+                <Button Content="{x:Static res:Strings.Duplicates_DeleteAll}" Margin="0,16,0,0" HorizontalAlignment="Left"
+                        Command="{Binding DeleteAllGroupsCommand}"
+                        Visibility="{Binding HasRunOnce, Converter={StaticResource BoolToVis}}"/>
             </StackPanel>
         </Border>
 

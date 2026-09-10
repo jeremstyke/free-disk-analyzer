@@ -99,12 +99,14 @@
   <data name="Duplicates_WastedSpace" xml:space="preserve"><value>Wasted space</value></data>
   <data name="Duplicates_Copies" xml:space="preserve"><value>copies</value></data>
   <data name="Duplicates_Delete" xml:space="preserve"><value>Delete extra copies</value></data>
+  <data name="Duplicates_DeleteAll" xml:space="preserve"><value>Delete all duplicates</value></data>
 
   <data name="EmptyFolders_Title" xml:space="preserve"><value>Empty Folders</value></data>
   <data name="EmptyFolders_Subtitle" xml:space="preserve"><value>Folders from your last scan that contain nothing at all.</value></data>
   <data name="EmptyFolders_NoScan" xml:space="preserve"><value>Run a scan from the Analyze tab first.</value></data>
   <data name="EmptyFolders_NoneFound" xml:space="preserve"><value>No empty folders found.</value></data>
   <data name="EmptyFolders_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="EmptyFolders_DeleteAll" xml:space="preserve"><value>Delete all empty folders</value></data>
 
   <data name="Analyze_ExportReport" xml:space="preserve"><value>Export report (CSV)</value></data>
 

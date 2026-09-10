@@ -110,13 +110,11 @@ public sealed partial class DuplicatesViewModel : ObservableObject
     {
         if (group is null || group.FilePaths.Count < 2) return;
 
-        // Always keep the first copy, only the extras are ever offered for
-        // deletion, so a duplicate group can never be fully wiped out.
         var toDelete = group.FilePaths.Skip(1).ToList();
 
         var confirmed = MessageBox.Show(
             $"Delete {toDelete.Count} of {group.FilePaths.Count} copies (keeping one)?\n" +
-            $"This will free about {Core.Utilities.ByteSizeFormatter.Format(group.SizeBytes * toDelete.Count)}.\n" +
+            $"This will free about {ByteSizeFormatter.Format(group.SizeBytes * toDelete.Count)}.\n" +
             "Files go to the Recycle Bin, not permanently deleted.",
             "Delete duplicates",
             MessageBoxButton.YesNo,
@@ -124,24 +122,78 @@ public sealed partial class DuplicatesViewModel : ObservableObject
 
         if (!confirmed) return;
 
-        var deletedCount = 0;
-        foreach (var path in toDelete)
-        {
-            if (!PathSafetyGuard.IsSafeToDelete(path)) continue;
-            if (_safeDeleteService.TryDeleteFile(path)) deletedCount++;
-        }
+        var (deleted, total) = DeleteGroupFiles(group);
 
-        if (deletedCount == toDelete.Count)
+        if (deleted == total)
         {
             Results.Remove(group);
         }
         else
         {
             MessageBox.Show(
-                $"Deleted {deletedCount} of {toDelete.Count} files. Some may be open in another program.",
+                $"Deleted {deleted} of {total} files. Some may be open in another program.",
                 "Delete duplicates",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }
+    }
+
+    [RelayCommand]
+    private void DeleteAllGroups()
+    {
+        var groups = Results.Where(g => g.FilePaths.Count >= 2).ToList();
+        if (groups.Count == 0) return;
+
+        var totalFiles = groups.Sum(g => g.FilePaths.Count - 1);
+        var totalSize = groups.Sum(g => g.SizeBytes * (g.FilePaths.Count - 1));
+
+        var confirmed = MessageBox.Show(
+            $"Delete {totalFiles} extra copies across {groups.Count} duplicate groups (keeping one copy of each)?\n" +
+            $"This will free about {ByteSizeFormatter.Format(totalSize)}.\n" +
+            "Files go to the Recycle Bin, not permanently deleted.",
+            "Delete all duplicates",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Warning) == MessageBoxResult.Yes;
+
+        if (!confirmed) return;
+
+        var deletedGroups = 0;
+        var skippedFiles = 0;
+
+        foreach (var group in groups)
+        {
+            var (deleted, total) = DeleteGroupFiles(group);
+            skippedFiles += total - deleted;
+
+            if (deleted == total)
+            {
+                Results.Remove(group);
+                deletedGroups++;
+            }
+        }
+
+        if (skippedFiles > 0)
+        {
+            MessageBox.Show(
+                $"Cleaned {deletedGroups} of {groups.Count} groups. {skippedFiles} file(s) were skipped, usually because they're open in another program.",
+                "Delete all duplicates",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+    }
+
+    /// <summary>Deletes the extra copies for one group (already-confirmed). Always keeps the first file.</summary>
+    private (int Deleted, int Total) DeleteGroupFiles(DuplicateGroup group)
+    {
+        var toDelete = group.FilePaths.Skip(1).ToList();
+        var deletedCount = 0;
+
+        foreach (var path in toDelete)
+        {
+            if (!PathSafetyGuard.IsSafeToDelete(path)) continue;
+            if (_safeDeleteService.TryDeleteFile(path)) deletedCount++;
+        }
+
+        return (deletedCount, toDelete.Count);
     }
 }

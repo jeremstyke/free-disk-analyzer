@@ -99,12 +99,14 @@
   <data name="Duplicates_WastedSpace" xml:space="preserve"><value>Espace gaspillé</value></data>
   <data name="Duplicates_Copies" xml:space="preserve"><value>copies</value></data>
   <data name="Duplicates_Delete" xml:space="preserve"><value>Supprimer les copies en trop</value></data>
+  <data name="Duplicates_DeleteAll" xml:space="preserve"><value>Supprimer tous les doublons</value></data>
 
   <data name="EmptyFolders_Title" xml:space="preserve"><value>Dossiers vides</value></data>
   <data name="EmptyFolders_Subtitle" xml:space="preserve"><value>Dossiers de votre dernier scan qui ne contiennent rien du tout.</value></data>
   <data name="EmptyFolders_NoScan" xml:space="preserve"><value>Lancez d'abord un scan depuis l'onglet Analyser.</value></data>
   <data name="EmptyFolders_NoneFound" xml:space="preserve"><value>Aucun dossier vide trouvé.</value></data>
   <data name="EmptyFolders_Delete" xml:space="preserve"><value>Supprimer</value></data>
+  <data name="EmptyFolders_DeleteAll" xml:space="preserve"><value>Supprimer tous les dossiers vides</value></data>
 
   <data name="Analyze_ExportReport" xml:space="preserve"><value>Exporter le rapport (CSV)</value></data>
 

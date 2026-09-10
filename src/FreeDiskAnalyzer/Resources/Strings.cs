@@ -82,12 +82,14 @@ public static class Strings
     public static string Duplicates_WastedSpace => Get(nameof(Duplicates_WastedSpace));
     public static string Duplicates_Copies => Get(nameof(Duplicates_Copies));
     public static string Duplicates_Delete => Get(nameof(Duplicates_Delete));
+    public static string Duplicates_DeleteAll => Get(nameof(Duplicates_DeleteAll));
 
     public static string EmptyFolders_Title => Get(nameof(EmptyFolders_Title));
     public static string EmptyFolders_Subtitle => Get(nameof(EmptyFolders_Subtitle));
     public static string EmptyFolders_NoScan => Get(nameof(EmptyFolders_NoScan));
     public static string EmptyFolders_NoneFound => Get(nameof(EmptyFolders_NoneFound));
     public static string EmptyFolders_Delete => Get(nameof(EmptyFolders_Delete));
+    public static string EmptyFolders_DeleteAll => Get(nameof(EmptyFolders_DeleteAll));
 
     public static string Analyze_ExportReport => Get(nameof(Analyze_ExportReport));
 
