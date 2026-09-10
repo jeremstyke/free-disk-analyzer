@@ -152,3 +152,12 @@ What can actually be deleted, and nothing else:
 Deliberately not built: a generic "delete this" button on Large Files, Old Files, or Folders. Those tabs show arbitrary files the scanner found, which could be anything, so deletion there stays manual (the existing Show in Explorer button) rather than one click. See the note added to `CONTRIBUTING.md`.
 
 Not yet verified by hand: this is real, permanent-ish (Recycle-Bin-backed but still) file deletion, shipped without ever having been run on a real machine, same caveat as everything else in this project, but it matters more here than anywhere else so far.
+
+## PC cleanup and cookie whitelist (per Bob, 2026-09-10)
+
+Two additions on top of the deletion safety work above:
+
+- **System tab** (6th Cleanup sub-tab): `ISystemCleaner` / `SystemCleaner` cleans the user's own Temp folder (`Path.GetTempPath()`, always outside Windows/Program Files so it never conflicts with `PathSafetyGuard`) and empties the Recycle Bin via the standard `SHEmptyRecycleBin` shell API. Deliberately does not touch `C:\Windows\Temp` (the system-wide temp folder), that's under the protected `Windows` root and out of scope here, only the per-user temp folder is cleaned.
+- **Cookie whitelist** (Settings): a list of domains (one per line) whose cookies survive a cookie cleanup, so the user stays signed in to sites they choose. Implemented via `Microsoft.Data.Sqlite`, opening the browser's cookie database directly and deleting only non-whitelisted rows (Chromium: `cookies` table / `host_key` column, Firefox: `moz_cookies` / `host`), rather than deleting the whole file.
+
+Flagged explicitly to Bob when built: the cookie whitelist is meaningfully less certain than everything else in this app. It edits another program's private database file based on an assumed schema that could differ across browser versions or break on a future update, verified by static reasoning only, never against a real Chrome/Edge/Firefox cookie database. Failures are caught and skipped (never a partial/corrupt write attempted), but "doesn't crash" isn't the same as "definitely works as intended", this is the one feature in the app worth extra scrutiny once real testing starts.

@@ -41,6 +41,9 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Libération de RAM (vrais chiffres avant/après, pas un gain promis)
 - Notifications de mise à jour dans l'app, avec téléchargement et installation en un clic
 - Derniers articles du blog affichés sur le tableau de bord
+- Nettoyage PC : fichiers temporaires et Corbeille (onglet Système dans Nettoyage)
+- Liste blanche de cookies (Paramètres) : reste connecté sur certains sites lors du nettoyage
+- Indicateurs de risque vert/orange/rouge sur chaque fonctionnalité de suppression
 - Export d'un rapport de scan en CSV
 - Recommandation NordVPN sur le tableau de bord, et recommandation DeleteMe après un scan, toutes deux clairement identifiées comme liens affiliés
 - Paramètres : langue, thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
