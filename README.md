@@ -24,6 +24,8 @@ Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. N
   </a>
 </p>
 
+<p align="center"><sub>Power user? <a href="../../releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> instead, no installation, no admin rights needed.</sub></p>
+
 > [View all releases](../../releases)
 
 ---

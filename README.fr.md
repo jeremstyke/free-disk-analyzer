@@ -23,6 +23,8 @@ Analyse de disque, doublons, nettoyage navigateurs et PC, gestion démarrage et 
   </a>
 </p>
 
+<p align="center"><sub>Utilisateur avancé ? <a href="../../releases/latest/download/PurgeCore-Portable.zip">Téléchargez la version portable</a>, pas d'installation, pas besoin de droits admin.</sub></p>
+
 > [Voir toutes les versions](../../releases)
 
 ---
