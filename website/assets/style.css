@@ -46,6 +46,8 @@ a { color: var(--accent); }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 12px;
   width: 100%;
 }
 
@@ -63,6 +65,8 @@ a { color: var(--accent); }
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
   font-size: 15px;
 }
 
