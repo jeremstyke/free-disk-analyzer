@@ -17,6 +17,7 @@ public sealed partial class CleanupViewModel : ObservableObject
     public OldFilesViewModel OldFiles { get; }
     public DuplicatesViewModel Duplicates { get; }
     public EmptyFoldersViewModel EmptyFolders { get; }
+    public PerformanceViewModel Performance { get; }
 
     public ObservableCollection<CleanupTab> Tabs { get; }
 
@@ -26,17 +27,23 @@ public sealed partial class CleanupViewModel : ObservableObject
     [ObservableProperty]
     private object? currentContent;
 
-    public CleanupViewModel(IDriveEnumerator driveEnumerator, IDuplicateFinder duplicateFinder, ScanResultStore scanResultStore)
+    public CleanupViewModel(
+        IDriveEnumerator driveEnumerator,
+        IDuplicateFinder duplicateFinder,
+        IRamOptimizer ramOptimizer,
+        ScanResultStore scanResultStore)
     {
         OldFiles = new OldFilesViewModel(scanResultStore);
         Duplicates = new DuplicatesViewModel(driveEnumerator, duplicateFinder);
         EmptyFolders = new EmptyFoldersViewModel(scanResultStore);
+        Performance = new PerformanceViewModel(ramOptimizer);
 
         Tabs = new ObservableCollection<CleanupTab>
         {
             new(Resources.Strings.OldFiles_Title, OldFiles),
             new(Resources.Strings.Duplicates_Title, Duplicates),
-            new(Resources.Strings.EmptyFolders_Title, EmptyFolders)
+            new(Resources.Strings.EmptyFolders_Title, EmptyFolders),
+            new(Resources.Strings.Performance_Title, Performance)
         };
 
         SelectedTab = Tabs[0];

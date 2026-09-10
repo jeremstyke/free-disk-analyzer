@@ -88,6 +88,11 @@ public static class Strings
 
     public static string Analyze_ExportReport => Get(nameof(Analyze_ExportReport));
 
+    public static string Performance_Title => Get(nameof(Performance_Title));
+    public static string Performance_Body => Get(nameof(Performance_Body));
+    public static string Performance_FreeRam => Get(nameof(Performance_FreeRam));
+    public static string Performance_Running => Get(nameof(Performance_Running));
+
     public static string Settings_Title => Get(nameof(Settings_Title));
     public static string Settings_Subtitle => Get(nameof(Settings_Subtitle));
     public static string Settings_Language => Get(nameof(Settings_Language));

@@ -68,9 +68,11 @@ This tracks the phases toward Free Disk Analyzer v1.0.0. Each phase is meant to 
 - Done: `v1.0.0` tagged and released (installer + portable zip + checksums, verified present on the GitHub Release). Note: this happened before the app was ever launched and tested locally, at Bob's explicit request, ahead of the usual order. If the app doesn't actually run correctly once tested, expect a `v1.0.1` fix release.
 - Blog on the website (per Bob, revisited 2026-09-09, now with a concrete order and a new piece): build it after the Windows telemetry item in the v2 vision below. Purpose leans toward the original "Outils & Conseils" pitch (SEO/AdSense/affiliate traffic via tips-and-guides articles) rather than a product changelog, though that's worth confirming when this is actually scheduled. New addition: the Windows app itself should show a small "latest articles" feed (e.g. on the Dashboard or a dedicated tab) pulling from the website's blog, so the app drives traffic back to the site rather than the site only linking to the app. Needs a simple feed format the app can fetch (an RSS/JSON file generated alongside the blog is the least-effort option, no server needed, consistent with the static-site approach). Not scoped, not started.
 
-## Phase 7: Duplicate finder, old files, empty folders, CSV export (post-v1.0.0)
+## Phase 7: Duplicate finder, old files, empty folders, CSV export, RAM optimization (post-v1.0.0)
 
-All four read-only, no file deletion, same risk profile as the rest of v1:
+Important gap discovered 2026-09-10: Bob tested the actual `v1.0.0` release binary and it had none of this, because all of Phase 7 was built and merged to `main` *after* the `v1.0.0` tag was cut. The tag freezes a specific commit, it doesn't track `main`. Lesson: cut a new tag (`v1.0.1`+) whenever features land that should be in the hands of whoever is testing, don't assume "on main" means "in the release someone downloaded."
+
+All read-only except RAM optimization (which modifies live process memory state, not files or the registry, and is fully reversible/non-destructive):
 
 - `FolderNode` now tracks recursive file/subfolder counts (`FileCount`, `SubfolderCount`, `IsEmpty`), computed by `DiskScanner` during the normal scan at no extra cost.
 - `ScanResult` gained `OldestFiles` (bounded top-200, oldest first, files with no last-write date are excluded) and `EmptyFolders` (capped at 200), both from the same scan pass as everything else, no rescan needed.
@@ -81,6 +83,7 @@ All four read-only, no file deletion, same risk profile as the rest of v1:
 - Follow-up (per Bob): 10 sidebar items felt cluttered, so Old Files, Duplicates, and Empty Folders were consolidated under a single "Cleanup" sidebar entry with internal pill-style sub-navigation (`CleanupViewModel`, `CleanupView`). Sidebar is back to 8 items. Each sub-page keeps its own view model and state exactly as before, only the navigation container changed.
 - Unit tests added for all of the above (folder counts, empty folder detection, oldest-files ordering, duplicate detection including the size-threshold and no-false-positive-on-same-size-different-content cases, CSV building including comma-escaping).
 - Localized in both English and French, same pattern as the rest of the app.
+- "Free up RAM" added to Cleanup as a 4th sub-tab, per Bob 2026-09-10. `IRamOptimizer` / `RamOptimizer` in the WPF project (uses Windows P/Invoke, `EmptyWorkingSet` / `GlobalMemoryStatusEx`, so it lives alongside `SettingsService` rather than in the cross-platform-clean Core project, same pattern as the registry code). Trims working sets of processes this app has permission to touch (most system/other-user processes will be skipped, that's expected). Shows real before/after available-memory numbers rather than claiming a guaranteed benefit, since on modern Windows the actual gain from this kind of action is often smaller than "RAM cleaner" tools imply.
 - Verified compiling via the same GitHub Actions build-status check used for the rest of the project, not yet exercised by hand on a real machine.
 
 ## Out of scope for v1

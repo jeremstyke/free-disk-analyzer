@@ -13,6 +13,7 @@ public sealed partial class MainViewModel : ObservableObject
     private readonly IDriveEnumerator _driveEnumerator;
     private readonly IDiskScanner _diskScanner;
     private readonly IDuplicateFinder _duplicateFinder;
+    private readonly IRamOptimizer _ramOptimizer;
     private readonly ISettingsService _settingsService;
     private readonly ScanResultStore _scanResultStore;
 
@@ -32,11 +33,13 @@ public sealed partial class MainViewModel : ObservableObject
         IDriveEnumerator driveEnumerator,
         IDiskScanner diskScanner,
         IDuplicateFinder duplicateFinder,
+        IRamOptimizer ramOptimizer,
         ISettingsService settingsService)
     {
         _driveEnumerator = driveEnumerator;
         _diskScanner = diskScanner;
         _duplicateFinder = duplicateFinder;
+        _ramOptimizer = ramOptimizer;
         _settingsService = settingsService;
         _scanResultStore = new ScanResultStore();
 
@@ -63,7 +66,7 @@ public sealed partial class MainViewModel : ObservableObject
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.LargeFiles => new LargeFilesViewModel(_scanResultStore),
             NavKey.Folders => new FoldersViewModel(_scanResultStore),
-            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _scanResultStore),
+            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _scanResultStore),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
             NavKey.About => new AboutViewModel(),

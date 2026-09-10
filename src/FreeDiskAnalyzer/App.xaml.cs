@@ -24,7 +24,8 @@ public partial class App : Application
         IDriveEnumerator driveEnumerator = new DriveEnumerator();
         IDiskScanner diskScanner = new DiskScanner();
         IDuplicateFinder duplicateFinder = new DuplicateFinder();
-        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, settingsService);
+        IRamOptimizer ramOptimizer = new RamOptimizer();
+        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService);
 
         var mainWindow = new MainWindow
         {

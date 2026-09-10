@@ -37,6 +37,7 @@ Découvrez ce qui occupe réellement votre stockage, avec une interface moderne 
 - Détecteur de fichiers en double (1 Mo et plus, comparés par contenu, pas juste nom/taille)
 - Détecteur de fichiers anciens, ceux probablement oubliés, triés par date de modification
 - Détecteur de dossiers vides
+- Libération de RAM (vrais chiffres avant/après, pas un gain promis)
 - Export d'un rapport de scan en CSV
 - Recommandation NordVPN sur le tableau de bord, et recommandation DeleteMe après un scan, toutes deux clairement identifiées comme liens affiliés
 - Paramètres : langue, thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement

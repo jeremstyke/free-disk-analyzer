@@ -105,6 +105,11 @@
 
   <data name="Analyze_ExportReport" xml:space="preserve"><value>Exporter le rapport (CSV)</value></data>
 
+  <data name="Performance_Title" xml:space="preserve"><value>Libérer la RAM</value></data>
+  <data name="Performance_Body" xml:space="preserve"><value>Demande à Windows de récupérer la mémoire que les processus en cours n'utilisent pas activement. Windows le fait déjà automatiquement dès qu'un programme a besoin de cette mémoire, donc l'effet réel est souvent modeste. Les chiffres ci-dessous sont la mesure réelle, pas un gain promis.</value></data>
+  <data name="Performance_FreeRam" xml:space="preserve"><value>Libérer la RAM</value></data>
+  <data name="Performance_Running" xml:space="preserve"><value>En cours...</value></data>
+
   <data name="Settings_Title" xml:space="preserve"><value>Paramètres</value></data>
   <data name="Settings_Subtitle" xml:space="preserve"><value>Les préférences sont sauvegardées localement sur cet appareil.</value></data>
   <data name="Settings_Language" xml:space="preserve"><value>Langue</value></data>
