@@ -131,6 +131,7 @@
   <data name="Vpn_SupportTitle" xml:space="preserve"><value>Support VPN development</value></data>
   <data name="Vpn_SupportBody" xml:space="preserve"><value>This is a donation to help fund building the free VPN, not a purchase of VPN access, there's nothing to activate yet.</value></data>
   <data name="Vpn_SupportButton" xml:space="preserve"><value>Support development</value></data>
+  <data name="Vpn_LearnMore" xml:space="preserve"><value>See full details on the website</value></data>
 
   <data name="Browsers_Title" xml:space="preserve"><value>Browser cleanup</value></data>
   <data name="Browsers_Body" xml:space="preserve"><value>Clears cache, cookies, and browsing history for Chrome, Edge, and Firefox. Bookmarks and saved passwords are never touched. For Firefox, history is not offered here since it's stored together with bookmarks in the same file. Close your browsers first for best results.</value></data>

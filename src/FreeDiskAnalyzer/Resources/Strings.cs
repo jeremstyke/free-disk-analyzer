@@ -114,6 +114,7 @@ public static class Strings
     public static string Vpn_SupportTitle => Get(nameof(Vpn_SupportTitle));
     public static string Vpn_SupportBody => Get(nameof(Vpn_SupportBody));
     public static string Vpn_SupportButton => Get(nameof(Vpn_SupportButton));
+    public static string Vpn_LearnMore => Get(nameof(Vpn_LearnMore));
 
     public static string Browsers_Title => Get(nameof(Browsers_Title));
     public static string Browsers_Body => Get(nameof(Browsers_Body));

@@ -131,6 +131,7 @@
   <data name="Vpn_SupportTitle" xml:space="preserve"><value>Soutenir le développement du VPN</value></data>
   <data name="Vpn_SupportBody" xml:space="preserve"><value>C'est un don pour aider à financer le développement du VPN gratuit, pas un achat d'accès VPN, il n'y a rien à activer pour l'instant.</value></data>
   <data name="Vpn_SupportButton" xml:space="preserve"><value>Soutenir le développement</value></data>
+  <data name="Vpn_LearnMore" xml:space="preserve"><value>Voir tous les détails sur le site</value></data>
 
   <data name="Browsers_Title" xml:space="preserve"><value>Nettoyage des navigateurs</value></data>
   <data name="Browsers_Body" xml:space="preserve"><value>Efface le cache, les cookies et l'historique de navigation pour Chrome, Edge et Firefox. Les favoris et mots de passe enregistrés ne sont jamais touchés. Pour Firefox, l'historique n'est pas proposé ici car il est stocké avec les favoris dans le même fichier. Fermez vos navigateurs d'abord pour de meilleurs résultats.</value></data>
