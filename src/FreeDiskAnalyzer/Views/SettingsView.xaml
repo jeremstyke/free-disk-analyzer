@@ -46,18 +46,6 @@
                 </StackPanel>
             </Border>
 
-            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
-                <StackPanel>
-                    <TextBlock Text="{x:Static res:Strings.Settings_CookieWhitelist}" FontWeight="SemiBold" FontSize="16"
-                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
-                    <TextBlock Text="{x:Static res:Strings.Settings_CookieWhitelistNote}"
-                               Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap" Margin="0,0,0,10"/>
-                    <TextBox Text="{Binding CookieWhitelistText, UpdateSourceTrigger=PropertyChanged}"
-                             AcceptsReturn="True" TextWrapping="Wrap" MinHeight="80" MaxHeight="160"
-                             VerticalScrollBarVisibility="Auto"/>
-                </StackPanel>
-            </Border>
-
             <Button Content="{x:Static res:Strings.Settings_Reset}" Command="{Binding ResetSettingsCommand}"
                     HorizontalAlignment="Left"/>
 

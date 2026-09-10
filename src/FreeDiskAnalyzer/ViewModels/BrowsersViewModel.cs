@@ -11,6 +11,7 @@ public sealed partial class BrowsersViewModel : ObservableObject
 {
     private readonly IBrowserCleaner _browserCleaner;
     private readonly ISettingsService _settingsService;
+    private bool _isLoading;
 
     public ObservableCollection<BrowserCleanupItemViewModel> Items { get; } = new();
 
@@ -26,12 +27,34 @@ public sealed partial class BrowsersViewModel : ObservableObject
     [ObservableProperty]
     private string? resultSummary;
 
+    [ObservableProperty]
+    private string cookieWhitelistText = string.Empty;
+
     public BrowsersViewModel(IBrowserCleaner browserCleaner, ISettingsService settingsService)
     {
         _browserCleaner = browserCleaner;
         _settingsService = settingsService;
+
+        _isLoading = true;
+        CookieWhitelistText = string.Join(Environment.NewLine, _settingsService.Load().CookieWhitelist);
+        _isLoading = false;
+
         _ = ScanAsync();
     }
+
+    partial void OnCookieWhitelistTextChanged(string value)
+    {
+        if (_isLoading) return;
+
+        var current = _settingsService.Load();
+        current.CookieWhitelist = ParseWhitelist(value);
+        _settingsService.Save(current);
+    }
+
+    private static List<string> ParseWhitelist(string text) =>
+        text.Split(new[] { '\r', '\n', ',' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList();
 
     [RelayCommand]
     private async Task ScanAsync()
@@ -61,7 +84,7 @@ public sealed partial class BrowsersViewModel : ObservableObject
         if (selected.Count == 0) return;
 
         var totalSize = selected.Sum(i => i.Item.SizeBytes);
-        var whitelist = _settingsService.Load().CookieWhitelist;
+        var whitelist = ParseWhitelist(CookieWhitelistText);
 
         var confirmed = MessageBox.Show(
             $"Clear {selected.Count} item(s), about {ByteSizeFormatter.Format(totalSize)}?\n" +

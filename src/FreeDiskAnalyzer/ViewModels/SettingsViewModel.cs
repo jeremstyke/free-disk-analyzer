@@ -27,9 +27,6 @@ public sealed partial class SettingsViewModel : ObservableObject
     [ObservableProperty]
     private bool languageChanged;
 
-    [ObservableProperty]
-    private string cookieWhitelistText = string.Empty;
-
     public IReadOnlyList<ThemeMode> ThemeOptions { get; } = new[] { ThemeMode.Light, ThemeMode.Dark };
 
     public IReadOnlyList<LanguageOption> LanguageOptions { get; } = new[]
@@ -47,7 +44,6 @@ public sealed partial class SettingsViewModel : ObservableObject
         Theme = settings.Theme;
         StartWithWindows = settings.StartWithWindows;
         AnalyticsEnabled = settings.AnalyticsEnabled;
-        CookieWhitelistText = string.Join(Environment.NewLine, settings.CookieWhitelist);
 
         _initialLanguageCode = settings.Language;
         selectedLanguage = LanguageOptions.FirstOrDefault(l => l.Code == settings.Language) ?? LanguageOptions[0];
@@ -77,25 +73,19 @@ public sealed partial class SettingsViewModel : ObservableObject
         PersistIfNotLoading();
     }
 
-    partial void OnCookieWhitelistTextChanged(string value) => PersistIfNotLoading();
-
-    private static List<string> ParseWhitelist(string text) =>
-        text.Split(new[] { '\r', '\n', ',' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-            .Distinct(StringComparer.OrdinalIgnoreCase)
-            .ToList();
-
     private void PersistIfNotLoading()
     {
         if (_isLoading) return;
 
-        _settingsService.Save(new AppSettings
-        {
-            Theme = Theme,
-            StartWithWindows = StartWithWindows,
-            AnalyticsEnabled = AnalyticsEnabled,
-            Language = SelectedLanguage.Code,
-            CookieWhitelist = ParseWhitelist(CookieWhitelistText)
-        });
+        // Load-modify-save rather than constructing a fresh AppSettings, so
+        // this doesn't clobber fields managed elsewhere (the cookie
+        // whitelist now lives on the Browsers tab in Cleanup).
+        var current = _settingsService.Load();
+        current.Theme = Theme;
+        current.StartWithWindows = StartWithWindows;
+        current.AnalyticsEnabled = AnalyticsEnabled;
+        current.Language = SelectedLanguage.Code;
+        _settingsService.Save(current);
     }
 
     [RelayCommand]
@@ -107,7 +97,6 @@ public sealed partial class SettingsViewModel : ObservableObject
         AnalyticsEnabled = false;
         SelectedLanguage = LanguageOptions[0];
         LanguageChanged = false;
-        CookieWhitelistText = string.Empty;
         _isLoading = false;
 
         _settingsService.SetStartWithWindows(false);
