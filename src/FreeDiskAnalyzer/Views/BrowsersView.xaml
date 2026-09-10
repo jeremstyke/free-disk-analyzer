@@ -16,6 +16,10 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="{x:Static res:Strings.Browsers_RescanCommand}" Margin="0,0,12,0"
                         Command="{Binding ScanCommand}"/>
+                <Button Content="{x:Static res:Strings.Browsers_SelectAll}" Margin="0,0,12,0"
+                        Command="{Binding SelectAllCommand}"/>
+                <Button Content="{x:Static res:Strings.Browsers_DeselectAll}" Margin="0,0,12,0"
+                        Command="{Binding DeselectAllCommand}"/>
                 <Button Content="{x:Static res:Strings.Browsers_Clean}" Style="{StaticResource PrimaryButtonStyle}"
                         Command="{Binding CleanSelectedCommand}"/>
             </StackPanel>

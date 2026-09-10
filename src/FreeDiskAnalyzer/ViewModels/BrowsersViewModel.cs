@@ -77,6 +77,18 @@ public sealed partial class BrowsersViewModel : ObservableObject
         }
     }
 
+    [RelayCommand]
+    private void SelectAll()
+    {
+        foreach (var item in Items) item.IsSelected = true;
+    }
+
+    [RelayCommand]
+    private void DeselectAll()
+    {
+        foreach (var item in Items) item.IsSelected = false;
+    }
+
     [RelayCommand(CanExecute = nameof(CanClean))]
     private async Task CleanSelectedAsync()
     {

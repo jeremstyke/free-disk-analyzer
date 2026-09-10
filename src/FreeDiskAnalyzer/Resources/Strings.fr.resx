@@ -129,6 +129,8 @@
   <data name="Browsers_Title" xml:space="preserve"><value>Nettoyage des navigateurs</value></data>
   <data name="Browsers_Body" xml:space="preserve"><value>Efface le cache, les cookies et l'historique de navigation pour Chrome, Edge et Firefox. Les favoris et mots de passe enregistrés ne sont jamais touchés. Pour Firefox, l'historique n'est pas proposé ici car il est stocké avec les favoris dans le même fichier. Fermez vos navigateurs d'abord pour de meilleurs résultats.</value></data>
   <data name="Browsers_RescanCommand" xml:space="preserve"><value>Rescanner</value></data>
+  <data name="Browsers_SelectAll" xml:space="preserve"><value>Tout sélectionner</value></data>
+  <data name="Browsers_DeselectAll" xml:space="preserve"><value>Tout désélectionner</value></data>
   <data name="Browsers_Clean" xml:space="preserve"><value>Nettoyer la sélection</value></data>
   <data name="Risk_Low" xml:space="preserve"><value>Risque faible</value></data>
   <data name="Risk_Medium" xml:space="preserve"><value>Risque moyen</value></data>
