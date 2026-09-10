@@ -6,8 +6,8 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/jeremstyke/free-disk-analyzer/build.yml?branch=main)](../../actions)
 [![Release](https://img.shields.io/github/v/release/jeremstyke/free-disk-analyzer)](../../releases/latest)
 
-**Un analyseur d'espace disque gratuit et respectueux de la vie privée pour Windows.**
-Découvrez ce qui occupe réellement votre stockage, avec une interface moderne et facile à utiliser.
+**Un nettoyeur PC complet et 100% gratuit pour Windows.**
+Analyse de disque, doublons, nettoyage navigateurs et PC, gestion démarrage et RAM. Rien n'est jamais envoyé nulle part, une alternative respectueuse de la vie privée à CCleaner et consorts.
 
 🇬🇧 [Read in English](README.md)
 

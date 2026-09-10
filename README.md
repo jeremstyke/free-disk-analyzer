@@ -7,8 +7,8 @@
 [![Release](https://img.shields.io/github/v/release/jeremstyke/free-disk-analyzer)](../../releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/jeremstyke/free-disk-analyzer/total)](../../releases)
 
-**A free, privacy-first disk space analyzer for Windows.**
-See what's really using your storage, with a beautiful and easy-to-use interface.
+**A complete, 100% free PC cleaner for Windows.**
+Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. Nothing is ever sent anywhere, a privacy-first alternative to CCleaner and similar tools.
 
 🇫🇷 [Lire en français](README.fr.md)
 
