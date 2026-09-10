@@ -15,7 +15,7 @@
         <!-- Sidebar -->
         <Border Grid.Column="0" Background="{DynamicResource SidebarBrush}"
                 BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,1,0">
-            <DockPanel>
+            <DockPanel LastChildFill="False">
                 <StackPanel DockPanel.Dock="Top" Margin="20,24,20,20">
                     <TextBlock Text="Free Disk Analyzer" FontSize="16" FontWeight="SemiBold"
                                TextWrapping="Wrap" Foreground="{DynamicResource TextPrimaryBrush}"/>
