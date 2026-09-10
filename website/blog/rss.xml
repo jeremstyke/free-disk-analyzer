@@ -7,10 +7,10 @@
     <language>en</language>
 
     <item>
-      <title>Free Disk Analyzer v1.2.0: Startup Manager and a First Look at VPN Plans</title>
+      <title>Free Disk Analyzer v1.2.0: Startup Manager</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-2-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-2-0-release-notes.html</guid>
-      <description>What's new in Free Disk Analyzer v1.2.0: a Startup Manager to speed up boot time, and a new VPN tab showing where the planned free VPN stands.</description>
+      <description>What's new in Free Disk Analyzer v1.2.0: a Startup Manager to speed up boot time and reduce clutter at login.</description>
     </item>
     <item>
       <title>Free Disk Analyzer v1.1.0: Cleanup That Actually Cleans</title>
