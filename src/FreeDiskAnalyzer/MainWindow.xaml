@@ -39,9 +39,12 @@
                 </ListBox>
 
                 <Button DockPanel.Dock="Bottom" Command="{Binding OpenCoffeeCommand}"
-                        Style="{StaticResource PrimaryButtonStyle}"
-                        HorizontalAlignment="Stretch" Margin="12,0,12,16">
-                    <TextBlock Text="{x:Static res:Strings.About_Coffee}" HorizontalAlignment="Center"/>
+                        Style="{StaticResource OutlineButtonStyle}"
+                        Margin="12,0,12,16">
+                    <TextBlock>
+                        <Run Text="☕"/>
+                        <Run Text="{x:Static res:Strings.About_Coffee}"/>
+                    </TextBlock>
                 </Button>
             </DockPanel>
         </Border>
