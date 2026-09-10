@@ -21,6 +21,9 @@
             <DataTemplate DataType="{x:Type vm:AnalyzeViewModel}">
                 <views:AnalyzeView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ExploreViewModel}">
+                <views:CleanupView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:LargeFilesViewModel}">
                 <views:LargeFilesView/>
             </DataTemplate>

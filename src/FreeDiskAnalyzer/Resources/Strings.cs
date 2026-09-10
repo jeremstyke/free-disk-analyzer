@@ -19,8 +19,7 @@ public static class Strings
 
     public static string Nav_Dashboard => Get(nameof(Nav_Dashboard));
     public static string Nav_Analyze => Get(nameof(Nav_Analyze));
-    public static string Nav_LargeFiles => Get(nameof(Nav_LargeFiles));
-    public static string Nav_Folders => Get(nameof(Nav_Folders));
+    public static string Nav_Explore => Get(nameof(Nav_Explore));
     public static string Nav_Cleanup => Get(nameof(Nav_Cleanup));
     public static string Nav_Settings => Get(nameof(Nav_Settings));
     public static string Nav_Privacy => Get(nameof(Nav_Privacy));

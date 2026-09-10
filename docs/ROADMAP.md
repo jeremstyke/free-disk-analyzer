@@ -165,3 +165,12 @@ Flagged explicitly to Bob when built: the cookie whitelist is meaningfully less 
 ## CleanTab cross-promotion removed from site/app (per Bob, 2026-09-10)
 
 All CleanTab links and mentions removed from the website (footer on every page, About page bio) and the app (About page card, ViewModel command/URL, resx strings). Consistent with Free Disk Analyzer now having its own browser cleanup feature rather than needing to point at CleanTab for that. Note: this only covers what lives in this repository, the CleanTab extension itself is a separate codebase/session, not something reachable from here.
+
+## Sidebar regrouped: Explore + Cleanup (per Bob, 2026-09-10)
+
+Sidebar was growing (8 items, Cleanup already had 6 internal sub-tabs). Regrouped by whether a tab can change/delete something:
+
+- **Explore** (new, 3 sub-tabs: Large Files, Folders, Old Files): purely read-only browsing of the last scan, nothing here deletes anything.
+- **Cleanup** (5 sub-tabs, Old Files moved out to Explore): Duplicates, Empty Folders, Performance, Browsers, System, everything here can change or delete something.
+
+Sidebar is back to 7 top-level items. `ExploreViewModel` reuses the exact same `CleanupView.xaml` (it only binds to generic `Tabs`/`SelectedTab`/`CurrentContent`/`Label` properties, no Cleanup-specific content), registered as a second DataTemplate target in `App.xaml` rather than duplicating the XAML file.

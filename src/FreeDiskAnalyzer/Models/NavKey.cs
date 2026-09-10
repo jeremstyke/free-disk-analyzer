@@ -4,8 +4,7 @@ public enum NavKey
 {
     Dashboard,
     Analyze,
-    LargeFiles,
-    Folders,
+    Explore,
     Cleanup,
     Settings,
     Privacy,

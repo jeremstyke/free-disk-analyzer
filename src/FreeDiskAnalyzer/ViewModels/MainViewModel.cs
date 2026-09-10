@@ -146,8 +146,7 @@ public sealed partial class MainViewModel : ObservableObject
         {
             NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _blogFeedService, _scanResultStore),
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
-            NavKey.LargeFiles => new LargeFilesViewModel(_scanResultStore),
-            NavKey.Folders => new FoldersViewModel(_scanResultStore),
+            NavKey.Explore => new ExploreViewModel(_scanResultStore),
             NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _safeDeleteService, _browserCleaner, _systemCleaner, _settingsService, _scanResultStore),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
@@ -162,8 +161,7 @@ public sealed partial class MainViewModel : ObservableObject
     private static string GetTitle(NavKey key) => key switch
     {
         NavKey.Analyze => "Analyze",
-        NavKey.LargeFiles => "Large Files",
-        NavKey.Folders => "Folders",
+        NavKey.Explore => "Explore",
         NavKey.Cleanup => "Cleanup",
         NavKey.Settings => "Settings",
         NavKey.Privacy => "Privacy",
@@ -175,8 +173,7 @@ public sealed partial class MainViewModel : ObservableObject
     {
         new NavItem { Key = NavKey.Dashboard, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Dashboard, Glyph = "\uE80F" },
         new NavItem { Key = NavKey.Analyze, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Analyze, Glyph = "\uE721" },
-        new NavItem { Key = NavKey.LargeFiles, Label = FreeDiskAnalyzer.Resources.Strings.Nav_LargeFiles, Glyph = "\uE8A5" },
-        new NavItem { Key = NavKey.Folders, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Folders, Glyph = "\uE8B7" },
+        new NavItem { Key = NavKey.Explore, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Explore, Glyph = "\uE8A5" },
         new NavItem { Key = NavKey.Cleanup, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Cleanup, Glyph = "\uE74D" },
         new NavItem { Key = NavKey.Settings, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Settings, Glyph = "\uE713" },
         new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E" },

@@ -7,14 +7,14 @@ using FreeDiskAnalyzer.Services;
 namespace FreeDiskAnalyzer.ViewModels;
 
 /// <summary>
-/// Groups Old Files, Duplicates, and Empty Folders under one sidebar entry
-/// with internal pill-style sub-navigation, instead of three separate
-/// top-level tabs. Each sub-page keeps its own view model and state, this
-/// just decides which one is currently visible.
+/// Groups Duplicates, Empty Folders, Performance, Browsers, and System under
+/// one sidebar entry with internal pill-style sub-navigation. Everything
+/// here can delete or change something (files, RAM, browser data, temp
+/// files), that's what separates this tab from Explore, which is purely
+/// read-only browsing.
 /// </summary>
 public sealed partial class CleanupViewModel : ObservableObject
 {
-    public OldFilesViewModel OldFiles { get; }
     public DuplicatesViewModel Duplicates { get; }
     public EmptyFoldersViewModel EmptyFolders { get; }
     public PerformanceViewModel Performance { get; }
@@ -39,7 +39,6 @@ public sealed partial class CleanupViewModel : ObservableObject
         ISettingsService settingsService,
         ScanResultStore scanResultStore)
     {
-        OldFiles = new OldFilesViewModel(scanResultStore);
         Duplicates = new DuplicatesViewModel(driveEnumerator, duplicateFinder, safeDeleteService);
         EmptyFolders = new EmptyFoldersViewModel(scanResultStore, safeDeleteService);
         Performance = new PerformanceViewModel(ramOptimizer);
@@ -48,7 +47,6 @@ public sealed partial class CleanupViewModel : ObservableObject
 
         Tabs = new ObservableCollection<CleanupTab>
         {
-            new(Resources.Strings.OldFiles_Title, OldFiles),
             new(Resources.Strings.Duplicates_Title, Duplicates),
             new(Resources.Strings.EmptyFolders_Title, EmptyFolders),
             new(Resources.Strings.Performance_Title, Performance),

@@ -36,8 +36,7 @@
 
   <data name="Nav_Dashboard" xml:space="preserve"><value>Tableau de bord</value></data>
   <data name="Nav_Analyze" xml:space="preserve"><value>Analyser</value></data>
-  <data name="Nav_LargeFiles" xml:space="preserve"><value>Fichiers volumineux</value></data>
-  <data name="Nav_Folders" xml:space="preserve"><value>Dossiers</value></data>
+  <data name="Nav_Explore" xml:space="preserve"><value>Explorer</value></data>
   <data name="Nav_Cleanup" xml:space="preserve"><value>Nettoyage</value></data>
   <data name="Nav_Settings" xml:space="preserve"><value>Paramètres</value></data>
   <data name="Nav_Privacy" xml:space="preserve"><value>Confidentialité</value></data>
