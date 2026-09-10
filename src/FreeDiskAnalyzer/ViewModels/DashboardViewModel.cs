@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using FreeDiskAnalyzer.Core.Models;
 using FreeDiskAnalyzer.Core.Services;
 using FreeDiskAnalyzer.Core.Utilities;
 using FreeDiskAnalyzer.Services;
@@ -16,10 +17,15 @@ public sealed partial class DashboardViewModel : ObservableObject
     public const string NordVpnAffiliateUrl =
         "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer";
 
+    public const string BlogUrl = "https://jeremstyke.github.io/free-disk-analyzer/blog/";
+    private const int LatestArticleCount = 3;
+
     private readonly IDriveEnumerator _driveEnumerator;
+    private readonly IBlogFeedService _blogFeedService;
     private readonly ScanResultStore _scanResultStore;
 
     public ObservableCollection<DriveCardViewModel> Drives { get; } = new();
+    public ObservableCollection<BlogPost> LatestArticles { get; } = new();
 
     [ObservableProperty]
     private DriveCardViewModel? selectedDrive;
@@ -29,14 +35,28 @@ public sealed partial class DashboardViewModel : ObservableObject
 
     public ObservableCollection<CategoryUsageViewModel> CategoryBreakdown { get; } = new();
 
-    public DashboardViewModel(IDriveEnumerator driveEnumerator, ScanResultStore scanResultStore)
+    public DashboardViewModel(IDriveEnumerator driveEnumerator, IBlogFeedService blogFeedService, ScanResultStore scanResultStore)
     {
         _driveEnumerator = driveEnumerator;
+        _blogFeedService = blogFeedService;
         _scanResultStore = scanResultStore;
 
         LoadDrives();
         UpdateFromScanResult();
         _scanResultStore.PropertyChanged += OnStoreChanged;
+
+        _ = LoadLatestArticlesAsync();
+    }
+
+    private async Task LoadLatestArticlesAsync()
+    {
+        var posts = await _blogFeedService.GetLatestPostsAsync(LatestArticleCount);
+
+        LatestArticles.Clear();
+        foreach (var post in posts)
+        {
+            LatestArticles.Add(post);
+        }
     }
 
     private void OnStoreChanged(object? sender, PropertyChangedEventArgs e)
@@ -105,5 +125,18 @@ public sealed partial class DashboardViewModel : ObservableObject
     private void OpenNordVpn()
     {
         Process.Start(new ProcessStartInfo(NordVpnAffiliateUrl) { UseShellExecute = true });
+    }
+
+    [RelayCommand]
+    private void OpenArticle(BlogPost? post)
+    {
+        if (post is null) return;
+        Process.Start(new ProcessStartInfo(post.Url) { UseShellExecute = true });
+    }
+
+    [RelayCommand]
+    private void OpenBlog()
+    {
+        Process.Start(new ProcessStartInfo(BlogUrl) { UseShellExecute = true });
     }
 }

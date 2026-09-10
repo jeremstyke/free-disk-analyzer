@@ -56,6 +56,8 @@
   <data name="Dashboard_LearnMore" xml:space="preserve"><value>En savoir plus</value></data>
   <data name="Dashboard_AffiliateDisclosure" xml:space="preserve"><value>Lien affilié - Aide à financer le développement de Free Disk Analyzer, sans surcoût pour vous.</value></data>
   <data name="Dashboard_UsedOf" xml:space="preserve"><value> utilisé sur </value></data>
+  <data name="Dashboard_FromTheBlog" xml:space="preserve"><value>Depuis le blog</value></data>
+  <data name="Dashboard_ViewBlog" xml:space="preserve"><value>Voir le blog</value></data>
 
   <data name="Analyze_Title" xml:space="preserve"><value>Analyser</value></data>
   <data name="Analyze_Subtitle" xml:space="preserve"><value>Choisissez un disque et lancez un scan.</value></data>

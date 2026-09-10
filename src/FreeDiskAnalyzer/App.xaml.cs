@@ -26,7 +26,8 @@ public partial class App : Application
         IDuplicateFinder duplicateFinder = new DuplicateFinder();
         IRamOptimizer ramOptimizer = new RamOptimizer();
         IUpdateChecker updateChecker = new UpdateChecker();
-        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService, updateChecker);
+        IBlogFeedService blogFeedService = new BlogFeedService();
+        var mainViewModel = new MainViewModel(driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, settingsService, updateChecker, blogFeedService);
 
         var mainWindow = new MainWindow
         {

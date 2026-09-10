@@ -44,6 +44,7 @@ See what's really using your storage, with a beautiful and easy-to-use interface
 - Empty folder finder
 - Free up RAM (real before/after numbers, not a promised gain)
 - In-app update notifications, with one-click download and install
+- Latest blog articles shown on the Dashboard
 - Export a scan report to CSV
 - NordVPN recommendation on the Dashboard, and a DeleteMe recommendation after a scan completes, both clearly labeled as affiliate links
 - Settings: language, light/dark theme, start with Windows, opt-in anonymous analytics, reset to defaults, all saved locally

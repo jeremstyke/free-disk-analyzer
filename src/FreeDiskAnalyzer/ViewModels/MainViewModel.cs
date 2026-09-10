@@ -20,6 +20,7 @@ public sealed partial class MainViewModel : ObservableObject
     private readonly IRamOptimizer _ramOptimizer;
     private readonly ISettingsService _settingsService;
     private readonly IUpdateChecker _updateChecker;
+    private readonly IBlogFeedService _blogFeedService;
     private readonly ScanResultStore _scanResultStore;
 
     private UpdateInfo? _updateInfo;
@@ -54,7 +55,8 @@ public sealed partial class MainViewModel : ObservableObject
         IDuplicateFinder duplicateFinder,
         IRamOptimizer ramOptimizer,
         ISettingsService settingsService,
-        IUpdateChecker updateChecker)
+        IUpdateChecker updateChecker,
+        IBlogFeedService blogFeedService)
     {
         _driveEnumerator = driveEnumerator;
         _diskScanner = diskScanner;
@@ -62,6 +64,7 @@ public sealed partial class MainViewModel : ObservableObject
         _ramOptimizer = ramOptimizer;
         _settingsService = settingsService;
         _updateChecker = updateChecker;
+        _blogFeedService = blogFeedService;
         _scanResultStore = new ScanResultStore();
 
         NavItems = new ObservableCollection<NavItem>(BuildNavItems());
@@ -132,7 +135,7 @@ public sealed partial class MainViewModel : ObservableObject
 
         object page = key switch
         {
-            NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _scanResultStore),
+            NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _blogFeedService, _scanResultStore),
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.LargeFiles => new LargeFilesViewModel(_scanResultStore),
             NavKey.Folders => new FoldersViewModel(_scanResultStore),
