@@ -7,6 +7,7 @@ using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Models;
 using FreeDiskAnalyzer.Core.Services;
 using FreeDiskAnalyzer.Core.Utilities;
+using FreeDiskAnalyzer.Services;
 
 namespace FreeDiskAnalyzer.ViewModels;
 
