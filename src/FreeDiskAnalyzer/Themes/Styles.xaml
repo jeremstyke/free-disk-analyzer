@@ -45,7 +45,7 @@
 
     <!-- Primary call-to-action button, accent filled, rounded -->
     <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource AccentGradientBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource AccentForegroundBrush}"/>
         <Setter Property="FontFamily" Value="{DynamicResource AppFontFamily}"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
@@ -196,21 +196,27 @@
     <Style x:Key="NavListItemStyle" TargetType="ListBoxItem">
         <Setter Property="Padding" Value="12,10"/>
         <Setter Property="Margin" Value="0,2"/>
-        <Setter Property="Foreground" Value="{DynamicResource TextSecondaryBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="{DynamicResource AppFontFamily}"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
                     <Grid>
                         <Border x:Name="SelectedBorder"
-                                Background="{DynamicResource SidebarSelectedBrush}"
+                                Background="#40FFFFFF"
                                 CornerRadius="10"
                                 Opacity="0"/>
                         <Border x:Name="HoverBorder"
-                                Background="{DynamicResource SurfaceAltBrush}"
+                                Background="#22FFFFFF"
                                 CornerRadius="10"
                                 Opacity="0"/>
                         <ContentPresenter Margin="{TemplateBinding Padding}"/>
@@ -222,6 +228,18 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Opacity"
                                                          To="1" Duration="0:0:0.12"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                         To="1.03" Duration="0:0:0.15">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut" Amplitude="0.8"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                         To="1.03" Duration="0:0:0.15">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut" Amplitude="0.8"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -230,6 +248,8 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Opacity"
                                                          To="0" Duration="0:0:0.15"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.15"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.15"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
@@ -251,8 +271,8 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
-                            <Setter Property="Foreground" Value="{DynamicResource AccentBrush}"/>
-                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

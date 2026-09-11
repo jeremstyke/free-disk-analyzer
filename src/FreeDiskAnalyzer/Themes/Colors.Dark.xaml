@@ -19,9 +19,14 @@
     <SolidColorBrush x:Key="SurfaceBrush" Color="#1E293B"/>
     <SolidColorBrush x:Key="SurfaceAltBrush" Color="#273549"/>
     <SolidColorBrush x:Key="SidebarBrush" Color="#111C2E"/>
-    <LinearGradientBrush x:Key="SidebarGradientBrush" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#111C2E" Offset="0"/>
-        <GradientStop Color="#0B1420" Offset="1"/>
+    <LinearGradientBrush x:Key="SidebarGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#1D3A8A" Offset="0"/>
+        <GradientStop Color="#5B21B6" Offset="0.55"/>
+        <GradientStop Color="#0F766E" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="AccentGradientBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#2563EB" Offset="0"/>
+        <GradientStop Color="#7C3AED" Offset="1"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="SidebarSelectedBrush" Color="#1E3A5F"/>
 
