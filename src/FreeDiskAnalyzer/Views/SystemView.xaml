@@ -1,6 +1,7 @@
 <UserControl x:Class="FreeDiskAnalyzer.Views.SystemView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FreeDiskAnalyzer.Views"
              xmlns:res="clr-namespace:FreeDiskAnalyzer.Resources">
     <Grid>
         <Grid.RowDefinitions>
@@ -21,6 +22,14 @@
             </StackPanel>
             <TextBlock Text="{Binding ResultSummary}" Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"
                        Margin="0,12,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0" Visibility="{Binding IsScanning, Converter={StaticResource BoolToVis}}">
+                <local:LoadingDotsView Margin="0,0,8,0"/>
+                <TextBlock Text="{x:Static res:Strings.System_Scanning}" Style="{StaticResource CaptionTextStyle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0" Visibility="{Binding IsCleaning, Converter={StaticResource BoolToVis}}">
+                <local:LoadingDotsView Margin="0,0,8,0"/>
+                <TextBlock Text="{x:Static res:Strings.System_Cleaning}" Style="{StaticResource CaptionTextStyle}"/>
+            </StackPanel>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">

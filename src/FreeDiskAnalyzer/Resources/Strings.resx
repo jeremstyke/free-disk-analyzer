@@ -145,6 +145,8 @@
   <data name="System_Body" xml:space="preserve"><value>Clears your Temp folder (low risk, files go to the Recycle Bin) and empties the Recycle Bin (medium risk, permanent, review what's in it first if unsure).</value></data>
   <data name="System_TempFiles" xml:space="preserve"><value>Temp files</value></data>
   <data name="System_RecycleBin" xml:space="preserve"><value>Recycle Bin</value></data>
+  <data name="System_Scanning" xml:space="preserve"><value>Scanning...</value></data>
+  <data name="System_Cleaning" xml:space="preserve"><value>Cleaning...</value></data>
 
   <data name="Update_Available" xml:space="preserve"><value>A new version is available: v{0}</value></data>
   <data name="Update_DownloadFailedTitle" xml:space="preserve"><value>Update failed</value></data>

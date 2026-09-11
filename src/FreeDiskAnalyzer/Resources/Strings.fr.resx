@@ -145,6 +145,8 @@
   <data name="System_Body" xml:space="preserve"><value>Vide votre dossier temporaire (risque faible, les fichiers vont à la Corbeille) et vide la Corbeille (risque moyen, définitif, vérifiez son contenu d'abord en cas de doute).</value></data>
   <data name="System_TempFiles" xml:space="preserve"><value>Fichiers temporaires</value></data>
   <data name="System_RecycleBin" xml:space="preserve"><value>Corbeille</value></data>
+  <data name="System_Scanning" xml:space="preserve"><value>Analyse en cours...</value></data>
+  <data name="System_Cleaning" xml:space="preserve"><value>Nettoyage en cours...</value></data>
 
   <data name="Update_Available" xml:space="preserve"><value>Une nouvelle version est disponible : v{0}</value></data>
   <data name="Update_DownloadFailedTitle" xml:space="preserve"><value>Échec de la mise à jour</value></data>

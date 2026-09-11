@@ -20,7 +20,31 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="PurgeCore" FontSize="17" FontWeight="Bold"
                                    TextWrapping="Wrap" Foreground="White"/>
-                        <Border Background="#D97706" CornerRadius="999" Padding="6,2" Margin="8,0,0,0" VerticalAlignment="Center">
+                        <Border Background="#D97706" CornerRadius="999" Padding="6,2" Margin="8,0,0,0" VerticalAlignment="Center"
+                                RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            </Border.RenderTransform>
+                            <Border.Triggers>
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                             From="1" To="1.12" Duration="0:0:1.1">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <SineEase EasingMode="EaseInOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                             From="1" To="1.12" Duration="0:0:1.1">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <SineEase EasingMode="EaseInOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Border.Triggers>
                             <TextBlock Text="BETA" FontSize="9" FontWeight="Bold" Foreground="White"/>
                         </Border>
                     </StackPanel>

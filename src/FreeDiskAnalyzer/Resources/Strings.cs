@@ -128,6 +128,8 @@ public static class Strings
     public static string System_Body => Get(nameof(System_Body));
     public static string System_TempFiles => Get(nameof(System_TempFiles));
     public static string System_RecycleBin => Get(nameof(System_RecycleBin));
+    public static string System_Scanning => Get(nameof(System_Scanning));
+    public static string System_Cleaning => Get(nameof(System_Cleaning));
 
     public static string Update_Available => Get(nameof(Update_Available));
     public static string Update_DownloadFailedTitle => Get(nameof(Update_DownloadFailedTitle));
