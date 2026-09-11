@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PurgeCore vs WinDirStat : lequel choisir ?</title>
+<meta name="description" content="Une comparaison honnête entre PurgeCore et WinDirStat : visualisation en treemap versus une boîte à outils de nettoyage plus large, et ce qui correspond à ce que vous cherchez.">
+<meta property="og:title" content="PurgeCore vs WinDirStat : lequel choisir ?">
+<meta property="og:description" content="Une comparaison honnête entre PurgeCore et WinDirStat : visualisation en treemap versus une boîte à outils de nettoyage plus large, et ce qui correspond à ce que vous cherchez.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/purgecore/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-windirstat.html">
+<link rel="canonical" href="https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-windirstat.html">
+<link rel="icon" type="image/png" href="../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Blog PurgeCore" href="rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      PurgeCore
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Fonctionnalités</a>
+      <a href="../../privacy.html">Confidentialité</a>
+      <a href="../../about.html">À propos</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offrir un café</a>
+      <div class="lang-switch"><a href="../../blog/free-disk-analyzer-vs-windirstat.html">EN</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Retour au blog</a>
+
+  <div class="article-header">
+    <span class="article-tag article-tag-comparison">Comparaison</span>
+  </div>
+  <h1>PurgeCore vs WinDirStat : lequel choisir ?</h1>
+  <p class="article-meta">2026 · 5 min de lecture</p>
+
+  <p>WinDirStat est la réponse classique à "où est passé mon espace disque" depuis 2003 : le pointer vers un disque, obtenir un treemap coloré de chaque fichier. Il est gratuit, open source, et toujours activement maintenu. Voici comment il se compare.</p>
+
+  <h2>Ce que WinDirStat fait et que PurgeCore ne fait pas</h2>
+  <ul>
+    <li><strong>Une visualisation en treemap.</strong> Chaque fichier dessiné en rectangle dont la taille correspond à son poids, coloré par type de fichier. C'est une façon vraiment rapide de repérer un fichier ou dossier énorme d'un coup d'œil, et PurgeCore n'a pas de vue équivalente, il utilise des listes triées à la place.</li>
+    <li><strong>Une répartition par extension de fichier</strong> montrant exactement combien d'espace chaque type de fichier consomme sur tout le scan.</li>
+    <li><strong>Deux décennies de maintenance</strong> et une large base d'utilisateurs établie, dont beaucoup de professionnels IT qui l'utilisent spécifiquement parce qu'il est simple et fait une seule chose.</li>
+    <li><strong>Support de scan élevé</strong> pour atteindre les dossiers système protégés qu'un compte utilisateur standard ne peut pas lire.</li>
+  </ul>
+
+  <h2>Où PurgeCore prend une approche différente</h2>
+  <ul>
+    <li><strong>Des fonctionnalités de nettoyage au-delà de "trouver et supprimer manuellement".</strong> WinDirStat permet de supprimer, déplacer ou compresser des fichiers depuis son interface, mais il ne trouve pas les doublons, ne nettoie pas les données de navigateur, ne gère pas les programmes de démarrage, et ne touche pas à la Corbeille ni au dossier Temp comme fonctionnalités dédiées. PurgeCore construit tout ça autour du scan initial.</li>
+    <li><strong>Des garde-fous sur la suppression.</strong> L'action de suppression de WinDirStat est une opération directe sur les fichiers, efficace, mais sans notation de risque intégrée ni filet de sécurité Corbeille intégré au flux comme chez PurgeCore.</li>
+    <li><strong>Un tableau de bord et une répartition par catégorie</strong> comme premier écran, plutôt que de plonger directement dans l'arborescence des fichiers.</li>
+    <li><strong>Une détection de doublons</strong>, basée sur le contenu réel des fichiers plutôt que le nom ou la taille, quelque chose que WinDirStat ne fait pas du tout.</li>
+  </ul>
+
+  <h2>Deux outils construits autour de besoins différents</h2>
+  <p>WinDirStat répond extrêmement bien à une seule question : où, visuellement, va mon espace disque. Il n'essaie pas d'être une suite de nettoyage complète, et pour ceux qui veulent juste cette réponse et sont à l'aise pour supprimer les choses eux-mêmes ensuite, ça reste un choix solide et sans fioritures. PurgeCore part d'une question similaire mais est construit pour aussi agir sur la réponse, avec des garde-fous autour de tout ce qui supprime quelque chose.</p>
+
+  <h2>En résumé</h2>
+  <p>Si un treemap est la vue précise que vous voulez, ou que vous êtes un professionnel IT qui a juste besoin d'un moyen rapide et sans fioritures de voir où est passé l'espace sur une machine que vous dépannez, WinDirStat fait encore bien ce travail. Si vous voulez l'analyse de disque plus la détection de doublons, le nettoyage navigateur, la gestion RAM et démarrage, et une suppression axée sécurité dans une seule application, c'est le périmètre plus large que couvre PurgeCore.</p>
+
+  <div class="cta-box">
+    <p>Vous voulez l'image complète, pas juste où est passé l'espace mais ce que vous pouvez faire en sécurité à ce sujet ? C'est ce que PurgeCore ajoute en plus.</p>
+  </div>
+
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Télécharger PurgeCore</h2>
+    <p>Gratuit pour toujours, pas de compte, pas d'essai.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Télécharger pour Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">Pas encore de certificat de signature de code commercial, donc Windows peut afficher un bref avertissement "éditeur inconnu" au premier lancement. Le code source est public sur GitHub, et chaque version est publiée avec une empreinte SHA-256 vérifiable.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. Tous droits réservés. Si PurgeCore vous est utile, vous pouvez <a href="https://jeremstyke.gumroad.com/coffee">offrir un café</a>.</div>
+    <div class="disclosure">PurgeCore peut recommander des produits via des liens affiliés, clairement identifiés là où ils apparaissent dans l'application. Cela n'affecte jamais ce que l'application elle-même vous coûte.</div>
+  </div>
+</footer>
+
+<script src="../../assets/animations.js" defer></script>
+</body>
+</html>

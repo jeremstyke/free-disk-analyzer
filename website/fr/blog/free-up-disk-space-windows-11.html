@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment libérer de l'espace disque sur Windows 11 : le guide complet</title>
+<meta name="description" content="Tous les endroits où Windows cache réellement de l'espace récupérable, de Storage Sense au dossier WinSxS, dans l'ordre qui vous redonne le plus d'espace pour le moins de risque.">
+<meta property="og:title" content="Comment libérer de l'espace disque sur Windows 11 : le guide complet">
+<meta property="og:description" content="Tous les endroits où Windows cache réellement de l'espace récupérable, de Storage Sense au dossier WinSxS, dans l'ordre qui vous redonne le plus d'espace pour le moins de risque.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/purgecore/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/purgecore/fr/blog/free-up-disk-space-windows-11.html">
+<link rel="canonical" href="https://jeremstyke.github.io/purgecore/fr/blog/free-up-disk-space-windows-11.html">
+<link rel="icon" type="image/png" href="../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      PurgeCore
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Fonctionnalités</a>
+      <a href="../../privacy.html">Confidentialité</a>
+      <a href="../../about.html">À propos</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offrir un café</a>
+      <div class="lang-switch"><a href="../../blog/free-up-disk-space-windows-11.html">EN</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Retour au blog</a>
+
+  <h1>Comment libérer de l'espace disque sur Windows 11 : le guide complet</h1>
+  <div class="article-header">
+    <span class="article-tag article-tag-guide">Guide</span>
+  </div>
+  <p class="article-meta">2026 · 7 min de lecture</p>
+
+  <p>Windows accumule du désordre à plein d'endroits que vous ne regardez jamais directement : restes de mises à jour, état d'hibernation, fichiers temporaires qui ont survécu à leur utilité, et installations que vous avez oubliées. Les solutions ci-dessous sont classées du plus sûr et facile au plus avancé, commencez par le haut et arrêtez-vous une fois que vous avez libéré ce dont vous avez besoin.</p>
+
+  <h2>1. Lancer Storage Sense</h2>
+  <p>Paramètres &gt; Système &gt; Stockage &gt; Storage Sense. Activez-le et lancez-le une fois manuellement. Il efface les fichiers temporaires, vide la Corbeille après un certain nombre de jours, et peut décharger les vieux fichiers de dossiers comme Téléchargements vers le cloud si vous utilisez OneDrive. C'est le point de départ le plus sûr : Microsoft l'a spécifiquement conçu pour ne toucher à rien que vous utilisez activement.</p>
+
+  <h2>2. Désinstaller ce que vous n'utilisez pas</h2>
+  <p>Paramètres &gt; Applications &gt; Applications installées, puis triez par taille. Les grosses applications rarement utilisées (vieux jeux, logiciels d'essai, utilitaires groupés par le fabricant de l'ordinateur portable) sont généralement le plus gros gain ici, souvent plus important que tout ce que le nettoyage des fichiers temp trouvera.</p>
+
+  <h2>3. Nettoyer le dossier Téléchargements</h2>
+  <p>C'est le seul dossier que presque tout le monde oublie de vérifier, et les installateurs, fichiers ZIP et téléchargements vidéo s'y entassent pendant des années. C'est aussi généralement sûr de le vider entièrement, puisque tout ce qui est vraiment nécessaire a généralement déjà été déplacé ailleurs.</p>
+
+  <h2>4. Vider la Corbeille, correctement</h2>
+  <p>Les fichiers supprimés restent dans la Corbeille en utilisant leur espace d'origine jusqu'à ce qu'elle soit vidée. Si vous ne l'avez pas vidée depuis un moment, clic droit dessus et vérifiez "Propriétés" d'abord, ce n'est pas rare d'y trouver plusieurs gigaoctets qui attendent.</p>
+
+  <h2>5. Vider les caches des navigateurs</h2>
+  <p>Chrome, Edge et Firefox ont chacun leur propre cache, et sur une machine utilisée intensivement depuis des mois, ça peut représenter plusieurs gigaoctets cumulés sur tous les profils. Chaque navigateur a une option "Effacer les données de navigation" dans ses paramètres, généralement sous Confidentialité.</p>
+
+  <h2>6. Réduire l'utilisation des points de restauration système</h2>
+  <p>Les points de restauration système peuvent discrètement consommer de nombreux gigaoctets avec le temps. Paramètres &gt; Système &gt; À propos &gt; Paramètres système avancés &gt; Protection du système permet de réduire l'espace disque maximum qui leur est alloué, ou de supprimer les anciens points de restauration, sans désactiver complètement la fonctionnalité.</p>
+
+  <h2>7. Désactiver l'hibernation, si vous ne l'utilisez pas</h2>
+  <p>Le fichier d'hibernation (<code>hiberfil.sys</code>) réserve un espace équivalent à une portion de votre RAM, en permanence, que vous utilisiez l'hibernation ou non. Si vous ne l'utilisez jamais (la plupart des utilisateurs de bureau ne l'utilisent pas), lancer <code>powercfg /hibernate off</code> depuis une invite de commande administrateur récupère cet espace immédiatement. Passez cette étape si vous comptez sur l'hibernation pour la mise en veille/reprise.</p>
+
+  <h2>8. Nettoyer le dossier WinSxS, avec précaution</h2>
+  <p>Le dossier WinSxS stocke les versions de composants Windows utilisées pour les mises à jour et retours en arrière, et il grossit au fil des années de mises à jour Windows. Lancer <code>Dism.exe /online /Cleanup-Image /StartComponentCleanup</code> depuis une invite de commande administrateur supprime les versions obsolètes en toute sécurité. Ne supprimez pas ce dossier manuellement, ça peut casser Windows Update.</p>
+
+  <div class="cta-box">
+    <p>Avant de commencer à supprimer des choses, il est utile de voir réellement où va l'espace d'abord, plutôt que de deviner. <a href="../index.html">PurgeCore</a> scanne un disque et montre les plus gros fichiers et dossiers, tout localement, rien ne quitte votre ordinateur.</p>
+  </div>
+
+  <h2>L'ordre qui a du sens</h2>
+  <p>Storage Sense et la désinstallation des apps inutilisées mènent la plupart des gens à l'essentiel sans quasiment aucun risque. Le dossier Téléchargements et la Corbeille ajoutent généralement un gain notable en plus. Le nettoyage WinSxS et l'hibernation valent le coup sur une machine plus ancienne où ça n'a jamais été fait, mais ce sont des étapes optionnelles, pas les premières.</p>
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Télécharger PurgeCore</h2>
+    <p>Gratuit pour toujours, pas de compte, pas d'essai. S'installe en quelques secondes.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Télécharger pour Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">Pas encore de certificat de signature de code commercial, donc Windows peut afficher un bref avertissement "éditeur inconnu" au premier lancement. Le code source est public sur GitHub, et chaque version est publiée avec une empreinte SHA-256 vérifiable.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. Tous droits réservés. Si PurgeCore vous est utile, vous pouvez <a href="https://jeremstyke.gumroad.com/coffee">offrir un café</a>.</div>
+    <div class="disclosure">PurgeCore peut recommander des produits via des liens affiliés, clairement identifiés là où ils apparaissent dans l'application. Cela n'affecte jamais ce que l'application elle-même vous coûte.</div>
+  </div>
+</footer>
+
+<script src="../../assets/animations.js" defer></script>
+</body>
+</html>
