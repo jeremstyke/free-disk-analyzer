@@ -7,6 +7,13 @@
     <language>en</language>
 
     <item>
+      <title>PurgeCore v1.6.0: Smoother Interface</title>
+      <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-6-0-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-6-0-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>What's new in PurgeCore v1.6.0: smooth animated buttons, an animated sidebar, and a fade-in transition when switching tabs.</description>
+    </item>
+    <item>
       <title>PurgeCore v1.5.0: Browser Cleanup Fixes</title>
       <category>Release notes</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-5-0-release-notes.html</link>
