@@ -126,6 +126,15 @@
   <data name="Drivers_Body" xml:space="preserve"><value>Installed drivers and how old they are. Nothing here is downloaded or installed automatically, use Windows Update or the manufacturer's own site to update anything.</value></data>
   <data name="Drivers_OpenWindowsUpdate" xml:space="preserve"><value>Open Windows Update</value></data>
   <data name="Drivers_OldBadge" xml:space="preserve"><value>3+ years old</value></data>
+  <data name="Drivers_AgeUnknown" xml:space="preserve"><value>Update date unknown</value></data>
+  <data name="Drivers_AgeRecent" xml:space="preserve"><value>Updated recently</value></data>
+  <data name="Drivers_AgeMonth" xml:space="preserve"><value>{0} month ago</value></data>
+  <data name="Drivers_AgeMonths" xml:space="preserve"><value>{0} months ago</value></data>
+  <data name="Drivers_AgeYear" xml:space="preserve"><value>{0} year ago</value></data>
+  <data name="Drivers_AgeYears" xml:space="preserve"><value>{0} years ago</value></data>
+  <data name="Drivers_DetailTitle" xml:space="preserve"><value>Driver details</value></data>
+  <data name="Drivers_DetailExplanation" xml:space="preserve"><value>A driver lets Windows and this device talk to each other correctly. Manufacturers release updates over time to fix bugs, improve compatibility, and sometimes close security issues. This one hasn't been updated in a while, which isn't necessarily a problem, but it's worth checking if the device works fine and you're not troubleshooting anything related to it. Updating is optional, only do it if you have a specific reason to (a problem with the device, or wanting the latest features).</value></data>
+  <data name="Drivers_DetailOpenPrompt" xml:space="preserve"><value>Open {0}'s site to check for an update?</value></data>
 
 
   <data name="Browsers_Title" xml:space="preserve"><value>Browser cleanup</value></data>

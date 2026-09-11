@@ -109,6 +109,15 @@ public static class Strings
     public static string Drivers_Body => Get(nameof(Drivers_Body));
     public static string Drivers_OpenWindowsUpdate => Get(nameof(Drivers_OpenWindowsUpdate));
     public static string Drivers_OldBadge => Get(nameof(Drivers_OldBadge));
+    public static string Drivers_AgeUnknown => Get(nameof(Drivers_AgeUnknown));
+    public static string Drivers_AgeRecent => Get(nameof(Drivers_AgeRecent));
+    public static string Drivers_AgeMonth => Get(nameof(Drivers_AgeMonth));
+    public static string Drivers_AgeMonths => Get(nameof(Drivers_AgeMonths));
+    public static string Drivers_AgeYear => Get(nameof(Drivers_AgeYear));
+    public static string Drivers_AgeYears => Get(nameof(Drivers_AgeYears));
+    public static string Drivers_DetailTitle => Get(nameof(Drivers_DetailTitle));
+    public static string Drivers_DetailExplanation => Get(nameof(Drivers_DetailExplanation));
+    public static string Drivers_DetailOpenPrompt => Get(nameof(Drivers_DetailOpenPrompt));
 
 
     public static string Browsers_Title => Get(nameof(Browsers_Title));

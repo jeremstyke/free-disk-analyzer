@@ -126,6 +126,15 @@
   <data name="Drivers_Body" xml:space="preserve"><value>Pilotes installés et leur ancienneté. Rien n'est téléchargé ni installé automatiquement ici, utilisez Windows Update ou le site du fabricant pour mettre à jour quoi que ce soit.</value></data>
   <data name="Drivers_OpenWindowsUpdate" xml:space="preserve"><value>Ouvrir Windows Update</value></data>
   <data name="Drivers_OldBadge" xml:space="preserve"><value>3+ ans</value></data>
+  <data name="Drivers_AgeUnknown" xml:space="preserve"><value>Date de mise à jour inconnue</value></data>
+  <data name="Drivers_AgeRecent" xml:space="preserve"><value>Mis à jour récemment</value></data>
+  <data name="Drivers_AgeMonth" xml:space="preserve"><value>Il y a {0} mois</value></data>
+  <data name="Drivers_AgeMonths" xml:space="preserve"><value>Il y a {0} mois</value></data>
+  <data name="Drivers_AgeYear" xml:space="preserve"><value>Il y a {0} an</value></data>
+  <data name="Drivers_AgeYears" xml:space="preserve"><value>Il y a {0} ans</value></data>
+  <data name="Drivers_DetailTitle" xml:space="preserve"><value>Détails du pilote</value></data>
+  <data name="Drivers_DetailExplanation" xml:space="preserve"><value>Un pilote permet à Windows et à cet appareil de communiquer correctement. Les fabricants publient des mises à jour au fil du temps pour corriger des bugs, améliorer la compatibilité, et parfois combler des failles de sécurité. Celui-ci n'a pas été mis à jour depuis un moment, ce n'est pas forcément un problème si l'appareil fonctionne bien et que vous ne rencontrez aucun souci avec. La mise à jour est optionnelle, ne la faites que si vous avez une vraie raison (un problème avec l'appareil, ou envie des dernières fonctionnalités).</value></data>
+  <data name="Drivers_DetailOpenPrompt" xml:space="preserve"><value>Ouvrir le site de {0} pour vérifier une mise à jour ?</value></data>
 
 
   <data name="Browsers_Title" xml:space="preserve"><value>Nettoyage des navigateurs</value></data>

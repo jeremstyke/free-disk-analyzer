@@ -19,4 +19,22 @@ public sealed class DriverInfo
 
     /// <summary>URL or URI to open for this specific driver's manufacturer, never a direct download.</summary>
     public string LinkUrl => DriverManufacturerLinks.GetLink(Manufacturer, DeviceName).Url;
+
+    /// <summary>Human-readable relative age, e.g. "3 years ago", localized.</summary>
+    public string AgeDisplay
+    {
+        get
+        {
+            if (DriverDate is not { } date) return Resources.Strings.Drivers_AgeUnknown;
+
+            var days = (DateTime.Now - date).TotalDays;
+            if (days < 30) return Resources.Strings.Drivers_AgeRecent;
+
+            var years = (int)(days / 365.25);
+            if (years >= 1) return string.Format(years == 1 ? Resources.Strings.Drivers_AgeYear : Resources.Strings.Drivers_AgeYears, years);
+
+            var months = (int)(days / 30.44);
+            return string.Format(months == 1 ? Resources.Strings.Drivers_AgeMonth : Resources.Strings.Drivers_AgeMonths, months);
+        }
+    }
 }

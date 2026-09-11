@@ -21,7 +21,9 @@
             <ItemsControl ItemsSource="{Binding Drivers}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource CardStyle}" Margin="0,0,0,8" Padding="14">
+                        <Button Style="{StaticResource ClickableCardStyle}" Margin="0,0,0,8"
+                                Command="{Binding DataContext.ShowDriverDetailsCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -37,7 +39,7 @@
                                         <Run Text=" · v"/>
                                         <Run Text="{Binding Version, Mode=OneWay}"/>
                                         <Run Text=" · "/>
-                                        <Run Text="{Binding DriverDate, StringFormat='{}{0:yyyy-MM-dd}', Mode=OneWay}"/>
+                                        <Run Text="{Binding AgeDisplay, Mode=OneWay}"/>
                                     </TextBlock>
                                 </StackPanel>
 
@@ -46,12 +48,11 @@
                                     <TextBlock Text="{x:Static res:Strings.Drivers_OldBadge}" Foreground="White" FontSize="10" FontWeight="Bold"/>
                                 </Border>
 
-                                <Button Grid.Column="2" Content="{Binding LinkLabel}" Style="{StaticResource OutlineButtonStyle}"
-                                        VerticalAlignment="Center" Padding="10,5" FontSize="12"
-                                        Command="{Binding DataContext.OpenDriverLinkCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                <TextBlock Grid.Column="2" Text="{Binding LinkLabel}" Style="{StaticResource CaptionTextStyle}"
+                                           Foreground="{DynamicResource AccentBrush}" FontWeight="SemiBold"
+                                           VerticalAlignment="Center" Margin="8,0,0,0"/>
                             </Grid>
-                        </Border>
+                        </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
