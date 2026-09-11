@@ -88,7 +88,7 @@
                 </Grid>
             </Border>
 
-            <ContentControl Grid.Row="1" Content="{Binding CurrentPage}" Margin="32"/>
+            <ContentControl x:Name="PageContent" Grid.Row="1" Content="{Binding CurrentPage}" Margin="32"/>
         </Grid>
     </Grid>
 </Window>
