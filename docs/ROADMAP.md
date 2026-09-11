@@ -213,3 +213,13 @@ Bob asked to seriously explore integrating a real VPN into PurgeCore via VPNrese
 **Why dropped despite #5 being financially sound**: even the good version is a multi-day build (VPNresellers integration, WireGuard bundling and UAC handling, Gumroad subscription status checks, a full new VPN tab) for a product with ~20 users still in beta on its core cleanup features. Per-subscriber economics being healthy doesn't matter much without subscriber volume, and getting volume isn't the current bottleneck skill needed, testing and stabilizing the existing app is. Bob's own call: not worth it yet.
 
 If this comes back: the Gumroad-subscription-only model (#5) is the one to build, skip the ad-funded paths entirely, they're either against ad network policy or dependent on unpredictable user behavior for profitability.
+
+## VPN pricing settled, if this ever gets built (per Bob, 2026-09-11)
+
+Even though the VPN idea itself was dropped for now (see above), Bob and I worked out final pricing in case it comes back later, framed as "priced at cost, not a profit center": **3.49 EUR/month or 29.99 EUR/year**.
+
+Margin at full daily usage: ~0.45 EUR/month on the monthly plan (~13%), ~3.18 EUR/year on the annual plan (~11%), after Gumroad's 10% + ~0.50 EUR fee and card processing (~2.9% + ~0.30 EUR) are subtracted, against a VPNresellers cost of ~1.85 EUR/month if connected every single day.
+
+Important dynamic worth remembering: VPNresellers bills per full calendar day of activity, not per hour, but only on days the account actually connects. A subscriber who doesn't use the VPN daily costs Bob proportionally less than someone who uses it every day, while paying the same flat subscription price, the same "unlimited plan, uneven usage" economics as a gym membership. A subscriber active only 5 days out of 30 would net roughly 2 EUR/month margin instead of 0.45 EUR, meaning realistic blended margins across a subscriber base are likely well above the full-usage worst case.
+
+Test-the-demand-first plan discussed but not yet executed: put a small survey (Google Forms or Tally.so) in front of users asking whether they'd want a paid VPN add-on at this price point, before building anything. Bob was going to create the form; once a link exists, add a button/section in the app and on the site pointing to it.
