@@ -18,6 +18,9 @@
             <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
                 <views:DashboardView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:BlogViewModel}">
+                <views:BlogView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:AnalyzeViewModel}">
                 <views:AnalyzeView/>
             </DataTemplate>

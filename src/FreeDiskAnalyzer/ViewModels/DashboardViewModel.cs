@@ -19,23 +19,10 @@ public sealed partial class DashboardViewModel : ObservableObject
     public const string NordVpnAffiliateUrl =
         "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer";
 
-    public const string BlogUrl = "https://jeremstyke.github.io/purgecore/blog/";
-    private const int LatestArticleCountPerGroup = 2;
-    private const int FetchCount = 10;
-
     private readonly IDriveEnumerator _driveEnumerator;
-    private readonly IBlogFeedService _blogFeedService;
     private readonly ScanResultStore _scanResultStore;
 
     public ObservableCollection<DriveCardViewModel> Drives { get; } = new();
-    public ObservableCollection<BlogPost> LatestReleaseNotes { get; } = new();
-    public ObservableCollection<BlogPost> LatestArticles { get; } = new();
-
-    [ObservableProperty]
-    private bool hasReleaseNotes;
-
-    [ObservableProperty]
-    private bool hasArticles;
 
     [ObservableProperty]
     private DriveCardViewModel? selectedDrive;
@@ -45,38 +32,14 @@ public sealed partial class DashboardViewModel : ObservableObject
 
     public ObservableCollection<CategoryUsageViewModel> CategoryBreakdown { get; } = new();
 
-    public DashboardViewModel(IDriveEnumerator driveEnumerator, IBlogFeedService blogFeedService, ScanResultStore scanResultStore)
+    public DashboardViewModel(IDriveEnumerator driveEnumerator, ScanResultStore scanResultStore)
     {
         _driveEnumerator = driveEnumerator;
-        _blogFeedService = blogFeedService;
         _scanResultStore = scanResultStore;
 
         LoadDrives();
         UpdateFromScanResult();
         _scanResultStore.PropertyChanged += OnStoreChanged;
-
-        _ = LoadLatestArticlesAsync();
-    }
-
-    private async Task LoadLatestArticlesAsync()
-    {
-        var posts = await _blogFeedService.GetLatestPostsAsync(FetchCount);
-
-        LatestReleaseNotes.Clear();
-        LatestArticles.Clear();
-
-        foreach (var post in posts.Where(p => p.Category == "Release notes").Take(LatestArticleCountPerGroup))
-        {
-            LatestReleaseNotes.Add(post);
-        }
-
-        foreach (var post in posts.Where(p => p.Category != "Release notes").Take(LatestArticleCountPerGroup))
-        {
-            LatestArticles.Add(post);
-        }
-
-        HasReleaseNotes = LatestReleaseNotes.Count > 0;
-        HasArticles = LatestArticles.Count > 0;
     }
 
     private void OnStoreChanged(object? sender, PropertyChangedEventArgs e)
@@ -152,18 +115,5 @@ public sealed partial class DashboardViewModel : ObservableObject
     private void OpenNordVpn()
     {
         Process.Start(new ProcessStartInfo(NordVpnAffiliateUrl) { UseShellExecute = true });
-    }
-
-    [RelayCommand]
-    private void OpenArticle(BlogPost? post)
-    {
-        if (post is null) return;
-        Process.Start(new ProcessStartInfo(post.Url) { UseShellExecute = true });
-    }
-
-    [RelayCommand]
-    private void OpenBlog()
-    {
-        Process.Start(new ProcessStartInfo(BlogUrl) { UseShellExecute = true });
     }
 }

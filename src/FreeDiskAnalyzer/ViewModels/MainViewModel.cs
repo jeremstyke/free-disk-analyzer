@@ -161,10 +161,11 @@ public sealed partial class MainViewModel : ObservableObject
 
         object page = key switch
         {
-            NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _blogFeedService, _scanResultStore),
+            NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _scanResultStore),
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.Explore => new ExploreViewModel(_scanResultStore, _driverInfoService),
             NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _startupManager, _safeDeleteService, _browserCleaner, _systemCleaner, _settingsService, _scanResultStore),
+            NavKey.Blog => new BlogViewModel(_blogFeedService),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
             NavKey.About => new AboutViewModel(),
@@ -180,6 +181,7 @@ public sealed partial class MainViewModel : ObservableObject
         NavKey.Analyze => "Analyze",
         NavKey.Explore => "Explore",
         NavKey.Cleanup => "Cleanup",
+        NavKey.Blog => "Blog",
         NavKey.Settings => "Settings",
         NavKey.Privacy => "Privacy",
         NavKey.About => "About",
@@ -195,6 +197,7 @@ public sealed partial class MainViewModel : ObservableObject
             new NavItem { Key = NavKey.Analyze, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Analyze, Glyph = "\uE721", IconBrush = (Brush)res["TealBrush"] },
             new NavItem { Key = NavKey.Explore, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Explore, Glyph = "\uE8A5", IconBrush = (Brush)res["VioletBrush"] },
             new NavItem { Key = NavKey.Cleanup, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Cleanup, Glyph = "\uE74D", IconBrush = (Brush)res["AmberBrush"] },
+            new NavItem { Key = NavKey.Blog, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Blog, Glyph = "\uE8A9", IconBrush = (Brush)res["RoseBrush"] },
             new NavItem { Key = NavKey.Settings, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Settings, Glyph = "\uE713", IconBrush = (Brush)res["RoseBrush"] },
             new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E", IconBrush = (Brush)res["TealBrush"] },
             new NavItem { Key = NavKey.About, Label = FreeDiskAnalyzer.Resources.Strings.Nav_About, Glyph = "\uE946", IconBrush = (Brush)res["VioletBrush"] }

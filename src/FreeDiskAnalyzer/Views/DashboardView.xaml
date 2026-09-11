@@ -113,68 +113,20 @@
             </Border>
 
             <!-- NordVPN affiliate card -->
-            <Border Style="{StaticResource CardStyle}" Background="{DynamicResource AccentBrushLight}" Margin="0,0,0,24">
+            <Border Style="{StaticResource CardStyle}" Background="{DynamicResource AccentBrushLight}" Margin="0,0,0,24" Padding="28">
                 <StackPanel>
-                    <TextBlock Text="{x:Static res:Strings.Dashboard_NordVpnTitle}" FontWeight="SemiBold" FontSize="16"
-                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
-                    <TextBlock Text="{x:Static res:Strings.Dashboard_NordVpnBody}" TextWrapping="Wrap"
-                               Style="{StaticResource BodyTextStyle}" Margin="0,0,0,12"/>
+                    <TextBlock Text="{x:Static res:Strings.Dashboard_NordVpnTitle}" FontWeight="Bold" FontSize="20"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock Text="{x:Static res:Strings.Dashboard_NordVpnBody}" TextWrapping="Wrap" FontSize="15"
+                               Style="{StaticResource BodyTextStyle}" Margin="0,0,0,18"/>
                     <Button Content="{x:Static res:Strings.Dashboard_LearnMore}" Style="{StaticResource PrimaryButtonStyle}"
-                            HorizontalAlignment="Left" Command="{Binding OpenNordVpnCommand}"/>
-                    <TextBlock Margin="0,12,0,0" Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap">
+                            HorizontalAlignment="Left" Padding="22,12" FontSize="15" Command="{Binding OpenNordVpnCommand}"/>
+                    <TextBlock Margin="0,14,0,0" Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap">
                         <Run Text="🔗"/>
                         <Run Text="{x:Static res:Strings.Dashboard_AffiliateDisclosure}"/>
                     </TextBlock>
                 </StackPanel>
             </Border>
-
-            <!-- From the blog -->
-            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,24">
-                <StackPanel>
-                    <TextBlock Text="{x:Static res:Strings.Dashboard_FromTheBlog}" FontWeight="SemiBold" FontSize="16"
-                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,12"/>
-
-                    <TextBlock Text="{x:Static res:Strings.Dashboard_ReleaseNotes}" Style="{StaticResource CaptionTextStyle}"
-                               FontWeight="SemiBold" Margin="0,0,0,4"
-                               Visibility="{Binding HasReleaseNotes, Converter={StaticResource BoolToVis}}"/>
-                    <ItemsControl ItemsSource="{Binding LatestReleaseNotes}" Margin="0,0,0,10">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button HorizontalContentAlignment="Left" Margin="0,0,0,4" Padding="0,6"
-                                        Background="Transparent" BorderThickness="0" Cursor="Hand"
-                                        Command="{Binding DataContext.OpenArticleCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}">
-                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap"
-                                               Foreground="{DynamicResource AccentBrush}"
-                                               Style="{StaticResource BodyTextStyle}"/>
-                                </Button>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-
-                    <TextBlock Text="{x:Static res:Strings.Dashboard_GuidesAndComparisons}" Style="{StaticResource CaptionTextStyle}"
-                               FontWeight="SemiBold" Margin="0,0,0,4"
-                               Visibility="{Binding HasArticles, Converter={StaticResource BoolToVis}}"/>
-                    <ItemsControl ItemsSource="{Binding LatestArticles}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button HorizontalContentAlignment="Left" Margin="0,0,0,4" Padding="0,6"
-                                        Background="Transparent" BorderThickness="0" Cursor="Hand"
-                                        Command="{Binding DataContext.OpenArticleCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}">
-                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap"
-                                               Foreground="{DynamicResource AccentBrush}"
-                                               Style="{StaticResource BodyTextStyle}"/>
-                                </Button>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-
-                    <Button Content="{x:Static res:Strings.Dashboard_ViewBlog}" Style="{StaticResource OutlineButtonStyle}"
-                            Margin="0,8,0,0" Command="{Binding OpenBlogCommand}"/>
-                </StackPanel>
-            </Border>
-
         </StackPanel>
     </ScrollViewer>
 </UserControl>
