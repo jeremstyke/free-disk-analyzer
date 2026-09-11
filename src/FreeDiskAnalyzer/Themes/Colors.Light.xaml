@@ -19,6 +19,10 @@
     <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="SurfaceAltBrush" Color="#F1F5F9"/>
     <SolidColorBrush x:Key="SidebarBrush" Color="#FFFFFF"/>
+    <LinearGradientBrush x:Key="SidebarGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FFFFFF" Offset="0"/>
+        <GradientStop Color="#F3F6FC" Offset="1"/>
+    </LinearGradientBrush>
     <SolidColorBrush x:Key="SidebarSelectedBrush" Color="#EFF6FF"/>
 
     <!-- Lines -->

@@ -8,11 +8,39 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="16"/>
         <Setter Property="Padding" Value="20"/>
-        <Setter Property="Effect">
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="RenderTransform">
             <Setter.Value>
-                <DropShadowEffect Color="#0F172A" Opacity="0.06" BlurRadius="18" ShadowDepth="2" Direction="270"/>
+                <TranslateTransform Y="0"/>
             </Setter.Value>
         </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect x:Name="CardShadow" Color="#0F172A" Opacity="0.06" BlurRadius="18" ShadowDepth="2" Direction="270"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Y" To="-3" Duration="0:0:0.15"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Effect.Opacity" To="0.12" Duration="0:0:0.15"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="24" Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Y" To="0" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Effect.Opacity" To="0.06" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Effect.BlurRadius" To="18" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <!-- Primary call-to-action button, accent filled, rounded -->

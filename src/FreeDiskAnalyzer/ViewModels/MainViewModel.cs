@@ -1,8 +1,11 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Reflection;
+using System.Windows;
+using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Models;
@@ -124,10 +127,18 @@ public sealed partial class MainViewModel : ObservableObject
             // to close this app automatically, install over it, and relaunch it.
             Process.Start(new ProcessStartInfo(tempPath) { UseShellExecute = true });
         }
-        catch (Exception ex) when (ex is HttpRequestException or IOException or UnauthorizedAccessException)
+        catch (Exception ex) when (ex is HttpRequestException or IOException or UnauthorizedAccessException
+                                        or OperationCanceledException or Win32Exception)
         {
-            // Best effort: leave the banner up so the user can try again, or
-            // fall back to downloading from the website/GitHub manually.
+            // Covers: network drop or timeout during download (OperationCanceledException,
+            // not HttpRequestException), and the installer failing to launch, e.g. the
+            // user declined the Windows SmartScreen/UAC prompt (Win32Exception).
+            // Previously these were silent, the user saw nothing happen at all.
+            MessageBox.Show(
+                Resources.Strings.Update_DownloadFailedBody,
+                Resources.Strings.Update_DownloadFailedTitle,
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
         }
         finally
         {
@@ -175,16 +186,20 @@ public sealed partial class MainViewModel : ObservableObject
         _ => key.ToString()
     };
 
-    private static IEnumerable<NavItem> BuildNavItems() => new[]
+    private static IEnumerable<NavItem> BuildNavItems()
     {
-        new NavItem { Key = NavKey.Dashboard, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Dashboard, Glyph = "\uE80F" },
-        new NavItem { Key = NavKey.Analyze, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Analyze, Glyph = "\uE721" },
-        new NavItem { Key = NavKey.Explore, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Explore, Glyph = "\uE8A5" },
-        new NavItem { Key = NavKey.Cleanup, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Cleanup, Glyph = "\uE74D" },
-        new NavItem { Key = NavKey.Settings, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Settings, Glyph = "\uE713" },
-        new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E" },
-        new NavItem { Key = NavKey.About, Label = FreeDiskAnalyzer.Resources.Strings.Nav_About, Glyph = "\uE946" }
-    };
+        var res = Application.Current.Resources;
+        return new[]
+        {
+            new NavItem { Key = NavKey.Dashboard, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Dashboard, Glyph = "\uE80F", IconBrush = (Brush)res["AccentBrush"] },
+            new NavItem { Key = NavKey.Analyze, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Analyze, Glyph = "\uE721", IconBrush = (Brush)res["TealBrush"] },
+            new NavItem { Key = NavKey.Explore, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Explore, Glyph = "\uE8A5", IconBrush = (Brush)res["VioletBrush"] },
+            new NavItem { Key = NavKey.Cleanup, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Cleanup, Glyph = "\uE74D", IconBrush = (Brush)res["AmberBrush"] },
+            new NavItem { Key = NavKey.Settings, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Settings, Glyph = "\uE713", IconBrush = (Brush)res["RoseBrush"] },
+            new NavItem { Key = NavKey.Privacy, Label = FreeDiskAnalyzer.Resources.Strings.Nav_Privacy, Glyph = "\uE72E", IconBrush = (Brush)res["TealBrush"] },
+            new NavItem { Key = NavKey.About, Label = FreeDiskAnalyzer.Resources.Strings.Nav_About, Glyph = "\uE946", IconBrush = (Brush)res["VioletBrush"] }
+        };
+    }
 
     [RelayCommand]
     private void OpenCoffee()
@@ -198,5 +213,5 @@ public sealed partial class MainViewModel : ObservableObject
         Process.Start(new ProcessStartInfo(ReportBugUrl) { UseShellExecute = true });
     }
 
-    public const string ReportBugUrl = "https://github.com/jeremstyke/purgecore/issues/new";
+    public const string ReportBugUrl = "mailto:juryjeremy@gmail.com?subject=PurgeCore%20-%20Bug%20report";
 }

@@ -1,3 +1,5 @@
+using System.Windows.Media;
+
 namespace FreeDiskAnalyzer.Models;
 
 /// <summary>
@@ -10,4 +12,7 @@ public sealed class NavItem
     public required NavKey Key { get; init; }
     public required string Label { get; init; }
     public required string Glyph { get; init; }
+
+    /// <summary>Cycles through the app's accent palette so the sidebar isn't monochrome.</summary>
+    public required Brush IconBrush { get; init; }
 }

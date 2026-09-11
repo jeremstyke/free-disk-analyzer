@@ -147,6 +147,8 @@
   <data name="System_RecycleBin" xml:space="preserve"><value>Recycle Bin</value></data>
 
   <data name="Update_Available" xml:space="preserve"><value>A new version is available: v{0}</value></data>
+  <data name="Update_DownloadFailedTitle" xml:space="preserve"><value>Update failed</value></data>
+  <data name="Update_DownloadFailedBody" xml:space="preserve"><value>The update couldn't be downloaded or installed. This can happen if your connection dropped, or if you declined the Windows security prompt for the installer (look for a "Windows protected your PC" message, click "More info" then "Run anyway"). You can also download the latest version manually from the website or GitHub.</value></data>
   <data name="Update_Download" xml:space="preserve"><value>Download and install</value></data>
   <data name="Update_Downloading" xml:space="preserve"><value>Downloading...</value></data>
   <data name="Update_Dismiss" xml:space="preserve"><value>Not now</value></data>

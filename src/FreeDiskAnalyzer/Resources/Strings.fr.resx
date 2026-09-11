@@ -147,6 +147,8 @@
   <data name="System_RecycleBin" xml:space="preserve"><value>Corbeille</value></data>
 
   <data name="Update_Available" xml:space="preserve"><value>Une nouvelle version est disponible : v{0}</value></data>
+  <data name="Update_DownloadFailedTitle" xml:space="preserve"><value>Échec de la mise à jour</value></data>
+  <data name="Update_DownloadFailedBody" xml:space="preserve"><value>La mise à jour n'a pas pu être téléchargée ou installée. Ça peut arriver si votre connexion a coupé, ou si vous avez refusé l'avertissement de sécurité Windows pour l'installeur (cherchez un message "Windows a protégé votre ordinateur", cliquez sur "Informations complémentaires" puis "Exécuter quand même"). Vous pouvez aussi télécharger la dernière version manuellement depuis le site ou GitHub.</value></data>
   <data name="Update_Download" xml:space="preserve"><value>Télécharger et installer</value></data>
   <data name="Update_Downloading" xml:space="preserve"><value>Téléchargement...</value></data>
   <data name="Update_Dismiss" xml:space="preserve"><value>Plus tard</value></data>

@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Sidebar -->
-        <Border Grid.Column="0" Background="{DynamicResource SidebarBrush}"
+        <Border Grid.Column="0" Background="{DynamicResource SidebarGradientBrush}"
                 BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,1,0">
             <DockPanel LastChildFill="False">
                 <StackPanel DockPanel.Dock="Top" Margin="20,24,20,20">
@@ -36,6 +36,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Height="24">
                                 <TextBlock Text="{Binding Glyph}" FontFamily="{DynamicResource AppIconFontFamily}"
+                                           Foreground="{Binding IconBrush}"
                                            FontSize="16" Width="24" VerticalAlignment="Center"/>
                                 <TextBlock Text="{Binding Label}" Margin="10,0,0,0" VerticalAlignment="Center"/>
                             </StackPanel>

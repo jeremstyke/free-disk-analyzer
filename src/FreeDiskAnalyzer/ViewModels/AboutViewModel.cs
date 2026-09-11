@@ -9,7 +9,7 @@ public sealed partial class AboutViewModel : ObservableObject
 {
     public const string GitHubUrl = "https://github.com/jeremstyke/purgecore";
     public const string CoffeeUrl = "https://jeremstyke.gumroad.com/coffee";
-    public const string ReportBugUrl = "https://github.com/jeremstyke/purgecore/issues/new";
+    public const string ReportBugUrl = "mailto:juryjeremy@gmail.com?subject=PurgeCore%20-%20Bug%20report";
 
     public string VersionDisplay { get; } =
         Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";
