@@ -131,6 +131,8 @@
   <data name="Browsers_RescanCommand" xml:space="preserve"><value>Rescan</value></data>
   <data name="Browsers_SelectAll" xml:space="preserve"><value>Select all</value></data>
   <data name="Browsers_DeselectAll" xml:space="preserve"><value>Deselect all</value></data>
+  <data name="Browsers_Scanning" xml:space="preserve"><value>Scanning...</value></data>
+  <data name="Browsers_Cleaning" xml:space="preserve"><value>Cleaning, this can take a while for large caches...</value></data>
   <data name="Browsers_Clean" xml:space="preserve"><value>Clean selected</value></data>
   <data name="Risk_Low" xml:space="preserve"><value>Low risk</value></data>
   <data name="Risk_Medium" xml:space="preserve"><value>Medium risk</value></data>

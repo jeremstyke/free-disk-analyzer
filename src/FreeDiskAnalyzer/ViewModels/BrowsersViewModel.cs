@@ -3,6 +3,7 @@ using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Utilities;
+using FreeDiskAnalyzer.Models;
 using FreeDiskAnalyzer.Services;
 
 namespace FreeDiskAnalyzer.ViewModels;
@@ -56,7 +57,7 @@ public sealed partial class BrowsersViewModel : ObservableObject
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanScan))]
     private async Task ScanAsync()
     {
         IsScanning = true;
@@ -76,6 +77,8 @@ public sealed partial class BrowsersViewModel : ObservableObject
             IsScanning = false;
         }
     }
+
+    private bool CanScan() => !IsScanning && !IsCleaning;
 
     [RelayCommand]
     private void SelectAll()
@@ -97,11 +100,12 @@ public sealed partial class BrowsersViewModel : ObservableObject
 
         var totalSize = selected.Sum(i => i.Item.SizeBytes);
         var whitelist = ParseWhitelist(CookieWhitelistText);
+        var includesCookies = selected.Any(i => i.Item.Category == BrowserCleanupCategory.Cookies);
 
         var confirmed = MessageBox.Show(
             $"Clear {selected.Count} item(s), about {ByteSizeFormatter.Format(totalSize)}?\n" +
             "Close your browsers first for best results, anything still in use will be skipped rather than failing the whole operation." +
-            (whitelist.Count > 0 ? $"\nCookies for {whitelist.Count} whitelisted domain(s) will be kept." : ""),
+            (includesCookies && whitelist.Count > 0 ? $"\nCookies for {whitelist.Count} whitelisted domain(s) will be kept." : ""),
             "Clean browsers",
             MessageBoxButton.YesNo,
             MessageBoxImage.Warning) == MessageBoxResult.Yes;
@@ -128,7 +132,17 @@ public sealed partial class BrowsersViewModel : ObservableObject
         }
     }
 
-    private bool CanClean() => !IsCleaning;
+    private bool CanClean() => !IsCleaning && !IsScanning;
 
-    partial void OnIsCleaningChanged(bool value) => CleanSelectedCommand.NotifyCanExecuteChanged();
+    partial void OnIsCleaningChanged(bool value)
+    {
+        CleanSelectedCommand.NotifyCanExecuteChanged();
+        ScanCommand.NotifyCanExecuteChanged();
+    }
+
+    partial void OnIsScanningChanged(bool value)
+    {
+        CleanSelectedCommand.NotifyCanExecuteChanged();
+        ScanCommand.NotifyCanExecuteChanged();
+    }
 }

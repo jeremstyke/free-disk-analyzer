@@ -114,6 +114,8 @@ public static class Strings
     public static string Browsers_RescanCommand => Get(nameof(Browsers_RescanCommand));
     public static string Browsers_SelectAll => Get(nameof(Browsers_SelectAll));
     public static string Browsers_DeselectAll => Get(nameof(Browsers_DeselectAll));
+    public static string Browsers_Scanning => Get(nameof(Browsers_Scanning));
+    public static string Browsers_Cleaning => Get(nameof(Browsers_Cleaning));
     public static string Browsers_Clean => Get(nameof(Browsers_Clean));
     public static string Risk_Low => Get(nameof(Risk_Low));
     public static string Risk_Medium => Get(nameof(Risk_Medium));

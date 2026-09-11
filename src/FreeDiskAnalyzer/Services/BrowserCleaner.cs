@@ -49,14 +49,14 @@ public sealed class BrowserCleaner : IBrowserCleaner
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var anySuccess = item.Category == BrowserCleanupCategory.Cookies && hasWhitelist
+                var (anySuccess, bytesFreed) = item.Category == BrowserCleanupCategory.Cookies && hasWhitelist
                     ? CleanCookiesWithWhitelist(item, cookieWhitelist!)
                     : DeleteItemPaths(item);
 
                 if (anySuccess)
                 {
                     cleaned++;
-                    freed += item.SizeBytes;
+                    freed += bytesFreed;
                 }
                 else
                 {
@@ -68,9 +68,16 @@ public sealed class BrowserCleaner : IBrowserCleaner
         }, cancellationToken);
     }
 
-    private bool DeleteItemPaths(BrowserCleanupItem item)
+    /// <summary>
+    /// Deletes each path in the item and reports the real, measured size of
+    /// only the paths that actually succeeded, rather than the item's total
+    /// scanned size, which would overstate the result if one of several
+    /// paths (e.g. Cache and Code Cache) was locked and skipped.
+    /// </summary>
+    private (bool AnySuccess, long BytesFreed) DeleteItemPaths(BrowserCleanupItem item)
     {
         var anySuccess = false;
+        long freed = 0;
 
         foreach (var path in item.Paths)
         {
@@ -81,14 +88,21 @@ public sealed class BrowserCleaner : IBrowserCleaner
                 continue;
             }
 
-            var success = Directory.Exists(path)
+            var isDirectory = Directory.Exists(path);
+            var pathSize = isDirectory ? GetFolderSizeBytes(path) : GetFileSizeBytes(path);
+
+            var success = isDirectory
                 ? _safeDeleteService.TryDeleteDirectory(path)
                 : _safeDeleteService.TryDeleteFile(path);
 
-            if (success) anySuccess = true;
+            if (success)
+            {
+                anySuccess = true;
+                freed += pathSize;
+            }
         }
 
-        return anySuccess;
+        return (anySuccess, freed);
     }
 
     /// <summary>
@@ -96,20 +110,24 @@ public sealed class BrowserCleaner : IBrowserCleaner
     /// instead of removing the whole cookies file. Schema differs by
     /// browser (Chromium: table "cookies"/"host_key", Firefox: table
     /// "moz_cookies"/"host"). Any failure (locked file, unexpected schema)
-    /// skips that file rather than risking a partial write.
+    /// skips that file rather than risking a partial write. Bytes freed is
+    /// measured as the actual file size reduction after VACUUM, not assumed.
     /// </summary>
-    private bool CleanCookiesWithWhitelist(BrowserCleanupItem item, IReadOnlyList<string> whitelist)
+    private (bool AnySuccess, long BytesFreed) CleanCookiesWithWhitelist(BrowserCleanupItem item, IReadOnlyList<string> whitelist)
     {
         var (table, column) = item.BrowserName == "Firefox"
             ? ("moz_cookies", "host")
             : ("cookies", "host_key");
 
         var anySuccess = false;
+        long freed = 0;
 
         foreach (var path in item.Paths)
         {
             if (PathSafetyGuard.IsProtected(path)) continue;
             if (!File.Exists(path)) { anySuccess = true; continue; }
+
+            var sizeBefore = GetFileSizeBytes(path);
 
             try
             {
@@ -132,6 +150,8 @@ public sealed class BrowserCleaner : IBrowserCleaner
                 vacuumCommand.ExecuteNonQuery();
 
                 anySuccess = true;
+                var sizeAfter = GetFileSizeBytes(path);
+                freed += Math.Max(0, sizeBefore - sizeAfter);
             }
             catch (Exception ex) when (ex is SqliteException or IOException or UnauthorizedAccessException)
             {
@@ -141,7 +161,7 @@ public sealed class BrowserCleaner : IBrowserCleaner
             }
         }
 
-        return anySuccess;
+        return (anySuccess, freed);
     }
 
     private static IEnumerable<BrowserCleanupItem> ScanChromiumBrowser(string browserName, string profileRoot)
