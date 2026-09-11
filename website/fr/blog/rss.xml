@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog PurgeCore</title>
+    <link>https://jeremstyke.github.io/purgecore/fr/blog/</link>
+    <description>Guides, comparaisons et notes de version pour PurgeCore.</description>
+    <language>fr</language>
+
+    <item>
+      <title>Free Disk Analyzer devient PurgeCore</title>
+      <link>https://jeremstyke.github.io/purgecore/fr/blog/renamed-to-purgecore.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/fr/blog/renamed-to-purgecore.html</guid>
+      <category>Annonce</category>
+      <description>Free Disk Analyzer a été renommé en PurgeCore. Même application, mêmes fonctionnalités, toujours gratuit pour toujours, même téléchargement, juste un nouveau nom.</description>
+    </item>
+    <item>
+      <title>PurgeCore vs CCleaner : lequel choisir ?</title>
+      <link>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-ccleaner.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-ccleaner.html</guid>
+      <category>Comparaison</category>
+      <description>Une comparaison honnête entre PurgeCore et CCleaner : ce que chacun fait bien, où CCleaner garde une avance, et où un nettoyeur de registre et des offres payantes changent la donne.</description>
+    </item>
+  </channel>
+</rss>
