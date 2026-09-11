@@ -223,3 +223,13 @@ Margin at full daily usage: ~0.45 EUR/month on the monthly plan (~13%), ~3.18 EU
 Important dynamic worth remembering: VPNresellers bills per full calendar day of activity, not per hour, but only on days the account actually connects. A subscriber who doesn't use the VPN daily costs Bob proportionally less than someone who uses it every day, while paying the same flat subscription price, the same "unlimited plan, uneven usage" economics as a gym membership. A subscriber active only 5 days out of 30 would net roughly 2 EUR/month margin instead of 0.45 EUR, meaning realistic blended margins across a subscriber base are likely well above the full-usage worst case.
 
 Test-the-demand-first plan discussed but not yet executed: put a small survey (Google Forms or Tally.so) in front of users asking whether they'd want a paid VPN add-on at this price point, before building anything. Bob was going to create the form; once a link exists, add a button/section in the app and on the site pointing to it.
+
+## VPN pricing, option B considered: normal margin instead of cost-price (per Bob, 2026-09-11)
+
+After modeling profit at scale (30k subscribers, priced at cost 3.49/month: roughly 13.5k-59.7k EUR/month depending on average usage days, likely 35k-41k/month at a realistic ~12-15 days/month blended usage), Bob asked about pricing higher instead of at cost.
+
+**Option B: 5.99 EUR/month** instead of 3.49. Net after Gumroad + card fees ~4.55 EUR, margin ~2.70 EUR/month at full daily usage, ~3.62 EUR/month at a more realistic 15 days/month usage, roughly 2.5x the margin of the cost-price option at the same subscriber count. Still meaningfully cheaper than standalone VPNs (NordVPN/ExpressVPN around 10-13 EUR/month), so the "cheaper than a real VPN" pitch still holds even at this higher price.
+
+Trade-offs flagged, not resolved: (1) loses the "priced at cost, we don't profit from this" honest-pricing narrative that fits PurgeCore's overall positioning (no aggressive upsells, no ads), (2) a paid in-house VPN at a lower price than the existing NordVPN affiliate card could cannibalize those affiliate clicks, trading a zero-risk, zero-effort revenue stream for a bigger but higher-effort, higher-responsibility one, (3) unknown effect of a higher price on conversion rate, real number would come from the planned demand survey (see above), not guesswork.
+
+No decision made between the 3.49 (cost-price) and 5.99 (normal margin) options, both logged as live alternatives if the VPN feature is ever built. Same overall precondition as before: not being built now, survey-the-demand step still not executed.
