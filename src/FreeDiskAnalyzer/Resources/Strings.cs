@@ -39,6 +39,8 @@ public static class Strings
     public static string Dashboard_AffiliateDisclosure => Get(nameof(Dashboard_AffiliateDisclosure));
     public static string Dashboard_UsedOf => Get(nameof(Dashboard_UsedOf));
     public static string Dashboard_FromTheBlog => Get(nameof(Dashboard_FromTheBlog));
+    public static string Dashboard_ReleaseNotes => Get(nameof(Dashboard_ReleaseNotes));
+    public static string Dashboard_GuidesAndComparisons => Get(nameof(Dashboard_GuidesAndComparisons));
     public static string Dashboard_ViewBlog => Get(nameof(Dashboard_ViewBlog));
 
     public static string Analyze_Title => Get(nameof(Analyze_Title));

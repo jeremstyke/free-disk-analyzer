@@ -26,10 +26,11 @@ public sealed class BlogFeedService : IBlogFeedService
 
                 var title = item.Element("title")?.Value;
                 var link = item.Element("link")?.Value;
+                var category = item.Element("category")?.Value;
 
                 if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(link)) continue;
 
-                posts.Add(new BlogPost(title, link));
+                posts.Add(new BlogPost(title, link, string.IsNullOrWhiteSpace(category) ? "Guide" : category));
             }
 
             return posts;

@@ -56,6 +56,8 @@
   <data name="Dashboard_AffiliateDisclosure" xml:space="preserve"><value>Lien affilié - Aide à financer le développement de PurgeCore, sans surcoût pour vous.</value></data>
   <data name="Dashboard_UsedOf" xml:space="preserve"><value> utilisé sur </value></data>
   <data name="Dashboard_FromTheBlog" xml:space="preserve"><value>Depuis le blog</value></data>
+  <data name="Dashboard_ReleaseNotes" xml:space="preserve"><value>Notes de version</value></data>
+  <data name="Dashboard_GuidesAndComparisons" xml:space="preserve"><value>Guides et comparaisons</value></data>
   <data name="Dashboard_ViewBlog" xml:space="preserve"><value>Voir le blog</value></data>
 
   <data name="Analyze_Title" xml:space="preserve"><value>Analyser</value></data>

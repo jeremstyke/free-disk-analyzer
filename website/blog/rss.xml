@@ -8,78 +8,91 @@
 
     <item>
       <title>PurgeCore v1.5.0: Browser Cleanup Fixes</title>
+      <category>Release notes</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-5-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-5-0-release-notes.html</guid>
       <description>What's new in PurgeCore v1.5.0: progress indicators for browser cleanup, accurate freed-space reporting, and a fix for a misleading confirmation message.</description>
     </item>
     <item>
       <title>Free Disk Analyzer Is Now PurgeCore</title>
+      <category>Announcement</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/renamed-to-purgecore.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/renamed-to-purgecore.html</guid>
       <description>Free Disk Analyzer has been renamed to PurgeCore. Same app, same free-forever approach, same download, just a new name.</description>
     </item>
     <item>
       <title>PurgeCore vs CCleaner: Which One Should You Use?</title>
+      <category>Comparison</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-ccleaner.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-ccleaner.html</guid>
       <description>An honest comparison of PurgeCore and CCleaner: what each one does well, where CCleaner is still ahead, and where a registry cleaner and paid upsells change the picture.</description>
     </item>
     <item>
       <title>PurgeCore vs BleachBit: Which One Should You Use?</title>
+      <category>Comparison</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-bleachbit.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-bleachbit.html</guid>
       <description>An honest comparison of PurgeCore and BleachBit: open-source privacy cleaning versus disk-space analysis, and where each one is the better fit.</description>
     </item>
     <item>
       <title>PurgeCore vs WinDirStat: Which One Should You Use?</title>
+      <category>Comparison</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-windirstat.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/free-disk-analyzer-vs-windirstat.html</guid>
       <description>An honest comparison of PurgeCore and WinDirStat: treemap visualization versus a broader cleanup toolkit, and which fits what you're trying to do.</description>
     </item>
     <item>
       <title>PurgeCore v1.2.0: Startup Manager</title>
+      <category>Release notes</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-2-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-2-0-release-notes.html</guid>
       <description>What's new in PurgeCore v1.2.0: a Startup Manager to speed up boot time and reduce clutter at login.</description>
     </item>
     <item>
       <title>PurgeCore v1.1.0: Cleanup That Actually Cleans</title>
+      <category>Release notes</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-1-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-1-0-release-notes.html</guid>
       <description>What's new in PurgeCore v1.1.0: safe deletion for duplicates and empty folders, browser cleanup for Chrome/Edge/Firefox, a cookie whitelist, PC cleanup, RAM optimization, and risk indicators on everything.</description>
     </item>
     <item>
       <title>PurgeCore v1.0.2: In-App Update Notifications</title>
+      <category>Release notes</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-2-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-2-release-notes.html</guid>
       <description>What's new in PurgeCore v1.0.2: a banner that appears when a newer version is out, with one-click download and install.</description>
     </item>
     <item>
       <title>PurgeCore v1.0.1: Cleanup, Duplicates, RAM, and CSV Export</title>
+      <category>Release notes</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-1-release-notes.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-0-1-release-notes.html</guid>
       <description>What's new in PurgeCore v1.0.1: a Cleanup tab with duplicate finder, old files, empty folders, a RAM optimizer, and CSV export.</description>
     </item>
     <item>
       <title>How to Free Up Disk Space on Windows 11: The Complete Guide</title>
+      <category>Guide</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/free-up-disk-space-windows-11.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/free-up-disk-space-windows-11.html</guid>
       <description>Every place Windows actually hides reclaimable space, from Storage Sense to the WinSxS folder, in the order that gives you the most space back for the least risk.</description>
     </item>
     <item>
       <title>What's Taking Up Space on Your Windows PC? How to Actually Find Out</title>
+      <category>Guide</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/find-whats-using-storage-windows.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/find-whats-using-storage-windows.html</guid>
       <description>Why File Explorer's folder sizes lie to you, and the fastest ways to find the real source of a full drive.</description>
     </item>
     <item>
       <title>How to Find and Delete Duplicate Files on Windows</title>
+      <category>Guide</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/find-delete-duplicate-files-windows.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/find-delete-duplicate-files-windows.html</guid>
       <description>Why duplicates pile up without you noticing, how they're actually detected, and how to remove them safely.</description>
     </item>
     <item>
       <title>Windows Storage Sense vs. Third-Party Disk Cleaners: What's the Difference</title>
+      <category>Guide</category>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/storage-sense-vs-disk-cleaners.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/storage-sense-vs-disk-cleaners.html</guid>
       <description>What Storage Sense actually automates, where it falls short, and when a dedicated tool is worth using instead.</description>

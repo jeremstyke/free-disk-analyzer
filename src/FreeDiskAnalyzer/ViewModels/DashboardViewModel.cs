@@ -18,14 +18,22 @@ public sealed partial class DashboardViewModel : ObservableObject
         "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer";
 
     public const string BlogUrl = "https://jeremstyke.github.io/free-disk-analyzer/blog/";
-    private const int LatestArticleCount = 3;
+    private const int LatestArticleCountPerGroup = 2;
+    private const int FetchCount = 10;
 
     private readonly IDriveEnumerator _driveEnumerator;
     private readonly IBlogFeedService _blogFeedService;
     private readonly ScanResultStore _scanResultStore;
 
     public ObservableCollection<DriveCardViewModel> Drives { get; } = new();
+    public ObservableCollection<BlogPost> LatestReleaseNotes { get; } = new();
     public ObservableCollection<BlogPost> LatestArticles { get; } = new();
+
+    [ObservableProperty]
+    private bool hasReleaseNotes;
+
+    [ObservableProperty]
+    private bool hasArticles;
 
     [ObservableProperty]
     private DriveCardViewModel? selectedDrive;
@@ -50,13 +58,23 @@ public sealed partial class DashboardViewModel : ObservableObject
 
     private async Task LoadLatestArticlesAsync()
     {
-        var posts = await _blogFeedService.GetLatestPostsAsync(LatestArticleCount);
+        var posts = await _blogFeedService.GetLatestPostsAsync(FetchCount);
 
+        LatestReleaseNotes.Clear();
         LatestArticles.Clear();
-        foreach (var post in posts)
+
+        foreach (var post in posts.Where(p => p.Category == "Release notes").Take(LatestArticleCountPerGroup))
+        {
+            LatestReleaseNotes.Add(post);
+        }
+
+        foreach (var post in posts.Where(p => p.Category != "Release notes").Take(LatestArticleCountPerGroup))
         {
             LatestArticles.Add(post);
         }
+
+        HasReleaseNotes = LatestReleaseNotes.Count > 0;
+        HasArticles = LatestArticles.Count > 0;
     }
 
     private void OnStoreChanged(object? sender, PropertyChangedEventArgs e)
