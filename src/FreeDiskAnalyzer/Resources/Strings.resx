@@ -52,8 +52,6 @@
   <data name="Dashboard_StorageByCategory" xml:space="preserve"><value>Storage by category</value></data>
   <data name="Dashboard_NordVpnTitle" xml:space="preserve"><value>Recommended: NordVPN</value></data>
   <data name="Dashboard_NordVpnBody" xml:space="preserve"><value>Protect your connection while you browse and manage your files.</value></data>
-  <data name="Dashboard_DeleteMeTitle" xml:space="preserve"><value>Recommended: DeleteMe</value></data>
-  <data name="Dashboard_DeleteMeBody" xml:space="preserve"><value>Remove your personal data from data broker sites.</value></data>
   <data name="Dashboard_LearnMore" xml:space="preserve"><value>Learn more</value></data>
   <data name="Dashboard_AffiliateDisclosure" xml:space="preserve"><value>Affiliate link - Helps support the development of PurgeCore at no extra cost to you.</value></data>
   <data name="Dashboard_UsedOf" xml:space="preserve"><value> used of </value></data>

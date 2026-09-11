@@ -18,7 +18,6 @@ public sealed partial class DashboardViewModel : ObservableObject
     // See AFFILIATE-DISCLOSURE.md.
     public const string NordVpnAffiliateUrl =
         "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer";
-    public const string DeleteMeAffiliateUrl = "https://www.de33watrk.com/WCKMXS/KMKS9/";
 
     public const string BlogUrl = "https://jeremstyke.github.io/purgecore/blog/";
     private const int LatestArticleCountPerGroup = 2;
@@ -153,12 +152,6 @@ public sealed partial class DashboardViewModel : ObservableObject
     private void OpenNordVpn()
     {
         Process.Start(new ProcessStartInfo(NordVpnAffiliateUrl) { UseShellExecute = true });
-    }
-
-    [RelayCommand]
-    private void OpenDeleteMe()
-    {
-        Process.Start(new ProcessStartInfo(DeleteMeAffiliateUrl) { UseShellExecute = true });
     }
 
     [RelayCommand]

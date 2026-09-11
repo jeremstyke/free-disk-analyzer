@@ -35,8 +35,6 @@ public static class Strings
     public static string Dashboard_StorageByCategory => Get(nameof(Dashboard_StorageByCategory));
     public static string Dashboard_NordVpnTitle => Get(nameof(Dashboard_NordVpnTitle));
     public static string Dashboard_NordVpnBody => Get(nameof(Dashboard_NordVpnBody));
-    public static string Dashboard_DeleteMeTitle => Get(nameof(Dashboard_DeleteMeTitle));
-    public static string Dashboard_DeleteMeBody => Get(nameof(Dashboard_DeleteMeBody));
     public static string Dashboard_LearnMore => Get(nameof(Dashboard_LearnMore));
     public static string Dashboard_AffiliateDisclosure => Get(nameof(Dashboard_AffiliateDisclosure));
     public static string Dashboard_UsedOf => Get(nameof(Dashboard_UsedOf));
