@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qu'est-ce qui occupe l'espace sur votre PC Windows ? Comment vraiment le découvrir</title>
+<meta name="description" content="Pourquoi les tailles de dossiers de l'Explorateur de fichiers vous mentent, et les moyens les plus rapides de trouver la vraie source d'un disque plein.">
+<meta property="og:title" content="Qu'est-ce qui occupe l'espace sur votre PC Windows ? Comment vraiment le découvrir">
+<meta property="og:description" content="Pourquoi les tailles de dossiers de l'Explorateur de fichiers vous mentent, et les moyens les plus rapides de trouver la vraie source d'un disque plein.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/purgecore/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/purgecore/fr/blog/find-whats-using-storage-windows.html">
+<link rel="canonical" href="https://jeremstyke.github.io/purgecore/fr/blog/find-whats-using-storage-windows.html">
+<link rel="icon" type="image/png" href="../../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      PurgeCore
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Fonctionnalités</a>
+      <a href="../../privacy.html">Confidentialité</a>
+      <a href="../../about.html">À propos</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offrir un café</a>
+      <div class="lang-switch"><a href="../../blog/find-whats-using-storage-windows.html">EN</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Retour au blog</a>
+
+  <h1>Qu'est-ce qui occupe l'espace sur votre PC Windows ? Comment vraiment le découvrir</h1>
+  <div class="article-header">
+    <span class="article-tag article-tag-guide">Guide</span>
+  </div>
+  <p class="article-meta">2026 · 6 min de lecture</p>
+
+  <p>"Le disque local (C:) est presque plein" est l'un des messages Windows les plus frustrants, surtout parce qu'il ne vous dit pas pourquoi. L'Explorateur de fichiers seul rend ça étonnamment difficile à comprendre.</p>
+
+  <h2>Pourquoi l'Explorateur de fichiers n'aide pas vraiment</h2>
+  <p>Clic droit sur un dossier et choisir Propriétés montre une taille totale, mais le calcul peut prendre longtemps sur un gros dossier, et il faut le faire dossier par dossier, en devinant où regarder ensuite. Il n'y a pas de vue intégrée qui montre simplement les plus grosses choses d'un disque, triées, en un seul passage.</p>
+
+  <h2>Commencer par les Paramètres, pour une idée générale</h2>
+  <p>Paramètres &gt; Système &gt; Stockage donne une répartition par catégorie (Applications, Documents, Fichiers temporaires, etc). C'est un point de départ raisonnable, mais les catégories sont larges. "Applications" ne dit pas quelle application, et "Autre" est souvent la catégorie la plus grosse et la moins informative.</p>
+
+  <h2>Les suspects habituels à vérifier directement</h2>
+  <ul>
+    <li><strong>Dossier Téléchargements</strong> - installateurs et vidéos s'y accumulent pendant des années sans que personne ne le remarque.</li>
+    <li><strong>Fichier d'hibernation (<code>hiberfil.sys</code>)</strong> - réserve un espace équivalent à une portion de votre RAM, invisible sauf si vous savez où chercher.</li>
+    <li><strong>Fichiers disque de machines virtuelles</strong> - une seule image VM peut faire des dizaines de gigaoctets, et elles sont faciles à oublier une fois un projet terminé.</li>
+    <li><strong>Installations de jeux</strong> - les jeux modernes dépassent couramment 50-100 Go chacun ; quelques jeux désinstallés "en esprit mais pas en pratique" s'accumulent vite.</li>
+    <li><strong>Caches et données de profil des navigateurs</strong> - répartis entre Chrome, Edge et Firefox si vous en utilisez plusieurs.</li>
+    <li><strong>Dossiers <code>node_modules</code> et de build</strong> - si vous faites du développement, de vieux dossiers de projet peuvent cacher des gigaoctets de dépendances que vous ne réinstallerez jamais depuis là.</li>
+  </ul>
+
+  <h2>Les fichiers OneDrive peuvent être trompeurs</h2>
+  <p>Si vous utilisez OneDrive avec les fichiers à la demande, certains fichiers affichés dans l'Explorateur sont juste des espaces réservés, pas stockés localement, tandis que d'autres sont entièrement téléchargés. Un dossier qui paraît énorme dans la vue web de OneDrive peut à peine toucher votre disque local, et vice versa, ce qui peut fausser les estimations manuelles.</p>
+
+  <h2>Un scan dédié est le chemin le plus rapide</h2>
+  <p>Le moyen le plus direct de répondre à "qu'est-ce qui utilise mon espace" est un outil construit spécifiquement pour parcourir tout le disque une fois et classer dossiers et fichiers par taille. C'est exactement le travail que fait <a href="../index.html">PurgeCore</a> : pointez-le vers un disque, et il montre les plus gros dossiers et fichiers, une répartition par catégorie, et les fichiers les plus anciens que vous avez probablement oubliés, sans jamais envoyer d'informations sur vos fichiers nulle part.</p>
+
+  <h2>Une fois que vous savez où est l'espace</h2>
+  <p>Trouver la source est la partie utile, décider quoi en faire est généralement simple une fois que vous pouvez la voir : désinstaller le jeu, supprimer la vieille image VM, vider le cache du navigateur, ou juste la laisser si ça s'avère être quelque chose dont vous avez réellement besoin.</p>
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Télécharger PurgeCore</h2>
+    <p>Gratuit pour toujours, pas de compte, pas d'essai. S'installe en quelques secondes.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Télécharger pour Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">Pas encore de certificat de signature de code commercial, donc Windows peut afficher un bref avertissement "éditeur inconnu" au premier lancement. Le code source est public sur GitHub, et chaque version est publiée avec une empreinte SHA-256 vérifiable.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. Tous droits réservés. Si PurgeCore vous est utile, vous pouvez <a href="https://jeremstyke.gumroad.com/coffee">offrir un café</a>.</div>
+    <div class="disclosure">PurgeCore peut recommander des produits via des liens affiliés, clairement identifiés là où ils apparaissent dans l'application. Cela n'affecte jamais ce que l'application elle-même vous coûte.</div>
+  </div>
+</footer>
+
+<script src="../../assets/animations.js" defer></script>
+</body>
+</html>

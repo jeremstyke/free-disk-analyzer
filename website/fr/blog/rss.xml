@@ -20,5 +20,33 @@
       <category>Comparaison</category>
       <description>Une comparaison honnête entre PurgeCore et CCleaner : ce que chacun fait bien, où CCleaner garde une avance, et où un nettoyeur de registre et des offres payantes changent la donne.</description>
     </item>
+    <item>
+      <title>PurgeCore vs BleachBit : lequel choisir ?</title>
+      <link>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-bleachbit.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-bleachbit.html</guid>
+      <category>Comparaison</category>
+      <description>Une comparaison honnête entre PurgeCore et BleachBit : nettoyage open source axé confidentialité versus analyse d'espace disque, et où chacun est le meilleur choix.</description>
+    </item>
+    <item>
+      <title>PurgeCore vs WinDirStat : lequel choisir ?</title>
+      <link>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-windirstat.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-windirstat.html</guid>
+      <category>Comparaison</category>
+      <description>Une comparaison honnête entre PurgeCore et WinDirStat : visualisation en treemap versus une boîte à outils de nettoyage plus large, et ce qui correspond à ce que vous cherchez.</description>
+    </item>
+    <item>
+      <title>Comment libérer de l'espace disque sur Windows 11 : le guide complet</title>
+      <link>https://jeremstyke.github.io/purgecore/fr/blog/free-up-disk-space-windows-11.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/fr/blog/free-up-disk-space-windows-11.html</guid>
+      <category>Guide</category>
+      <description>Tous les endroits où Windows cache réellement de l'espace récupérable, de Storage Sense au dossier WinSxS, dans l'ordre qui vous redonne le plus d'espace pour le moins de risque.</description>
+    </item>
+    <item>
+      <title>Qu'est-ce qui occupe l'espace sur votre PC Windows ? Comment vraiment le découvrir</title>
+      <link>https://jeremstyke.github.io/purgecore/fr/blog/find-whats-using-storage-windows.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/fr/blog/find-whats-using-storage-windows.html</guid>
+      <category>Guide</category>
+      <description>Pourquoi les tailles de dossiers de l'Explorateur de fichiers vous mentent, et les moyens les plus rapides de trouver la vraie source d'un disque plein.</description>
+    </item>
   </channel>
 </rss>

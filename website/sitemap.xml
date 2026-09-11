@@ -56,6 +56,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-bleachbit.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jeremstyke.github.io/purgecore/fr/blog/free-disk-analyzer-vs-windirstat.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jeremstyke.github.io/purgecore/fr/blog/free-up-disk-space-windows-11.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jeremstyke.github.io/purgecore/fr/blog/find-whats-using-storage-windows.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://jeremstyke.github.io/purgecore/blog/free-disk-analyzer-vs-ccleaner.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
