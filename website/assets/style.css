@@ -7,6 +7,13 @@
   --accent-deep: #1D3A8A;
   --border: #E2E8F0;
   --max-width: 1080px;
+
+  /* Secondary accents, used purposefully (not decoratively) to add variety
+     and help scan content types apart: teal for guides, violet for
+     comparisons, amber for announcements. */
+  --teal: #0D9488;
+  --violet: #7C3AED;
+  --amber: #D97706;
 }
 
 * { box-sizing: border-box; }
@@ -224,6 +231,10 @@ section { padding: 64px 0; }
   padding-left: 20px;
   box-sizing: border-box;
 }
+
+.feature:nth-child(4n+2) { border-left-color: var(--teal); }
+.feature:nth-child(4n+3) { border-left-color: var(--violet); }
+.feature:nth-child(4n+4) { border-left-color: var(--amber); }
 
 .feature:nth-child(odd) { padding-right: 24px; }
 
@@ -529,6 +540,10 @@ footer .disclosure {
   margin-bottom: 12px;
 }
 
+.blog-tag-guide { background: var(--teal); }
+.blog-tag-comparison { background: var(--violet); }
+.blog-tag-announcement { background: var(--amber); }
+
 .blog-card h3 {
   font-size: 19px;
   font-weight: 700;
@@ -551,14 +566,14 @@ footer .disclosure {
 .blog-card:hover h3 { color: var(--accent); }
 
 .blog-card-pinned {
-  border: 2px solid var(--accent);
+  border: 2px solid var(--amber);
 }
 
 .pinned-label {
   display: block;
   font-size: 12px;
   font-weight: 700;
-  color: var(--accent-deep);
+  color: var(--amber);
   margin-bottom: 6px;
 }
 
@@ -580,3 +595,7 @@ footer .disclosure {
   border-radius: 999px;
   margin-bottom: 14px;
 }
+
+.article-tag-guide { background: var(--teal); }
+.article-tag-comparison { background: var(--violet); }
+.article-tag-announcement { background: var(--amber); }
