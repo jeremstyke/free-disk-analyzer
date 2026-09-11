@@ -59,17 +59,17 @@ public sealed class SystemCleaner : ISystemCleaner
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var success = item.Category switch
+                var (success, bytesFreed) = item.Category switch
                 {
                     SystemCleanupCategory.TempFiles => CleanTempFiles(),
                     SystemCleanupCategory.RecycleBin => CleanRecycleBin(),
-                    _ => false
+                    _ => (false, 0L)
                 };
 
                 if (success)
                 {
                     cleaned++;
-                    freed += item.SizeBytes;
+                    freed += bytesFreed;
                 }
                 else
                 {
@@ -81,54 +81,87 @@ public sealed class SystemCleaner : ISystemCleaner
         }, cancellationToken);
     }
 
-    private bool CleanTempFiles()
+    /// <summary>
+    /// Deletes each entry in Temp individually and tracks the real, measured
+    /// size of only the entries that actually succeeded. Many Temp files are
+    /// locked by running programs, so this is not a rare edge case, without
+    /// tracking real per-entry success the app could report "freed X GB"
+    /// when almost nothing was actually deleted.
+    /// </summary>
+    private (bool AnySuccess, long BytesFreed) CleanTempFiles()
     {
         var tempPath = Path.GetTempPath();
 
-        // The Temp folder itself is never deleted, only its contents, and
-        // only entries outside any protected root (defense in depth, this
-        // path is never under Windows/Program Files in practice).
-        if (PathSafetyGuard.IsProtected(tempPath)) return false;
+        if (PathSafetyGuard.IsProtected(tempPath)) return (false, 0);
 
-        var anyAttempted = false;
+        var anySuccess = false;
+        long freed = 0;
 
         try
         {
             foreach (var entry in Directory.EnumerateFileSystemEntries(tempPath))
             {
-                anyAttempted = true;
+                var isDirectory = Directory.Exists(entry);
+                var entrySize = isDirectory ? GetFolderSizeBytes(entry) : GetFileSizeBytes(entry);
 
-                if (Directory.Exists(entry))
+                var success = isDirectory
+                    ? _safeDeleteService.TryDeleteDirectory(entry)
+                    : _safeDeleteService.TryDeleteFile(entry);
+
+                if (success)
                 {
-                    _safeDeleteService.TryDeleteDirectory(entry);
-                }
-                else
-                {
-                    _safeDeleteService.TryDeleteFile(entry);
+                    anySuccess = true;
+                    freed += entrySize;
                 }
             }
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
         {
-            return anyAttempted;
+            // Return whatever succeeded before the error rather than failing
+            // the whole operation over one problem entry.
         }
 
-        return true;
+        return (anySuccess, freed);
     }
 
-    private static bool CleanRecycleBin()
+    /// <summary>
+    /// Empties the Recycle Bin and measures the real size difference before
+    /// and after, rather than trusting SHEmptyRecycleBin's return code alone,
+    /// since "already empty" and some transient failures can both return a
+    /// non-zero HRESULT on certain Windows versions.
+    /// </summary>
+    private static (bool AnySuccess, long BytesFreed) CleanRecycleBin()
     {
         try
         {
-            // 0 = success. Other HRESULTs can mean "nothing to empty" on some
-            // Windows versions, treat any outcome as best effort rather than
-            // a hard failure the user needs to act on.
+            var sizeBefore = GetRecycleBinSizeBytes();
+            if (sizeBefore <= 0) return (true, 0);
+
             SHEmptyRecycleBin(IntPtr.Zero, null, SherbNoconfirmation | SherbNosound);
-            return true;
+
+            var sizeAfter = GetRecycleBinSizeBytes();
+            var freed = Math.Max(0, sizeBefore - sizeAfter);
+
+            // Treat "did the size actually go down" as the real signal of
+            // success, not the HRESULT, which can be unreliable across
+            // Windows versions for this particular API.
+            return (freed > 0, freed);
         }
         catch (Exception ex) when (ex is EntryPointNotFoundException or DllNotFoundException)
         {
-            return false;
+            return (false, 0);
+        }
+    }
+
+    private static long GetFileSizeBytes(string path)
+    {
+        try
+        {
+            return new FileInfo(path).Length;
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            return 0;
         }
     }
 
