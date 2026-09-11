@@ -180,3 +180,19 @@ Bob's original request in this same conversation also included a VPN "teasing" t
 Bob asked for a registry cleaner-style feature, declined (see refusal precedent: registry cleaners have near-zero real benefit on modern Windows and real risk of breaking a program that needs the "obsolete" key, Microsoft itself discourages this category of tool). Offered a safer alternative instead: read-only driver info. `IDriverInfoService` / `DriverInfoService` (WPF project, uses `System.Management`/WMI, `Win32_PnPSignedDriver`) lists installed drivers with name, manufacturer, version, and date, flags anything 3+ years old as a simple age signal, not a diagnosis. Added as a 4th pill under Explore (read-only tabs), alongside Large Files/Folders/Old Files.
 
 Deliberately does not download or install anything: buttons open Windows Update (`ms-settings:windowsupdate`) and the NVIDIA/AMD/Intel driver pages, generic (not matched to the user's specific hardware), the user does the actual update themselves. Accurate per-device driver matching is exactly the kind of database that "driver updater" tools claim to have and often get wrong or use to manufacture fake problems for a paid upsell, not something to attempt here.
+
+## Idea: paid sponsor slot (per Bob, 2026-09-11, logged only, not started)
+
+Bob floated the idea of letting sponsors pay to have their own promotional link placed in the app, similar in spirit to the existing NordVPN/DeleteMe affiliate cards but sponsor-supplied rather than curated by Bob. Not something to build now, just logged so it isn't lost.
+
+Worth thinking through before building, if revisited: how this differs from an ad network (a single curated sponsor slot Bob personally vets is a very different trust proposition than programmatic ads, closer to how some newsletters/open source projects do a "this release sponsored by X" credit), how sponsors would be vetted so a sponsor slot doesn't become a vector for scammy/low-quality products showing up in a tool people trust for safety, and how it's disclosed to users (same affiliate-disclosure pattern already used for NordVPN/DeleteMe would likely apply). Precondition should be the same as everything else on this list: real usage first, since a sponsor slot needs an actual audience to be worth anything to a sponsor.
+
+## NordVPN + DeleteMe made more prominent (per Bob, 2026-09-11)
+
+Bob asked to give these more visibility, in the app and on the site, while a future paid-sponsor idea (above) stays unbuilt for now.
+
+App: the Dashboard used to show only a NordVPN card, placed last (below the blog section). Added a matching DeleteMe card (previously only shown post-scan on the Analyze tab, DeleteMe now also appears here), and moved both up to right after the Storage by category card, side by side, so they're visible without scrolling as far.
+
+Website: moved the Partners section (NordVPN + DeleteMe) up on both homepages, from below the Privacy/Free-forever bands to right after Features, same reasoning, more visible higher on the page.
+
+Deliberately did not add pop-ups, banners, or anything more attention-grabbing than repositioning existing cards, that would work against PurgeCore's whole pitch of "not like the more aggressive free tools."
