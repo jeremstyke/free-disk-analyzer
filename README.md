@@ -139,6 +139,10 @@ All rights reserved. The application is free to use, the source code is not free
 
 This repository is public.
 
+## For software directories
+
+A [PAD file](https://jeremstyke.github.io/purgecore/pad_file.xml) is available for automated listing on software directories and download sites.
+
 ## Support
 
 If PurgeCore is useful to you, you can [offer a coffee](https://jeremstyke.gumroad.com/coffee).

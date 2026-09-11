@@ -137,6 +137,10 @@ Tous droits réservés. L'application est gratuite à l'usage, le code source n'
 
 Ce dépôt est public.
 
+## Pour les annuaires de logiciels
+
+Un [fichier PAD](https://jeremstyke.github.io/purgecore/pad_file.xml) est disponible pour un référencement automatisé sur les annuaires de logiciels et sites de téléchargement.
+
 ## Soutien
 
 Si PurgeCore vous est utile, vous pouvez [offrir un café](https://jeremstyke.gumroad.com/coffee).
