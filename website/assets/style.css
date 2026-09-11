@@ -70,6 +70,18 @@ a { color: var(--accent); }
 
 .brand svg { width: 26px; height: 26px; }
 
+.beta-badge {
+  display: inline-block;
+  background: var(--amber);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;

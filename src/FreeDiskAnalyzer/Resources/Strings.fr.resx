@@ -179,6 +179,7 @@
   <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="About_ViewGitHub" xml:space="preserve"><value>Voir sur GitHub</value></data>
   <data name="About_Version" xml:space="preserve"><value>Version</value></data>
+  <data name="About_BetaNote" xml:space="preserve"><value>PurgeCore est en bêta. Les fonctionnalités principales sont stables, mais l'application n'a pas encore été largement testée en conditions réelles, quelques imperfections sont possibles.</value></data>
   <data name="About_License" xml:space="preserve"><value>Tous droits réservés. Voir LICENSE dans le dépôt.</value></data>
   <data name="About_Coffee" xml:space="preserve"><value>Offrir un café</value></data>
 

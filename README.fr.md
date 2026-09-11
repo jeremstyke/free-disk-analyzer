@@ -1,12 +1,13 @@
 # PurgeCore
 
+[![Status : Bêta](https://img.shields.io/badge/statut-B%C3%AAta-F59E0B)](#)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-lightgrey.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D6)](#)
 [![.NET](https://img.shields.io/badge/.NET-8-512BD4)](#)
 [![Build](https://img.shields.io/github/actions/workflow/status/jeremstyke/purgecore/build.yml?branch=main)](../../actions)
 [![Release](https://img.shields.io/github/v/release/jeremstyke/purgecore)](../../releases/latest)
 
-**Un nettoyeur PC complet et 100% gratuit pour Windows.**
+**Un nettoyeur PC complet et 100% gratuit pour Windows. Actuellement en bêta.**
 Analyse de disque, doublons, nettoyage navigateurs et PC, gestion démarrage et RAM. Rien n'est jamais envoyé nulle part, une alternative respectueuse de la vie privée à CCleaner et consorts.
 
 🇬🇧 [Read in English](README.md)
@@ -23,7 +24,7 @@ Analyse de disque, doublons, nettoyage navigateurs et PC, gestion démarrage et 
   </a>
 </p>
 
-<p align="center"><sub>Utilisateur avancé ? <a href="../../releases/latest/download/PurgeCore-Portable.zip">Téléchargez la version portable</a>, pas d'installation, pas besoin de droits admin.</sub></p>
+<p align="center"><sub>Utilisateur avancé ? <a href="../../releases/latest/download/PurgeCore-Portable.zip">Téléchargez la version portable</a>, pas d'installation, pas besoin de droits admin. · Annuaire de logiciels ? <a href="https://jeremstyke.github.io/purgecore/pad_file.xml">Fichier PAD ici</a>.</sub></p>
 
 > [Voir toutes les versions](../../releases)
 
@@ -136,10 +137,6 @@ Tous droits réservés. L'application est gratuite à l'usage, le code source n'
 ## Visibilité du dépôt
 
 Ce dépôt est public.
-
-## Pour les annuaires de logiciels
-
-Un [fichier PAD](https://jeremstyke.github.io/purgecore/pad_file.xml) est disponible pour un référencement automatisé sur les annuaires de logiciels et sites de téléchargement.
 
 ## Soutien
 

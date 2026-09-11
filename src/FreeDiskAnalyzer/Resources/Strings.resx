@@ -179,6 +179,7 @@
   <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="About_ViewGitHub" xml:space="preserve"><value>View on GitHub</value></data>
   <data name="About_Version" xml:space="preserve"><value>Version</value></data>
+  <data name="About_BetaNote" xml:space="preserve"><value>PurgeCore is in beta. The core features are stable, but it hasn't had wide real-world testing yet, expect the occasional rough edge.</value></data>
   <data name="About_License" xml:space="preserve"><value>All rights reserved. See LICENSE in the repository.</value></data>
   <data name="About_Coffee" xml:space="preserve"><value>Offer a coffee</value></data>
 

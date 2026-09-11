@@ -1,5 +1,6 @@
 # PurgeCore
 
+[![Status: Beta](https://img.shields.io/badge/status-Beta-F59E0B)](#)
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-lightgrey.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D6)](#)
 [![.NET](https://img.shields.io/badge/.NET-8-512BD4)](#)
@@ -7,7 +8,7 @@
 [![Release](https://img.shields.io/github/v/release/jeremstyke/purgecore)](../../releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/jeremstyke/purgecore/total)](../../releases)
 
-**A complete, 100% free PC cleaner for Windows.**
+**A complete, 100% free PC cleaner for Windows. Currently in beta.**
 Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. Nothing is ever sent anywhere, a privacy-first alternative to CCleaner and similar tools.
 
 🇫🇷 [Lire en français](README.fr.md)
@@ -24,7 +25,7 @@ Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. N
   </a>
 </p>
 
-<p align="center"><sub>Power user? <a href="../../releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> instead, no installation, no admin rights needed.</sub></p>
+<p align="center"><sub>Power user? <a href="../../releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> instead, no installation, no admin rights needed. · Software directory? <a href="https://jeremstyke.github.io/purgecore/pad_file.xml">PAD file here</a>.</sub></p>
 
 > [View all releases](../../releases)
 
@@ -138,10 +139,6 @@ All rights reserved. The application is free to use, the source code is not free
 ## Repository visibility
 
 This repository is public.
-
-## For software directories
-
-A [PAD file](https://jeremstyke.github.io/purgecore/pad_file.xml) is available for automated listing on software directories and download sites.
 
 ## Support
 

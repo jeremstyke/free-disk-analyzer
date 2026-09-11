@@ -16,7 +16,7 @@
   #define AppVersion "1.0.0"
 #endif
 
-#define AppName "PurgeCore"
+#define AppName "PurgeCore (Beta)"
 #define AppPublisher "Jeremy Jury"
 #define AppUrl "https://github.com/jeremstyke/purgecore"
 #define AppExeName "PurgeCore.exe"
