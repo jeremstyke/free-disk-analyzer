@@ -24,6 +24,7 @@
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+          <StackPanel>
             <ItemsControl ItemsSource="{Binding Items}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -51,6 +52,23 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+
+            <Border Style="{StaticResource CardStyle}" Background="{DynamicResource AccentBrushLight}" Margin="0,12,0,0"
+                    Visibility="{Binding HasCleaned, Converter={StaticResource BoolToVis}}">
+                <StackPanel>
+                    <TextBlock Text="{x:Static res:Strings.Analyze_DeleteMeTitle}" FontWeight="SemiBold" FontSize="16"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                    <TextBlock Text="{x:Static res:Strings.Analyze_DeleteMeBody}" TextWrapping="Wrap"
+                               Style="{StaticResource BodyTextStyle}" Margin="0,0,0,12"/>
+                    <Button Content="{x:Static res:Strings.Dashboard_LearnMore}" Style="{StaticResource PrimaryButtonStyle}"
+                            HorizontalAlignment="Left" Command="{Binding OpenDeleteMeCommand}"/>
+                    <TextBlock Margin="0,12,0,0" Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap">
+                        <Run Text="🔗"/>
+                        <Run Text="{x:Static res:Strings.Dashboard_AffiliateDisclosure}"/>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+          </StackPanel>
         </ScrollViewer>
     </Grid>
 </UserControl>

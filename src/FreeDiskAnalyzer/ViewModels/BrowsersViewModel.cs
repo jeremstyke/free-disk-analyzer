@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -27,6 +28,9 @@ public sealed partial class BrowsersViewModel : ObservableObject
 
     [ObservableProperty]
     private string? resultSummary;
+
+    [ObservableProperty]
+    private bool hasCleaned;
 
     [ObservableProperty]
     private string cookieWhitelistText = string.Empty;
@@ -121,6 +125,7 @@ public sealed partial class BrowsersViewModel : ObservableObject
             ResultSummary =
                 $"Freed about {ByteSizeFormatter.Format(result.BytesFreed)} " +
                 $"({result.ItemsCleaned} cleaned, {result.ItemsSkipped} skipped, usually because a browser was open).";
+            HasCleaned = true;
 
             // Re-scan so the list reflects what's actually left, rather than
             // guessing which items fully succeeded.
@@ -144,5 +149,11 @@ public sealed partial class BrowsersViewModel : ObservableObject
     {
         CleanSelectedCommand.NotifyCanExecuteChanged();
         ScanCommand.NotifyCanExecuteChanged();
+    }
+
+    [RelayCommand]
+    private void OpenDeleteMe()
+    {
+        Process.Start(new ProcessStartInfo(AnalyzeViewModel.DeleteMeAffiliateUrl) { UseShellExecute = true });
     }
 }

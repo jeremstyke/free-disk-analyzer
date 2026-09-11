@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -22,6 +23,9 @@ public sealed partial class SystemViewModel : ObservableObject
 
     [ObservableProperty]
     private string? resultSummary;
+
+    [ObservableProperty]
+    private bool hasCleaned;
 
     public SystemViewModel(ISystemCleaner systemCleaner)
     {
@@ -83,6 +87,7 @@ public sealed partial class SystemViewModel : ObservableObject
             ResultSummary =
                 $"Freed about {ByteSizeFormatter.Format(result.BytesFreed)} " +
                 $"({result.CategoriesCleaned} cleaned, {result.CategoriesSkipped} skipped).";
+            HasCleaned = true;
 
             await ScanAsync();
         }
@@ -95,4 +100,10 @@ public sealed partial class SystemViewModel : ObservableObject
     private bool CanClean() => !IsCleaning;
 
     partial void OnIsCleaningChanged(bool value) => CleanSelectedCommand.NotifyCanExecuteChanged();
+
+    [RelayCommand]
+    private void OpenDeleteMe()
+    {
+        Process.Start(new ProcessStartInfo(AnalyzeViewModel.DeleteMeAffiliateUrl) { UseShellExecute = true });
+    }
 }
