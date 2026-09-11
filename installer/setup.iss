@@ -18,7 +18,7 @@
 
 #define AppName "PurgeCore"
 #define AppPublisher "Jeremy Jury"
-#define AppUrl "https://github.com/jeremstyke/free-disk-analyzer"
+#define AppUrl "https://github.com/jeremstyke/purgecore"
 #define AppExeName "PurgeCore.exe"
 
 [Setup]

@@ -7,7 +7,7 @@ namespace FreeDiskAnalyzer.ViewModels;
 
 public sealed partial class AboutViewModel : ObservableObject
 {
-    public const string GitHubUrl = "https://github.com/jeremstyke/free-disk-analyzer";
+    public const string GitHubUrl = "https://github.com/jeremstyke/purgecore";
     public const string CoffeeUrl = "https://jeremstyke.gumroad.com/coffee";
 
     public string VersionDisplay { get; } =

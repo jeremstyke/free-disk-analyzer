@@ -3,9 +3,9 @@
 [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-lightgrey.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D6)](#)
 [![.NET](https://img.shields.io/badge/.NET-8-512BD4)](#)
-[![Build](https://img.shields.io/github/actions/workflow/status/jeremstyke/free-disk-analyzer/build.yml?branch=main)](../../actions)
-[![Release](https://img.shields.io/github/v/release/jeremstyke/free-disk-analyzer)](../../releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/jeremstyke/free-disk-analyzer/total)](../../releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/jeremstyke/purgecore/build.yml?branch=main)](../../actions)
+[![Release](https://img.shields.io/github/v/release/jeremstyke/purgecore)](../../releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/jeremstyke/purgecore/total)](../../releases)
 
 **A complete, 100% free PC cleaner for Windows.**
 Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. Nothing is ever sent anywhere, a privacy-first alternative to CCleaner and similar tools.
@@ -13,7 +13,7 @@ Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. N
 🇫🇷 [Lire en français](README.fr.md)
 
 <p align="center">
-  <a href="https://jeremstyke.github.io/free-disk-analyzer/">
+  <a href="https://jeremstyke.github.io/purgecore/">
     <img src="https://img.shields.io/badge/%F0%9F%8C%90%20Website-2563EB?style=for-the-badge" alt="Website" />
   </a>
 </p>
@@ -118,8 +118,8 @@ Requirements:
 - Visual Studio 2022 (or `dotnet build` from the CLI)
 
 ```bash
-git clone https://github.com/jeremstyke/free-disk-analyzer.git
-cd free-disk-analyzer
+git clone https://github.com/jeremstyke/purgecore.git
+cd purgecore
 dotnet build
 ```
 

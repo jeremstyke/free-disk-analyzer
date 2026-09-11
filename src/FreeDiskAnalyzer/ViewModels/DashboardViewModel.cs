@@ -17,7 +17,7 @@ public sealed partial class DashboardViewModel : ObservableObject
     public const string NordVpnAffiliateUrl =
         "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=155375&source=Free%20disk%20analyzer";
 
-    public const string BlogUrl = "https://jeremstyke.github.io/free-disk-analyzer/blog/";
+    public const string BlogUrl = "https://jeremstyke.github.io/purgecore/blog/";
     private const int LatestArticleCountPerGroup = 2;
     private const int FetchCount = 10;
 

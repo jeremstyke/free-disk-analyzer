@@ -44,7 +44,7 @@
       <a href="#download">Télécharger</a>
     </nav>
     <div style="display:flex; align-items:center; gap:12px;">
-      <a class="github-link" href="https://github.com/jeremstyke/free-disk-analyzer">GitHub</a>
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
       <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offrir un café</a>
       <div class="lang-switch"><a href="../" onclick="try{localStorage.setItem('fda_lang','en')}catch(e){}">EN</a></div>
     </div>
@@ -57,11 +57,11 @@
       <h1>Découvrez ce qui occupe vraiment votre stockage.</h1>
       <p class="lead">Un nettoyeur PC complet et 100% gratuit pour Windows. Rien n'est jamais envoyé nulle part, une alternative respectueuse de la vie privée à CCleaner et consorts.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Setup.exe">Télécharger pour Windows</a>
+        <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Télécharger pour Windows</a>
         <span class="btn-note" id="latest-version-note">Gratuit</span>
       </div>
       <p style="margin-top:14px; font-size:13px; color:var(--ink-muted);">Pas encore de certificat de signature de code commercial, Windows peut afficher un avertissement "éditeur inconnu" au premier lancement. <a href="#faq">Pourquoi ?</a></p>
-      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Utilisateur avancé ? <a href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Portable.zip">Téléchargez la version portable</a> (pas d'installation, pas besoin de droits admin).</p>
+      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Utilisateur avancé ? <a href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Portable.zip">Téléchargez la version portable</a> (pas d'installation, pas besoin de droits admin).</p>
     </div>
     <div class="hero-art">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -215,7 +215,7 @@
     </div>
     <div class="faq-item">
       <h3>Puis-je voir le code source ?</h3>
-      <p>Oui, le code source est consultable publiquement sur <a href="https://github.com/jeremstyke/free-disk-analyzer">GitHub</a>. L'application compilée, elle, est gratuite à l'usage.</p>
+      <p>Oui, le code source est consultable publiquement sur <a href="https://github.com/jeremstyke/purgecore">GitHub</a>. L'application compilée, elle, est gratuite à l'usage.</p>
     </div>
     <div class="faq-item">
       <h3>Quelle est la différence entre l'installateur et la version portable ?</h3>
@@ -229,9 +229,9 @@
     <div class="download-band">
       <h2>Télécharger pour Windows</h2>
       <p>PurgeCore est disponible dès maintenant.</p>
-      <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Setup.exe">Télécharger pour Windows</a>
+      <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Télécharger pour Windows</a>
       <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">Pas encore de certificat de signature de code commercial, donc Windows peut afficher un bref avertissement "éditeur inconnu" au premier lancement. Le code source est public sur GitHub, et chaque version est publiée avec une empreinte SHA-256 vérifiable.</p>
-      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Utilisateur avancé ? <a href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Portable.zip">Téléchargez la version portable</a> (pas d'installation, pas besoin de droits admin).</p>
+      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Utilisateur avancé ? <a href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Portable.zip">Téléchargez la version portable</a> (pas d'installation, pas besoin de droits admin).</p>
     </div>
   </div>
 </section>
@@ -244,7 +244,7 @@
 </footer>
 
 <script>
-  fetch('https://api.github.com/repos/jeremstyke/free-disk-analyzer/releases/latest')
+  fetch('https://api.github.com/repos/jeremstyke/purgecore/releases/latest')
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (data) {
       if (!data || !data.tag_name) return;

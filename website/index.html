@@ -48,7 +48,7 @@
       <a href="#download">Download</a>
     </nav>
     <div style="display:flex; align-items:center; gap:12px;">
-      <a class="github-link" href="https://github.com/jeremstyke/free-disk-analyzer">GitHub</a>
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
       <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
       <div class="lang-switch"><a href="fr/" onclick="try{localStorage.setItem('fda_lang','fr')}catch(e){}">FR</a></div>
     </div>
@@ -61,11 +61,11 @@
       <h1>See what's really using your storage.</h1>
       <p class="lead">A complete, 100% free PC cleaner for Windows. Nothing is ever sent anywhere, a privacy-first alternative to CCleaner and similar tools.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Setup.exe">Download for Windows</a>
+        <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Download for Windows</a>
         <span class="btn-note" id="latest-version-note">Free</span>
       </div>
       <p style="margin-top:14px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, Windows may show an "unknown publisher" warning on first run. <a href="#faq">Why?</a></p>
-      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Power user? <a href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> (no installation, no admin rights needed).</p>
+      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Power user? <a href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> (no installation, no admin rights needed).</p>
     </div>
     <div class="hero-art">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -220,7 +220,7 @@
     </div>
     <div class="faq-item">
       <h3>Can I see the source code?</h3>
-      <p>Yes, the source code is publicly viewable on <a href="https://github.com/jeremstyke/free-disk-analyzer">GitHub</a>. The compiled app itself is free to use.</p>
+      <p>Yes, the source code is publicly viewable on <a href="https://github.com/jeremstyke/purgecore">GitHub</a>. The compiled app itself is free to use.</p>
     </div>
     <div class="faq-item">
       <h3>What's the difference between the installer and the portable version?</h3>
@@ -234,9 +234,9 @@
     <div class="download-band">
       <h2>Download for Windows</h2>
       <p>PurgeCore is available now.</p>
-      <a class="btn btn-primary" href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Setup.exe">Download for Windows</a>
+      <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Download for Windows</a>
       <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, so Windows may show a brief "unknown publisher" warning on first run. The source is public on GitHub, and each release is published with a SHA-256 checksum you can verify.</p>
-      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Power user? <a href="https://github.com/jeremstyke/free-disk-analyzer/releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> (no installation, no admin rights needed).</p>
+      <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Power user? <a href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> (no installation, no admin rights needed).</p>
     </div>
   </div>
 </section>
@@ -249,7 +249,7 @@
 </footer>
 
 <script>
-  fetch('https://api.github.com/repos/jeremstyke/free-disk-analyzer/releases/latest')
+  fetch('https://api.github.com/repos/jeremstyke/purgecore/releases/latest')
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (data) {
       if (!data || !data.tag_name) return;
