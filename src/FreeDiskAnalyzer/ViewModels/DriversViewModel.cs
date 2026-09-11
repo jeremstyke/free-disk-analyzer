@@ -12,9 +12,6 @@ public sealed partial class DriversViewModel : ObservableObject
     private readonly IDriverInfoService _driverInfoService;
 
     public const string WindowsUpdateUri = "ms-settings:windowsupdate";
-    public const string NvidiaUrl = "https://www.nvidia.com/en-us/drivers/";
-    public const string AmdUrl = "https://www.amd.com/en/support";
-    public const string IntelUrl = "https://www.intel.com/content/www/us/en/support/detect.html";
 
     public ObservableCollection<DriverInfo> Drivers { get; } = new();
 
@@ -51,11 +48,9 @@ public sealed partial class DriversViewModel : ObservableObject
     private void OpenWindowsUpdate() => Process.Start(new ProcessStartInfo(WindowsUpdateUri) { UseShellExecute = true });
 
     [RelayCommand]
-    private void OpenNvidia() => Process.Start(new ProcessStartInfo(NvidiaUrl) { UseShellExecute = true });
-
-    [RelayCommand]
-    private void OpenAmd() => Process.Start(new ProcessStartInfo(AmdUrl) { UseShellExecute = true });
-
-    [RelayCommand]
-    private void OpenIntel() => Process.Start(new ProcessStartInfo(IntelUrl) { UseShellExecute = true });
+    private void OpenDriverLink(DriverInfo? driver)
+    {
+        if (driver is null) return;
+        Process.Start(new ProcessStartInfo(driver.LinkUrl) { UseShellExecute = true });
+    }
 }

@@ -13,13 +13,8 @@
                        Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
             <TextBlock Text="{x:Static res:Strings.Drivers_Body}" TextWrapping="Wrap"
                        Style="{StaticResource BodyTextStyle}" Margin="0,0,0,16"/>
-            <WrapPanel>
-                <Button Content="{x:Static res:Strings.Drivers_OpenWindowsUpdate}" Style="{StaticResource PrimaryButtonStyle}"
-                        Margin="0,0,8,8" Command="{Binding OpenWindowsUpdateCommand}"/>
-                <Button Content="NVIDIA" Margin="0,0,8,8" Command="{Binding OpenNvidiaCommand}"/>
-                <Button Content="AMD" Margin="0,0,8,8" Command="{Binding OpenAmdCommand}"/>
-                <Button Content="Intel" Margin="0,0,8,8" Command="{Binding OpenIntelCommand}"/>
-            </WrapPanel>
+            <Button Content="{x:Static res:Strings.Drivers_OpenWindowsUpdate}" Style="{StaticResource PrimaryButtonStyle}"
+                    HorizontalAlignment="Left" Command="{Binding OpenWindowsUpdateCommand}"/>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
@@ -30,6 +25,7 @@
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
 
@@ -45,10 +41,15 @@
                                     </TextBlock>
                                 </StackPanel>
 
-                                <Border Grid.Column="1" Background="#F59E0B" CornerRadius="999" Padding="8,3" VerticalAlignment="Center"
+                                <Border Grid.Column="1" Background="#F59E0B" CornerRadius="999" Padding="8,3" Margin="8,0" VerticalAlignment="Center"
                                         Visibility="{Binding IsPotentiallyOld, Converter={StaticResource BoolToVis}}">
                                     <TextBlock Text="{x:Static res:Strings.Drivers_OldBadge}" Foreground="White" FontSize="10" FontWeight="Bold"/>
                                 </Border>
+
+                                <Button Grid.Column="2" Content="{Binding LinkLabel}" Style="{StaticResource OutlineButtonStyle}"
+                                        VerticalAlignment="Center" Padding="10,5" FontSize="12"
+                                        Command="{Binding DataContext.OpenDriverLinkCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

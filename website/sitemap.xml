@@ -46,6 +46,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://jeremstyke.github.io/purgecore/from-cleantab.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jeremstyke.github.io/purgecore/fr/from-cleantab.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://jeremstyke.github.io/purgecore/fr/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
