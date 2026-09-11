@@ -51,6 +51,15 @@
                         <Run Text="{x:Static res:Strings.About_Coffee}"/>
                     </TextBlock>
                 </Button>
+
+                <Button DockPanel.Dock="Bottom" Command="{Binding ReportBugCommand}"
+                        Style="{StaticResource OutlineButtonStyle}"
+                        Margin="12,0,12,8">
+                    <TextBlock>
+                        <Run Text="🐞"/>
+                        <Run Text="{x:Static res:Strings.Sidebar_ReportBug}"/>
+                    </TextBlock>
+                </Button>
             </DockPanel>
         </Border>
 

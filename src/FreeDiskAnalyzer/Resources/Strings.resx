@@ -182,6 +182,7 @@
   <data name="About_BetaNote" xml:space="preserve"><value>PurgeCore is in beta. The core features are stable, but it hasn't had wide real-world testing yet, expect the occasional rough edge.</value></data>
   <data name="About_License" xml:space="preserve"><value>All rights reserved. See LICENSE in the repository.</value></data>
   <data name="About_Coffee" xml:space="preserve"><value>Offer a coffee</value></data>
+  <data name="Sidebar_ReportBug" xml:space="preserve"><value>Report a bug</value></data>
 
   <data name="ComingSoon_Subtitle" xml:space="preserve"><value>This section is coming in a future update.</value></data>
 </root>

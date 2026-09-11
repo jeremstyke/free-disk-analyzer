@@ -1,6 +1,8 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Windows;
+using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Core.Models;
@@ -104,15 +106,22 @@ public sealed partial class DashboardViewModel : ObservableObject
         var maxBytes = result.BytesByCategory.Values.Max();
         if (maxBytes <= 0) return;
 
+        var palette = new[] { "AccentBrush", "TealBrush", "VioletBrush", "AmberBrush", "RoseBrush" };
+        var index = 0;
+
         foreach (var (category, bytes) in result.BytesByCategory.OrderByDescending(kvp => kvp.Value))
         {
             if (bytes <= 0) continue;
+
+            var brush = (Brush)Application.Current.Resources[palette[index % palette.Length]];
+            index++;
 
             CategoryBreakdown.Add(new CategoryUsageViewModel
             {
                 Label = category.ToString(),
                 BytesDisplay = ByteSizeFormatter.Format(bytes),
-                BarPercentage = bytes / (double)maxBytes * 100
+                BarPercentage = bytes / (double)maxBytes * 100,
+                BarBrush = brush
             });
         }
     }

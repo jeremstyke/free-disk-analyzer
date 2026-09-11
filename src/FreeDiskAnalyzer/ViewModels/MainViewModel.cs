@@ -191,4 +191,12 @@ public sealed partial class MainViewModel : ObservableObject
     {
         Process.Start(new ProcessStartInfo(AboutViewModel.CoffeeUrl) { UseShellExecute = true });
     }
+
+    [RelayCommand]
+    private void ReportBug()
+    {
+        Process.Start(new ProcessStartInfo(ReportBugUrl) { UseShellExecute = true });
+    }
+
+    public const string ReportBugUrl = "https://github.com/jeremstyke/purgecore/issues/new";
 }

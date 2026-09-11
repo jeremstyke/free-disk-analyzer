@@ -7,6 +7,13 @@
     <SolidColorBrush x:Key="AccentBrushLight" Color="#DBEAFE"/>
     <SolidColorBrush x:Key="AccentForegroundBrush" Color="#FFFFFF"/>
 
+    <!-- Secondary accents, used purposefully for variety (category bars,
+         icons), same palette as the website -->
+    <SolidColorBrush x:Key="TealBrush" Color="#0D9488"/>
+    <SolidColorBrush x:Key="VioletBrush" Color="#7C3AED"/>
+    <SolidColorBrush x:Key="AmberBrush" Color="#D97706"/>
+    <SolidColorBrush x:Key="RoseBrush" Color="#E11D48"/>
+
     <!-- Surfaces -->
     <SolidColorBrush x:Key="BackgroundBrush" Color="#F8FAFC"/>
     <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF"/>

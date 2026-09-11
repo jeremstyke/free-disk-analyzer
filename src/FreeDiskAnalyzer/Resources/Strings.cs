@@ -165,6 +165,7 @@ public static class Strings
     public static string About_BetaNote => Get(nameof(About_BetaNote));
     public static string About_License => Get(nameof(About_License));
     public static string About_Coffee => Get(nameof(About_Coffee));
+    public static string Sidebar_ReportBug => Get(nameof(Sidebar_ReportBug));
 
     public static string ComingSoon_Subtitle => Get(nameof(ComingSoon_Subtitle));
 

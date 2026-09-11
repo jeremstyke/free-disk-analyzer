@@ -9,6 +9,7 @@ public sealed partial class AboutViewModel : ObservableObject
 {
     public const string GitHubUrl = "https://github.com/jeremstyke/purgecore";
     public const string CoffeeUrl = "https://jeremstyke.gumroad.com/coffee";
+    public const string ReportBugUrl = "https://github.com/jeremstyke/purgecore/issues/new";
 
     public string VersionDisplay { get; } =
         Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";
@@ -23,5 +24,11 @@ public sealed partial class AboutViewModel : ObservableObject
     private void OpenCoffee()
     {
         Process.Start(new ProcessStartInfo(CoffeeUrl) { UseShellExecute = true });
+    }
+
+    [RelayCommand]
+    private void ReportBug()
+    {
+        Process.Start(new ProcessStartInfo(ReportBugUrl) { UseShellExecute = true });
     }
 }

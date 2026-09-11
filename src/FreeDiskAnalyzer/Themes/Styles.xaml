@@ -64,9 +64,9 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
-                                                         To="0.96" Duration="0:0:0.08"/>
+                                                         To="0.94" Duration="0:0:0.08"/>
                                         <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
-                                                         To="0.96" Duration="0:0:0.08"/>
+                                                         To="0.94" Duration="0:0:0.08"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -74,9 +74,17 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
-                                                         To="1" Duration="0:0:0.12"/>
+                                                         To="1" Duration="0:0:0.35">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut" Amplitude="1.2"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
                                         <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
-                                                         To="1" Duration="0:0:0.12"/>
+                                                         To="1" Duration="0:0:0.35">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut" Amplitude="1.2"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>

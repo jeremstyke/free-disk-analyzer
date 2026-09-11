@@ -182,6 +182,7 @@
   <data name="About_BetaNote" xml:space="preserve"><value>PurgeCore est en bêta. Les fonctionnalités principales sont stables, mais l'application n'a pas encore été largement testée en conditions réelles, quelques imperfections sont possibles.</value></data>
   <data name="About_License" xml:space="preserve"><value>Tous droits réservés. Voir LICENSE dans le dépôt.</value></data>
   <data name="About_Coffee" xml:space="preserve"><value>Offrir un café</value></data>
+  <data name="Sidebar_ReportBug" xml:space="preserve"><value>Signaler un bug</value></data>
 
   <data name="ComingSoon_Subtitle" xml:space="preserve"><value>Cette section arrive dans une prochaine mise à jour.</value></data>
 </root>
