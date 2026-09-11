@@ -30,10 +30,6 @@ Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. N
 
 ---
 
-## Screenshots
-
-*Screenshots will be added here once the first UI build is available.*
-
 ## Features
 
 - Fast, non-blocking disk scan (async, cancellable at any time)
