@@ -7,6 +7,12 @@
     <language>en</language>
 
     <item>
+      <title>PurgeCore v1.5.0: Browser Cleanup Fixes</title>
+      <link>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-5-0-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/v1-5-0-release-notes.html</guid>
+      <description>What's new in PurgeCore v1.5.0: progress indicators for browser cleanup, accurate freed-space reporting, and a fix for a misleading confirmation message.</description>
+    </item>
+    <item>
       <title>Free Disk Analyzer Is Now PurgeCore</title>
       <link>https://jeremstyke.github.io/free-disk-analyzer/blog/renamed-to-purgecore.html</link>
       <guid>https://jeremstyke.github.io/free-disk-analyzer/blog/renamed-to-purgecore.html</guid>
