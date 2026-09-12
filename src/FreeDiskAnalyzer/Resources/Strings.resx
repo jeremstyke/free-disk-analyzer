@@ -53,14 +53,14 @@
   <data name="Dashboard_StorageByCategory" xml:space="preserve"><value>Storage by category</value></data>
   <data name="Dashboard_NordVpnTitle" xml:space="preserve"><value>Recommended: NordVPN</value></data>
   <data name="Dashboard_NordVpnBody" xml:space="preserve"><value>Protect your connection while you browse and manage your files.</value></data>
-  <data name="Dashboard_LearnMore" xml:space="preserve"><value>Learn more</value></data>
+  <data name="Dashboard_LearnMore" xml:space="preserve"><value>🔗 Learn more</value></data>
   <data name="Dashboard_AffiliateDisclosure" xml:space="preserve"><value>Affiliate link - Helps support the development of PurgeCore at no extra cost to you.</value></data>
   <data name="Dashboard_UsedOf" xml:space="preserve"><value> used of </value></data>
   <data name="Dashboard_FromTheBlog" xml:space="preserve"><value>From the blog</value></data>
   <data name="Dashboard_ReleaseNotes" xml:space="preserve"><value>Release notes</value></data>
   <data name="Blog_ReleaseNotesEnglishOnly" xml:space="preserve"><value>Release notes are only available in English for now.</value></data>
   <data name="Dashboard_GuidesAndComparisons" xml:space="preserve"><value>Guides &amp; comparisons</value></data>
-  <data name="Dashboard_ViewBlog" xml:space="preserve"><value>View blog</value></data>
+  <data name="Dashboard_ViewBlog" xml:space="preserve"><value>📰 View blog</value></data>
 
   <data name="Analyze_Title" xml:space="preserve"><value>Analyze</value></data>
   <data name="Analyze_Subtitle" xml:space="preserve"><value>Pick a drive and start a scan.</value></data>
@@ -102,26 +102,26 @@
   <data name="Duplicates_NoneFound" xml:space="preserve"><value>No duplicate files found.</value></data>
   <data name="Duplicates_WastedSpace" xml:space="preserve"><value>Wasted space</value></data>
   <data name="Duplicates_Copies" xml:space="preserve"><value>copies</value></data>
-  <data name="Duplicates_Delete" xml:space="preserve"><value>Delete extra copies</value></data>
-  <data name="Duplicates_DeleteAll" xml:space="preserve"><value>Delete all duplicates</value></data>
+  <data name="Duplicates_Delete" xml:space="preserve"><value>🗑️ Delete extra copies</value></data>
+  <data name="Duplicates_DeleteAll" xml:space="preserve"><value>🗑️ Delete all duplicates</value></data>
 
   <data name="EmptyFolders_Title" xml:space="preserve"><value>Empty Folders</value></data>
   <data name="EmptyFolders_Subtitle" xml:space="preserve"><value>Folders from your last scan that contain nothing at all.</value></data>
   <data name="EmptyFolders_NoScan" xml:space="preserve"><value>Run a scan from the Analyze tab first.</value></data>
   <data name="EmptyFolders_NoneFound" xml:space="preserve"><value>No empty folders found.</value></data>
-  <data name="EmptyFolders_Delete" xml:space="preserve"><value>Delete</value></data>
-  <data name="EmptyFolders_DeleteAll" xml:space="preserve"><value>Delete all empty folders</value></data>
+  <data name="EmptyFolders_Delete" xml:space="preserve"><value>🗑️ Delete</value></data>
+  <data name="EmptyFolders_DeleteAll" xml:space="preserve"><value>🗑️ Delete all empty folders</value></data>
 
   <data name="Analyze_ExportReport" xml:space="preserve"><value>Export report (CSV)</value></data>
 
   <data name="Performance_Title" xml:space="preserve"><value>Free up RAM</value></data>
   <data name="Performance_Body" xml:space="preserve"><value>Asks Windows to reclaim memory that running processes aren't actively using. Windows already does this automatically when something needs the memory, so the real-world effect is often modest. The numbers below are the actual measurement, not a promised gain.</value></data>
-  <data name="Performance_FreeRam" xml:space="preserve"><value>Free up RAM</value></data>
+  <data name="Performance_FreeRam" xml:space="preserve"><value>⚡ Free up RAM</value></data>
   <data name="Performance_Running" xml:space="preserve"><value>Working...</value></data>
 
   <data name="Performance_DnsTitle" xml:space="preserve"><value>Flush DNS cache</value></data>
   <data name="Performance_DnsBody" xml:space="preserve"><value>Clears Windows' cached DNS lookups. Can help with slow or failing page loads caused by a stale or incorrect entry. Does not free disk space or memory.</value></data>
-  <data name="Performance_FlushDns" xml:space="preserve"><value>Flush DNS cache</value></data>
+  <data name="Performance_FlushDns" xml:space="preserve"><value>🌐 Flush DNS cache</value></data>
   <data name="Performance_DnsFlushedSuccess" xml:space="preserve"><value>DNS cache flushed.</value></data>
   <data name="Performance_DnsFlushedFailure" xml:space="preserve"><value>Couldn't flush the DNS cache. This is unusual, try again or restart your computer.</value></data>
 
@@ -132,7 +132,7 @@
 
   <data name="Drivers_Title" xml:space="preserve"><value>Drivers</value></data>
   <data name="Drivers_Body" xml:space="preserve"><value>Installed drivers and how old they are. Nothing here is downloaded or installed automatically, use Windows Update or the manufacturer's own site to update anything.</value></data>
-  <data name="Drivers_OpenWindowsUpdate" xml:space="preserve"><value>Open Windows Update</value></data>
+  <data name="Drivers_OpenWindowsUpdate" xml:space="preserve"><value>🔄 Open Windows Update</value></data>
   <data name="Drivers_OldBadge" xml:space="preserve"><value>3+ years old</value></data>
   <data name="Drivers_AgeUnknown" xml:space="preserve"><value>Update date unknown</value></data>
   <data name="Drivers_AgeRecent" xml:space="preserve"><value>Updated recently</value></data>
@@ -147,12 +147,12 @@
 
   <data name="Browsers_Title" xml:space="preserve"><value>Browser cleanup</value></data>
   <data name="Browsers_Body" xml:space="preserve"><value>Clears cache, cookies, and browsing history for Chrome, Edge, and Firefox. Bookmarks and saved passwords are never touched. For Firefox, history is not offered here since it's stored together with bookmarks in the same file. Close your browsers first for best results.</value></data>
-  <data name="Browsers_RescanCommand" xml:space="preserve"><value>Rescan</value></data>
+  <data name="Browsers_RescanCommand" xml:space="preserve"><value>🔄 Rescan</value></data>
   <data name="Browsers_SelectAll" xml:space="preserve"><value>Select all</value></data>
   <data name="Browsers_DeselectAll" xml:space="preserve"><value>Deselect all</value></data>
   <data name="Browsers_Scanning" xml:space="preserve"><value>Scanning...</value></data>
   <data name="Browsers_Cleaning" xml:space="preserve"><value>Cleaning, this can take a while for large caches...</value></data>
-  <data name="Browsers_Clean" xml:space="preserve"><value>Clean selected</value></data>
+  <data name="Browsers_Clean" xml:space="preserve"><value>🧹 Clean selected</value></data>
   <data name="Risk_Low" xml:space="preserve"><value>Low risk</value></data>
   <data name="Risk_Medium" xml:space="preserve"><value>Medium risk</value></data>
   <data name="Risk_High" xml:space="preserve"><value>High risk</value></data>
@@ -166,7 +166,7 @@
   <data name="Uninstall_Title" xml:space="preserve"><value>Uninstall programs</value></data>
   <data name="Uninstall_Body" xml:space="preserve"><value>Installed programs, largest first. Uninstalling runs each program's own official uninstaller, the same one Windows would run, nothing here deletes files or registry entries directly.</value></data>
   <data name="Uninstall_SearchPlaceholder" xml:space="preserve"><value>Search installed programs</value></data>
-  <data name="Uninstall_Button" xml:space="preserve"><value>Uninstall</value></data>
+  <data name="Uninstall_Button" xml:space="preserve"><value>🗑️ Uninstall</value></data>
   <data name="Uninstall_ConfirmTitle" xml:space="preserve"><value>Uninstall program</value></data>
   <data name="Uninstall_ConfirmBody" xml:space="preserve"><value>Uninstall {0}? This opens that program's own uninstaller, follow its prompts to finish.</value></data>
   <data name="Uninstall_LaunchFailedBody" xml:space="preserve"><value>Couldn't start the uninstaller for this program. It may need to be removed from Windows Settings &gt; Apps instead.</value></data>
@@ -202,7 +202,7 @@
   <data name="Privacy_Affiliate_Body" xml:space="preserve"><value>The NordVPN card on the Dashboard and the DeleteMe suggestion after a scan are affiliate links, clearly labeled where they appear. Clicking one opens your browser to the partner's site, which then applies its own privacy policy. PurgeCore does not track which links you click.</value></data>
 
   <data name="About_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
-  <data name="About_ViewGitHub" xml:space="preserve"><value>View on GitHub</value></data>
+  <data name="About_ViewGitHub" xml:space="preserve"><value>💻 View on GitHub</value></data>
   <data name="About_Version" xml:space="preserve"><value>Version</value></data>
   <data name="About_BetaNote" xml:space="preserve"><value>PurgeCore is in beta. The core features are stable, but it hasn't had wide real-world testing yet, expect the occasional rough edge.</value></data>
   <data name="About_SupportersTitle" xml:space="preserve"><value>Thanks to our supporters</value></data>

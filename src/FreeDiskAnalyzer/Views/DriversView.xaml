@@ -48,7 +48,7 @@
                                     <TextBlock Text="{x:Static res:Strings.Drivers_OldBadge}" Foreground="White" FontSize="10" FontWeight="Bold"/>
                                 </Border>
 
-                                <TextBlock Grid.Column="2" Text="{Binding LinkLabel}" Style="{StaticResource CaptionTextStyle}"
+                                <TextBlock Grid.Column="2" Text="{Binding LinkLabel, StringFormat='🔧 {0}'}" Style="{StaticResource CaptionTextStyle}"
                                            Foreground="{DynamicResource AccentBrush}" FontWeight="SemiBold"
                                            VerticalAlignment="Center" Margin="8,0,0,0"/>
                             </Grid>
