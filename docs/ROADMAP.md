@@ -279,3 +279,18 @@ Bob revisited Android after already agreeing earlier that a straight port of Pur
 **Why this version is worth keeping, unlike the earlier straight-port idea**: it targets a real, common pain point (photos/videos filling up phone storage) rather than trying to force a Windows-shaped tool onto a platform that structurally can't support it. Same spirit as PurgeCore (free, privacy-first, no aggressive ads) but a genuinely separate product, not a port.
 
 **Bob's own assessment, which stands**: this is effectively a second product to build from scratch (new codebase, new platform, new store to manage), not a Windows PurgeCore feature. Precondition is the same as everything else on this list: PurgeCore Windows needs a real established user base first. Logged as a real idea worth revisiting later, unlike the other Android ideas already ruled out.
+
+## Voluntary support option (Patreon/Tipeee/Store), compared, deferred (2026-09-12)
+
+Bob explored a recurring voluntary support option (not a paywalled feature, same spirit as the existing "offer a coffee" Gumroad link) at 1.99 EUR/month across three platforms. Verified numbers, all at 1.99 EUR:
+
+- Gumroad: ~0.99 EUR net (10% + ~0.46 EUR fee hits small amounts hardest)
+- Patreon: ~1.60 EUR net (10% platform fee + micro-pledge processing rate of 5% + $0.10 for pledges under $3, which 1.99 EUR/~$2.15 qualifies for)
+- Microsoft Store add-on: ~1.69 EUR net (flat 15% commission, no fixed fee)
+- Tipeee: ~1.77 EUR net (8% platform + ~2.9% Stripe processing, no special micro-payment tier but no harsh fixed fee either)
+
+Tipeee is the cheapest of the four at this specific small amount, Patreon the most expensive, contrary to Bob's initial assumption that Patreon was simply "better." The real differentiator isn't the fee (a few cents/month/supporter either way) but audience fit: Patreon has far more international brand recognition (relevant since PurgeCore is bilingual and pulls English-speaking traffic from GitHub/Reddit), Tipeee is French-native (EUR, no currency conversion, French support) but has a much smaller total user base (~200k active "tipeurs" vs Patreon's much larger audience) so less organic discovery. The Microsoft Store option only makes sense once/if the app is actually on the Store (still blocked on MSIX packaging + real screenshots, see above), and captures a different audience (people who find PurgeCore via the Store itself) rather than replacing Patreon/Tipeee.
+
+What it would include if built: one simple tier, nothing that touches app functionality (no ad-free tier since there are no ads, no priority support, no exclusive features, that would break "free forever, nothing behind a paywall"). Just recognition: name listed in a "Thanks to our supporters" page/section, early access to release notes (the information, not an early feature), a cosmetic supporter badge, informal input on what to build next via a supporters-only poll.
+
+Bob's call: revisit once there's a real audience to make the choice meaningful, not with ~20 users. No platform chosen yet, no page built yet.
