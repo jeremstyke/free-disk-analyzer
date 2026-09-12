@@ -34,9 +34,10 @@ public partial class App : Application
         IDriverInfoService driverInfoService = new DriverInfoService();
         IInstalledProgramsService installedProgramsService = new InstalledProgramsService();
         IDnsCacheService dnsCacheService = new DnsCacheService();
+        ISupportersService supportersService = new SupportersService();
         var mainViewModel = new MainViewModel(
             driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, startupManager, driverInfoService, settingsService,
-            updateChecker, blogFeedService, safeDeleteService, browserCleaner, systemCleaner, installedProgramsService, dnsCacheService);
+            updateChecker, blogFeedService, safeDeleteService, browserCleaner, systemCleaner, installedProgramsService, dnsCacheService, supportersService);
 
         var mainWindow = new MainWindow
         {

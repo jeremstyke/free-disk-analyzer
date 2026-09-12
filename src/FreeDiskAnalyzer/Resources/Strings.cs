@@ -188,6 +188,7 @@ public static class Strings
     public static string About_ViewGitHub => Get(nameof(About_ViewGitHub));
     public static string About_Version => Get(nameof(About_Version));
     public static string About_BetaNote => Get(nameof(About_BetaNote));
+    public static string About_SupportersTitle => Get(nameof(About_SupportersTitle));
     public static string About_License => Get(nameof(About_License));
     public static string About_Coffee => Get(nameof(About_Coffee));
     public static string Sidebar_ReportBug => Get(nameof(Sidebar_ReportBug));

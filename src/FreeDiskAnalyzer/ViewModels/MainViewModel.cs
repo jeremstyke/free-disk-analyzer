@@ -31,6 +31,7 @@ public sealed partial class MainViewModel : ObservableObject
     private readonly ISystemCleaner _systemCleaner;
     private readonly IInstalledProgramsService _installedProgramsService;
     private readonly IDnsCacheService _dnsCacheService;
+    private readonly ISupportersService _supportersService;
     private readonly ScanResultStore _scanResultStore;
 
     private UpdateInfo? _updateInfo;
@@ -73,7 +74,8 @@ public sealed partial class MainViewModel : ObservableObject
         IBrowserCleaner browserCleaner,
         ISystemCleaner systemCleaner,
         IInstalledProgramsService installedProgramsService,
-        IDnsCacheService dnsCacheService)
+        IDnsCacheService dnsCacheService,
+        ISupportersService supportersService)
     {
         _driveEnumerator = driveEnumerator;
         _diskScanner = diskScanner;
@@ -89,6 +91,7 @@ public sealed partial class MainViewModel : ObservableObject
         _systemCleaner = systemCleaner;
         _installedProgramsService = installedProgramsService;
         _dnsCacheService = dnsCacheService;
+        _supportersService = supportersService;
         _scanResultStore = new ScanResultStore();
 
         NavItems = new ObservableCollection<NavItem>(BuildNavItems());
@@ -174,7 +177,7 @@ public sealed partial class MainViewModel : ObservableObject
             NavKey.Blog => new BlogViewModel(_blogFeedService),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
-            NavKey.About => new AboutViewModel(),
+            NavKey.About => new AboutViewModel(_supportersService),
             _ => new ComingSoonViewModel(GetTitle(key))
         };
 

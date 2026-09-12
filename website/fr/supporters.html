@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos soutiens - PurgeCore</title>
+<meta name="description" content="Merci à tous ceux qui soutiennent le développement de PurgeCore.">
+<link rel="canonical" href="https://jeremstyke.github.io/purgecore/fr/supporters.html">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      PurgeCore
+      <span class="beta-badge">BETA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#features">Fonctionnalités</a>
+      <a href="../privacy.html">Confidentialité</a>
+      <a href="../about.html">À propos</a>
+      <a href="blog/">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offrir un café</a>
+      <div class="lang-switch"><a href="../supporters.html">EN</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="index.html">&larr; Retour à l'accueil</a>
+
+  <h1>Merci à nos soutiens</h1>
+  <p class="page-lead">PurgeCore est gratuit pour toujours, sans abonnement et sans fonctionnalité verrouillée derrière un paywall. Certaines personnes choisissent quand même de soutenir le développement, et ça compte énormément. Les voici.</p>
+
+  <div id="supporters-list" style="margin-top:32px;">
+    <p style="color:var(--ink-muted);">Aucun soutien listé pour l'instant, soyez le premier.</p>
+  </div>
+
+  <div class="cta-box" style="margin-top:32px;">
+    <p>Vous voulez votre nom ici ? Vous pouvez <a href="https://jeremstyke.gumroad.com/coffee">offrir un café</a> à tout moment, des options de soutien ponctuel ou récurrent sont aussi en préparation.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. Tous droits réservés. Si PurgeCore vous est utile, vous pouvez <a href="https://jeremstyke.gumroad.com/coffee">offrir un café</a>.</div>
+    <div style="margin-top:6px; font-size:13px;"><a href="../privacy.html" style="color:var(--ink-muted);">Politique de confidentialité</a> · <a href="terms.html" style="color:var(--ink-muted);">Conditions d'utilisation</a></div>
+    <div class="disclosure">PurgeCore peut recommander des produits via des liens affiliés, clairement identifiés là où ils apparaissent dans l'application. Cela n'affecte jamais ce que l'application elle-même vous coûte.</div>
+  </div>
+</footer>
+
+<script>
+  fetch('../supporters.json')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !data.supporters || !data.supporters.length) return;
+      var list = document.getElementById('supporters-list');
+      var ul = document.createElement('div');
+      ul.style.cssText = 'display:flex; flex-wrap:wrap; gap:12px;';
+      data.supporters.forEach(function (name) {
+        var chip = document.createElement('span');
+        chip.textContent = name;
+        chip.style.cssText = 'background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:8px 16px; font-weight:600;';
+        ul.appendChild(chip);
+      });
+      list.innerHTML = '';
+      list.appendChild(ul);
+    })
+    .catch(function () { /* garder le message par défaut */ });
+</script>
+<script src="../assets/animations.js" defer></script>
+</body>
+</html>
