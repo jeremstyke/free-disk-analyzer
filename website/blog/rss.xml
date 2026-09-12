@@ -7,6 +7,20 @@
     <language>en</language>
 
     <item>
+      <title>PurgeCore v1.8.3: A Full Code Audit</title>
+      <link>https://jeremstyke.github.io/purgecore/blog/v1-8-3-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/blog/v1-8-3-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>A full audit of the codebase found and fixed a Startup Manager desync bug and a leftover from the rename to PurgeCore.</description>
+    </item>
+    <item>
+      <title>PurgeCore v1.8.2: Startup Manager and Cookie Whitelist Fixes</title>
+      <link>https://jeremstyke.github.io/purgecore/blog/v1-8-2-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/blog/v1-8-2-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>Toggling a startup item twice in a row could silently fail, and cookie whitelist entries pasted as full URLs protected nothing. Both fixed.</description>
+    </item>
+    <item>
       <title>PurgeCore v1.8.0: Uninstall Programs</title>
       <link>https://jeremstyke.github.io/purgecore/blog/v1-8-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/purgecore/blog/v1-8-0-release-notes.html</guid>
