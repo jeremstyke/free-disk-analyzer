@@ -154,8 +154,6 @@ public static class Strings
     public static string Settings_LanguageRestartNote => Get(nameof(Settings_LanguageRestartNote));
     public static string Settings_Theme => Get(nameof(Settings_Theme));
     public static string Settings_StartWithWindows => Get(nameof(Settings_StartWithWindows));
-    public static string Settings_Analytics => Get(nameof(Settings_Analytics));
-    public static string Settings_AnalyticsNote => Get(nameof(Settings_AnalyticsNote));
     public static string Settings_Reset => Get(nameof(Settings_Reset));
     public static string Settings_CookieWhitelist => Get(nameof(Settings_CookieWhitelist));
     public static string Settings_CookieWhitelistNote => Get(nameof(Settings_CookieWhitelistNote));
@@ -164,8 +162,6 @@ public static class Strings
     public static string Privacy_Tagline => Get(nameof(Privacy_Tagline));
     public static string Privacy_StaysLocal_Title => Get(nameof(Privacy_StaysLocal_Title));
     public static string Privacy_StaysLocal_Body => Get(nameof(Privacy_StaysLocal_Body));
-    public static string Privacy_OptIn_Title => Get(nameof(Privacy_OptIn_Title));
-    public static string Privacy_OptIn_Body => Get(nameof(Privacy_OptIn_Body));
     public static string Privacy_NeverCollected_Title => Get(nameof(Privacy_NeverCollected_Title));
     public static string Privacy_NeverCollected_Body => Get(nameof(Privacy_NeverCollected_Body));
     public static string Privacy_Offline_Title => Get(nameof(Privacy_Offline_Title));

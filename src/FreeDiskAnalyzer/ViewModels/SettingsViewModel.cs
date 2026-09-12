@@ -19,9 +19,6 @@ public sealed partial class SettingsViewModel : ObservableObject
     private bool startWithWindows;
 
     [ObservableProperty]
-    private bool analyticsEnabled;
-
-    [ObservableProperty]
     private LanguageOption selectedLanguage;
 
     [ObservableProperty]
@@ -43,7 +40,6 @@ public sealed partial class SettingsViewModel : ObservableObject
         var settings = _settingsService.Load();
         Theme = settings.Theme;
         StartWithWindows = settings.StartWithWindows;
-        AnalyticsEnabled = settings.AnalyticsEnabled;
 
         _initialLanguageCode = settings.Language;
         selectedLanguage = LanguageOptions.FirstOrDefault(l => l.Code == settings.Language) ?? LanguageOptions[0];
@@ -65,8 +61,6 @@ public sealed partial class SettingsViewModel : ObservableObject
         PersistIfNotLoading();
     }
 
-    partial void OnAnalyticsEnabledChanged(bool value) => PersistIfNotLoading();
-
     partial void OnSelectedLanguageChanged(LanguageOption value)
     {
         LanguageChanged = !_isLoading && value.Code != _initialLanguageCode;
@@ -83,7 +77,6 @@ public sealed partial class SettingsViewModel : ObservableObject
         var current = _settingsService.Load();
         current.Theme = Theme;
         current.StartWithWindows = StartWithWindows;
-        current.AnalyticsEnabled = AnalyticsEnabled;
         current.Language = SelectedLanguage.Code;
         _settingsService.Save(current);
     }
@@ -94,7 +87,6 @@ public sealed partial class SettingsViewModel : ObservableObject
         _isLoading = true;
         Theme = ThemeMode.Light;
         StartWithWindows = false;
-        AnalyticsEnabled = false;
         SelectedLanguage = LanguageOptions[0];
         LanguageChanged = false;
         _isLoading = false;

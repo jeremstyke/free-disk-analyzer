@@ -13,19 +13,6 @@ This document explains exactly what PurgeCore does and does not do with your dat
 
 None of the above ever leaves your computer. The scan engine reads your file system directly and keeps all results in local memory and local settings storage. There is no server involved in analyzing a disk.
 
-## What can be sent, anonymously, and only if you opt in
-
-If you enable analytics in **Settings**, the following minimal, anonymous data may be sent:
-
-- That an installation happened (no identifier tied to you)
-- That the app was launched
-- Number of scans performed (a count, not what was scanned)
-- Application version
-- Windows version
-- Approximate country (derived from network-level location, not GPS or account data)
-
-This is off by default in spirit of privacy-first design, and can be turned off at any time in Settings.
-
 ## What is never collected, under any circumstance
 
 - Your name, email address, or Microsoft account
@@ -33,6 +20,7 @@ This is off by default in spirit of privacy-first design, and can be turned off 
 - Folder names or folder structure
 - Detailed disk contents or file lists
 - Any identifier that could be used to fingerprint your device or link scans to you across sessions
+- Usage analytics or telemetry of any kind, there is no opt-in analytics feature
 - Any hidden or undocumented telemetry
 
 ## Offline use

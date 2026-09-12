@@ -52,7 +52,7 @@ Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. N
 - Green/orange/red risk indicators on every deletion feature
 - Export a scan report to CSV
 - NordVPN recommendation on the Dashboard, and a DeleteMe recommendation after a scan completes, both clearly labeled as affiliate links
-- Settings: language, light/dark theme, start with Windows, opt-in anonymous analytics, reset to defaults, all saved locally
+- Settings: language, light/dark theme, start with Windows, reset to defaults, all saved locally
 - Dedicated Privacy page explaining exactly what stays local and what never leaves your machine
 - Light and dark mode, modern Windows 11-inspired interface
 - English and French, full coverage (language selector in Settings, restart to apply)

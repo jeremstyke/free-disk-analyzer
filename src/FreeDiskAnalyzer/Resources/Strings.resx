@@ -171,8 +171,6 @@
   <data name="Settings_LanguageRestartNote" xml:space="preserve"><value>Restart PurgeCore to apply a language change.</value></data>
   <data name="Settings_Theme" xml:space="preserve"><value>Theme</value></data>
   <data name="Settings_StartWithWindows" xml:space="preserve"><value>Start with Windows</value></data>
-  <data name="Settings_Analytics" xml:space="preserve"><value>Share anonymous usage statistics</value></data>
-  <data name="Settings_AnalyticsNote" xml:space="preserve"><value>Off by default. No file names, paths, or personal data are ever included. See the Privacy tab for details.</value></data>
   <data name="Settings_Reset" xml:space="preserve"><value>Reset settings</value></data>
   <data name="Settings_CookieWhitelist" xml:space="preserve"><value>Cookie whitelist</value></data>
   <data name="Settings_CookieWhitelistNote" xml:space="preserve"><value>One domain per line (e.g. gmail.com). When cleaning cookies in Cleanup, these are kept so you stay signed in. Leave empty to clear all cookies for the selected browsers.</value></data>
@@ -181,10 +179,8 @@
   <data name="Privacy_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="Privacy_StaysLocal_Title" xml:space="preserve"><value>What stays local, always</value></data>
   <data name="Privacy_StaysLocal_Body" xml:space="preserve"><value>Drive, folder, and file names and paths, file sizes, types and dates, and every scan result stay on this computer. The scan engine reads your file system directly, there is no server involved in analyzing a disk.</value></data>
-  <data name="Privacy_OptIn_Title" xml:space="preserve"><value>What can be sent, anonymously, only if you opt in</value></data>
-  <data name="Privacy_OptIn_Body" xml:space="preserve"><value>If you enable analytics in Settings: that an installation and launches happened, the number of scans performed, the app version, the Windows version, and an approximate country. This is off by default and can be turned off at any time.</value></data>
   <data name="Privacy_NeverCollected_Title" xml:space="preserve"><value>What is never collected</value></data>
-  <data name="Privacy_NeverCollected_Body" xml:space="preserve"><value>Your name, email, or Microsoft account. File names, paths, or contents. Folder names or structure. Detailed disk contents. Any identifier used to fingerprint this device. There is no hidden or undocumented telemetry.</value></data>
+  <data name="Privacy_NeverCollected_Body" xml:space="preserve"><value>Your name, email, or Microsoft account. File names, paths, or contents. Folder names or structure. Detailed disk contents. Any identifier used to fingerprint this device. Usage analytics or telemetry of any kind, there is no opt-in analytics feature. There is no hidden or undocumented telemetry.</value></data>
   <data name="Privacy_Offline_Title" xml:space="preserve"><value>Offline use</value></data>
   <data name="Privacy_Offline_Body" xml:space="preserve"><value>PurgeCore works fully offline. Disabling your internet connection does not affect scanning, results, or any core feature.</value></data>
   <data name="Privacy_Affiliate_Title" xml:space="preserve"><value>Affiliate links</value></data>

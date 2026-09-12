@@ -171,8 +171,6 @@
   <data name="Settings_LanguageRestartNote" xml:space="preserve"><value>Redémarrez PurgeCore pour appliquer un changement de langue.</value></data>
   <data name="Settings_Theme" xml:space="preserve"><value>Thème</value></data>
   <data name="Settings_StartWithWindows" xml:space="preserve"><value>Démarrer avec Windows</value></data>
-  <data name="Settings_Analytics" xml:space="preserve"><value>Partager des statistiques d'usage anonymes</value></data>
-  <data name="Settings_AnalyticsNote" xml:space="preserve"><value>Désactivé par défaut. Aucun nom de fichier, chemin ou donnée personnelle n'est jamais inclus. Voir l'onglet Confidentialité pour le détail.</value></data>
   <data name="Settings_Reset" xml:space="preserve"><value>Réinitialiser les paramètres</value></data>
   <data name="Settings_CookieWhitelist" xml:space="preserve"><value>Liste blanche des cookies</value></data>
   <data name="Settings_CookieWhitelistNote" xml:space="preserve"><value>Un domaine par ligne (ex : gmail.com). Lors du nettoyage des cookies dans Nettoyage, ceux-ci sont conservés pour rester connecté. Laissez vide pour effacer tous les cookies des navigateurs sélectionnés.</value></data>
@@ -181,10 +179,8 @@
   <data name="Privacy_Tagline" xml:space="preserve"><value>Free forever. Privacy first.</value></data>
   <data name="Privacy_StaysLocal_Title" xml:space="preserve"><value>Ce qui reste local, toujours</value></data>
   <data name="Privacy_StaysLocal_Body" xml:space="preserve"><value>Noms et chemins des disques, dossiers et fichiers, tailles, types et dates, et chaque résultat de scan restent sur cet ordinateur. Le moteur de scan lit votre système de fichiers directement, aucun serveur n'intervient dans l'analyse d'un disque.</value></data>
-  <data name="Privacy_OptIn_Title" xml:space="preserve"><value>Ce qui peut être envoyé, anonymement, uniquement si vous l'activez</value></data>
-  <data name="Privacy_OptIn_Body" xml:space="preserve"><value>Si vous activez les statistiques dans les Paramètres : qu'une installation et des lancements ont eu lieu, le nombre de scans effectués, la version de l'application, la version de Windows, et un pays approximatif. C'est désactivé par défaut et peut être désactivé à tout moment.</value></data>
   <data name="Privacy_NeverCollected_Title" xml:space="preserve"><value>Ce qui n'est jamais collecté</value></data>
-  <data name="Privacy_NeverCollected_Body" xml:space="preserve"><value>Votre nom, email ou compte Microsoft. Noms de fichiers, chemins ou contenus. Noms de dossiers ou structure. Contenu détaillé du disque. Tout identifiant utilisé pour reconnaître cet appareil. Il n'y a aucune télémétrie cachée ou non documentée.</value></data>
+  <data name="Privacy_NeverCollected_Body" xml:space="preserve"><value>Votre nom, email ou compte Microsoft. Noms de fichiers, chemins ou contenus. Noms de dossiers ou structure. Contenu détaillé du disque. Tout identifiant utilisé pour reconnaître cet appareil. Des statistiques d'usage ou une télémétrie de quelque sorte, il n'y a aucune fonctionnalité d'analytique optionnelle. Il n'y a aucune télémétrie cachée ou non documentée.</value></data>
   <data name="Privacy_Offline_Title" xml:space="preserve"><value>Utilisation hors ligne</value></data>
   <data name="Privacy_Offline_Body" xml:space="preserve"><value>PurgeCore fonctionne entièrement hors ligne. Désactiver votre connexion internet n'affecte ni le scan, ni les résultats, ni aucune fonctionnalité principale.</value></data>
   <data name="Privacy_Affiliate_Title" xml:space="preserve"><value>Liens affiliés</value></data>

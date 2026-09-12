@@ -53,7 +53,7 @@ Analyse de disque, doublons, nettoyage navigateurs et PC, gestion démarrage et 
 - Indicateurs de risque vert/orange/rouge sur chaque fonctionnalité de suppression
 - Export d'un rapport de scan en CSV
 - Recommandation NordVPN sur le tableau de bord, et recommandation DeleteMe après un scan, toutes deux clairement identifiées comme liens affiliés
-- Paramètres : langue, thème clair/sombre, démarrage avec Windows, statistiques anonymes en opt-in, réinitialisation, tout sauvegardé localement
+- Paramètres : langue, thème clair/sombre, démarrage avec Windows, réinitialisation, tout sauvegardé localement
 - Page Confidentialité dédiée expliquant précisément ce qui reste local
 - Mode clair et sombre, interface moderne inspirée de Windows 11
 - Anglais et français, couverture complète (sélecteur de langue dans Paramètres, redémarrage requis pour appliquer)

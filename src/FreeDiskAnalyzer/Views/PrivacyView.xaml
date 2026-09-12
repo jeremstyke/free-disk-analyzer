@@ -19,15 +19,6 @@
 
             <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
                 <StackPanel>
-                    <TextBlock Text="{x:Static res:Strings.Privacy_OptIn_Title}" FontWeight="SemiBold" FontSize="16"
-                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
-                    <TextBlock Text="{x:Static res:Strings.Privacy_OptIn_Body}"
-                               Style="{StaticResource BodyTextStyle}" TextWrapping="Wrap"/>
-                </StackPanel>
-            </Border>
-
-            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
-                <StackPanel>
                     <TextBlock Text="{x:Static res:Strings.Privacy_NeverCollected_Title}" FontWeight="SemiBold" FontSize="16"
                                Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"/>
                     <TextBlock Text="{x:Static res:Strings.Privacy_NeverCollected_Body}"

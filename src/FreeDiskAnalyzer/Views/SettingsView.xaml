@@ -37,15 +37,6 @@
                 </StackPanel>
             </Border>
 
-            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,16">
-                <StackPanel>
-                    <CheckBox Content="{x:Static res:Strings.Settings_Analytics}" IsChecked="{Binding AnalyticsEnabled}"
-                              Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
-                    <TextBlock Text="{x:Static res:Strings.Settings_AnalyticsNote}"
-                               Style="{StaticResource CaptionTextStyle}" TextWrapping="Wrap"/>
-                </StackPanel>
-            </Border>
-
             <Button Content="{x:Static res:Strings.Settings_Reset}" Command="{Binding ResetSettingsCommand}"
                     HorizontalAlignment="Left"/>
 
