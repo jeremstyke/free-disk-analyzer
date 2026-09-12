@@ -243,3 +243,14 @@ Technical reality covered: GitHub Pages is a static site, it cannot store live c
 Bob decided against the idea entirely once the core tension was clear: PurgeCore's whole pitch, repeated on the homepage, README, About page, the CleanTab migration page, and every comparison article, is "100% local, nothing is ever sent anywhere." Even a fully anonymous, disclosed, opt-out-able ping (no personal data, random local ID only) is still the app phoning home, which contradicts that claim as currently written. Not worth undermining a core, oft-repeated trust claim for a stats display feature.
 
 If this comes back, the two facts to remember: (1) any version of this requires updating the "nothing is ever sent anywhere" language across the site and app, in the privacy policy, and adding a real opt-out in Settings, not just a footnote, and (2) "active today/30 days" and version-distribution stats specifically require a real backend (Supabase), simple running-total counters don't need one but come with the public/writable caveat above.
+
+## Private usage telemetry (for Bob only, not public), decided but deferred (2026-09-11)
+
+Bob raised usage tracking again shortly after dropping the public stats idea above. This time scoped differently: not a public stats page, just Bob wanting visibility into how the app is used. Same core tension applies regardless of whether it's public or private: data still leaves the user's machine, which is what "nothing is ever sent anywhere" promises won't happen. Decided to proceed anyway, on these terms:
+
+- Anonymous only: no personal data, a random local ID, no way to tie an event back to a specific person.
+- **On by default**, per Bob's explicit call (not opt-in), with a real toggle to turn it off in Settings.
+- Backend: Supabase (Bob already uses it elsewhere), a simple events/counts table Bob reads directly from the Supabase dashboard, no custom stats display needed since this isn't public-facing.
+- Required alongside the feature, not optional: update the Privacy Policy to disclose this plainly, since "on by default" makes accurate disclosure more important, not less.
+
+Explicitly deferred, not started, "we'll do that later" per Bob. When picked up: needs a Supabase project (existing one or new), the specific events to track (which features, what "active" means), the Settings toggle, and the privacy policy update, in that order.
