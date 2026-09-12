@@ -58,8 +58,35 @@ public sealed partial class BrowsersViewModel : ObservableObject
 
     private static List<string> ParseWhitelist(string text) =>
         text.Split(new[] { '\r', '\n', ',' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Select(NormalizeDomain)
+            .Where(d => d.Length > 0)
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
+
+    /// <summary>
+    /// Strips a scheme and path if the user pastes a full URL instead of a
+    /// bare domain (e.g. "https://gmail.com/mail" -> "gmail.com"). Without
+    /// this, a pasted URL would never match any real cookie host and that
+    /// whitelist entry would silently protect nothing.
+    /// </summary>
+    private static string NormalizeDomain(string raw)
+    {
+        var value = raw.Trim();
+
+        var schemeIndex = value.IndexOf("://", StringComparison.Ordinal);
+        if (schemeIndex >= 0)
+        {
+            value = value[(schemeIndex + 3)..];
+        }
+
+        var pathIndex = value.IndexOfAny(new[] { '/', '\\', '?', '#' });
+        if (pathIndex >= 0)
+        {
+            value = value[..pathIndex];
+        }
+
+        return value.Trim().TrimEnd('.');
+    }
 
     [RelayCommand(CanExecute = nameof(CanScan))]
     private async Task ScanAsync()

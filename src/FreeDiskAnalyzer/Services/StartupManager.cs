@@ -29,7 +29,7 @@ public sealed class StartupManager : IStartupManager
         }, cancellationToken);
     }
 
-    public Task<bool> SetEnabledAsync(StartupItem item, bool enabled, CancellationToken cancellationToken = default)
+    public Task<StartupItem?> SetEnabledAsync(StartupItem item, bool enabled, CancellationToken cancellationToken = default)
     {
         return Task.Run(() =>
         {
@@ -41,7 +41,7 @@ public sealed class StartupManager : IStartupManager
             }
             catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or SecurityException)
             {
-                return false;
+                return null;
             }
         }, cancellationToken);
     }
@@ -153,11 +153,11 @@ public sealed class StartupManager : IStartupManager
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
         "FreeDiskAnalyzer", "DisabledStartupItems");
 
-    private static bool SetRegistryEnabled(StartupItem item, bool enabled)
+    private static StartupItem? SetRegistryEnabled(StartupItem item, bool enabled)
     {
         using var runKey = Registry.CurrentUser.CreateSubKey(RunKeyPath, writable: true);
         using var disabledKey = Registry.CurrentUser.CreateSubKey(DisabledBackupKeyPath, writable: true);
-        if (runKey is null || disabledKey is null) return false;
+        if (runKey is null || disabledKey is null) return null;
 
         if (enabled)
         {
@@ -170,13 +170,21 @@ public sealed class StartupManager : IStartupManager
             runKey.DeleteValue(item.Name, throwOnMissingValue: false);
         }
 
-        return true;
+        // Registry items keep the same "path" (a command line, not a file
+        // location) either way, only IsEnabled actually changes here.
+        return new StartupItem
+        {
+            Name = item.Name,
+            CommandOrPath = item.CommandOrPath,
+            Source = item.Source,
+            IsEnabled = enabled
+        };
     }
 
-    private bool SetStartupFolderEnabled(StartupItem item, bool enabled)
+    private StartupItem? SetStartupFolderEnabled(StartupItem item, bool enabled)
     {
-        if (!File.Exists(item.CommandOrPath)) return false;
-        if (PathSafetyGuard.IsProtected(item.CommandOrPath)) return false;
+        if (!File.Exists(item.CommandOrPath)) return null;
+        if (PathSafetyGuard.IsProtected(item.CommandOrPath)) return null;
 
         var startupFolder = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
         var disabledFolder = GetDisabledStartupFolderPath();
@@ -185,9 +193,19 @@ public sealed class StartupManager : IStartupManager
         var targetFolder = enabled ? startupFolder : disabledFolder;
         var destination = Path.Combine(targetFolder, Path.GetFileName(item.CommandOrPath));
 
-        if (PathSafetyGuard.IsProtected(destination)) return false;
+        if (PathSafetyGuard.IsProtected(destination)) return null;
 
         File.Move(item.CommandOrPath, destination, overwrite: true);
-        return true;
+
+        // The file physically moved, so the path genuinely changed. Returning
+        // it (rather than the caller reusing the old, now-stale path) is what
+        // makes toggling the same item back and forth actually work.
+        return new StartupItem
+        {
+            Name = item.Name,
+            CommandOrPath = destination,
+            Source = item.Source,
+            IsEnabled = enabled
+        };
     }
 }

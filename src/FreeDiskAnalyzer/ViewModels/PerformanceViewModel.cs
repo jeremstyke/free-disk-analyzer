@@ -92,10 +92,10 @@ public sealed partial class PerformanceViewModel : ObservableObject
 
         try
         {
-            var success = await _startupManager.SetEnabledAsync(vm.Item, targetState);
-            if (success)
+            var updated = await _startupManager.SetEnabledAsync(vm.Item, targetState);
+            if (updated is not null)
             {
-                vm.IsEnabled = targetState;
+                vm.UpdateItem(updated);
             }
         }
         finally
