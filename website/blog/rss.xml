@@ -7,6 +7,13 @@
     <language>en</language>
 
     <item>
+      <title>PurgeCore v1.8.0: Uninstall Programs</title>
+      <link>https://jeremstyke.github.io/purgecore/blog/v1-8-0-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/blog/v1-8-0-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>A new Uninstall tab lists installed programs, largest first, and uninstalls them using each program's own official uninstaller.</description>
+    </item>
+    <item>
       <title>PurgeCore v1.7.1: A New Typeface</title>
       <link>https://jeremstyke.github.io/purgecore/blog/v1-7-1-release-notes.html</link>
       <guid>https://jeremstyke.github.io/purgecore/blog/v1-7-1-release-notes.html</guid>
