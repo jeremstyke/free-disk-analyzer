@@ -102,6 +102,12 @@ public static class Strings
     public static string Performance_FreeRam => Get(nameof(Performance_FreeRam));
     public static string Performance_Running => Get(nameof(Performance_Running));
 
+    public static string Performance_DnsTitle => Get(nameof(Performance_DnsTitle));
+    public static string Performance_DnsBody => Get(nameof(Performance_DnsBody));
+    public static string Performance_FlushDns => Get(nameof(Performance_FlushDns));
+    public static string Performance_DnsFlushedSuccess => Get(nameof(Performance_DnsFlushedSuccess));
+    public static string Performance_DnsFlushedFailure => Get(nameof(Performance_DnsFlushedFailure));
+
     public static string Startup_Title => Get(nameof(Startup_Title));
     public static string Startup_Body => Get(nameof(Startup_Body));
     public static string Startup_Remove => Get(nameof(Startup_Remove));

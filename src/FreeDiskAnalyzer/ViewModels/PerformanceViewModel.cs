@@ -11,6 +11,7 @@ public sealed partial class PerformanceViewModel : ObservableObject
 {
     private readonly IRamOptimizer _ramOptimizer;
     private readonly IStartupManager _startupManager;
+    private readonly IDnsCacheService _dnsCacheService;
 
     [ObservableProperty]
     private bool isRunning;
@@ -21,6 +22,15 @@ public sealed partial class PerformanceViewModel : ObservableObject
     [ObservableProperty]
     private string resultSummary = string.Empty;
 
+    [ObservableProperty]
+    private bool isFlushingDns;
+
+    [ObservableProperty]
+    private bool hasFlushedDnsOnce;
+
+    [ObservableProperty]
+    private string dnsResultSummary = string.Empty;
+
     public ObservableCollection<StartupItemViewModel> StartupItems { get; } = new();
 
     [ObservableProperty]
@@ -29,10 +39,11 @@ public sealed partial class PerformanceViewModel : ObservableObject
     [ObservableProperty]
     private bool hasNoStartupItems;
 
-    public PerformanceViewModel(IRamOptimizer ramOptimizer, IStartupManager startupManager)
+    public PerformanceViewModel(IRamOptimizer ramOptimizer, IStartupManager startupManager, IDnsCacheService dnsCacheService)
     {
         _ramOptimizer = ramOptimizer;
         _startupManager = startupManager;
+        _dnsCacheService = dnsCacheService;
 
         _ = LoadStartupItemsAsync();
     }
@@ -58,6 +69,25 @@ public sealed partial class PerformanceViewModel : ObservableObject
         finally
         {
             IsRunning = false;
+        }
+    }
+
+    [RelayCommand]
+    private async Task FlushDnsAsync()
+    {
+        IsFlushingDns = true;
+
+        try
+        {
+            var success = await _dnsCacheService.FlushAsync();
+            DnsResultSummary = success
+                ? Resources.Strings.Performance_DnsFlushedSuccess
+                : Resources.Strings.Performance_DnsFlushedFailure;
+            HasFlushedDnsOnce = true;
+        }
+        finally
+        {
+            IsFlushingDns = false;
         }
     }
 

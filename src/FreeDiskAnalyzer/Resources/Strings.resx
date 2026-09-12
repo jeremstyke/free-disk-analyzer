@@ -119,6 +119,12 @@
   <data name="Performance_FreeRam" xml:space="preserve"><value>Free up RAM</value></data>
   <data name="Performance_Running" xml:space="preserve"><value>Working...</value></data>
 
+  <data name="Performance_DnsTitle" xml:space="preserve"><value>Flush DNS cache</value></data>
+  <data name="Performance_DnsBody" xml:space="preserve"><value>Clears Windows' cached DNS lookups. Can help with slow or failing page loads caused by a stale or incorrect entry. Does not free disk space or memory.</value></data>
+  <data name="Performance_FlushDns" xml:space="preserve"><value>Flush DNS cache</value></data>
+  <data name="Performance_DnsFlushedSuccess" xml:space="preserve"><value>DNS cache flushed.</value></data>
+  <data name="Performance_DnsFlushedFailure" xml:space="preserve"><value>Couldn't flush the DNS cache. This is unusual, try again or restart your computer.</value></data>
+
   <data name="Startup_Title" xml:space="preserve"><value>Startup programs</value></data>
   <data name="Startup_Body" xml:space="preserve"><value>Apps that launch when Windows starts. Turning one off doesn't uninstall it, it just stops launching automatically, and can be turned back on any time. Only your own account's entries are shown, not shared system-wide ones.</value></data>
   <data name="Startup_Remove" xml:space="preserve"><value>Remove</value></data>

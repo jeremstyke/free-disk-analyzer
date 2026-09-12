@@ -119,6 +119,12 @@
   <data name="Performance_FreeRam" xml:space="preserve"><value>Libérer la RAM</value></data>
   <data name="Performance_Running" xml:space="preserve"><value>En cours...</value></data>
 
+  <data name="Performance_DnsTitle" xml:space="preserve"><value>Vider le cache DNS</value></data>
+  <data name="Performance_DnsBody" xml:space="preserve"><value>Efface les résolutions DNS mises en cache par Windows. Peut aider en cas de pages qui chargent lentement ou échouent à cause d'une entrée obsolète ou incorrecte. Ne libère ni espace disque ni RAM.</value></data>
+  <data name="Performance_FlushDns" xml:space="preserve"><value>Vider le cache DNS</value></data>
+  <data name="Performance_DnsFlushedSuccess" xml:space="preserve"><value>Cache DNS vidé.</value></data>
+  <data name="Performance_DnsFlushedFailure" xml:space="preserve"><value>Impossible de vider le cache DNS. C'est inhabituel, réessayez ou redémarrez votre ordinateur.</value></data>
+
   <data name="Startup_Title" xml:space="preserve"><value>Programmes au démarrage</value></data>
   <data name="Startup_Body" xml:space="preserve"><value>Applications qui se lancent au démarrage de Windows. Désactiver n'en désinstalle aucune, ça arrête juste le lancement automatique, réactivable à tout moment. Seules les entrées de votre propre compte sont affichées, pas les entrées système partagées.</value></data>
   <data name="Startup_Remove" xml:space="preserve"><value>Supprimer</value></data>

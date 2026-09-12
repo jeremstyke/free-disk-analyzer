@@ -39,12 +39,13 @@ public sealed partial class CleanupViewModel : ObservableObject
         IBrowserCleaner browserCleaner,
         ISystemCleaner systemCleaner,
         IInstalledProgramsService installedProgramsService,
+        IDnsCacheService dnsCacheService,
         ISettingsService settingsService,
         ScanResultStore scanResultStore)
     {
         Duplicates = new DuplicatesViewModel(driveEnumerator, duplicateFinder, safeDeleteService);
         EmptyFolders = new EmptyFoldersViewModel(scanResultStore, safeDeleteService);
-        Performance = new PerformanceViewModel(ramOptimizer, startupManager);
+        Performance = new PerformanceViewModel(ramOptimizer, startupManager, dnsCacheService);
         Browsers = new BrowsersViewModel(browserCleaner, settingsService);
         System = new SystemViewModel(systemCleaner);
         Uninstall = new UninstallViewModel(installedProgramsService);

@@ -30,6 +30,7 @@ public sealed partial class MainViewModel : ObservableObject
     private readonly IBrowserCleaner _browserCleaner;
     private readonly ISystemCleaner _systemCleaner;
     private readonly IInstalledProgramsService _installedProgramsService;
+    private readonly IDnsCacheService _dnsCacheService;
     private readonly ScanResultStore _scanResultStore;
 
     private UpdateInfo? _updateInfo;
@@ -71,7 +72,8 @@ public sealed partial class MainViewModel : ObservableObject
         ISafeDeleteService safeDeleteService,
         IBrowserCleaner browserCleaner,
         ISystemCleaner systemCleaner,
-        IInstalledProgramsService installedProgramsService)
+        IInstalledProgramsService installedProgramsService,
+        IDnsCacheService dnsCacheService)
     {
         _driveEnumerator = driveEnumerator;
         _diskScanner = diskScanner;
@@ -86,6 +88,7 @@ public sealed partial class MainViewModel : ObservableObject
         _browserCleaner = browserCleaner;
         _systemCleaner = systemCleaner;
         _installedProgramsService = installedProgramsService;
+        _dnsCacheService = dnsCacheService;
         _scanResultStore = new ScanResultStore();
 
         NavItems = new ObservableCollection<NavItem>(BuildNavItems());
@@ -167,7 +170,7 @@ public sealed partial class MainViewModel : ObservableObject
             NavKey.Dashboard => new DashboardViewModel(_driveEnumerator, _scanResultStore),
             NavKey.Analyze => new AnalyzeViewModel(_driveEnumerator, _diskScanner, _scanResultStore),
             NavKey.Explore => new ExploreViewModel(_scanResultStore, _driverInfoService),
-            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _startupManager, _safeDeleteService, _browserCleaner, _systemCleaner, _installedProgramsService, _settingsService, _scanResultStore),
+            NavKey.Cleanup => new CleanupViewModel(_driveEnumerator, _duplicateFinder, _ramOptimizer, _startupManager, _safeDeleteService, _browserCleaner, _systemCleaner, _installedProgramsService, _dnsCacheService, _settingsService, _scanResultStore),
             NavKey.Blog => new BlogViewModel(_blogFeedService),
             NavKey.Settings => new SettingsViewModel(_settingsService),
             NavKey.Privacy => new PrivacyViewModel(),
