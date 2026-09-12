@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PurgeCore v1.7.0: A Real Cleanup Bug Fixed, and a New Look</title>
+<meta name="description" content="What's new in PurgeCore v1.7.0: a real System cleanup bug fixed (reported freeing space that wasn't actually freed), a bold new colorful design, a separate Blog tab, and clickable drivers with plain explanations.">
+<meta property="og:title" content="PurgeCore v1.7.0: A Real Cleanup Bug Fixed, and a New Look">
+<meta property="og:description" content="What's new in PurgeCore v1.7.0: a real System cleanup bug fixed (reported freeing space that wasn't actually freed), a bold new colorful design, a separate Blog tab, and clickable drivers with plain explanations.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/purgecore/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/purgecore/blog/v1-7-0-release-notes.html">
+<link rel="canonical" href="https://jeremstyke.github.io/purgecore/blog/v1-7-0-release-notes.html">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="PurgeCore Blog" href="rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      PurgeCore
+      <span class="beta-badge">BETA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <div class="article-header">
+    <span class="article-tag">Release notes</span>
+  </div>
+  <h1>PurgeCore v1.7.0: A Real Cleanup Bug Fixed, and a New Look</h1>
+  <p class="article-meta">2026</p>
+
+  <p>This is a bigger release than usual: one real bug worth knowing about, and a genuine redesign, not just a tweak.</p>
+
+  <h2>Fixed: System cleanup could report freeing space it didn't actually free</h2>
+  <p>The Temp files and Recycle Bin cleaner had a real bug: it didn't check whether each individual file actually got deleted before reporting success. Temp files are commonly locked by running programs, so if deletion failed silently for some or all of them, the app could still say "Freed X GB" when little or nothing had actually happened. This is now fixed, the app measures and reports only what was genuinely deleted.</p>
+
+  <h2>A bolder, more colorful design</h2>
+  <p>The interface has a real visual refresh: a vibrant gradient sidebar (blue, violet, teal), gradient-filled buttons, colorized navigation icons, and more animation throughout, a bouncier feel on hover and selection, a pulsing beta badge, and a proper loading indicator during scans and cleanups.</p>
+
+  <h2>Blog moved to its own tab</h2>
+  <p>Release notes and guides used to share space on the Dashboard with everything else. They now have a dedicated Blog tab, freeing up room for a bigger, more visible NordVPN recommendation card on the Dashboard.</p>
+
+  <h2>Drivers are now clickable</h2>
+  <p>Clicking a driver in the Explore tab now shows how long ago it was updated in plain language ("3 years ago" instead of a raw date), a short explanation of what a driver actually does and why updating is optional, then offers to open the manufacturer's site, rather than jumping straight there.</p>
+
+  <h2>Also in this release</h2>
+  <ul>
+    <li>"Report a bug" now opens an email instead of a GitHub issue</li>
+    <li>The update banner used to fail silently on a network timeout or a declined Windows security prompt, it now shows a clear message explaining what happened</li>
+  </ul>
+
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Download v1.7.0</h2>
+    <p>Free forever, no account, no trial.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Download for Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, so Windows may show a brief "unknown publisher" warning on first run. The source is public on GitHub, and each release is published with a SHA-256 checksum you can verify.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved. If PurgeCore is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">PurgeCore may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+<script src="../assets/animations.js" defer></script>
+</body>
+</html>

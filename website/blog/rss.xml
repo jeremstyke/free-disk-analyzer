@@ -7,6 +7,20 @@
     <language>en</language>
 
     <item>
+      <title>PurgeCore v1.7.1: A New Typeface</title>
+      <link>https://jeremstyke.github.io/purgecore/blog/v1-7-1-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/blog/v1-7-1-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>PurgeCore v1.7.1 embeds Inter as the app's font instead of the default Windows system font, matching the website's typeface for a consistent look.</description>
+    </item>
+    <item>
+      <title>PurgeCore v1.7.0: A Real Cleanup Bug Fixed, and a New Look</title>
+      <link>https://jeremstyke.github.io/purgecore/blog/v1-7-0-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/blog/v1-7-0-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>A real System cleanup bug fixed (reported freeing space that wasn't actually freed), a bold new colorful design, a separate Blog tab, and clickable drivers with plain explanations.</description>
+    </item>
+    <item>
       <title>PurgeCore v1.6.2: Report a Bug, More Color</title>
       <link>https://jeremstyke.github.io/purgecore/blog/v1-6-2-release-notes.html</link>
       <guid>https://jeremstyke.github.io/purgecore/blog/v1-6-2-release-notes.html</guid>
