@@ -18,6 +18,9 @@
                 <TextBlock Text="{x:Static res:Strings.Dashboard_ReleaseNotes}" FontWeight="SemiBold" FontSize="14"
                            Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,8"
                            Visibility="{Binding HasReleaseNotes, Converter={StaticResource BoolToVis}}"/>
+                <TextBlock Text="{x:Static res:Strings.Blog_ReleaseNotesEnglishOnly}" Style="{StaticResource CaptionTextStyle}"
+                           Margin="0,-4,0,8"
+                           Visibility="{Binding IsFrenchUi, Converter={StaticResource BoolToVis}}"/>
                 <ItemsControl ItemsSource="{Binding LatestReleaseNotes}" Margin="0,0,0,16">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>

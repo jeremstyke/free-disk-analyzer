@@ -58,6 +58,7 @@
   <data name="Dashboard_UsedOf" xml:space="preserve"><value> utilisé sur </value></data>
   <data name="Dashboard_FromTheBlog" xml:space="preserve"><value>Depuis le blog</value></data>
   <data name="Dashboard_ReleaseNotes" xml:space="preserve"><value>Notes de version</value></data>
+  <data name="Blog_ReleaseNotesEnglishOnly" xml:space="preserve"><value>Les notes de version ne sont pour l'instant disponibles qu'en anglais.</value></data>
   <data name="Dashboard_GuidesAndComparisons" xml:space="preserve"><value>Guides et comparaisons</value></data>
   <data name="Dashboard_ViewBlog" xml:space="preserve"><value>Voir le blog</value></data>
 

@@ -6,16 +6,17 @@ namespace FreeDiskAnalyzer.Core.Services;
 
 public sealed class BlogFeedService : IBlogFeedService
 {
-    private const string FeedUrl = "https://jeremstyke.github.io/purgecore/blog/rss.xml";
+    public const string EnglishFeedUrl = "https://jeremstyke.github.io/purgecore/blog/rss.xml";
+    public const string FrenchFeedUrl = "https://jeremstyke.github.io/purgecore/fr/blog/rss.xml";
 
-    public async Task<IReadOnlyList<BlogPost>> GetLatestPostsAsync(int count, CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyList<BlogPost>> GetLatestPostsAsync(string feedUrl, int count, CancellationToken cancellationToken = default)
     {
         try
         {
             using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(10) };
             client.DefaultRequestHeaders.UserAgent.ParseAdd("FreeDiskAnalyzer-App");
 
-            var xml = await client.GetStringAsync(FeedUrl, cancellationToken);
+            var xml = await client.GetStringAsync(feedUrl, cancellationToken);
             var doc = XDocument.Parse(xml);
 
             var posts = new List<BlogPost>();
