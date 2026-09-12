@@ -5,6 +5,7 @@ using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FreeDiskAnalyzer.Models;
+using FreeDiskAnalyzer.Services;
 
 namespace FreeDiskAnalyzer.ViewModels;
 
