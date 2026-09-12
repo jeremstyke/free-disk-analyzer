@@ -244,13 +244,8 @@ Bob decided against the idea entirely once the core tension was clear: PurgeCore
 
 If this comes back, the two facts to remember: (1) any version of this requires updating the "nothing is ever sent anywhere" language across the site and app, in the privacy policy, and adding a real opt-out in Settings, not just a footnote, and (2) "active today/30 days" and version-distribution stats specifically require a real backend (Supabase), simple running-total counters don't need one but come with the public/writable caveat above.
 
-## Private usage telemetry (for Bob only, not public), decided but deferred (2026-09-11)
+## Usage telemetry, fully dropped, not deferred (2026-09-11)
 
-Bob raised usage tracking again shortly after dropping the public stats idea above. This time scoped differently: not a public stats page, just Bob wanting visibility into how the app is used. Same core tension applies regardless of whether it's public or private: data still leaves the user's machine, which is what "nothing is ever sent anywhere" promises won't happen. Decided to proceed anyway, on these terms:
+Bob raised usage tracking again shortly after dropping the public stats idea above, this time scoped as private-only (just Bob wanting visibility into how the app is used, not a public stats page). Briefly considered building it (anonymous, on by default, Supabase-backed, toggle to disable in Settings), then Bob mentioned wanting the data usable for resale later. Flagged that clearly: GDPR's purpose-limitation principle means data can't be collected for one stated reason and repurposed for resale without clear upfront consent, and PurgeCore's whole pitch is the opposite of what Hola VPN and Onavo did (both discussed earlier as cautionary examples, secretly monetizing free users' data). Bob then clarified he didn't mean resale, just wanted usage data for himself. Even so, decided against building this at all: any version still means the app phones home, still contradicts "nothing is ever sent anywhere" repeated across the site and app, whether the data is public, private, or resold. Bob's final call: no tracking of any kind, full stop, not deferred to later, dropped.
 
-- Anonymous only: no personal data, a random local ID, no way to tie an event back to a specific person.
-- **On by default**, per Bob's explicit call (not opt-in), with a real toggle to turn it off in Settings.
-- Backend: Supabase (Bob already uses it elsewhere), a simple events/counts table Bob reads directly from the Supabase dashboard, no custom stats display needed since this isn't public-facing.
-- Required alongside the feature, not optional: update the Privacy Policy to disclose this plainly, since "on by default" makes accurate disclosure more important, not less.
-
-Explicitly deferred, not started, "we'll do that later" per Bob. When picked up: needs a Supabase project (existing one or new), the specific events to track (which features, what "active" means), the Settings toggle, and the privacy policy update, in that order.
+If this comes back: it would need to be reconsidered against the same "nothing is ever sent anywhere" claim as before, that claim would need to change first, on the site, in the app, and in the privacy policy, before any telemetry (public or private) could be added honestly.
