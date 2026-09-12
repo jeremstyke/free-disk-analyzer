@@ -7,6 +7,13 @@
     <language>en</language>
 
     <item>
+      <title>PurgeCore v1.9.0: Flush DNS Cache</title>
+      <link>https://jeremstyke.github.io/purgecore/blog/v1-9-0-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/blog/v1-9-0-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>A one-click DNS cache flush in the Performance tab, plus the website and README catching up on the Uninstall feature from v1.8.0.</description>
+    </item>
+    <item>
       <title>PurgeCore v1.8.3: A Full Code Audit</title>
       <link>https://jeremstyke.github.io/purgecore/blog/v1-8-3-release-notes.html</link>
       <guid>https://jeremstyke.github.io/purgecore/blog/v1-8-3-release-notes.html</guid>

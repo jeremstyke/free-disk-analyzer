@@ -44,6 +44,8 @@ Analyse de disque, doublons, nettoyage navigateurs et PC, gestion démarrage et 
 - Détecteur de dossiers vides, avec suppression en un clic (Corbeille, pas définitif)
 - Nettoyage des navigateurs : efface le cache, les cookies et l'historique pour Chrome, Edge et Firefox (favoris et mots de passe jamais touchés, historique Firefox volontairement exclu car mélangé aux favoris dans le même fichier)
 - Libération de RAM (vrais chiffres avant/après, pas un gain promis)
+- Désinstaller des programmes (du plus gros au plus petit, recherche, utilise le désinstalleur officiel de chaque programme)
+- Vider le cache DNS (un clic, aucun fichier ni registre touché)
 - Gestionnaire de démarrage (activer/désactiver/supprimer les apps au démarrage de Windows, compte utilisateur uniquement, pas besoin de droits admin)
 - Infos pilotes (lecture seule) : pilotes installés, signale ceux de 3+ ans, liens vers Windows Update et les sites fabricants, ne télécharge ni n'installe jamais rien lui-même
 - Notifications de mise à jour dans l'app, avec téléchargement et installation en un clic

@@ -43,6 +43,8 @@ Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. N
 - Empty folder finder, with one-click delete (Recycle Bin, not permanent)
 - Browser cleanup: clears cache, cookies, and history for Chrome, Edge, and Firefox (bookmarks and passwords are never touched, Firefox history is intentionally skipped since it's stored together with bookmarks)
 - Free up RAM (real before/after numbers, not a promised gain)
+- Uninstall programs (largest first, search, uses each program's own official uninstaller)
+- Flush DNS cache (one click, no files or registry touched)
 - Startup program manager (enable/disable/remove apps that launch with Windows, per-user only, no admin rights needed)
 - Driver info (read-only): installed drivers, flags ones 3+ years old, links to Windows Update and manufacturer sites, never downloads or installs anything itself
 - In-app update notifications, with one-click download and install

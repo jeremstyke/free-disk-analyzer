@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PurgeCore v1.9.0: Flush DNS Cache</title>
+<meta name="description" content="What's new in PurgeCore v1.9.0: a one-click DNS cache flush in the Performance tab, plus the website and README catching up on the Uninstall feature from v1.8.0.">
+<meta property="og:title" content="PurgeCore v1.9.0: Flush DNS Cache">
+<meta property="og:description" content="What's new in PurgeCore v1.9.0: a one-click DNS cache flush in the Performance tab, plus the website and README catching up on the Uninstall feature from v1.8.0.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://jeremstyke.github.io/purgecore/assets/og-image-icon.png">
+<meta property="og:url" content="https://jeremstyke.github.io/purgecore/blog/v1-9-0-release-notes.html">
+<link rel="canonical" href="https://jeremstyke.github.io/purgecore/blog/v1-9-0-release-notes.html">
+<link rel="icon" type="image/png" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="PurgeCore Blog" href="rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="12" stroke="#E2E8F0" stroke-width="5" fill="none"/>
+        <circle cx="16" cy="16" r="12" stroke="#2563EB" stroke-width="5" fill="none" stroke-linecap="round"
+                stroke-dasharray="30.2 45.2" transform="rotate(-90 16 16)"/>
+      </svg>
+      PurgeCore
+      <span class="beta-badge">BETA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#features">Features</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../about.html">About</a>
+      <a href="./">Blog</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a class="github-link" href="https://github.com/jeremstyke/purgecore">GitHub</a>
+      <a class="coffee-link" href="https://jeremstyke.gumroad.com/coffee">☕ Offer a coffee</a>
+      <div class="lang-switch"><a href="../fr/">FR</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="content-page">
+  <a class="back-link" href="./">&larr; Back to blog</a>
+
+  <div class="article-header">
+    <span class="article-tag">Release notes</span>
+  </div>
+  <h1>PurgeCore v1.9.0: Flush DNS Cache</h1>
+  <p class="article-meta">2026</p>
+
+  <p>A small new tool, and a couple of overdue corrections to how the existing ones were documented.</p>
+
+  <h2>New: Flush DNS cache</h2>
+  <p>A "Flush DNS cache" button in the Performance tab, next to Free up RAM. It clears Windows' cached DNS lookups, which can help with slow or failing page loads caused by a stale or incorrect entry. It doesn't free disk space or memory, it's purely a network fix, and touches nothing else on the system.</p>
+
+  <h2>Housekeeping: the website and README now mention Uninstall</h2>
+  <p>The Uninstall feature (installed programs, largest first, removed via each program's own official uninstaller) shipped back in v1.8.0, but never made it into the feature list on this site or in the README. Fixed, both now list it properly.</p>
+
+  <div class="download-band" style="margin-top:48px;">
+    <h2>Download v1.9.0</h2>
+    <p>Free forever, no account, no trial.</p>
+    <a class="btn btn-primary" href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Setup.exe">Download for Windows</a>
+    <p style="margin-top:16px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, so Windows may show a brief "unknown publisher" warning on first run. The source is public on GitHub, and each release is published with a SHA-256 checksum you can verify.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>&copy; 2026 Jeremy Jury. All rights reserved. If PurgeCore is useful to you, you can <a href="https://jeremstyke.gumroad.com/coffee">offer a coffee</a>.</div>
+    <div class="disclosure">PurgeCore may recommend products through affiliate links, clearly labeled where they appear in the app. This never affects what the app itself costs you.</div>
+  </div>
+</footer>
+
+<script src="../assets/animations.js" defer></script>
+</body>
+</html>
