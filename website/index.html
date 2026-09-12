@@ -67,6 +67,7 @@
       </div>
       <p style="margin-top:14px; font-size:13px; color:var(--ink-muted);">No commercial code-signing certificate yet, Windows may show an "unknown publisher" warning on first run. <a href="#faq">Why?</a></p>
       <p style="margin-top:8px; font-size:13px; color:var(--ink-muted);">Power user? <a href="https://github.com/jeremstyke/purgecore/releases/latest/download/PurgeCore-Portable.zip">Download the portable version</a> (no installation, no admin rights needed).</p>
+      <p id="download-count-note" style="margin-top:8px; font-size:13px; color:var(--ink-muted);"></p>
     </div>
     <div class="hero-art">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -176,6 +177,78 @@
   </div>
 </section>
 
+<section id="comparison">
+  <div class="wrap">
+    <h2>How PurgeCore compares</h2>
+    <p class="section-lead">A quick summary, full write-ups linked below.</p>
+    <div style="overflow-x:auto; margin-top:24px;">
+    <table style="width:100%; border-collapse:collapse; min-width:640px;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--border);">
+          <th style="text-align:left; padding:12px 16px;"></th>
+          <th style="text-align:center; padding:12px 16px; color:var(--accent);">PurgeCore</th>
+          <th style="text-align:center; padding:12px 16px; color:var(--ink-muted);">CCleaner</th>
+          <th style="text-align:center; padding:12px 16px; color:var(--ink-muted);">BleachBit</th>
+          <th style="text-align:center; padding:12px 16px; color:var(--ink-muted);">WinDirStat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px 16px;">Free, no paid tier</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center; color:var(--ink-muted);">Partial</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center;">✓</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px 16px;">Disk space analysis</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center; color:var(--ink-muted);">Limited</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+          <td style="text-align:center;">✓</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px 16px;">Duplicate file finder</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px 16px;">Browser cleanup (Chrome, Edge, Firefox)</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px 16px;">Uninstall programs</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px 16px;">Registry cleaner</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗ (on purpose)</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px 16px;">Open source</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center; color:var(--ink-muted);">✗</td>
+          <td style="text-align:center;">✓</td>
+          <td style="text-align:center;">✓</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="margin-top:20px; font-size:13px; color:var(--ink-muted);">No registry cleaner is a deliberate choice, not a missing feature, see the CCleaner comparison for why. Full comparisons: <a href="blog/free-disk-analyzer-vs-ccleaner.html">vs CCleaner</a>, <a href="blog/free-disk-analyzer-vs-bleachbit.html">vs BleachBit</a>, <a href="blog/free-disk-analyzer-vs-windirstat.html">vs WinDirStat</a>.</p>
+  </div>
+</section>
+
 <section id="privacy" class="band-dark">
   <div class="wrap">
     <h2 class="section-heading">Built to stay out of your data</h2>
@@ -229,6 +302,10 @@
       <p>PurgeCore doesn't yet have a commercial code-signing certificate, so Windows SmartScreen may flag it as from an unknown publisher. You can verify your download with the SHA-256 checksum published alongside each release.</p>
     </div>
     <div class="faq-item">
+      <h3>My antivirus is flagging PurgeCore, is that normal?</h3>
+      <p>It can happen. Tools that touch startup entries, browser data, and system files trigger the same broad heuristics some antivirus software uses for "potentially unwanted programs", even when nothing harmful is happening. The source code is public on GitHub if you want to check for yourself, and every release ships with a SHA-256 checksum so you can confirm your download matches exactly what was built from that source. If your antivirus blocks it outright, you may need to add an exception.</p>
+    </div>
+    <div class="faq-item">
       <h3>Can I see the source code?</h3>
       <p>Yes, the source code is publicly viewable on <a href="https://github.com/jeremstyke/purgecore">GitHub</a>. The compiled app itself is free to use.</p>
     </div>
@@ -258,6 +335,24 @@
   </div>
 </footer>
 
+<script>
+  fetch('https://api.github.com/repos/jeremstyke/purgecore/releases')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (releases) {
+      if (!releases || !releases.length) return;
+      var total = 0;
+      releases.forEach(function (release) {
+        (release.assets || []).forEach(function (asset) {
+          total += asset.download_count || 0;
+        });
+      });
+      var note = document.getElementById('download-count-note');
+      if (note && total > 0) {
+        note.textContent = total.toLocaleString('en-US') + ' downloads so far, across all versions.';
+      }
+    })
+    .catch(function () { /* offline or rate-limited: leave it blank */ });
+</script>
 <script>
   fetch('https://api.github.com/repos/jeremstyke/purgecore/releases/latest')
     .then(function (r) { return r.ok ? r.json() : null; })
