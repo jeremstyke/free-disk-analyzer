@@ -49,7 +49,7 @@ Analyse de disque, doublons, nettoyage navigateurs et PC, gestion démarrage et 
 - Gestionnaire de démarrage (activer/désactiver/supprimer les apps au démarrage de Windows, compte utilisateur uniquement, pas besoin de droits admin)
 - Infos pilotes (lecture seule) : pilotes installés, signale ceux de 3+ ans, liens vers Windows Update et les sites fabricants, ne télécharge ni n'installe jamais rien lui-même
 - Notifications de mise à jour dans l'app, avec téléchargement et installation en un clic
-- Derniers articles du blog affichés sur le tableau de bord
+- Derniers articles du blog affichés dans leur propre onglet Blog
 - Nettoyage PC : fichiers temporaires et Corbeille (onglet Système dans Nettoyage)
 - Liste blanche de cookies (onglet Navigateurs) : reste connecté sur certains sites lors du nettoyage
 - Indicateurs de risque vert/orange/rouge sur chaque fonctionnalité de suppression

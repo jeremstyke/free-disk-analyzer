@@ -48,7 +48,7 @@ Disk analysis, duplicates, browser and PC cleanup, startup and RAM management. N
 - Startup program manager (enable/disable/remove apps that launch with Windows, per-user only, no admin rights needed)
 - Driver info (read-only): installed drivers, flags ones 3+ years old, links to Windows Update and manufacturer sites, never downloads or installs anything itself
 - In-app update notifications, with one-click download and install
-- Latest blog articles shown on the Dashboard
+- Latest blog articles shown in their own Blog tab
 - PC cleanup: Temp files and Recycle Bin (System tab in Cleanup)
 - Cookie whitelist (Browsers tab): keep specific sites signed in when clearing cookies
 - Green/orange/red risk indicators on every deletion feature
