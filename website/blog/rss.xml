@@ -7,6 +7,13 @@
     <language>en</language>
 
     <item>
+      <title>PurgeCore v1.9.1: Icons Everywhere</title>
+      <link>https://jeremstyke.github.io/purgecore/blog/v1-9-1-release-notes.html</link>
+      <guid>https://jeremstyke.github.io/purgecore/blog/v1-9-1-release-notes.html</guid>
+      <category>Release notes</category>
+      <description>PurgeCore v1.9.1 adds icons to buttons and links that didn't have them: NordVPN, DeleteMe, Free up RAM, Flush DNS, Uninstall, and more.</description>
+    </item>
+    <item>
       <title>PurgeCore v1.9.0: Flush DNS Cache</title>
       <link>https://jeremstyke.github.io/purgecore/blog/v1-9-0-release-notes.html</link>
       <guid>https://jeremstyke.github.io/purgecore/blog/v1-9-0-release-notes.html</guid>

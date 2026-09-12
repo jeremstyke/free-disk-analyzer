@@ -71,6 +71,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://jeremstyke.github.io/purgecore/blog/v1-9-1-release-notes.html</loc>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://jeremstyke.github.io/purgecore/blog/v1-9-0-release-notes.html</loc>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
