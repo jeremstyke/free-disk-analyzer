@@ -27,6 +27,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Inter (SIL Open Font License, see Fonts/LICENSE-Inter.txt), embedded
+         so the app matches the website's typeface without depending on
+         whatever's installed on the user's Windows version. -->
+    <Resource Include="Fonts\Inter-Regular.ttf" />
+    <Resource Include="Fonts\Inter-Bold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- Used for Microsoft.VisualBasic.FileIO.FileSystem, the standard way
          to send files to the Recycle Bin instead of permanently deleting
          them, from .NET (no WinForms dependency involved). -->
