@@ -20,6 +20,7 @@ public sealed partial class CleanupViewModel : ObservableObject
     public PerformanceViewModel Performance { get; }
     public BrowsersViewModel Browsers { get; }
     public SystemViewModel System { get; }
+    public UninstallViewModel Uninstall { get; }
 
     public ObservableCollection<CleanupTab> Tabs { get; }
 
@@ -37,6 +38,7 @@ public sealed partial class CleanupViewModel : ObservableObject
         ISafeDeleteService safeDeleteService,
         IBrowserCleaner browserCleaner,
         ISystemCleaner systemCleaner,
+        IInstalledProgramsService installedProgramsService,
         ISettingsService settingsService,
         ScanResultStore scanResultStore)
     {
@@ -45,6 +47,7 @@ public sealed partial class CleanupViewModel : ObservableObject
         Performance = new PerformanceViewModel(ramOptimizer, startupManager);
         Browsers = new BrowsersViewModel(browserCleaner, settingsService);
         System = new SystemViewModel(systemCleaner);
+        Uninstall = new UninstallViewModel(installedProgramsService);
 
         Tabs = new ObservableCollection<CleanupTab>
         {
@@ -52,7 +55,8 @@ public sealed partial class CleanupViewModel : ObservableObject
             new(Resources.Strings.EmptyFolders_Title, EmptyFolders),
             new(Resources.Strings.Performance_Title, Performance),
             new(Resources.Strings.Browsers_Title, Browsers),
-            new(Resources.Strings.System_Title, System)
+            new(Resources.Strings.System_Title, System),
+            new(Resources.Strings.Uninstall_Title, Uninstall)
         };
 
         SelectedTab = Tabs[0];

@@ -155,6 +155,14 @@
   <data name="System_Body" xml:space="preserve"><value>Clears your Temp folder (low risk, files go to the Recycle Bin) and empties the Recycle Bin (medium risk, permanent, review what's in it first if unsure).</value></data>
   <data name="System_TempFiles" xml:space="preserve"><value>Temp files</value></data>
   <data name="System_RecycleBin" xml:space="preserve"><value>Recycle Bin</value></data>
+
+  <data name="Uninstall_Title" xml:space="preserve"><value>Uninstall programs</value></data>
+  <data name="Uninstall_Body" xml:space="preserve"><value>Installed programs, largest first. Uninstalling runs each program's own official uninstaller, the same one Windows would run, nothing here deletes files or registry entries directly.</value></data>
+  <data name="Uninstall_SearchPlaceholder" xml:space="preserve"><value>Search installed programs</value></data>
+  <data name="Uninstall_Button" xml:space="preserve"><value>Uninstall</value></data>
+  <data name="Uninstall_ConfirmTitle" xml:space="preserve"><value>Uninstall program</value></data>
+  <data name="Uninstall_ConfirmBody" xml:space="preserve"><value>Uninstall {0}? This opens that program's own uninstaller, follow its prompts to finish.</value></data>
+  <data name="Uninstall_LaunchFailedBody" xml:space="preserve"><value>Couldn't start the uninstaller for this program. It may need to be removed from Windows Settings &gt; Apps instead.</value></data>
   <data name="System_Scanning" xml:space="preserve"><value>Scanning...</value></data>
   <data name="System_Cleaning" xml:space="preserve"><value>Cleaning...</value></data>
 

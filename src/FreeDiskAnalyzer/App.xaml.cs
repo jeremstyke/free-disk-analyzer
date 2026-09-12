@@ -32,9 +32,10 @@ public partial class App : Application
         ISystemCleaner systemCleaner = new SystemCleaner(safeDeleteService);
         IStartupManager startupManager = new StartupManager(safeDeleteService);
         IDriverInfoService driverInfoService = new DriverInfoService();
+        IInstalledProgramsService installedProgramsService = new InstalledProgramsService();
         var mainViewModel = new MainViewModel(
             driveEnumerator, diskScanner, duplicateFinder, ramOptimizer, startupManager, driverInfoService, settingsService,
-            updateChecker, blogFeedService, safeDeleteService, browserCleaner, systemCleaner);
+            updateChecker, blogFeedService, safeDeleteService, browserCleaner, systemCleaner, installedProgramsService);
 
         var mainWindow = new MainWindow
         {

@@ -138,6 +138,14 @@ public static class Strings
     public static string System_Body => Get(nameof(System_Body));
     public static string System_TempFiles => Get(nameof(System_TempFiles));
     public static string System_RecycleBin => Get(nameof(System_RecycleBin));
+
+    public static string Uninstall_Title => Get(nameof(Uninstall_Title));
+    public static string Uninstall_Body => Get(nameof(Uninstall_Body));
+    public static string Uninstall_SearchPlaceholder => Get(nameof(Uninstall_SearchPlaceholder));
+    public static string Uninstall_Button => Get(nameof(Uninstall_Button));
+    public static string Uninstall_ConfirmTitle => Get(nameof(Uninstall_ConfirmTitle));
+    public static string Uninstall_ConfirmBody => Get(nameof(Uninstall_ConfirmBody));
+    public static string Uninstall_LaunchFailedBody => Get(nameof(Uninstall_LaunchFailedBody));
     public static string System_Scanning => Get(nameof(System_Scanning));
     public static string System_Cleaning => Get(nameof(System_Cleaning));
 

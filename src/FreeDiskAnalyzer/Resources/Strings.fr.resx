@@ -155,6 +155,14 @@
   <data name="System_Body" xml:space="preserve"><value>Vide votre dossier temporaire (risque faible, les fichiers vont à la Corbeille) et vide la Corbeille (risque moyen, définitif, vérifiez son contenu d'abord en cas de doute).</value></data>
   <data name="System_TempFiles" xml:space="preserve"><value>Fichiers temporaires</value></data>
   <data name="System_RecycleBin" xml:space="preserve"><value>Corbeille</value></data>
+
+  <data name="Uninstall_Title" xml:space="preserve"><value>Désinstaller des programmes</value></data>
+  <data name="Uninstall_Body" xml:space="preserve"><value>Programmes installés, du plus gros au plus petit. Désinstaller lance le désinstalleur officiel de chaque programme, le même que celui de Windows, rien ici ne supprime de fichiers ou d'entrées de registre directement.</value></data>
+  <data name="Uninstall_SearchPlaceholder" xml:space="preserve"><value>Rechercher un programme installé</value></data>
+  <data name="Uninstall_Button" xml:space="preserve"><value>Désinstaller</value></data>
+  <data name="Uninstall_ConfirmTitle" xml:space="preserve"><value>Désinstaller le programme</value></data>
+  <data name="Uninstall_ConfirmBody" xml:space="preserve"><value>Désinstaller {0} ? Ça ouvre le désinstalleur propre à ce programme, suivez ses instructions pour terminer.</value></data>
+  <data name="Uninstall_LaunchFailedBody" xml:space="preserve"><value>Impossible de lancer le désinstalleur de ce programme. Il faudra peut-être le retirer depuis Paramètres Windows &gt; Applications.</value></data>
   <data name="System_Scanning" xml:space="preserve"><value>Analyse en cours...</value></data>
   <data name="System_Cleaning" xml:space="preserve"><value>Nettoyage en cours...</value></data>
 

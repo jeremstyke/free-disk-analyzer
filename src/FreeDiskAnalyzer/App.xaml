@@ -57,6 +57,9 @@
             <DataTemplate DataType="{x:Type vm:SystemViewModel}">
                 <views:SystemView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:UninstallViewModel}">
+                <views:UninstallView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
                 <views:SettingsView/>
             </DataTemplate>
