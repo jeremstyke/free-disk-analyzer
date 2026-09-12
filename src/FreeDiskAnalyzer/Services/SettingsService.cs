@@ -14,7 +14,7 @@ public interface ISettingsService
 public sealed class SettingsService : ISettingsService
 {
     private const string RunKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
-    private const string RunValueName = "FreeDiskAnalyzer";
+    private const string RunValueName = "PurgeCore";
 
     private readonly string _settingsFilePath;
 
@@ -66,6 +66,11 @@ public sealed class SettingsService : ISettingsService
     {
         using var key = Registry.CurrentUser.OpenSubKey(RunKeyPath, writable: true);
         if (key is null) return;
+
+        // Cleans up the entry from before the app was renamed from Free Disk
+        // Analyzer to PurgeCore, so nobody who enabled this pre-rename is
+        // left with a stale, orphaned registry value under the old name.
+        key.DeleteValue("FreeDiskAnalyzer", throwOnMissingValue: false);
 
         if (enabled)
         {

@@ -11,6 +11,14 @@ public sealed class StartupManager : IStartupManager
     private const string RunKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
     private const string DisabledBackupKeyPath = @"Software\FreeDiskAnalyzer\DisabledStartupItems";
 
+    // Must match SettingsService.RunValueName: PurgeCore's own "Start with
+    // Windows" entry lives in this same registry key, but it's managed by
+    // its own dedicated Settings toggle, not this general-purpose list.
+    // Showing it here too would let someone disable/remove it through two
+    // different, uncoordinated paths and leave the Settings checkbox out of
+    // sync with what's actually in the registry.
+    private const string SelfRunValueName = "PurgeCore";
+
     private readonly ISafeDeleteService _safeDeleteService;
 
     public StartupManager(ISafeDeleteService safeDeleteService)
@@ -79,6 +87,7 @@ public sealed class StartupManager : IStartupManager
             foreach (var name in runKey.GetValueNames())
             {
                 if (string.IsNullOrEmpty(name)) continue;
+                if (string.Equals(name, SelfRunValueName, StringComparison.OrdinalIgnoreCase)) continue;
 
                 yield return new StartupItem
                 {
@@ -96,6 +105,7 @@ public sealed class StartupManager : IStartupManager
             foreach (var name in disabledKey.GetValueNames())
             {
                 if (string.IsNullOrEmpty(name)) continue;
+                if (string.Equals(name, SelfRunValueName, StringComparison.OrdinalIgnoreCase)) continue;
 
                 yield return new StartupItem
                 {
