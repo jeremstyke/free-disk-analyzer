@@ -249,3 +249,33 @@ If this comes back, the two facts to remember: (1) any version of this requires 
 Bob raised usage tracking again shortly after dropping the public stats idea above, this time scoped as private-only (just Bob wanting visibility into how the app is used, not a public stats page). Briefly considered building it (anonymous, on by default, Supabase-backed, toggle to disable in Settings), then Bob mentioned wanting the data usable for resale later. Flagged that clearly: GDPR's purpose-limitation principle means data can't be collected for one stated reason and repurposed for resale without clear upfront consent, and PurgeCore's whole pitch is the opposite of what Hola VPN and Onavo did (both discussed earlier as cautionary examples, secretly monetizing free users' data). Bob then clarified he didn't mean resale, just wanted usage data for himself. Even so, decided against building this at all: any version still means the app phones home, still contradicts "nothing is ever sent anywhere" repeated across the site and app, whether the data is public, private, or resold. Bob's final call: no tracking of any kind, full stop, not deferred to later, dropped.
 
 If this comes back: it would need to be reconsidered against the same "nothing is ever sent anywhere" claim as before, that claim would need to change first, on the site, in the app, and in the privacy policy, before any telemetry (public or private) could be added honestly.
+
+## Microsoft Store: in-app purchase options explored (2026-09-12)
+
+Bob asked about Microsoft Store submission again, then about monetization options within it once there. Logged here since it's a real, verified plan for later, not started.
+
+**Store submission basics**: developer registration is free (Microsoft dropped the $19 individual fee). Requires MSIX packaging (a real chunk of work: packaging project, manifest, icon set at multiple sizes, verifying registry/WMI/low-level calls still work under Full Trust packaging) and, critically, real screenshots of the app running, which don't exist yet since the app has never been run visually. That's the actual blocker, not the packaging work itself.
+
+**Selling the app itself: considered and rejected.** "Free forever" is repeated across the download button, README, FAQ, and is the headline argument in the CCleaner comparison article. Selling PurgeCore directly on the Store would require Microsoft's own payment system (mandatory for the app's own price, ~15% commission), and creates an awkward situation with existing free GitHub downloads (same price everywhere breaks "free forever" for everyone, or free on GitHub/paid on Store looks like a bait-and-switch to Store buyers). Bob agreed not to pursue this.
+
+**What's still on the table for whenever the Store submission happens**: a "Support PurgeCore" optional tip, priced at 1.99 EUR. Verified numbers: Microsoft Store add-ons/subscriptions support one-time or recurring (1/3/6/12/24-month) purchases. If sold via Microsoft's own commerce (mandatory for Store add-ons, no bring-your-own-payment option like the earlier "sell the app" case implied it might have), the 15% flat-percentage fee actually nets more than Gumroad on a small amount like 1.99 EUR (~1.69 EUR net on Store vs ~0.99 EUR net on Gumroad, because Gumroad's fixed component eats a bigger share of small transactions). This would sit alongside the existing Gumroad "offer a coffee" link, not replace it, different acquisition channels for different audiences.
+
+Also verified: Microsoft Store in-app purchases/subscriptions in general let developers keep 100% of revenue if they use their own payment processor instead of Microsoft's, relevant if the earlier VPN subscription idea (3.49/6.99 EUR per month, see above) ever gets built and needs a second sales channel beyond Gumroad.
+
+Nothing here is started, same precondition as everything else: real screenshots and MSIX packaging come first, before any Store monetization decision matters.
+
+## PurgeCore Mobile: a real Android companion idea, not a port (2026-09-12)
+
+Bob revisited Android after already agreeing earlier that a straight port of PurgeCore doesn't work (Android blocks access to other apps' files/cache since Android 10+, no equivalent to the registry or Windows startup). This time scoped differently: a standalone Android app in the same spirit, not a clone.
+
+**What's actually feasible on Android, confirmed against real platform constraints**:
+- Duplicate photo/video finder (MediaStore API, a well-established app category, comparable to what Google Photos itself offers)
+- Largest files finder (same API)
+- Unused app detector (Android tracks last-opened date, can link out to uninstall)
+- A storage dashboard/breakdown by category
+
+**What's still impossible, same as before**: clearing other apps' caches directly (blocked without root, can only deep-link to each app's own settings page), anything with a "system/registry/startup" equivalent.
+
+**Why this version is worth keeping, unlike the earlier straight-port idea**: it targets a real, common pain point (photos/videos filling up phone storage) rather than trying to force a Windows-shaped tool onto a platform that structurally can't support it. Same spirit as PurgeCore (free, privacy-first, no aggressive ads) but a genuinely separate product, not a port.
+
+**Bob's own assessment, which stands**: this is effectively a second product to build from scratch (new codebase, new platform, new store to manage), not a Windows PurgeCore feature. Precondition is the same as everything else on this list: PurgeCore Windows needs a real established user base first. Logged as a real idea worth revisiting later, unlike the other Android ideas already ruled out.
